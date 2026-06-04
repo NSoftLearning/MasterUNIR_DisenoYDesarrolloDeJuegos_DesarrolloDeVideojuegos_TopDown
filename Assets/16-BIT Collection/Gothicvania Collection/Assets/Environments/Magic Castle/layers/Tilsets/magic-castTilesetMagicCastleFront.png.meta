@@ -1,0 +1,715 @@
+fileFormatVersion: 2
+guid: 1e366a68688ed1e46ab9cbbe7b4ce8a2
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -666925650097136013
+    second: magic-castTilesetMagicCastleFront_0
+  - first:
+      213: -134063772827535171
+    second: magic-castTilesetMagicCastleFront_1
+  - first:
+      213: 851971616458087371
+    second: magic-castTilesetMagicCastleFront_2
+  - first:
+      213: 8616321131343655175
+    second: magic-castTilesetMagicCastleFront_3
+  - first:
+      213: 8836730607677877867
+    second: magic-castTilesetMagicCastleFront_4
+  - first:
+      213: -5303244759321281785
+    second: magic-castTilesetMagicCastleFront_5
+  - first:
+      213: 1174463415620570730
+    second: magic-castTilesetMagicCastleFront_6
+  - first:
+      213: 4221579353408223673
+    second: magic-castTilesetMagicCastleFront_7
+  - first:
+      213: 3104940787591400353
+    second: magic-castTilesetMagicCastleFront_8
+  - first:
+      213: -7609578039189228050
+    second: magic-castTilesetMagicCastleFront_9
+  - first:
+      213: 2607145680742691533
+    second: magic-castTilesetMagicCastleFront_10
+  - first:
+      213: -5912606272390959310
+    second: magic-castTilesetMagicCastleFront_11
+  - first:
+      213: 6741189216085989268
+    second: magic-castTilesetMagicCastleFront_12
+  - first:
+      213: -3599455230061200085
+    second: magic-castTilesetMagicCastleFront_13
+  - first:
+      213: 1676200581020395310
+    second: magic-castTilesetMagicCastleFront_14
+  - first:
+      213: -3177447634824077584
+    second: magic-castTilesetMagicCastleFront_15
+  - first:
+      213: -2388311504205071754
+    second: magic-castTilesetMagicCastleFront_16
+  - first:
+      213: 5942181961750777394
+    second: magic-castTilesetMagicCastleFront_17
+  - first:
+      213: 2330915588557327536
+    second: magic-castTilesetMagicCastleFront_18
+  - first:
+      213: -8437026912936989660
+    second: magic-castTilesetMagicCastleFront_19
+  - first:
+      213: 3949395679710957307
+    second: magic-castTilesetMagicCastleFront_20
+  - first:
+      213: 8325122622751907214
+    second: magic-castTilesetMagicCastleFront_21
+  - first:
+      213: -5161399263013477405
+    second: magic-castTilesetMagicCastleFront_22
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: magic-castTilesetMagicCastleFront_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 207
+        width: 496
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 37e1d5e97aa9eb6f0800000000000000
+      internalID: -666925650097136013
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: magic-castTilesetMagicCastleFront_1
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 127
+        width: 34
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db8bd5b75b5b32ef0800000000000000
+      internalID: -134063772827535171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: magic-castTilesetMagicCastleFront_2
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 127
+        width: 34
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bcb13b5dbafc2db00800000000000000
+      internalID: 851971616458087371
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: magic-castTilesetMagicCastleFront_3
+      rect:
+        serializedVersion: 2
+        x: 319
+        y: 143
+        width: 18
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7013e60fa62539770800000000000000
+      internalID: 8616321131343655175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: magic-castTilesetMagicCastleFront_4
+      rect:
+        serializedVersion: 2
+        x: 351
+        y: 143
+        width: 18
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b6e267e2baf52aa70800000000000000
+      internalID: 8836730607677877867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: magic-castTilesetMagicCastleFront_5
+      rect:
+        serializedVersion: 2
+        x: 383
+        y: 143
+        width: 18
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 70bf3bb3df61766b0800000000000000
+      internalID: -5303244759321281785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: magic-castTilesetMagicCastleFront_6
+      rect:
+        serializedVersion: 2
+        x: 415
+        y: 143
+        width: 18
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a6e81c101488c4010800000000000000
+      internalID: 1174463415620570730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: magic-castTilesetMagicCastleFront_7
+      rect:
+        serializedVersion: 2
+        x: 447
+        y: 127
+        width: 18
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b935071e00169a30800000000000000
+      internalID: 4221579353408223673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: magic-castTilesetMagicCastleFront_8
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 79
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1abc1051237f61b20800000000000000
+      internalID: 3104940787591400353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: magic-castTilesetMagicCastleFront_9
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 79
+        width: 34
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee533833719556690800000000000000
+      internalID: -7609578039189228050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: magic-castTilesetMagicCastleFront_10
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 79
+        width: 34
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc2bc52fe217e2420800000000000000
+      internalID: 2607145680742691533
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: magic-castTilesetMagicCastleFront_11
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 79
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 23fe36debe332fda0800000000000000
+      internalID: -5912606272390959310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: magic-castTilesetMagicCastleFront_12
+      rect:
+        serializedVersion: 2
+        x: 239
+        y: 95
+        width: 82
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 497df7c20e38d8d50800000000000000
+      internalID: 6741189216085989268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: magic-castTilesetMagicCastleFront_13
+      rect:
+        serializedVersion: 2
+        x: 351
+        y: 79
+        width: 18
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b2db74bf98a2c0ec0800000000000000
+      internalID: -3599455230061200085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: magic-castTilesetMagicCastleFront_14
+      rect:
+        serializedVersion: 2
+        x: 383
+        y: 79
+        width: 18
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e27260c2c8f034710800000000000000
+      internalID: 1676200581020395310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: magic-castTilesetMagicCastleFront_15
+      rect:
+        serializedVersion: 2
+        x: 415
+        y: 95
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0fed7e1063077e3d0800000000000000
+      internalID: -3177447634824077584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: magic-castTilesetMagicCastleFront_16
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 31
+        width: 34
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 67ab0ea37530bded0800000000000000
+      internalID: -2388311504205071754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: magic-castTilesetMagicCastleFront_17
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 15
+        width: 66
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 23e83ecd20fd67250800000000000000
+      internalID: 5942181961750777394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: magic-castTilesetMagicCastleFront_18
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 31
+        width: 66
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0bc4169c063195020800000000000000
+      internalID: 2330915588557327536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: magic-castTilesetMagicCastleFront_19
+      rect:
+        serializedVersion: 2
+        x: 335
+        y: 31
+        width: 18
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 42ceaf559b8a9ea80800000000000000
+      internalID: -8437026912936989660
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: magic-castTilesetMagicCastleFront_20
+      rect:
+        serializedVersion: 2
+        x: 367
+        y: 31
+        width: 18
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bfe42a622721fc630800000000000000
+      internalID: 3949395679710957307
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: magic-castTilesetMagicCastleFront_21
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 31
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e8d12b0cae6c88370800000000000000
+      internalID: 8325122622751907214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: magic-castTilesetMagicCastleFront_22
+      rect:
+        serializedVersion: 2
+        x: 447
+        y: 31
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e36e1077b60f58b0800000000000000
+      internalID: -5161399263013477405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      magic-castTilesetMagicCastleFront_0: -666925650097136013
+      magic-castTilesetMagicCastleFront_1: -134063772827535171
+      magic-castTilesetMagicCastleFront_10: 2607145680742691533
+      magic-castTilesetMagicCastleFront_11: -5912606272390959310
+      magic-castTilesetMagicCastleFront_12: 6741189216085989268
+      magic-castTilesetMagicCastleFront_13: -3599455230061200085
+      magic-castTilesetMagicCastleFront_14: 1676200581020395310
+      magic-castTilesetMagicCastleFront_15: -3177447634824077584
+      magic-castTilesetMagicCastleFront_16: -2388311504205071754
+      magic-castTilesetMagicCastleFront_17: 5942181961750777394
+      magic-castTilesetMagicCastleFront_18: 2330915588557327536
+      magic-castTilesetMagicCastleFront_19: -8437026912936989660
+      magic-castTilesetMagicCastleFront_2: 851971616458087371
+      magic-castTilesetMagicCastleFront_20: 3949395679710957307
+      magic-castTilesetMagicCastleFront_21: 8325122622751907214
+      magic-castTilesetMagicCastleFront_22: -5161399263013477405
+      magic-castTilesetMagicCastleFront_3: 8616321131343655175
+      magic-castTilesetMagicCastleFront_4: 8836730607677877867
+      magic-castTilesetMagicCastleFront_5: -5303244759321281785
+      magic-castTilesetMagicCastleFront_6: 1174463415620570730
+      magic-castTilesetMagicCastleFront_7: 4221579353408223673
+      magic-castTilesetMagicCastleFront_8: 3104940787591400353
+      magic-castTilesetMagicCastleFront_9: -7609578039189228050
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,663 @@
+fileFormatVersion: 2
+guid: a6e15974c3059aa44b4b40db9a5ca711
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -620940469971413095
+    second: explosion-export9_0
+  - first:
+      213: -7738298752291204370
+    second: explosion-export9_1
+  - first:
+      213: -8141091601321462137
+    second: explosion-export9_2
+  - first:
+      213: 2040983389074987426
+    second: explosion-export9_3
+  - first:
+      213: 501145284188673467
+    second: explosion-export9_4
+  - first:
+      213: 2933204786078000823
+    second: explosion-export9_5
+  - first:
+      213: -7134783997829333966
+    second: explosion-export9_6
+  - first:
+      213: 7727697906476895396
+    second: explosion-export9_7
+  - first:
+      213: 3883553322056800018
+    second: explosion-export9_8
+  - first:
+      213: -3533512604191709963
+    second: explosion-export9_9
+  - first:
+      213: 8616094159842641204
+    second: explosion-export9_10
+  - first:
+      213: -7999947899912340837
+    second: explosion-export9_11
+  - first:
+      213: 1014420941344318348
+    second: explosion-export9_12
+  - first:
+      213: 1108012516227284614
+    second: explosion-export9_13
+  - first:
+      213: -3142729632649082624
+    second: explosion-export9_14
+  - first:
+      213: 3840930911500183129
+    second: explosion-export9_15
+  - first:
+      213: -9038521422241748557
+    second: explosion-export9_16
+  - first:
+      213: 722874146644120473
+    second: explosion-export9_17
+  - first:
+      213: 3758916094320977948
+    second: explosion-export9_18
+  - first:
+      213: 5828900629619445488
+    second: explosion-export9_19
+  - first:
+      213: 8775481135584454462
+    second: explosion-export9_20
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: explosion-export9_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 48
+        width: 18
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 99790b4bee9f167f0800000000000000
+      internalID: -620940469971413095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: explosion-export9_1
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 61
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee295d7b84a0c9490800000000000000
+      internalID: -7738298752291204370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: explosion-export9_2
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 55
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 786715b6258050f80800000000000000
+      internalID: -8141091601321462137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: explosion-export9_3
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 54
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a9994a2497035c10800000000000000
+      internalID: 2040983389074987426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: explosion-export9_4
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 31
+        width: 20
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb59de41bfc64f600800000000000000
+      internalID: 501145284188673467
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: explosion-export9_5
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 50
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b6a7af4636d4b820800000000000000
+      internalID: 2933204786078000823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: explosion-export9_6
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 54
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 23cbd3471c72cfc90800000000000000
+      internalID: -7134783997829333966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: explosion-export9_7
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 42
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4acc5178d4c4e3b60800000000000000
+      internalID: 7727697906476895396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: explosion-export9_8
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 18
+        width: 20
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 217db73ab2725e530800000000000000
+      internalID: 3883553322056800018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: explosion-export9_9
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 46
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f4a9c1020176fec0800000000000000
+      internalID: -3533512604191709963
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: explosion-export9_10
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 37
+        width: 13
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4350db40df3829770800000000000000
+      internalID: 8616094159842641204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: explosion-export9_11
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 42
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b9ab71445c97af090800000000000000
+      internalID: -7999947899912340837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: explosion-export9_12
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 38
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c83ab85b872f31e00800000000000000
+      internalID: 1014420941344318348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: explosion-export9_13
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 26
+        width: 11
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 68ef9645383706f00800000000000000
+      internalID: 1108012516227284614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: explosion-export9_14
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 35
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0098bdccc08c264d0800000000000000
+      internalID: -3142729632649082624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: explosion-export9_15
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 27
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 95629ca505abd4530800000000000000
+      internalID: 3840930911500183129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: explosion-export9_16
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 28
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3b9a58497a8b09280800000000000000
+      internalID: -9038521422241748557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: explosion-export9_17
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 23
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9935908d43a280a00800000000000000
+      internalID: 722874146644120473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: explosion-export9_18
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 23
+        width: 8
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c18208ea54a5a2430800000000000000
+      internalID: 3758916094320977948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: explosion-export9_19
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 19
+        width: 13
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0fe84836d3a64e050800000000000000
+      internalID: 5828900629619445488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: explosion-export9_20
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 17
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e3727ab2995c8c970800000000000000
+      internalID: 8775481135584454462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      explosion-export9_0: -620940469971413095
+      explosion-export9_1: -7738298752291204370
+      explosion-export9_10: 8616094159842641204
+      explosion-export9_11: -7999947899912340837
+      explosion-export9_12: 1014420941344318348
+      explosion-export9_13: 1108012516227284614
+      explosion-export9_14: -3142729632649082624
+      explosion-export9_15: 3840930911500183129
+      explosion-export9_16: -9038521422241748557
+      explosion-export9_17: 722874146644120473
+      explosion-export9_18: 3758916094320977948
+      explosion-export9_19: 5828900629619445488
+      explosion-export9_2: -8141091601321462137
+      explosion-export9_20: 8775481135584454462
+      explosion-export9_3: 2040983389074987426
+      explosion-export9_4: 501145284188673467
+      explosion-export9_5: 2933204786078000823
+      explosion-export9_6: -7134783997829333966
+      explosion-export9_7: 7727697906476895396
+      explosion-export9_8: 3883553322056800018
+      explosion-export9_9: -3533512604191709963
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

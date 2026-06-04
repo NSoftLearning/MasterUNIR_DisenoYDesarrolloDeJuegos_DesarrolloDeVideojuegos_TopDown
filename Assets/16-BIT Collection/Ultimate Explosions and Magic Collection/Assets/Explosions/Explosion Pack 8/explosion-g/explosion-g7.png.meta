@@ -1,0 +1,429 @@
+fileFormatVersion: 2
+guid: 3c82fb56556914fc09cddab978864247
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4480076977148356908
+    second: explosion-g7_0
+  - first:
+      213: -2513066786227531687
+    second: explosion-g7_1
+  - first:
+      213: -7900689543166020562
+    second: explosion-g7_2
+  - first:
+      213: -4132751386540698623
+    second: explosion-g7_3
+  - first:
+      213: -1481694195064352904
+    second: explosion-g7_4
+  - first:
+      213: 7443817599726684252
+    second: explosion-g7_5
+  - first:
+      213: -1958511244536880090
+    second: explosion-g7_6
+  - first:
+      213: 293569082403213466
+    second: explosion-g7_7
+  - first:
+      213: 8342635919466192403
+    second: explosion-g7_8
+  - first:
+      213: 7256993396900419696
+    second: explosion-g7_9
+  - first:
+      213: -7858126908442032587
+    second: explosion-g7_10
+  - first:
+      213: 6398782782443494856
+    second: explosion-g7_11
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: explosion-g7_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 37
+        width: 38
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c296555364e6c2e30800000000000000
+      internalID: 4480076977148356908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: explosion-g7_1
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 29
+        width: 21
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 950531e921bcf1dd0800000000000000
+      internalID: -2513066786227531687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: explosion-g7_2
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 53
+        width: 14
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e2432fa58bc1b5290800000000000000
+      internalID: -7900689543166020562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: explosion-g7_3
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 39
+        width: 14
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1041d3c928485a6c0800000000000000
+      internalID: -4132751386540698623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: explosion-g7_4
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 11
+        width: 20
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 87f4e6ddaf6ff6be0800000000000000
+      internalID: -1481694195064352904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: explosion-g7_5
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 36
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c58828cfaa0cd4760800000000000000
+      internalID: 7443817599726684252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: explosion-g7_6
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 23
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 62465c45668f1d4e0800000000000000
+      internalID: -1958511244536880090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: explosion-g7_7
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 21
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a905ea96687f21400800000000000000
+      internalID: 293569082403213466
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: explosion-g7_8
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 15
+        width: 18
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 31e5236ea2ff6c370800000000000000
+      internalID: 8342635919466192403
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: explosion-g7_9
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 3
+        width: 22
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 078da979b0506b460800000000000000
+      internalID: 7256993396900419696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: explosion-g7_10
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 8
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 536cf5ef53352f290800000000000000
+      internalID: -7858126908442032587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: explosion-g7_11
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 0
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8cd1e66d90b0dc850800000000000000
+      internalID: 6398782782443494856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      explosion-g7_0: 4480076977148356908
+      explosion-g7_1: -2513066786227531687
+      explosion-g7_10: -7858126908442032587
+      explosion-g7_11: 6398782782443494856
+      explosion-g7_2: -7900689543166020562
+      explosion-g7_3: -4132751386540698623
+      explosion-g7_4: -1481694195064352904
+      explosion-g7_5: 7443817599726684252
+      explosion-g7_6: -1958511244536880090
+      explosion-g7_7: 293569082403213466
+      explosion-g7_8: 8342635919466192403
+      explosion-g7_9: 7256993396900419696
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

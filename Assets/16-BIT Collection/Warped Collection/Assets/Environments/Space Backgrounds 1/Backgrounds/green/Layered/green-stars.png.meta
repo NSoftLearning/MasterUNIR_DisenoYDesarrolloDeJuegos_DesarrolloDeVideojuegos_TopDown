@@ -1,0 +1,845 @@
+fileFormatVersion: 2
+guid: 9ab5dcee78bf17740ac07c6659302251
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 3059636605290797037
+    second: green-stars_0
+  - first:
+      213: -809540392087754277
+    second: green-stars_1
+  - first:
+      213: -710574722052743990
+    second: green-stars_2
+  - first:
+      213: -4542931892020638784
+    second: green-stars_3
+  - first:
+      213: -2198026986862159093
+    second: green-stars_4
+  - first:
+      213: -9050553309379793318
+    second: green-stars_5
+  - first:
+      213: -458106108574907867
+    second: green-stars_6
+  - first:
+      213: 7226285731265978722
+    second: green-stars_7
+  - first:
+      213: -2009007511433836552
+    second: green-stars_8
+  - first:
+      213: 3015864781135943423
+    second: green-stars_9
+  - first:
+      213: 7165428749186142274
+    second: green-stars_10
+  - first:
+      213: -4888832714709150386
+    second: green-stars_11
+  - first:
+      213: -8728076411460289579
+    second: green-stars_12
+  - first:
+      213: 7946801931748730523
+    second: green-stars_13
+  - first:
+      213: 5278073261190568777
+    second: green-stars_14
+  - first:
+      213: -5483353312813278135
+    second: green-stars_15
+  - first:
+      213: 6200698818272769273
+    second: green-stars_16
+  - first:
+      213: 2061702375743230847
+    second: green-stars_17
+  - first:
+      213: 3077309732435507751
+    second: green-stars_18
+  - first:
+      213: 8746400394709766518
+    second: green-stars_19
+  - first:
+      213: 1687577092387989153
+    second: green-stars_20
+  - first:
+      213: 2223530213064235119
+    second: green-stars_21
+  - first:
+      213: -8317139065129554372
+    second: green-stars_22
+  - first:
+      213: -2523021660151238899
+    second: green-stars_23
+  - first:
+      213: 3324116294078195127
+    second: green-stars_24
+  - first:
+      213: -4559928732527582684
+    second: green-stars_25
+  - first:
+      213: 1800441183625627679
+    second: green-stars_26
+  - first:
+      213: -8335624687649584824
+    second: green-stars_27
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: green-stars_0
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 149
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de7d3282843067a20800000000000000
+      internalID: 3059636605290797037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: green-stars_1
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 144
+        width: 14
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd967427d4fe3c4f0800000000000000
+      internalID: -809540392087754277
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: green-stars_2
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 117
+        width: 34
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: acc9ca91e088326f0800000000000000
+      internalID: -710574722052743990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: green-stars_3
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 155
+        width: 7
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0cb0151838344f0c0800000000000000
+      internalID: -4542931892020638784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: green-stars_4
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 136
+        width: 11
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b0bdb51e91a0f71e0800000000000000
+      internalID: -2198026986862159093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: green-stars_5
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 143
+        width: 29
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a5e6ead87b9f56280800000000000000
+      internalID: -9050553309379793318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: green-stars_6
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 153
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 522c4f0ebea74a9f0800000000000000
+      internalID: -458106108574907867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: green-stars_7
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 146
+        width: 16
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2612599069ce84460800000000000000
+      internalID: 7226285731265978722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: green-stars_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 129
+        width: 12
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f705e100529e14e0800000000000000
+      internalID: -2009007511433836552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: green-stars_9
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 135
+        width: 17
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff6183a2a018ad920800000000000000
+      internalID: 3015864781135943423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: green-stars_10
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 115
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2409c9abb77b07360800000000000000
+      internalID: 7165428749186142274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: green-stars_11
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 63
+        width: 24
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e45d3715c80672cb0800000000000000
+      internalID: -4888832714709150386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: green-stars_12
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 57
+        width: 21
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5db71724fb4afd680800000000000000
+      internalID: -8728076411460289579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: green-stars_13
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 36
+        width: 35
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b966542c046b84e60800000000000000
+      internalID: 7946801931748730523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: green-stars_14
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 53
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 94b50c7aaab7f3940800000000000000
+      internalID: 5278073261190568777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: green-stars_15
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 43
+        width: 21
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 94c9dcbc63737e3b0800000000000000
+      internalID: -5483353312813278135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: green-stars_16
+      rect:
+        serializedVersion: 2
+        x: 157
+        y: 35
+        width: 16
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f43556f8be4d0650800000000000000
+      internalID: 6200698818272769273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: green-stars_17
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 49
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f7311ca2363ac9c10800000000000000
+      internalID: 2061702375743230847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: green-stars_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 10
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 72abba9b5ecc4ba20800000000000000
+      internalID: 3077309732435507751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: green-stars_19
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 15
+        width: 9
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 671130e81d4716970800000000000000
+      internalID: 8746400394709766518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: green-stars_20
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 3
+        width: 6
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a66fd2ac6a7b6710800000000000000
+      internalID: 1687577092387989153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: green-stars_21
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 0
+        width: 45
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f68da01b2f09bde10800000000000000
+      internalID: 2223530213064235119
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: green-stars_22
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 21
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c3ead6b1616939c80800000000000000
+      internalID: -8317139065129554372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: green-stars_23
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 0
+        width: 77
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d0fa11aea2d6cfcd0800000000000000
+      internalID: -2523021660151238899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: green-stars_24
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 1
+        width: 15
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b56e945822a12e20800000000000000
+      internalID: 3324116294078195127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: green-stars_25
+      rect:
+        serializedVersion: 2
+        x: 253
+        y: 10
+        width: 16
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 422a8903af0e7b0c0800000000000000
+      internalID: -4559928732527582684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: green-stars_26
+      rect:
+        serializedVersion: 2
+        x: 254
+        y: 0
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f184df4a7b37cf810800000000000000
+      internalID: 1800441183625627679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: green-stars_27
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 26
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8498ba7b289e15c80800000000000000
+      internalID: -8335624687649584824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      green-stars_0: 3059636605290797037
+      green-stars_1: -809540392087754277
+      green-stars_10: 7165428749186142274
+      green-stars_11: -4888832714709150386
+      green-stars_12: -8728076411460289579
+      green-stars_13: 7946801931748730523
+      green-stars_14: 5278073261190568777
+      green-stars_15: -5483353312813278135
+      green-stars_16: 6200698818272769273
+      green-stars_17: 2061702375743230847
+      green-stars_18: 3077309732435507751
+      green-stars_19: 8746400394709766518
+      green-stars_2: -710574722052743990
+      green-stars_20: 1687577092387989153
+      green-stars_21: 2223530213064235119
+      green-stars_22: -8317139065129554372
+      green-stars_23: -2523021660151238899
+      green-stars_24: 3324116294078195127
+      green-stars_25: -4559928732527582684
+      green-stars_26: 1800441183625627679
+      green-stars_27: -8335624687649584824
+      green-stars_3: -4542931892020638784
+      green-stars_4: -2198026986862159093
+      green-stars_5: -9050553309379793318
+      green-stars_6: -458106108574907867
+      green-stars_7: 7226285731265978722
+      green-stars_8: -2009007511433836552
+      green-stars_9: 3015864781135943423
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

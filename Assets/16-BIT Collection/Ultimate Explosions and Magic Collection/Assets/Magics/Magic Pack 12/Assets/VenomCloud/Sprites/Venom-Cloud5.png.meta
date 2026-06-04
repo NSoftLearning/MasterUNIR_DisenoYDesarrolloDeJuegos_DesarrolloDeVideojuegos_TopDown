@@ -1,0 +1,585 @@
+fileFormatVersion: 2
+guid: 1023e0facf10b0d4dae4d8ea0a5c8b1b
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6349781284219642187
+    second: Venom-Cloud5_0
+  - first:
+      213: -1621097989945940452
+    second: Venom-Cloud5_1
+  - first:
+      213: 1568635637509071022
+    second: Venom-Cloud5_2
+  - first:
+      213: -1896403873575626397
+    second: Venom-Cloud5_3
+  - first:
+      213: -6562119738511075871
+    second: Venom-Cloud5_4
+  - first:
+      213: -4490844317814865177
+    second: Venom-Cloud5_5
+  - first:
+      213: 8294355886775494391
+    second: Venom-Cloud5_6
+  - first:
+      213: 2464366876861275537
+    second: Venom-Cloud5_7
+  - first:
+      213: -5123307556473044354
+    second: Venom-Cloud5_8
+  - first:
+      213: -6517271512314472614
+    second: Venom-Cloud5_9
+  - first:
+      213: 2761058137613788475
+    second: Venom-Cloud5_10
+  - first:
+      213: 5714239410648121920
+    second: Venom-Cloud5_11
+  - first:
+      213: -4359781212629783641
+    second: Venom-Cloud5_12
+  - first:
+      213: 7306649531162996269
+    second: Venom-Cloud5_13
+  - first:
+      213: 1730232606135899544
+    second: Venom-Cloud5_14
+  - first:
+      213: 1681836623382947667
+    second: Venom-Cloud5_15
+  - first:
+      213: -236987559635861234
+    second: Venom-Cloud5_16
+  - first:
+      213: 1384509980172146305
+    second: Venom-Cloud5_17
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Venom-Cloud5_0
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 63
+        width: 10
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5be1aa8809b01e7a0800000000000000
+      internalID: -6349781284219642187
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Venom-Cloud5_1
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 57
+        width: 22
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c162c2397f3b089e0800000000000000
+      internalID: -1621097989945940452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Venom-Cloud5_2
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 70
+        width: 13
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea02fb32dc9e4c510800000000000000
+      internalID: 1568635637509071022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Venom-Cloud5_3
+      rect:
+        serializedVersion: 2
+        x: 91
+        y: 59
+        width: 13
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 36999dc79be9ea5e0800000000000000
+      internalID: -1896403873575626397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Venom-Cloud5_4
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 31
+        width: 44
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e5d77c8ddaaee4a0800000000000000
+      internalID: -6562119738511075871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Venom-Cloud5_5
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 53
+        width: 11
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7e2401fe2e05da1c0800000000000000
+      internalID: -4490844317814865177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Venom-Cloud5_6
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 51
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f66cefcbb87b1370800000000000000
+      internalID: 8294355886775494391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Venom-Cloud5_7
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 34
+        width: 12
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 19d1e832e90333220800000000000000
+      internalID: 2464366876861275537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Venom-Cloud5_8
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 26
+        width: 13
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e72895dfbea56e8b0800000000000000
+      internalID: -5123307556473044354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Venom-Cloud5_9
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 12
+        width: 21
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a5719bbe6100e85a0800000000000000
+      internalID: -6517271512314472614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Venom-Cloud5_10
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 20
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b35eba85fbf315620800000000000000
+      internalID: 2761058137613788475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Venom-Cloud5_11
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 22
+        width: 18
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0420839f77e0d4f40800000000000000
+      internalID: 5714239410648121920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Venom-Cloud5_12
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 1
+        width: 10
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7aba7c21612fe73c0800000000000000
+      internalID: -4359781212629783641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Venom-Cloud5_13
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 3
+        width: 23
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d2eae3b490f666560800000000000000
+      internalID: 7306649531162996269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Venom-Cloud5_14
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 1
+        width: 20
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 895578b5365030810800000000000000
+      internalID: 1730232606135899544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Venom-Cloud5_15
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 12
+        width: 10
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 357abfa8f75175710800000000000000
+      internalID: 1681836623382947667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Venom-Cloud5_16
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 0
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e01c7b3f11d06bcf0800000000000000
+      internalID: -236987559635861234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Venom-Cloud5_17
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 0
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 186d424dd74c63310800000000000000
+      internalID: 1384509980172146305
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Venom-Cloud5_0: -6349781284219642187
+      Venom-Cloud5_1: -1621097989945940452
+      Venom-Cloud5_10: 2761058137613788475
+      Venom-Cloud5_11: 5714239410648121920
+      Venom-Cloud5_12: -4359781212629783641
+      Venom-Cloud5_13: 7306649531162996269
+      Venom-Cloud5_14: 1730232606135899544
+      Venom-Cloud5_15: 1681836623382947667
+      Venom-Cloud5_16: -236987559635861234
+      Venom-Cloud5_17: 1384509980172146305
+      Venom-Cloud5_2: 1568635637509071022
+      Venom-Cloud5_3: -1896403873575626397
+      Venom-Cloud5_4: -6562119738511075871
+      Venom-Cloud5_5: -4490844317814865177
+      Venom-Cloud5_6: 8294355886775494391
+      Venom-Cloud5_7: 2464366876861275537
+      Venom-Cloud5_8: -5123307556473044354
+      Venom-Cloud5_9: -6517271512314472614
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

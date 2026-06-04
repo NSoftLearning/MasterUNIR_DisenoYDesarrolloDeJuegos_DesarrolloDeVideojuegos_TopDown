@@ -1,0 +1,429 @@
+fileFormatVersion: 2
+guid: e84ede638022644169d74c2322a876b4
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 3793842132002845383
+    second: big-bolt18_0
+  - first:
+      213: -544104742577791815
+    second: big-bolt18_1
+  - first:
+      213: -5488672231503262224
+    second: big-bolt18_2
+  - first:
+      213: 8512134474178807080
+    second: big-bolt18_3
+  - first:
+      213: -96886740309791439
+    second: big-bolt18_4
+  - first:
+      213: -7289935035799383197
+    second: big-bolt18_5
+  - first:
+      213: 6661778341961829278
+    second: big-bolt18_6
+  - first:
+      213: 2007918166216151769
+    second: big-bolt18_7
+  - first:
+      213: -3155384900987525546
+    second: big-bolt18_8
+  - first:
+      213: 6679522074446684696
+    second: big-bolt18_9
+  - first:
+      213: 858437482226161180
+    second: big-bolt18_10
+  - first:
+      213: 1349186339212420580
+    second: big-bolt18_11
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: big-bolt18_0
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 106
+        width: 17
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c2b0f3815f66a430800000000000000
+      internalID: 3793842132002845383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: big-bolt18_1
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 103
+        width: 17
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9bc9b029e93f278f0800000000000000
+      internalID: -544104742577791815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: big-bolt18_2
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 119
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0fd82b88fa154d3b0800000000000000
+      internalID: -5488672231503262224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: big-bolt18_3
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 79
+        width: 20
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 825c8cd743d212670800000000000000
+      internalID: 8512134474178807080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: big-bolt18_4
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 77
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 13da364e50ac7aef0800000000000000
+      internalID: -96886740309791439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: big-bolt18_5
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 81
+        width: 14
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 363d08b65b2f4da90800000000000000
+      internalID: -7289935035799383197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: big-bolt18_6
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 68
+        width: 9
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e9b860d3b14637c50800000000000000
+      internalID: 6661778341961829278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: big-bolt18_7
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 67
+        width: 7
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d21e5b0fee8ddb10800000000000000
+      internalID: 2007918166216151769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: big-bolt18_8
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 61
+        width: 12
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 656e1078622d534d0800000000000000
+      internalID: -3155384900987525546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: big-bolt18_9
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 68
+        width: 9
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 81266c4efed62bc50800000000000000
+      internalID: 6679522074446684696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: big-bolt18_10
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 37
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c1698f58758c9eb00800000000000000
+      internalID: 858437482226161180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: big-bolt18_11
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 9
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e5e094c3d549b210800000000000000
+      internalID: 1349186339212420580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      big-bolt18_0: 3793842132002845383
+      big-bolt18_1: -544104742577791815
+      big-bolt18_10: 858437482226161180
+      big-bolt18_11: 1349186339212420580
+      big-bolt18_2: -5488672231503262224
+      big-bolt18_3: 8512134474178807080
+      big-bolt18_4: -96886740309791439
+      big-bolt18_5: -7289935035799383197
+      big-bolt18_6: 6661778341961829278
+      big-bolt18_7: 2007918166216151769
+      big-bolt18_8: -3155384900987525546
+      big-bolt18_9: 6679522074446684696
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

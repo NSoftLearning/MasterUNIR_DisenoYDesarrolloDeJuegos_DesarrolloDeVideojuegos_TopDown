@@ -1,0 +1,793 @@
+fileFormatVersion: 2
+guid: fbb1ee859c87d6e488f42b502c1b4a4d
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1256386129865298736
+    second: Dragon-Breath8_0
+  - first:
+      213: -7614667806543015562
+    second: Dragon-Breath8_1
+  - first:
+      213: -8070428423722279285
+    second: Dragon-Breath8_2
+  - first:
+      213: -8829760057798031264
+    second: Dragon-Breath8_3
+  - first:
+      213: -8640320804326191641
+    second: Dragon-Breath8_4
+  - first:
+      213: -4606243092155756482
+    second: Dragon-Breath8_5
+  - first:
+      213: 6207750841210398096
+    second: Dragon-Breath8_6
+  - first:
+      213: 766178467479366641
+    second: Dragon-Breath8_7
+  - first:
+      213: -5974275859849066690
+    second: Dragon-Breath8_8
+  - first:
+      213: 6633093441930544216
+    second: Dragon-Breath8_9
+  - first:
+      213: 2587364383251217667
+    second: Dragon-Breath8_10
+  - first:
+      213: 1350865612065597441
+    second: Dragon-Breath8_11
+  - first:
+      213: 5127846912345161582
+    second: Dragon-Breath8_12
+  - first:
+      213: -5903330733000713804
+    second: Dragon-Breath8_13
+  - first:
+      213: 8616891083755194344
+    second: Dragon-Breath8_14
+  - first:
+      213: -3116297690881776968
+    second: Dragon-Breath8_15
+  - first:
+      213: -4724078893120675271
+    second: Dragon-Breath8_16
+  - first:
+      213: 1065646411993283675
+    second: Dragon-Breath8_17
+  - first:
+      213: 4516379104682525342
+    second: Dragon-Breath8_18
+  - first:
+      213: -7287708609691077757
+    second: Dragon-Breath8_19
+  - first:
+      213: 8907076382333050755
+    second: Dragon-Breath8_20
+  - first:
+      213: -8960222043615254820
+    second: Dragon-Breath8_21
+  - first:
+      213: 1311956989622514709
+    second: Dragon-Breath8_22
+  - first:
+      213: -8498516350635057799
+    second: Dragon-Breath8_23
+  - first:
+      213: -447568421410864128
+    second: Dragon-Breath8_24
+  - first:
+      213: 6981518819407194861
+    second: Dragon-Breath8_25
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Dragon-Breath8_0
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 69
+        width: 33
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0dca6a4b87b609ee0800000000000000
+      internalID: -1256386129865298736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dragon-Breath8_1
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 114
+        width: 23
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 671966469f3435690800000000000000
+      internalID: -7614667806543015562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dragon-Breath8_2
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 120
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b8e51da8b14100090800000000000000
+      internalID: -8070428423722279285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dragon-Breath8_3
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 105
+        width: 21
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 068040f6204667580800000000000000
+      internalID: -8829760057798031264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dragon-Breath8_4
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 75
+        width: 12
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ed48b0c10a671880800000000000000
+      internalID: -8640320804326191641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dragon-Breath8_5
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 89
+        width: 22
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e3095f600565310c0800000000000000
+      internalID: -4606243092155756482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dragon-Breath8_6
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 76
+        width: 27
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0956a70008c562650800000000000000
+      internalID: 6207750841210398096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dragon-Breath8_7
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 82
+        width: 19
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1fb29acb14302aa00800000000000000
+      internalID: 766178467479366641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dragon-Breath8_8
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 83
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e37418f22cb171da0800000000000000
+      internalID: -5974275859849066690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dragon-Breath8_9
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 62
+        width: 9
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8544e30875b7d0c50800000000000000
+      internalID: 6633093441930544216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dragon-Breath8_10
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 44
+        width: 24
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 30dbf28b23a28e320800000000000000
+      internalID: 2587364383251217667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dragon-Breath8_11
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 40
+        width: 28
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 108e572fd1d3fb210800000000000000
+      internalID: 1350865612065597441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dragon-Breath8_12
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 10
+        width: 57
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e6fbae82995c92740800000000000000
+      internalID: 5127846912345161582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dragon-Breath8_13
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 61
+        width: 10
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b998dbb9f7231ea0800000000000000
+      internalID: -5903330733000713804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dragon-Breath8_14
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 70
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8e7857359c8559770800000000000000
+      internalID: 8616891083755194344
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dragon-Breath8_15
+      rect:
+        serializedVersion: 2
+        x: 185
+        y: 65
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b22f90d2cfa0c4d0800000000000000
+      internalID: -3116297690881776968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dragon-Breath8_16
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 45
+        width: 10
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9322f94a643b07eb0800000000000000
+      internalID: -4724078893120675271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dragon-Breath8_17
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 50
+        width: 23
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b5c770304cfe9ce00800000000000000
+      internalID: 1065646411993283675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dragon-Breath8_18
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 43
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e92499dedd66dae30800000000000000
+      internalID: 4516379104682525342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dragon-Breath8_19
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 22
+        width: 19
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 383bec4a1abdcda90800000000000000
+      internalID: -7287708609691077757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dragon-Breath8_20
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 15
+        width: 37
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 38f9b3c27ca4c9b70800000000000000
+      internalID: 8907076382333050755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dragon-Breath8_21
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 23
+        width: 17
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd620bd4685e6a380800000000000000
+      internalID: -8960222043615254820
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dragon-Breath8_22
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 25
+        width: 36
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5147a075ee1053210800000000000000
+      internalID: 1311956989622514709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dragon-Breath8_23
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 30
+        width: 12
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 97d5c8af7643f0a80800000000000000
+      internalID: -8498516350635057799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dragon-Breath8_24
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 28
+        width: 11
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0048f1d54eae9c9f0800000000000000
+      internalID: -447568421410864128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dragon-Breath8_25
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 8
+        width: 30
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dea6877606653e060800000000000000
+      internalID: 6981518819407194861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Dragon-Breath8_0: -1256386129865298736
+      Dragon-Breath8_1: -7614667806543015562
+      Dragon-Breath8_10: 2587364383251217667
+      Dragon-Breath8_11: 1350865612065597441
+      Dragon-Breath8_12: 5127846912345161582
+      Dragon-Breath8_13: -5903330733000713804
+      Dragon-Breath8_14: 8616891083755194344
+      Dragon-Breath8_15: -3116297690881776968
+      Dragon-Breath8_16: -4724078893120675271
+      Dragon-Breath8_17: 1065646411993283675
+      Dragon-Breath8_18: 4516379104682525342
+      Dragon-Breath8_19: -7287708609691077757
+      Dragon-Breath8_2: -8070428423722279285
+      Dragon-Breath8_20: 8907076382333050755
+      Dragon-Breath8_21: -8960222043615254820
+      Dragon-Breath8_22: 1311956989622514709
+      Dragon-Breath8_23: -8498516350635057799
+      Dragon-Breath8_24: -447568421410864128
+      Dragon-Breath8_25: 6981518819407194861
+      Dragon-Breath8_3: -8829760057798031264
+      Dragon-Breath8_4: -8640320804326191641
+      Dragon-Breath8_5: -4606243092155756482
+      Dragon-Breath8_6: 6207750841210398096
+      Dragon-Breath8_7: 766178467479366641
+      Dragon-Breath8_8: -5974275859849066690
+      Dragon-Breath8_9: 6633093441930544216
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
