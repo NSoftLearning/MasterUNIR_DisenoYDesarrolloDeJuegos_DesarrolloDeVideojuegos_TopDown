@@ -106,4 +106,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de759f7059659524184df77541fed4ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PatrolAndCloseCombatEnemyController
-  detectionRange: 4
+  _detectionRange: 5
+  _sidesToSearchFor:
+  - {fileID: 11400000, guid: b1bd0b50c8b3ca24bab4d8ac30f38768, type: 2}
+  layerstToSearchForTarget:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  _searchPersistenceTime: 2
