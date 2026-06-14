@@ -490,6 +490,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Character_EnemyBasic
       objectReference: {fileID: 0}
+    - target: {fileID: 2930518037557998276, guid: a8a7bf15438a978409717b0f7e83575a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3536357710556040168, guid: a8a7bf15438a978409717b0f7e83575a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.66

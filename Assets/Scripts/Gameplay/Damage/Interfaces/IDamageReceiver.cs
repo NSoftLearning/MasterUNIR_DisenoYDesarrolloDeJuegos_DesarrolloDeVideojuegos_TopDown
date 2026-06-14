@@ -8,4 +8,5 @@ public interface IDamageReceiver
     event Action<DamageDataDTO> DamageReceived;
     bool TryToDealDamage(DamageDataDTO damageData);
     bool CanDamage(List<DamageableTypeSO> targetTypes);
+    Vector3 GetPosition();
 }

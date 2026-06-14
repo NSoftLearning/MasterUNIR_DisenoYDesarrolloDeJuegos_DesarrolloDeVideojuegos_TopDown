@@ -7,16 +7,23 @@ public struct BasicTargetFinderQuerySettings
     public float range;
     public List<SideSO> sidesToSearch;
     public Transform origintransform;
+   // public Vector3 originForward;
+    public float halfFieldOfView;
     
 
     public BasicTargetFinderQuerySettings (
         LayerMask layersToSearch,
-        float range, List<SideSO> sidesToSearch, 
-        Transform originTransform)
+        float range, 
+        List<SideSO> sidesToSearch, 
+        Transform originTransform,
+     //   Vector3 originForward,
+        float halfFieldOfView)
     {
         this.layersToSearch = layersToSearch;
         this.range = range;
         this.sidesToSearch = sidesToSearch;
         this.origintransform = originTransform;
+       // this.originForward = originForward;
+        this.halfFieldOfView = halfFieldOfView;
     }
 }

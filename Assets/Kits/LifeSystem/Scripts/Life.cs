@@ -58,4 +58,9 @@ public class Life : MonoBehaviour, IDamageReceiver
     {
         throw new NotImplementedException();
     }
+
+    public Vector3 GetPosition()
+    {
+        return transform.position;
+    }
 }

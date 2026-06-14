@@ -3,11 +3,11 @@ using UnityEngine;
 public class FoundTargetDTO <TargetType>
 {
     public TargetType target;
-    //public Transform transform;
+    public Vector3 position;
 
-    public FoundTargetDTO (TargetType target /*, Transform transform*/) 
+    public FoundTargetDTO (TargetType target, Vector3 position) 
     {
         this.target = target;
-      //  this.transform = transform;
+        this.position = position;
     }
 }

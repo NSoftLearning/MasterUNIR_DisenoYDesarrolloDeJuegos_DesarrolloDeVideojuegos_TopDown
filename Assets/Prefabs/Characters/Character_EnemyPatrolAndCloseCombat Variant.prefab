@@ -8,6 +8,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4736413475477760085, guid: 7529b2afa91c15d4a883be5ae07470e6, type: 3}
+      propertyPath: _movementSpeed
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 7172689892765839884, guid: 7529b2afa91c15d4a883be5ae07470e6, type: 3}
       propertyPath: m_Color.b
       value: 1
@@ -92,7 +96,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4359b0dc8655e24698f948426b1e400, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DI_PatrolAndCloseCombatEnemyController
-  TargetFinder: {fileID: 3476943960244857115}
+  _characterRoot: {fileID: 3476943960244857115}
   patrolAndCloseCombatController: {fileID: 4028882310137395756}
 --- !u!114 &4028882310137395756
 MonoBehaviour:
@@ -106,10 +110,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de759f7059659524184df77541fed4ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PatrolAndCloseCombatEnemyController
-  _detectionRange: 5
+  _detectionRange: 8
   _sidesToSearchFor:
   - {fileID: 11400000, guid: b1bd0b50c8b3ca24bab4d8ac30f38768, type: 2}
   layerstToSearchForTarget:
     serializedVersion: 2
     m_Bits: 4294967295
   _searchPersistenceTime: 2
+  _halfFieldOfView: 45
