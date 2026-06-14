@@ -6,6 +6,6 @@ public class ItemSO : ScriptableObject
 
     public Sprite ItemIcon;
 
-    public void UseItem() { }
+    public void UseItem() {}
 
 }
