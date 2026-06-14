@@ -9,7 +9,9 @@ public class Coin : MonoBehaviour
     [SerializeField] Canvas canvas;
     [SerializeField] RectTransform coinPointTransfer;
     [SerializeField] float flySpeed = 8f;
-    private Collider2D coinCollider;
+    [SerializeField] float delayBeforeCollect = 1f;
+
+    private bool canTake = false;
 
     private void Start()
     {
@@ -23,16 +25,19 @@ public class Coin : MonoBehaviour
             coinPointTransfer = GameObject.Find("CoinTarget").GetComponent<RectTransform>();
         }
 
-        coinCollider = GetComponent<CapsuleCollider2D>();
+        canvas = coinPointTransfer.GetComponentInParent<Canvas>();
+
+        canTake = false;
+
+        StartCoroutine(DelayBeforeCollect());
+
     }
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player") && !isCollected)
+        if (collision.CompareTag("Player") && !isCollected && canTake)
         {
             isCollected = true;
-
-            coinCollider.enabled = false; //Collider físico, para que no choque con el jugador.
 
             StartCoroutine(MoveToTarget());
         }
@@ -53,5 +58,13 @@ public class Coin : MonoBehaviour
 
         coinManager.AddCoin();
         Destroy(gameObject);
+    }
+
+    IEnumerator DelayBeforeCollect()
+    {
+        yield return new WaitForSeconds(delayBeforeCollect);
+
+        canTake = true;
+
     }
 }
