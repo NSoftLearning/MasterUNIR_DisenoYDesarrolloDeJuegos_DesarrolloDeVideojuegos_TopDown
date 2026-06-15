@@ -7,6 +7,7 @@ public class PlayerControl : MonoBehaviour
     [SerializeField] InputActionReference _movement;
     [SerializeField] InputActionReference _attack;
     [SerializeField] InputActionReference _interact;
+    [SerializeField] InputActionReference _roll;
 
     CustomCharacterController _characterController;
     Vector2 _rawMove;
@@ -23,11 +24,13 @@ public class PlayerControl : MonoBehaviour
         _movement.action.Enable();
         _attack.action.Enable();
         _interact.action.Enable();
+        _roll.action.Enable();
         _movement.action.started += Move;
         _movement.action.performed += Move;
         _movement.action.canceled += Move;
 
         _interact.action.performed += OnInteract;
+        _roll.action.performed += OnRoll;
         // _attack.action.performed += OnAttack;
 
     }
@@ -43,6 +46,13 @@ public class PlayerControl : MonoBehaviour
         if (!context.performed) return;
 
         currentInteractable?.StartInteraction();
+    }
+
+    public void OnRoll(InputAction.CallbackContext context)
+    {
+        if (!context.performed) return;
+
+        _characterController.Roll();
     }
 
     private void OnDisable()
