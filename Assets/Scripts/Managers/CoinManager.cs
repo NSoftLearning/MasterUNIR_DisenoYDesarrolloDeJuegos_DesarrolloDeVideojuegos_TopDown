@@ -4,7 +4,7 @@ using UnityEngine;
 public class CoinManager : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI textCoin;
-    [SerializeField] private int currentCoins = 0;
+    [SerializeField] public int currentCoins = 0;
 
     void Start()
     {
