@@ -1,0 +1,1 @@
+public delegate void StateChangeDelegate<TStateId>(TStateId currentState, TStateId newState);

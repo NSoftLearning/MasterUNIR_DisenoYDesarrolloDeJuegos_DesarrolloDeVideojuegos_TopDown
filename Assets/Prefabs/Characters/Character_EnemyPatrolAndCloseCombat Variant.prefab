@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &4968431799266082706
+--- !u!1001 &6636255094538183757
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -8,17 +8,33 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4736413475477760085, guid: 7529b2afa91c15d4a883be5ae07470e6, type: 3}
+      propertyPath: _movementSpeed
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7172689892765839884, guid: 7529b2afa91c15d4a883be5ae07470e6, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7172689892765839884, guid: 7529b2afa91c15d4a883be5ae07470e6, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7172689892765839884, guid: 7529b2afa91c15d4a883be5ae07470e6, type: 3}
+      propertyPath: m_Color.r
+      value: 0.6121421
+      objectReference: {fileID: 0}
     - target: {fileID: 7807025985240862038, guid: 7529b2afa91c15d4a883be5ae07470e6, type: 3}
       propertyPath: m_Name
-      value: Character_EnemyBasic
+      value: Character_EnemyPatrolAndCloseCombat Variant
       objectReference: {fileID: 0}
     - target: {fileID: 8494001086697993338, guid: 7529b2afa91c15d4a883be5ae07470e6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.41273
+      value: 0.56
       objectReference: {fileID: 0}
     - target: {fileID: 8494001086697993338, guid: 7529b2afa91c15d4a883be5ae07470e6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.07737
+      value: -3.38
       objectReference: {fileID: 0}
     - target: {fileID: 8494001086697993338, guid: 7529b2afa91c15d4a883be5ae07470e6, type: 3}
       propertyPath: m_LocalPosition.z
@@ -58,22 +74,47 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 7807025985240862038, guid: 7529b2afa91c15d4a883be5ae07470e6, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 248215248058376335}
+      addedObject: {fileID: 3347133630919820721}
+    - targetCorrespondingSourceObject: {fileID: 7807025985240862038, guid: 7529b2afa91c15d4a883be5ae07470e6, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4028882310137395756}
   m_SourcePrefab: {fileID: 100100000, guid: 7529b2afa91c15d4a883be5ae07470e6, type: 3}
---- !u!1 &2930518037557998276 stripped
+--- !u!1 &3476943960244857115 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7807025985240862038, guid: 7529b2afa91c15d4a883be5ae07470e6, type: 3}
-  m_PrefabInstance: {fileID: 4968431799266082706}
+  m_PrefabInstance: {fileID: 6636255094538183757}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &248215248058376335
+--- !u!114 &3347133630919820721
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2930518037557998276}
+  m_GameObject: {fileID: 3476943960244857115}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 74057c0f415cbe44389c53d6bb9b7b0c, type: 3}
+  m_Script: {fileID: 11500000, guid: d4359b0dc8655e24698f948426b1e400, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Enemy
+  m_EditorClassIdentifier: Assembly-CSharp::DI_PatrolAndCloseCombatEnemyController
+  _characterRoot: {fileID: 3476943960244857115}
+  patrolAndCloseCombatController: {fileID: 4028882310137395756}
+--- !u!114 &4028882310137395756
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3476943960244857115}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de759f7059659524184df77541fed4ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PatrolAndCloseCombatEnemyController
+  _detectionRange: 8
+  _sidesToSearchFor:
+  - {fileID: 11400000, guid: b1bd0b50c8b3ca24bab4d8ac30f38768, type: 2}
+  layerstToSearchForTarget:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  _searchPersistenceTime: 2
+  _halfFieldOfView: 45

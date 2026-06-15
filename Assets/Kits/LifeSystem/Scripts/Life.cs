@@ -1,18 +1,24 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class Life : MonoBehaviour
+public class Life : MonoBehaviour, IDamageReceiver
 {
     [SerializeField] float startLife = 1;
     [SerializeField] float damagePerHit = .3f;
-
+    [SerializeField] DamageableTypeSO type;
 
     public UnityEvent <float, float> onLifeChanged;
     public UnityEvent <float> onLifeDepleted;
 
     HurtCollider hurtCollider;
     private float currentLife;
+
+    public event Action<DamageDataDTO> DamageReceived;
+
+    public DamageableTypeSO Type => type;
+
 
     private void Awake()
     {
@@ -41,5 +47,20 @@ public class Life : MonoBehaviour
     public void SimulateHitReceived () 
     {
         OnHitReceived();
+    }
+
+    public bool TryToDealDamage(DamageDataDTO damageData)
+    {
+        throw new NotImplementedException();
+    }
+
+    public bool CanDamage(List<DamageableTypeSO> targetTypes)
+    {
+        throw new NotImplementedException();
+    }
+
+    public Vector3 GetPosition()
+    {
+        return transform.position;
     }
 }
