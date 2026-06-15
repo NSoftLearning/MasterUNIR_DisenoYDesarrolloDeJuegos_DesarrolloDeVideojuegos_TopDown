@@ -369,7 +369,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85d6554da839d89478f4b7ef16ee5477, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InventoryManager
-  inventoryUI: {fileID: 0}
+  inventoryUI: {fileID: 1277819586}
   currentInventory: {fileID: 11400000, guid: 902127f2b9da0f041a011b309cd6e58b, type: 2}
   clearInventory: 0
   updateQuickAccess: 0

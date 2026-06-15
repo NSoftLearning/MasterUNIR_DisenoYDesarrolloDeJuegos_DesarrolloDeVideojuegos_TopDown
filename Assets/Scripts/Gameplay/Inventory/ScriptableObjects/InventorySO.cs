@@ -226,4 +226,9 @@ public class InventorySO : ScriptableObject
 
         return true;
     }
+
+    public List<InventorySlot> GetInventoryData() 
+    { 
+        return _inventorySlots; 
+    }
 }

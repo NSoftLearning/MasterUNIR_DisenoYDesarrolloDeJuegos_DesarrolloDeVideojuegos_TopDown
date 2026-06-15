@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class InventoryManager : MonoBehaviour
 {
+    [SerializeField] InventoryUIManager inventoryUI;
     [SerializeField] InventorySO currentInventory;
     public static InventoryManager Instance;
 
@@ -13,6 +14,7 @@ public class InventoryManager : MonoBehaviour
 
     private void Awake()
     {
+        
         if (Instance == null) 
         { 
             Instance = this;
@@ -21,6 +23,11 @@ public class InventoryManager : MonoBehaviour
         else
         {
             Destroy(gameObject);
+        }
+
+        if(currentInventory != null)
+        {
+            inventoryUI.InitializeInventoryUI(currentInventory);
         }
     }
 
@@ -33,6 +40,7 @@ public class InventoryManager : MonoBehaviour
         }
 
         if (updateQuickAccess) {
+            updateQuickAccess = false;
             AssignItemToQuickAccess(inventoryIndexToSetInFirstQuickAccess, 0);
             AssignItemToQuickAccess(inventoryIndexToSetInSecondQuickAccess, 1);
         }
@@ -40,12 +48,13 @@ public class InventoryManager : MonoBehaviour
 
     public void AddItem(ItemSO itemData) { 
         currentInventory.AddItem(itemData);
-    
+        inventoryUI.AddItem(itemData);
     }
 
     public void ClearInventory()
     {
         currentInventory.ClearInventory();
+        inventoryUI.ClearInventory();
     }
     public void AssignItemToQuickAccess(int inventoryIndex, int quickAccessIndex)
     {
@@ -77,6 +86,7 @@ public class InventoryManager : MonoBehaviour
     }
     public bool RemoveItemAt(int inventoryIndex)
     {
+        inventoryUI.RemoveItemFromIndex(inventoryIndex);
         return currentInventory.RemoveItemAt(inventoryIndex);
     }
 }
