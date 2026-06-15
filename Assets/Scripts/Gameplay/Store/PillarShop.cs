@@ -4,7 +4,7 @@ using UnityEngine;
 public class PillarShop : MonoBehaviour, IInteractables
 {
     [SerializeField] ItemSO itemData;
-    [SerializeField] InventorySO inventoryData;
+    //[SerializeField] InventorySO inventoryData;
     [SerializeField] Animator anim;
     [SerializeField] TextMeshProUGUI priceText;
     [SerializeField] bool isSelected;
@@ -20,7 +20,7 @@ public class PillarShop : MonoBehaviour, IInteractables
 
         priceText.text = ("$" + itemData.price.ToString());
 
-        // inventoryData = 
+        
     }
    
 
@@ -36,7 +36,7 @@ public class PillarShop : MonoBehaviour, IInteractables
         coinManager.currentCoins -= itemData.price;
         anim.SetTrigger("Buy It");
 
-       // inventoryData.AddItem(itemData);
+       InventoryManager.Instance.AddItem(itemData);
        // Agregar función de agregado del item al inventario
 
         Debug.Log("Compraste: " + itemData.itemName);
