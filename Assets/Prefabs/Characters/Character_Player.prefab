@@ -13,8 +13,32 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4736413475477760085, guid: 7529b2afa91c15d4a883be5ae07470e6, type: 3}
+      propertyPath: _rollTime
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4736413475477760085, guid: 7529b2afa91c15d4a883be5ae07470e6, type: 3}
+      propertyPath: _rollSpeed
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4736413475477760085, guid: 7529b2afa91c15d4a883be5ae07470e6, type: 3}
       propertyPath: _movementSpeed
-      value: 5
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5802807178633916902, guid: 7529b2afa91c15d4a883be5ae07470e6, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5802807178633916902, guid: 7529b2afa91c15d4a883be5ae07470e6, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5802807178633916902, guid: 7529b2afa91c15d4a883be5ae07470e6, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6331915899052633983, guid: 7529b2afa91c15d4a883be5ae07470e6, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7807025985240862038, guid: 7529b2afa91c15d4a883be5ae07470e6, type: 3}
       propertyPath: m_Name
@@ -22,7 +46,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8494001086697993338, guid: 7529b2afa91c15d4a883be5ae07470e6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.41273
+      value: -5.62
       objectReference: {fileID: 0}
     - target: {fileID: 8494001086697993338, guid: 7529b2afa91c15d4a883be5ae07470e6, type: 3}
       propertyPath: m_LocalPosition.y
@@ -88,3 +112,4 @@ MonoBehaviour:
   _movement: {fileID: -1680190386980627800, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   _attack: {fileID: 1120369429361536294, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   _interact: {fileID: 1781555164194001046, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
+  _roll: {fileID: -7471211009204490832, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
