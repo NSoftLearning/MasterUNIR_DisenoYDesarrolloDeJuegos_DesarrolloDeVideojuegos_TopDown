@@ -1,13 +1,25 @@
 fileFormatVersion: 2
-guid: 41e742f5987e64b55af4fabe90ad6f85
+guid: de7b3397f5dc11742a9c27c7f143f73f
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1882169737809640217
-    second: fire-missile2_0
+      213: 7141300285238527249
+    second: FireUp_0
   - first:
-      213: 5546139405494074950
-    second: fire-missile2_1
+      213: -2987196394674041027
+    second: FireUp_1
+  - first:
+      213: 4813145410063379701
+    second: FireUp_2
+  - first:
+      213: -6693443617137835642
+    second: FireUp_3
+  - first:
+      213: -5453349417546687975
+    second: FireUp_4
+  - first:
+      213: 2847225650966619448
+    second: FireUp_5
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -40,7 +52,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -54,7 +66,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 50
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -78,7 +90,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -129,45 +141,111 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: fire-missile2_0
+      name: FireUp_0
       rect:
         serializedVersion: 2
-        x: 2
-        y: 10
-        width: 11
-        height: 6
+        x: 0
+        y: 0
+        width: 27
+        height: 53
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7e4cdda789031e5e0800000000000000
-      internalID: -1882169737809640217
+      spriteID: 115c900f5cefa1360800000000000000
+      internalID: 7141300285238527249
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: fire-missile2_1
+      name: FireUp_1
       rect:
         serializedVersion: 2
-        x: 4
-        y: 4
-        width: 52
-        height: 24
+        x: 27
+        y: 0
+        width: 27
+        height: 53
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 64e35439768d7fc40800000000000000
-      internalID: 5546139405494074950
+      spriteID: d3f4025b4b85b86d0800000000000000
+      internalID: -2987196394674041027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireUp_2
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 0
+        width: 27
+        height: 53
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5fc2123df3abbc240800000000000000
+      internalID: 4813145410063379701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireUp_3
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 0
+        width: 27
+        height: 53
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 681c46c5e7c1c13a0800000000000000
+      internalID: -6693443617137835642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireUp_4
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 0
+        width: 27
+        height: 53
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 91adb0b099fc154b0800000000000000
+      internalID: -5453349417546687975
       vertices: []
       indices: 
       edges: []
@@ -176,7 +254,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 68bdcd49d88f46b4e88d748c83b270da
     internalID: 0
     vertices: []
     indices: 
@@ -184,10 +262,15 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":27.0,"y":53.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      fire-missile2_0: -1882169737809640217
-      fire-missile2_1: 5546139405494074950
+      FireUp_0: 7141300285238527249
+      FireUp_1: -2987196394674041027
+      FireUp_2: 4813145410063379701
+      FireUp_3: -6693443617137835642
+      FireUp_4: -5453349417546687975
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

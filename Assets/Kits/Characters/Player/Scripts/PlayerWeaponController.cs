@@ -62,8 +62,11 @@ public class PlayerWeaponController : MonoBehaviour
         return currentWeapon != null;
     }
 
+    bool isAttacking = false;
     public void Attack(Direction direction)
     {
+        if (currentWeapon == null) return;
+
         Transform attackPos = attackPosLeft;
         switch (direction)
         {
@@ -73,8 +76,11 @@ public class PlayerWeaponController : MonoBehaviour
             case Direction.Down: attackPos = attackPosDown; break;
         }
 
-        currentWeapon?.Attack(direction, attackPos);
+        currentWeapon.Attack(direction, attackPos);
+        isAttacking = true;
     }
+
+    public bool IsAttacking() { return isAttacking; }
 
     public float GetNeededStamina()
     {
@@ -84,6 +90,7 @@ public class PlayerWeaponController : MonoBehaviour
 
     private void OnWeaponFinishedAttack()
     {
+        isAttacking = false;
         FinishedAttack?.Invoke();
     }
 

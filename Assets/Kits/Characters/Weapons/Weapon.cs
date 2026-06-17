@@ -15,8 +15,8 @@ public abstract class Weapon : MonoBehaviour
         return _neededStamina;
     }
 
-    GameObject actAttack;
-    public void Attack(Direction direction, Transform location)
+    protected GameObject actAttack;
+    public virtual void Attack(Direction direction, Transform location)
     {
         float x = 0, y = 0;
         switch (direction)
@@ -27,13 +27,12 @@ public abstract class Weapon : MonoBehaviour
             case Direction.Down: y = 1; break;
         }
 
-        actAttack = Instantiate(_attackPrefab, location);
+        actAttack = Instantiate(_attackPrefab, location.position, Quaternion.identity);
 
         Animator anim = actAttack.GetComponent<Animator>();
 
         anim.SetFloat("HorizontalDirection", x);
         anim.SetFloat("VerticalDirection", y);
-        anim.SetTrigger("Attack");
 
         Invoke(nameof(FinishAttack), _timeBetweenAttacks);
     }

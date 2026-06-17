@@ -66,7 +66,10 @@ public class PlayerControl : MonoBehaviour
 
     private void OnChangeWeapon(InputAction.CallbackContext context)
     {
-        _weaponController.ChangeNextWeapon();
+        if (!_weaponController.IsAttacking())
+        {
+            _weaponController.ChangeNextWeapon();
+        }
     }
 
     private void OnDisable()

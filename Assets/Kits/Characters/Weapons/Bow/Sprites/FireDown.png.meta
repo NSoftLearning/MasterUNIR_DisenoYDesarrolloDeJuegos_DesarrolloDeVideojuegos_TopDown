@@ -1,10 +1,25 @@
 fileFormatVersion: 2
-guid: a23d5b366bd004287911ee2883fbb75a
+guid: 9cc64301e65f33948ac581eb85fb1699
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4112101590377860368
-    second: fire-missile5_0
+      213: -2253692218033351727
+    second: FireDown_0
+  - first:
+      213: 679735577184336024
+    second: FireDown_1
+  - first:
+      213: 5704845856014060739
+    second: FireDown_2
+  - first:
+      213: -1627403818559066251
+    second: FireDown_3
+  - first:
+      213: -612367819534378239
+    second: FireDown_4
+  - first:
+      213: 1743188924461859839
+    second: FireDown_5
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +52,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -51,7 +66,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 50
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -75,7 +90,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -126,23 +141,111 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: fire-missile5_0
+      name: FireDown_0
       rect:
         serializedVersion: 2
-        x: 2
-        y: 3
-        width: 54
-        height: 26
+        x: 0
+        y: 0
+        width: 27
+        height: 53
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 01d8ace0c9e111930800000000000000
-      internalID: 4112101590377860368
+      spriteID: 1d35f074ed649b0e0800000000000000
+      internalID: -2253692218033351727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireDown_1
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 0
+        width: 27
+        height: 53
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8987443f7e7ee6900800000000000000
+      internalID: 679735577184336024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireDown_2
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 0
+        width: 27
+        height: 53
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ccc31a941fab2f40800000000000000
+      internalID: 5704845856014060739
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireDown_3
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 0
+        width: 27
+        height: 53
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 57f2ca079dc4a69e0800000000000000
+      internalID: -1627403818559066251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireDown_4
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 0
+        width: 27
+        height: 53
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 10bd5cc66be6087f0800000000000000
+      internalID: -612367819534378239
       vertices: []
       indices: 
       edges: []
@@ -151,7 +254,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 84f88a1b4fd73cb44b4bc48d97013158
     internalID: 0
     vertices: []
     indices: 
@@ -159,9 +262,15 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":27.0,"y":53.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      fire-missile5_0: 4112101590377860368
+      FireDown_0: -2253692218033351727
+      FireDown_1: 679735577184336024
+      FireDown_2: 5704845856014060739
+      FireDown_3: -1627403818559066251
+      FireDown_4: -612367819534378239
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
