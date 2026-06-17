@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class InventoryManager : MonoBehaviour
@@ -72,21 +73,29 @@ public class InventoryManager : MonoBehaviour
 
     public void UseQuickAccessItem(int quickAccessIndex)
     {
-        ItemSO item = currentInventory.GetQuickAccessItem(quickAccessIndex);
+        IReadOnlyList<QuickAccessSlot> quickSlots = currentInventory.QuickAccessSlots;
 
-        if (item == null)
-        {
-            Debug.Log($"Quick access slot {quickAccessIndex + 1} is empty.");
+        if (quickAccessIndex < 0 || quickAccessIndex >= quickSlots.Count)
             return;
-        }
 
-        Debug.Log($"Using item: {item.itemName}");
-        item.UseItem();
+        QuickAccessSlot quickSlot = quickSlots[quickAccessIndex];
+
+        if (quickSlot == null || quickSlot.IsEmpty)
+            return;
+
+        UseItemAt(quickSlot.InventoryIndex);
     }
 
-    public InventorySO GetInventory()
+    public bool UseItemAt(int inventoryIndex)
     {
-        return currentInventory;
+        bool used = currentInventory.UseItemAt(inventoryIndex);
+
+        if (used)
+        {
+            RefreshUI();
+        }
+
+        return used;
     }
 
     public bool RemoveItem(ItemSO itemData, int amount = 1)
@@ -111,6 +120,11 @@ public class InventoryManager : MonoBehaviour
         }
 
         return removed;
+    }
+
+    public InventorySO GetInventory()
+    {
+        return currentInventory;
     }
 
     public void RefreshUI()

@@ -8,7 +8,7 @@ public class InventorySO : ScriptableObject
     [SerializeField] private List<InventorySlot> _inventorySlots = new List<InventorySlot>();
 
     [Header("Inventory Settings")]
-    [SerializeField] private bool _allowStacking = false;
+    [SerializeField] private bool _allowStacking = true;
 
     [Header("Quick Access")]
     [SerializeField] private int quickAccessSlotCount = 2;
@@ -71,6 +71,36 @@ public class InventorySO : ScriptableObject
         _inventorySlots.Add(itemSlot);
     }
 
+    public bool UseItemAt(int inventoryIndex)
+    {
+        if (inventoryIndex < 0 || inventoryIndex >= _inventorySlots.Count)
+        {
+            Debug.LogWarning("Invalid inventory index.");
+            return false;
+        }
+
+        InventorySlot slot = _inventorySlots[inventoryIndex];
+
+        if (slot == null || slot.IsEmpty)
+        {
+            Debug.LogWarning("Cannot use an empty inventory slot.");
+            return false;
+        }
+
+        slot.Item.UseItem();
+        slot.RemoveAmount(1);
+
+        if (slot.IsEmpty)
+        {
+            _inventorySlots.RemoveAt(inventoryIndex);
+
+            ClearQuickAccessSlotsWithInventoryIndex(inventoryIndex);
+            FixQuickAccessIndexesAfterInventoryRemove(inventoryIndex);
+        }
+
+        return true;
+    }
+
     public bool RemoveItem(ItemSO itemData, int amount = 1)
     {
         if (itemData == null || amount <= 0)
@@ -92,7 +122,8 @@ public class InventorySO : ScriptableObject
 
         if (slot.IsEmpty)
         {
-            _inventorySlots.Remove(slot);
+            _inventorySlots.RemoveAt(removedIndex);
+
             ClearQuickAccessSlotsWithInventoryIndex(removedIndex);
             FixQuickAccessIndexesAfterInventoryRemove(removedIndex);
         }
@@ -169,6 +200,18 @@ public class InventorySO : ScriptableObject
 
     public ItemSO GetQuickAccessItem(int quickAccessIndex)
     {
+        InventorySlot slot = GetQuickAccessInventorySlot(quickAccessIndex);
+
+        if (slot == null || slot.IsEmpty)
+        {
+            return null;
+        }
+
+        return slot.Item;
+    }
+
+    public InventorySlot GetQuickAccessInventorySlot(int quickAccessIndex)
+    {
         InitializeQuickAccessSlots();
 
         if (quickAccessIndex < 0 || quickAccessIndex >= _quickAccessSlots.Length)
@@ -199,7 +242,7 @@ public class InventorySO : ScriptableObject
             return null;
         }
 
-        return inventorySlot.Item;
+        return inventorySlot;
     }
 
     public InventorySlot GetInventorySlot(int inventoryIndex)
@@ -212,11 +255,16 @@ public class InventorySO : ScriptableObject
         return _inventorySlots[inventoryIndex];
     }
 
+    public List<InventorySlot> GetInventoryData()
+    {
+        return _inventorySlots;
+    }
+
     private InventorySlot FindSlotWithItem(ItemSO itemData)
     {
         foreach (InventorySlot slot in _inventorySlots)
         {
-            if (slot.Item == itemData)
+            if (slot != null && slot.Item == itemData)
             {
                 return slot;
             }
@@ -231,13 +279,14 @@ public class InventorySO : ScriptableObject
 
         for (int i = 0; i < _quickAccessSlots.Length; i++)
         {
-            if (_quickAccessSlots[i] == null)
+            QuickAccessSlot quickSlot = _quickAccessSlots[i];
+
+            if (quickSlot == null || quickSlot.IsEmpty)
                 continue;
 
-            if (!_quickAccessSlots[i].IsEmpty &&
-                _quickAccessSlots[i].InventoryIndex == inventoryIndex)
+            if (quickSlot.InventoryIndex == inventoryIndex)
             {
-                _quickAccessSlots[i].Clear();
+                quickSlot.Clear();
             }
         }
     }
@@ -260,10 +309,5 @@ public class InventorySO : ScriptableObject
                 quickSlot.Assign(currentIndex - 1);
             }
         }
-    }
-
-    public List<InventorySlot> GetInventoryData()
-    {
-        return _inventorySlots;
     }
 }

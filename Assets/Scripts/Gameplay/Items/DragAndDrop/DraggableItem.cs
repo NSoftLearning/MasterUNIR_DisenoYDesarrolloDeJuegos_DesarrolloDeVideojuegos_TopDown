@@ -1,18 +1,13 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
-using UnityEngine.Events;
 
 public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
-    [Header("Events")]
-    [SerializeField] private UnityEvent OnDropNullEvent;
-
     [SerializeField] private Image image;
 
     private RectTransform _rectTransform;
     private Canvas _canvas;
-
     private Transform _parentAfterDrag;
     private bool _wasDroppedSuccessfully;
 
@@ -29,7 +24,10 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
             image = GetComponent<Image>();
         }
 
-        image.sprite = itemData.ItemIcon;
+        if (image != null && itemData != null)
+        {
+            image.sprite = itemData.ItemIcon;
+        }
     }
 
     private void Awake()
@@ -48,27 +46,42 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         _wasDroppedSuccessfully = false;
         _parentAfterDrag = transform.parent;
 
-        transform.SetParent(_canvas.transform);
-        transform.SetAsLastSibling();
+        if (_canvas == null)
+        {
+            _canvas = GetComponentInParent<Canvas>();
+        }
 
-        image.raycastTarget = false;
+        if (_canvas != null)
+        {
+            transform.SetParent(_canvas.transform, true);
+            transform.SetAsLastSibling();
+        }
+
+        if (image != null)
+        {
+            image.raycastTarget = false;
+        }
     }
 
     public void OnDrag(PointerEventData eventData)
     {
+        if (_rectTransform == null || _canvas == null)
+            return;
+
         _rectTransform.anchoredPosition += eventData.delta / _canvas.scaleFactor;
     }
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        transform.SetParent(_parentAfterDrag);
-        transform.localPosition = Vector3.zero;
-
-        image.raycastTarget = true;
-
-        if (!_wasDroppedSuccessfully)
+        if (_parentAfterDrag != null)
         {
-            OnDropNullEvent.Invoke();
+            transform.SetParent(_parentAfterDrag, false);
+            transform.localPosition = Vector3.zero;
+        }
+
+        if (image != null)
+        {
+            image.raycastTarget = true;
         }
     }
 

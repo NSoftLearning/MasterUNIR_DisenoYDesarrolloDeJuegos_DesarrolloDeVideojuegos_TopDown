@@ -12,8 +12,8 @@ public class InventoryCellSlot : MonoBehaviour
     [Header("Use Button")]
     [SerializeField] private Button useButton;
 
-    private int _inventoryIndex = -1;
     private InventorySlot _slot;
+    private int _inventoryIndex = -1;
 
     public Transform GetItemParent()
     {
@@ -25,7 +25,7 @@ public class InventoryCellSlot : MonoBehaviour
         _slot = slot;
         _inventoryIndex = inventoryIndex;
 
-        RefreshTexts();
+        RefreshView();
 
         if (useButton != null)
         {
@@ -34,7 +34,7 @@ public class InventoryCellSlot : MonoBehaviour
         }
     }
 
-    private void RefreshTexts()
+    private void RefreshView()
     {
         if (_slot == null || _slot.IsEmpty)
         {
@@ -62,11 +62,9 @@ public class InventoryCellSlot : MonoBehaviour
 
     private void UseItem()
     {
-        if (_slot == null || _slot.IsEmpty)
+        if (_inventoryIndex < 0)
             return;
 
-        _slot.Item.UseItem();
-
-        InventoryManager.Instance.RemoveItemAt(_inventoryIndex);
+        InventoryManager.Instance.UseItemAt(_inventoryIndex);
     }
 }

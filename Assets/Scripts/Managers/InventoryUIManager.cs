@@ -25,6 +25,9 @@ public class InventoryUIManager : MonoBehaviour
         ClearInventoryUI();
         ClearQuickAccessUI();
 
+        if (inventoryData == null)
+            return;
+
         DrawInventory(inventoryData);
         DrawQuickAccess(inventoryData);
     }
@@ -41,6 +44,7 @@ public class InventoryUIManager : MonoBehaviour
                 continue;
 
             GameObject newSlot = Instantiate(slotPrefab, inventorySlotsParent);
+
             InventoryCellSlot inventoryCellSlot = newSlot.GetComponent<InventoryCellSlot>();
 
             if (inventoryCellSlot != null)
@@ -48,15 +52,23 @@ public class InventoryUIManager : MonoBehaviour
                 inventoryCellSlot.Initialize(slot, i);
             }
 
-            GameObject itemInstance = Instantiate(baseItemPrefab, newSlot.transform);
+            GameObject itemInstance = Instantiate(baseItemPrefab);
 
-            if (inventoryCellSlot != null)
+            if (inventoryCellSlot != null && inventoryCellSlot.GetItemParent() != null)
             {
                 itemInstance.transform.SetParent(inventoryCellSlot.GetItemParent(), false);
             }
+            else
+            {
+                itemInstance.transform.SetParent(newSlot.transform, false);
+            }
 
             DraggableItem draggableItem = itemInstance.GetComponent<DraggableItem>();
-            draggableItem.Initialize(slot.Item, i);
+
+            if (draggableItem != null)
+            {
+                draggableItem.Initialize(slot.Item, i);
+            }
 
             inventorySlotGraphics.Add(newSlot);
         }
@@ -92,7 +104,11 @@ public class InventoryUIManager : MonoBehaviour
             GameObject itemGraphic = Instantiate(quickAccessItemPrefab, quickAccessSlots[i]);
 
             DraggableItem draggableItem = itemGraphic.GetComponent<DraggableItem>();
-            draggableItem.Initialize(inventorySlot.Item, inventoryIndex);
+
+            if (draggableItem != null)
+            {
+                draggableItem.Initialize(inventorySlot.Item, inventoryIndex);
+            }
 
             quickAccessItemGraphics[i] = itemGraphic;
         }

@@ -17,11 +17,11 @@ public class QuickAccessCellLogic : MonoBehaviour, IDropHandler
         if (draggableItem == null)
             return;
 
+        draggableItem.MarkAsDroppedSuccessfully();
+
         InventoryManager.Instance.AssignItemToQuickAccess(
             draggableItem.InventoryIndex,
             quickAccessIndex
         );
-
-        draggableItem.MarkAsDroppedSuccessfully();
     }
 }

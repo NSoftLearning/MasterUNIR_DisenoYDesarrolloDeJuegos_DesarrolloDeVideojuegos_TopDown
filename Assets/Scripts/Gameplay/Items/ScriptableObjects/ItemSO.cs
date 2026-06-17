@@ -9,5 +9,6 @@ public class ItemSO : ScriptableObject
 
     public void UseItem()
     {
+        Debug.Log($"Using item: {itemName}");
     }
 }
