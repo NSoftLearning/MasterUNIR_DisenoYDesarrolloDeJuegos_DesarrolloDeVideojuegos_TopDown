@@ -8,15 +8,18 @@ public class PlayerControl : MonoBehaviour
     [SerializeField] InputActionReference _attack;
     [SerializeField] InputActionReference _interact;
     [SerializeField] InputActionReference _roll;
+    [SerializeField] InputActionReference _changeWeapon;
 
     CustomCharacterController _characterController;
     Vector2 _rawMove;
 
     IInteractables currentInteractable;
+    PlayerWeaponController _weaponController;
 
     private void Awake()
     {
         _characterController = GetComponent<CustomCharacterController>();
+        _weaponController = GetComponent<PlayerWeaponController>();
     }
      
     private void OnEnable()
@@ -25,14 +28,15 @@ public class PlayerControl : MonoBehaviour
         _attack.action.Enable();
         _interact.action.Enable();
         _roll.action.Enable();
+        _changeWeapon.action.Enable();
         _movement.action.started += Move;
         _movement.action.performed += Move;
         _movement.action.canceled += Move;
 
         _interact.action.performed += OnInteract;
         _roll.action.performed += OnRoll;
-        // _attack.action.performed += OnAttack;
-
+         _attack.action.performed += OnAttack;
+        _changeWeapon.action.performed += OnChangeWeapon;
     }
 
     private void Move(InputAction.CallbackContext context)
@@ -55,15 +59,24 @@ public class PlayerControl : MonoBehaviour
         _characterController.Roll();
     }
 
+    private void OnAttack(InputAction.CallbackContext context)
+    {
+        _characterController.Attack();
+    }
+
+    private void OnChangeWeapon(InputAction.CallbackContext context)
+    {
+        _weaponController.ChangeNextWeapon();
+    }
+
     private void OnDisable()
     {
-         _movement.action.Disable();
+        _movement.action.Disable();
         _movement.action.started -= Move;
         _movement.action.performed -= Move;
         _movement.action.canceled -= Move;
         _attack.action.Disable();
         _interact.action.Disable();
-
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -72,6 +85,12 @@ public class PlayerControl : MonoBehaviour
         {
             currentInteractable = interactable;
             currentInteractable.Select();
+        }
+        else if (collision.CompareTag("Weapon"))
+        {
+            _weaponController.NewWeapon(collision.gameObject);
+
+            Destroy(collision.gameObject);
         }
     }
 
@@ -86,6 +105,4 @@ public class PlayerControl : MonoBehaviour
             }
         }
     }
-
-
 }
