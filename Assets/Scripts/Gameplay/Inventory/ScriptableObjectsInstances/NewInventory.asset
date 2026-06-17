@@ -13,3 +13,8 @@ MonoBehaviour:
   m_Name: NewInventory
   m_EditorClassIdentifier: Assembly-CSharp::InventorySO
   _inventorySlots: []
+  _allowStacking: 1
+  quickAccessSlotCount: 2
+  _quickAccessSlots:
+  - _inventoryIndex: -1
+  - _inventoryIndex: -1

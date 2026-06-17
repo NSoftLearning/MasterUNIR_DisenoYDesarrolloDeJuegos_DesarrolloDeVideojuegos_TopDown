@@ -3,12 +3,13 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 3
-  tags: []
+  tags:
+  - Weapon
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Item
   - Water
   - UI
   - 
@@ -44,11 +45,20 @@ TagManager:
   - name: Floor
     uniqueID: 403102045
     locked: 0
-  - name: Walls
-    uniqueID: 1073933119
+  - name: Interactables
+    uniqueID: 2629201547
+    locked: 0
+  - name: Items
+    uniqueID: 2138572193
     locked: 0
   - name: Gameplay
     uniqueID: 2544312571
+    locked: 0
+  - name: Walls
+    uniqueID: 1073933119
+    locked: 0
+  - name: UI
+    uniqueID: 3193302333
     locked: 0
   m_RenderingLayers:
   - Default

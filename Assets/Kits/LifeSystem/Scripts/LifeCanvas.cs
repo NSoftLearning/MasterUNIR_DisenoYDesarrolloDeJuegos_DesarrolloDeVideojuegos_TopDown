@@ -5,6 +5,7 @@ using UnityEngine.UI;
 public class LifeCanvas : MonoBehaviour
 {
     [SerializeField] Life life;
+    [SerializeField] CustomCharacterController stamina;
     [SerializeField] Image mask;
 
     private void OnEnable()

@@ -1,16 +1,6 @@
 using UnityEngine;
 
-public class ItemEffectSO : MonoBehaviour
+public abstract class ItemEffectSO : ScriptableObject
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public abstract bool Use(GameObject user);
 }

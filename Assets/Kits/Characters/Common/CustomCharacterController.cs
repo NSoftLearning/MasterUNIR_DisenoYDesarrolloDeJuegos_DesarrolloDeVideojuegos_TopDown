@@ -1,6 +1,16 @@
+using System;
 using Unity.VisualScripting.Antlr3.Runtime;
 using UnityEditor.U2D.Animation;
 using UnityEngine;
+using static UnityEditor.PlayerSettings.SplashScreen;
+
+public enum Direction
+{
+    Down,
+    Up, 
+    Left, 
+    Right
+}
 
 public class CustomCharacterController : MonoBehaviour, IVisible, IOrientationService
 {
@@ -19,25 +29,36 @@ public class CustomCharacterController : MonoBehaviour, IVisible, IOrientationSe
     [SerializeField] float _recoverStaminaSpeedPerSecond = 0.15f;
     [SerializeField] float _rollStamina = 0.25f;
 
+    private PlayerWeaponController _weaponController;
+
     public Vector3 Position => _position;
     public Vector3 Forward => _forward;
 
-    float stamina = 0;
+    float stamina = 0; // Stamina actual
     private void Awake()
     {
         _capsuleCollider = GetComponent<CapsuleCollider2D>();
+        _weaponController = GetComponent<PlayerWeaponController>();
+
         stamina = _maxStamina;
+
+        if (_weaponController != null)
+        {
+            _weaponController.FinishedAttack += OnFinishedAttack;
+        }
     }
 
     bool canMove = true;
     Vector3 _position;
     Vector3 _forward;
+    Direction lastDirection;
     private void Update()
     {
         RecoverStamina();
 
         if (!canMove) return;
 
+        RefreshDirection();
         _rigidbody.linearVelocity = _rawMovement * _movementSpeed;
         RefreshOrientation();
     }
@@ -80,6 +101,21 @@ public class CustomCharacterController : MonoBehaviour, IVisible, IOrientationSe
             _forward = _rigidbody.linearVelocity.normalized;
     }
 
+    void RefreshDirection()
+    {
+        if (_rawMovement != Vector2.zero)
+        {
+            if (Mathf.Abs(_rawMovement.x) > Mathf.Abs(_rawMovement.y))
+            {
+                lastDirection = (_rawMovement.x > 0) ? Direction.Right : Direction.Left;
+            }
+            else
+            {
+                lastDirection = (_rawMovement.y > 0) ? Direction.Up : Direction.Down;
+            }
+        }
+    }
+
     public IVisible.Side GetSide()
     {
         return side;
@@ -95,6 +131,27 @@ public class CustomCharacterController : MonoBehaviour, IVisible, IOrientationSe
         float newStamina = stamina + _recoverStaminaSpeedPerSecond * Time.deltaTime;
         if (newStamina >= _maxStamina) stamina = _maxStamina;
         else stamina = newStamina;
+    }
+
+    public void Attack()
+    {
+        if (!canMove || !_weaponController.HasWeapon()) return;
+        
+        float neededStamina = _weaponController.GetNeededStamina();
+        float newStamina = stamina - neededStamina;
+
+        if (newStamina <= 0) return;
+
+        canMove = false;
+        stamina = newStamina;
+        _rigidbody.linearVelocity = Vector2.zero;
+        
+        _weaponController.Attack(lastDirection);
+    }
+
+    private void OnFinishedAttack()
+    {
+        canMove = true;
     }
 }
  
