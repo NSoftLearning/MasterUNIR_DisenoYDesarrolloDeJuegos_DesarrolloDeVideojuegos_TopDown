@@ -5,7 +5,7 @@ using UnityEngine;
 public class TargetFinder_DistanceAndLOS<TARGET_TYPE> : ITargetFinder<TARGET_TYPE, BasicTargetFinderQuerySettings>
 { 
 
-    public List<FoundTargetDTO<TARGET_TYPE>> FindTargets(BasicTargetFinderQuerySettings queryData, TARGET_TYPE ignoreList, Vector3 originForward)
+    public List<FoundTargetDTO<TARGET_TYPE>> FindTargets(BasicTargetFinderQuerySettings queryData, TARGET_TYPE ignoreList)
     {
         List<FoundTargetDTO<TARGET_TYPE>> typedTargetsCandidateList =  GetTypedTargetsByDistance(queryData, ignoreList);
         List<FoundTargetDTO<TARGET_TYPE>> typedTargetsFinalList = new List<FoundTargetDTO<TARGET_TYPE>>();
@@ -14,18 +14,12 @@ public class TargetFinder_DistanceAndLOS<TARGET_TYPE> : ITargetFinder<TARGET_TYP
         {
             Vector3 fromOriginToTarget = item.position - queryData.origintransform.position;
             fromOriginToTarget.z = 0;
-            originForward.z = 0;
+            queryData.originForward.z = 0;
 
-            float signedAngle = Vector3.SignedAngle(originForward, fromOriginToTarget, Vector3.forward);
+            float signedAngle = Vector3.SignedAngle(queryData.originForward, fromOriginToTarget, Vector3.forward);
             if (Mathf.Abs(signedAngle) <= queryData.halfFieldOfView)
-                typedTargetsFinalList.Add(item);
-
-            //Debug.DrawLine(queryData.origintransform.position, item.position, Color.red, .1f);
-        }
-
-        
-
-
+                typedTargetsFinalList.Add(item);         
+        }        
         return typedTargetsFinalList;
     }
 
@@ -42,7 +36,7 @@ public class TargetFinder_DistanceAndLOS<TARGET_TYPE> : ITargetFinder<TARGET_TYP
         {
             TARGET_TYPE typedItem = item.GetComponent<TARGET_TYPE>();
             if (typedItem != null
-                &&  !ignoredObject.Equals(typedItem))                       // != typedItem)// !ignoreList.Contains(typedItem))
+                &&  !ignoredObject.Equals(typedItem))                   
             {
                 typedTargets.Add(new FoundTargetDTO<TARGET_TYPE>(typedItem, item.transform.position));
             }

@@ -2,8 +2,8 @@ using NUnit.Framework;
 using System.Collections.Generic;
 using UnityEngine;
 
-public interface ITargetFinder <TARGET_TYPE, PARAMETER_TYPE>
+public interface ITargetFinder <TARGET_TYPE, QUERY_DATA>
 {
-    public List<FoundTargetDTO<TARGET_TYPE>> FindTargets(PARAMETER_TYPE queryData, TARGET_TYPE ignore, Vector3 originForward);
+    public List<FoundTargetDTO<TARGET_TYPE>> FindTargets(QUERY_DATA queryData, TARGET_TYPE ignore);
     
 }

@@ -11,14 +11,16 @@ public class PatrolAndCloseCombatEnemyController : MonoBehaviour
     [SerializeField] LayerMask layerstToSearchForTarget;
     [SerializeField] float _searchPersistenceTime;
     [SerializeField] float _halfFieldOfView;
-
+    [SerializeField] Transform _detectionOriginTransform;
     GenericStateMachine<PatrolAndCloseCombatStateId> _statesMachine;
 
     CustomCharacterController _characterController;
     ITargetFinder<IDamageReceiver, BasicTargetFinderQuerySettings> _targetFinder;
+    DetectionWithForwardContext<IDamageReceiver, BasicTargetFinderQuerySettings> _detecionStatesContext;
+
     IOrientationService _orientationService;
 
-    DetectionStatesContext <IDamageReceiver, BasicTargetFinderQuerySettings> _detecionStatesContext;
+    
     public void InjectDependencies (
         ITargetFinder<IDamageReceiver, BasicTargetFinderQuerySettings> targetFinder,
         IOrientationService orientationService,
@@ -31,19 +33,21 @@ public class PatrolAndCloseCombatEnemyController : MonoBehaviour
 
     private void Start()
     {
-        _detecionStatesContext = new DetectionStatesContext<IDamageReceiver, BasicTargetFinderQuerySettings>(
-            new BasicTargetFinderQuerySettings(
+        _detecionStatesContext = 
+            new DetectionWithForwardContext<IDamageReceiver, BasicTargetFinderQuerySettings>(
+                new BasicTargetFinderQuerySettings(
                     layerstToSearchForTarget,
                     _detectionRange,
                     _sidesToSearchFor,
-                    transform,
+                    _detectionOriginTransform,
+                    _orientationService.Forward,
                     _halfFieldOfView,
                     _closeDetectionRange
                     ),
             _targetFinder,
             _orientationService,
             GetComponent<IDamageReceiver>()
-            );
+        );
 
         InitializeStateMachine();
     }
@@ -87,7 +91,8 @@ public class PatrolAndCloseCombatEnemyController : MonoBehaviour
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, _detectionRange);
+        Gizmos.DrawWireSphere(_detectionOriginTransform.transform.position, _detectionRange);
+        Gizmos.DrawWireSphere(_detectionOriginTransform.position, _closeDetectionRange);
 
         if (_orientationService == null)
             return;
@@ -96,7 +101,7 @@ public class PatrolAndCloseCombatEnemyController : MonoBehaviour
         Vector3 forward = _orientationService.Forward.normalized;
 
         Gizmos.color = Color.cyan;
-        Gizmos.DrawLine(origin, origin + forward * _detectionRange);
+        Gizmos.DrawLine(_detectionOriginTransform.position, _detectionOriginTransform.position + forward * _detectionRange);
 
         Vector3 leftLimitDirection =
             Quaternion.AngleAxis(-_halfFieldOfView, Vector3.forward) * forward;
@@ -105,10 +110,10 @@ public class PatrolAndCloseCombatEnemyController : MonoBehaviour
             Quaternion.AngleAxis(_halfFieldOfView, Vector3.forward) * forward;
 
         Gizmos.color = Color.magenta;
-        Gizmos.DrawLine(origin, origin + leftLimitDirection.normalized * _detectionRange);
+        Gizmos.DrawLine(_detectionOriginTransform.position, _detectionOriginTransform.position + leftLimitDirection.normalized * _detectionRange);
 
         Gizmos.color = Color.magenta;
-        Gizmos.DrawLine(origin, origin + rightLimitDirection.normalized * _detectionRange);
+        Gizmos.DrawLine(_detectionOriginTransform.position, _detectionOriginTransform.position + rightLimitDirection.normalized * _detectionRange);
     }
 }
  

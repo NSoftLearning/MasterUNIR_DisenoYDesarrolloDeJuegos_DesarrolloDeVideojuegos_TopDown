@@ -1,7 +1,6 @@
-using NUnit.Framework;
+
 using System;
 using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
 
 public class SeekingState<TStateId> : IGenericState<TStateId> where TStateId : Enum
@@ -14,7 +13,7 @@ public class SeekingState<TStateId> : IGenericState<TStateId> where TStateId : E
     private Transform _transform;
 
     private StateChangeDelegate<TStateId> _stateChangeDelegate;
-    private DetectionStatesContext<IDamageReceiver, BasicTargetFinderQuerySettings> _detectionContext;
+    DetectionWithForwardContext<IDamageReceiver, BasicTargetFinderQuerySettings> _detectionContext;
     float _searchPersistenceTime;
 
 
@@ -27,7 +26,7 @@ public class SeekingState<TStateId> : IGenericState<TStateId> where TStateId : E
         float searchPersistenceTime,
         CustomCharacterController customCharacterController,
         Transform thisTransform,
-        DetectionStatesContext<IDamageReceiver, BasicTargetFinderQuerySettings>  detectionContext,
+        DetectionWithForwardContext<IDamageReceiver, BasicTargetFinderQuerySettings>  detectionContext,
         StateChangeDelegate <TStateId> stateChangeDelegate)
     {
         StateId = thisStateId;
@@ -63,7 +62,7 @@ public class SeekingState<TStateId> : IGenericState<TStateId> where TStateId : E
     {
         _targetsFound.Clear();
 
-        _targetsFound = _detectionContext.targetFinder.FindTargets(_detectionContext.basicTargetFindingQuerySettings,_detectionContext.objectToIgnore, _detectionContext.orientationService.Forward);
+        _targetsFound = _detectionContext.targetFinder.FindTargets(_detectionContext.GetCurrentQueryData(),_detectionContext.objectToIgnore);
         if (_targetsFound.Count > 0)
         {
             _willDesistAt = Time.time + _searchPersistenceTime;
