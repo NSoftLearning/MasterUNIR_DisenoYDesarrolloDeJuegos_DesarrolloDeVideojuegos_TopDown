@@ -8,12 +8,12 @@ public class PatrollingState<TStateId> : IGenericState<TStateId> where TStateId 
 
     TStateId _nextStateId; 
     private StateChangeDelegate<TStateId> _stateChangeDelegate;
-    DetectionStatesContext _context;
+    DetectionStatesContext<IDamageReceiver, BasicTargetFinderQuerySettings> _context;
          
     public PatrollingState (
         TStateId thisStateId,
         TStateId nextStateId,                    
-        DetectionStatesContext context,
+        DetectionStatesContext<IDamageReceiver, BasicTargetFinderQuerySettings> context,
         StateChangeDelegate<TStateId> stateChangeDelegate
         )
     {

@@ -14,7 +14,7 @@ public class SeekingState<TStateId> : IGenericState<TStateId> where TStateId : E
     private Transform _transform;
 
     private StateChangeDelegate<TStateId> _stateChangeDelegate;
-    private DetectionStatesContext _detectionContext;
+    private DetectionStatesContext<IDamageReceiver, BasicTargetFinderQuerySettings> _detectionContext;
     float _searchPersistenceTime;
 
 
@@ -27,7 +27,7 @@ public class SeekingState<TStateId> : IGenericState<TStateId> where TStateId : E
         float searchPersistenceTime,
         CustomCharacterController customCharacterController,
         Transform thisTransform,
-        DetectionStatesContext detectionContext,
+        DetectionStatesContext<IDamageReceiver, BasicTargetFinderQuerySettings>  detectionContext,
         StateChangeDelegate <TStateId> stateChangeDelegate)
     {
         StateId = thisStateId;

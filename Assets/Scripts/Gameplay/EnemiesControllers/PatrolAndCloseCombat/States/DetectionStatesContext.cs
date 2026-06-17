@@ -1,16 +1,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public struct DetectionStatesContext 
+public struct DetectionStatesContext <SEARCHED_TYPE, SEARCH_QUERY_DATA>
 {
-    public BasicTargetFinderQuerySettings basicTargetFindingQuerySettings;
-    public ITargetFinder<IDamageReceiver, BasicTargetFinderQuerySettings> targetFinder;
+    public SEARCH_QUERY_DATA basicTargetFindingQuerySettings;
+    public ITargetFinder<SEARCHED_TYPE, SEARCH_QUERY_DATA> targetFinder;
     public IOrientationService orientationService;
     public IDamageReceiver objectToIgnore;
 
     public DetectionStatesContext(
-        BasicTargetFinderQuerySettings basicTargetFindingQuerySettings, 
-        ITargetFinder<IDamageReceiver, BasicTargetFinderQuerySettings> targetFinder, 
+        SEARCH_QUERY_DATA basicTargetFindingQuerySettings, 
+        ITargetFinder<SEARCHED_TYPE, SEARCH_QUERY_DATA> targetFinder, 
         IOrientationService orientationService, 
         IDamageReceiver damageReceiverToIgnore) 
     {

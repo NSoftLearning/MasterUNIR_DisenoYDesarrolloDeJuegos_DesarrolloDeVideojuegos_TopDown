@@ -18,7 +18,7 @@ public class PatrolAndCloseCombatEnemyController : MonoBehaviour
     ITargetFinder<IDamageReceiver, BasicTargetFinderQuerySettings> _targetFinder;
     IOrientationService _orientationService;
 
-    DetectionStatesContext _detecionStatesContext;
+    DetectionStatesContext <IDamageReceiver, BasicTargetFinderQuerySettings> _detecionStatesContext;
     public void InjectDependencies (
         ITargetFinder<IDamageReceiver, BasicTargetFinderQuerySettings> targetFinder,
         IOrientationService orientationService,
@@ -31,7 +31,7 @@ public class PatrolAndCloseCombatEnemyController : MonoBehaviour
 
     private void Start()
     {
-        _detecionStatesContext = new DetectionStatesContext(
+        _detecionStatesContext = new DetectionStatesContext<IDamageReceiver, BasicTargetFinderQuerySettings>(
             new BasicTargetFinderQuerySettings(
                     layerstToSearchForTarget,
                     _detectionRange,
