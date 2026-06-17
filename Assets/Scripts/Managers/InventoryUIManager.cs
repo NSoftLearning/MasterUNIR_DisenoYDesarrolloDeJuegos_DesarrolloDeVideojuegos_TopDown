@@ -1,48 +1,104 @@
 using UnityEngine;
 using System.Collections.Generic;
 using UnityEngine.UI;
+
 public class InventoryUIManager : MonoBehaviour
 {
-    public List<GameObject> inventorySlotGraphics;
+    [Header("Inventory UI")]
+    [SerializeField] private Transform inventorySlotsParent;
     [SerializeField] private GameObject slotPrefab;
     [SerializeField] private GameObject baseItemPrefab;
 
-    public void AddItem(ItemSO itemData)
-    {
-        GameObject newSlot = Instantiate(slotPrefab, transform);
-        GameObject itemInstance = Instantiate(baseItemPrefab, newSlot.transform);
-        itemInstance.GetComponent<Image>().sprite = itemData.ItemIcon;
-        inventorySlotGraphics.Add(newSlot);
-    }
+    [Header("Quick Access UI")]
+    [SerializeField] private List<Transform> quickAccessSlots;
+    [SerializeField] private GameObject quickAccessItemPrefab;
 
-    public void RemoveItemFromIndex(int index) { 
-        GameObject targetItem = inventorySlotGraphics[index];
-        if (targetItem != null)
-        {
-            inventorySlotGraphics.RemoveAt(index);
-            Destroy(targetItem);
-        }
-    }
-    public void ClearInventory() { 
-        for (int i = 0; i < inventorySlotGraphics.Count; i++)
-        {
-
-            Destroy(inventorySlotGraphics[i].gameObject); 
-
-        }
-        inventorySlotGraphics.Clear();
-    }
-
+    private readonly List<GameObject> inventorySlotGraphics = new List<GameObject>();
+    private readonly List<GameObject> quickAccessItemGraphics = new List<GameObject>();
 
     public void InitializeInventoryUI(InventorySO inventoryData)
     {
-        List<InventorySlot> inventorySlots = inventoryData.GetInventoryData();
-        foreach (InventorySlot slot in inventorySlots) 
+        RefreshInventoryUI(inventoryData);
+    }
+
+    public void RefreshInventoryUI(InventorySO inventoryData)
+    {
+        ClearInventoryUI();
+        ClearQuickAccessUI();
+
+        DrawInventory(inventoryData);
+        DrawQuickAccess(inventoryData);
+    }
+
+    private void DrawInventory(InventorySO inventoryData)
+    {
+        IReadOnlyList<InventorySlot> inventorySlots = inventoryData.InventorySlots;
+
+        for (int i = 0; i < inventorySlots.Count; i++)
         {
-            AddItem(slot.Item);
+            InventorySlot slot = inventorySlots[i];
+
+            if (slot == null || slot.IsEmpty)
+                continue;
+
+            GameObject newSlot = Instantiate(slotPrefab, inventorySlotsParent);
+            GameObject itemInstance = Instantiate(baseItemPrefab, newSlot.transform);
+
+            DraggableItem draggableItem = itemInstance.GetComponent<DraggableItem>();
+            draggableItem.Initialize(slot.Item, i);
+
+            inventorySlotGraphics.Add(newSlot);
         }
     }
 
-    
+    private void DrawQuickAccess(InventorySO inventoryData)
+    {
+        IReadOnlyList<InventorySlot> quickSlots = inventoryData.QuickAccessSlots;
 
+        for (int i = 0; i < quickAccessSlots.Count; i++)
+        {
+            quickAccessItemGraphics.Add(null);
+
+            if (i >= quickSlots.Count)
+                continue;
+
+            InventorySlot slot = quickSlots[i];
+
+            if (slot == null || slot.IsEmpty)
+                continue;
+
+            GameObject itemGraphic = Instantiate(quickAccessItemPrefab, quickAccessSlots[i]);
+
+            Image image = itemGraphic.GetComponent<Image>();
+            image.sprite = slot.Item.ItemIcon;
+
+            quickAccessItemGraphics[i] = itemGraphic;
+        }
+    }
+
+    private void ClearInventoryUI()
+    {
+        for (int i = 0; i < inventorySlotGraphics.Count; i++)
+        {
+            if (inventorySlotGraphics[i] != null)
+            {
+                Destroy(inventorySlotGraphics[i]);
+            }
+        }
+
+        inventorySlotGraphics.Clear();
+    }
+
+    private void ClearQuickAccessUI()
+    {
+        for (int i = 0; i < quickAccessItemGraphics.Count; i++)
+        {
+            if (quickAccessItemGraphics[i] != null)
+            {
+                Destroy(quickAccessItemGraphics[i]);
+            }
+        }
+
+        quickAccessItemGraphics.Clear();
+    }
 }

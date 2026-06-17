@@ -105,19 +105,16 @@ public class InventorySO : ScriptableObject
     {
         InitializeQuickAccessSlots();
 
-        if (inventoryIndex < 0 || inventoryIndex >= _inventorySlots.Count)
-        {
-            Debug.LogWarning("Invalid inventory index.");
-            _quickAccessSlots[quickAccessIndex].InitializeSlot(
-            null,
-            0
-            );
-            return;
-        }
-
         if (quickAccessIndex < 0 || quickAccessIndex >= _quickAccessSlots.Length)
         {
             Debug.LogWarning("Invalid quick access index.");
+            return;
+        }
+
+        if (inventoryIndex < 0 || inventoryIndex >= _inventorySlots.Count)
+        {
+            Debug.LogWarning("Invalid inventory index.");
+            _quickAccessSlots[quickAccessIndex].Clear();
             return;
         }
 
@@ -133,6 +130,16 @@ public class InventorySO : ScriptableObject
             inventorySlot.Item,
             inventorySlot.ItemsInSlot
         );
+    }
+
+    public void RemoveItemFromQuickAccess(int quickAccessIndex) { 
+        InitializeQuickAccessSlots();
+        if (quickAccessIndex < 0 || quickAccessIndex >= _quickAccessSlots.Length)
+        {
+            Debug.LogWarning("Invalid quick access index.");
+            return;
+        }
+        _quickAccessSlots[quickAccessIndex].Clear();
     }
 
     public ItemSO GetQuickAccessItem(int quickAccessIndex)

@@ -12,7 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d28bc7b3c4bd8646a72b30ae4a6782e, type: 3}
   m_Name: NewInventory
   m_EditorClassIdentifier: Assembly-CSharp::InventorySO
-  _inventorySlots: []
-  _allowStacking: 0
+  _inventorySlots:
+  - _itemsInSlot: 6
+    _item: {fileID: 11400000, guid: fa5797f631d115d4781f93b219317f93, type: 2}
+  - _itemsInSlot: 1
+    _item: {fileID: 11400000, guid: 5fca62b9e3faaef49acf68657442e867, type: 2}
+  _allowStacking: 1
   quickAccessSlotCount: 2
-  _quickAccessSlots: []
+  _quickAccessSlots:
+  - _itemsInSlot: 6
+    _item: {fileID: 11400000, guid: fa5797f631d115d4781f93b219317f93, type: 2}
+  - _itemsInSlot: 6
+    _item: {fileID: 11400000, guid: fa5797f631d115d4781f93b219317f93, type: 2}

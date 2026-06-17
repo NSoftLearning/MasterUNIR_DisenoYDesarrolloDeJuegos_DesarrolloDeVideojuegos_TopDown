@@ -12,8 +12,9 @@ GameObject:
   - component: {fileID: 3935048885257436662}
   - component: {fileID: 7034655976541081082}
   - component: {fileID: 3518973521263772516}
+  - component: {fileID: -7936667038964518021}
   m_Layer: 5
-  m_Name: BaseItemGraphics
+  m_Name: InventoryBagItemGraphic
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -88,5 +89,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23b45e0a0d607ca458648e87c0b9fb75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DraggableItem
+  OnDropNullEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: -7936667038964518021}
+        m_TargetAssemblyTypeName: InvetoryObjectManager, Assembly-CSharp
+        m_MethodName: DropItem
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   image: {fileID: 0}
   parentAfterDrag: {fileID: 0}
+--- !u!114 &-7936667038964518021
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4387770851600892081}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95af8312e13592246b3de8817b8a207c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InvetoryObjectManager
+  _item: {fileID: 3518973521263772516}

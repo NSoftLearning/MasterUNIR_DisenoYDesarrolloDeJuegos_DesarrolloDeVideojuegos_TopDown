@@ -2,8 +2,9 @@ using UnityEngine;
 
 public class InventoryManager : MonoBehaviour
 {
-    [SerializeField] InventoryUIManager inventoryUI;
-    [SerializeField] InventorySO currentInventory;
+    [SerializeField] private InventoryUIManager inventoryUI;
+    [SerializeField] private InventorySO currentInventory;
+
     public static InventoryManager Instance;
 
     [Header("Debug Settings")]
@@ -14,21 +15,18 @@ public class InventoryManager : MonoBehaviour
 
     private void Awake()
     {
-        
-        if (Instance == null) 
-        { 
+        if (Instance == null)
+        {
             Instance = this;
             DontDestroyOnLoad(gameObject);
         }
         else
         {
             Destroy(gameObject);
+            return;
         }
 
-        if(currentInventory != null)
-        {
-            inventoryUI.InitializeInventoryUI(currentInventory);
-        }
+        RefreshUI();
     }
 
     private void Update()
@@ -39,26 +37,36 @@ public class InventoryManager : MonoBehaviour
             ClearInventory();
         }
 
-        if (updateQuickAccess) {
+        if (updateQuickAccess)
+        {
             updateQuickAccess = false;
+
             AssignItemToQuickAccess(inventoryIndexToSetInFirstQuickAccess, 0);
             AssignItemToQuickAccess(inventoryIndexToSetInSecondQuickAccess, 1);
         }
     }
 
-    public void AddItem(ItemSO itemData) { 
+    public void AddItem(ItemSO itemData)
+    {
         currentInventory.AddItem(itemData);
-        inventoryUI.AddItem(itemData);
+        RefreshUI();
     }
 
     public void ClearInventory()
     {
         currentInventory.ClearInventory();
-        inventoryUI.ClearInventory();
+        RefreshUI();
     }
+
     public void AssignItemToQuickAccess(int inventoryIndex, int quickAccessIndex)
     {
         currentInventory.AssignItemToQuickAccess(inventoryIndex, quickAccessIndex);
+        RefreshUI();
+    }
+    public void RemoveItemFromQuickAccess(int quickAccessIndex)
+    {
+        currentInventory.RemoveItemFromQuickAccess(quickAccessIndex);
+        RefreshUI();
     }
 
     public void UseQuickAccessItem(int quickAccessIndex)
@@ -82,11 +90,33 @@ public class InventoryManager : MonoBehaviour
 
     public bool RemoveItem(ItemSO itemData, int amount = 1)
     {
-        return currentInventory.RemoveItem(itemData, amount);
+        bool removed = currentInventory.RemoveItem(itemData, amount);
+
+        if (removed)
+        {
+            RefreshUI();
+        }
+
+        return removed;
     }
+
     public bool RemoveItemAt(int inventoryIndex)
     {
-        inventoryUI.RemoveItemFromIndex(inventoryIndex);
-        return currentInventory.RemoveItemAt(inventoryIndex);
+        bool removed = currentInventory.RemoveItemAt(inventoryIndex);
+
+        if (removed)
+        {
+            RefreshUI();
+        }
+
+        return removed;
+    }
+
+    public void RefreshUI()
+    {
+        if (inventoryUI != null && currentInventory != null)
+        {
+            inventoryUI.RefreshInventoryUI(currentInventory);
+        }
     }
 }
