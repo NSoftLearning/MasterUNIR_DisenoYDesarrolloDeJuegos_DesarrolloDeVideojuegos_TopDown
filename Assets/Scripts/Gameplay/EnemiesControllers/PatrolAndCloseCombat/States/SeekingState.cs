@@ -10,13 +10,11 @@ public class SeekingState<TStateId> : IGenericState<TStateId> where TStateId : E
 
     private TStateId _handleTargetReached;
     private TStateId _handleTargetLost;
-    private BasicTargetFinderQuerySettings _basicTargetFinderQuerySettings;
-    private ITargetFinder<IDamageReceiver, BasicTargetFinderQuerySettings> _targetFinder;
-    private List<IDamageReceiver> _selfDamageReceiver;
     private CustomCharacterController _customCharacterController;
     private Transform _transform;
-    private IOrientationService _orientationService;
+
     private StateChangeDelegate<TStateId> _stateChangeDelegate;
+    private DetectionStatesContext _detectionContext;
     float _searchPersistenceTime;
 
 
@@ -27,25 +25,19 @@ public class SeekingState<TStateId> : IGenericState<TStateId> where TStateId : E
         TStateId handleTargetReached,
         TStateId handleTargetMissed,
         float searchPersistenceTime,
-        BasicTargetFinderQuerySettings basicTargetFinderQuerySettings,
-        ITargetFinder <IDamageReceiver, BasicTargetFinderQuerySettings> targetFinder,
-        IDamageReceiver selfDamageReceiver,
         CustomCharacterController customCharacterController,
         Transform thisTransform,
-        IOrientationService orientationService,
+        DetectionStatesContext detectionContext,
         StateChangeDelegate <TStateId> stateChangeDelegate)
     {
         StateId = thisStateId;
         _handleTargetReached = handleTargetReached;
         _handleTargetLost = handleTargetMissed;
         _searchPersistenceTime = searchPersistenceTime;
-        _basicTargetFinderQuerySettings = basicTargetFinderQuerySettings;
-        _targetFinder = targetFinder;
-        _selfDamageReceiver = new List<IDamageReceiver> { selfDamageReceiver };
         _customCharacterController = customCharacterController;
         _transform = thisTransform;
-        _orientationService = orientationService;
         _stateChangeDelegate = stateChangeDelegate;
+        _detectionContext = detectionContext;
     }
 
     public void Enter()
@@ -71,7 +63,7 @@ public class SeekingState<TStateId> : IGenericState<TStateId> where TStateId : E
     {
         _targetsFound.Clear();
 
-        _targetsFound = _targetFinder.FindTargets(_basicTargetFinderQuerySettings, _selfDamageReceiver, _orientationService.Forward);
+        _targetsFound = _detectionContext.targetFinder.FindTargets(_detectionContext.basicTargetFindingQuerySettings,_detectionContext.objectToIgnore, _detectionContext.orientationService.Forward);
         if (_targetsFound.Count > 0)
         {
             _willDesistAt = Time.time + _searchPersistenceTime;

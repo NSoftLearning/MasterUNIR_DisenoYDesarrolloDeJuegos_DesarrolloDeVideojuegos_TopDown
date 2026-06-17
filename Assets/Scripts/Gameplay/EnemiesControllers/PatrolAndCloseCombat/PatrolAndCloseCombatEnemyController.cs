@@ -6,6 +6,7 @@ using static UnityEngine.UI.Image;
 public class PatrolAndCloseCombatEnemyController : MonoBehaviour
 {
     [SerializeField] float _detectionRange;
+    [SerializeField] float _closeDetectionRange;
     [SerializeField] List<SideSO> _sidesToSearchFor;
     [SerializeField] LayerMask layerstToSearchForTarget;
     [SerializeField] float _searchPersistenceTime;
@@ -16,6 +17,8 @@ public class PatrolAndCloseCombatEnemyController : MonoBehaviour
     CustomCharacterController _characterController;
     ITargetFinder<IDamageReceiver, BasicTargetFinderQuerySettings> _targetFinder;
     IOrientationService _orientationService;
+
+    DetectionStatesContext _detecionStatesContext;
     public void InjectDependencies (
         ITargetFinder<IDamageReceiver, BasicTargetFinderQuerySettings> targetFinder,
         IOrientationService orientationService,
@@ -28,6 +31,20 @@ public class PatrolAndCloseCombatEnemyController : MonoBehaviour
 
     private void Start()
     {
+        _detecionStatesContext = new DetectionStatesContext(
+            new BasicTargetFinderQuerySettings(
+                    layerstToSearchForTarget,
+                    _detectionRange,
+                    _sidesToSearchFor,
+                    transform,
+                    _halfFieldOfView,
+                    _closeDetectionRange
+                    ),
+            _targetFinder,
+            _orientationService,
+            GetComponent<IDamageReceiver>()
+            );
+
         InitializeStateMachine();
     }
 
@@ -45,33 +62,16 @@ public class PatrolAndCloseCombatEnemyController : MonoBehaviour
             new PatrollingState <PatrolAndCloseCombatStateId> (
                 PatrolAndCloseCombatStateId.Patrolling,
                 PatrolAndCloseCombatStateId.Seeking,
-                new BasicTargetFinderQuerySettings(
-                    layerstToSearchForTarget,
-                    _detectionRange,
-                    _sidesToSearchFor,
-                    transform,
-                    _halfFieldOfView
-                    ),
-                _targetFinder,
-                GetComponent<IDamageReceiver>(),
-                _orientationService,
+                _detecionStatesContext,
                 _statesMachine.FromStateToState),
             new SeekingState<PatrolAndCloseCombatStateId> (
                 PatrolAndCloseCombatStateId.Seeking,
                 PatrolAndCloseCombatStateId.Attacking,
                 PatrolAndCloseCombatStateId.Patrolling,
                 _searchPersistenceTime,
-                new BasicTargetFinderQuerySettings(
-                    layerstToSearchForTarget,
-                    _detectionRange,
-                    _sidesToSearchFor,
-                    transform,
-                    _halfFieldOfView),
-                _targetFinder,
-                GetComponent<IDamageReceiver>(), 
                 _characterController,
                 transform,
-                _orientationService,
+                _detecionStatesContext,
                 _statesMachine.FromStateToState)                
         };
 
@@ -83,34 +83,7 @@ public class PatrolAndCloseCombatEnemyController : MonoBehaviour
     {
         _statesMachine.Update();
     }
-    /*
 
-    private void OnDrawGizmosSelected()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, _detectionRange);
-        if (_orientationService != null)
-        {
-            Gizmos.color = Color.cyan;
-            Gizmos.DrawLine(_orientationService.Position, _orientationService.Position + _orientationService.Forward);
-
-            Vector3 leftLimitDirection =
-            Quaternion.AngleAxis(-_halfFieldOfView, Vector3.up) * _orientationService.Forward;
-
-            Vector3 rightLimitDirection =
-            Quaternion.AngleAxis(_halfFieldOfView, Vector3.up) * _orientationService.Forward;
-
-            Gizmos.color = Color.blue;
-            Gizmos.DrawLine(
-                _orientationService.Position,
-                _orientationService.Position + leftLimitDirection * _detectionRange);
-
-            Gizmos.DrawLine(
-                _orientationService.Position,
-                _orientationService.Position + rightLimitDirection * _detectionRange);
-        }
-    }
-    */
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
