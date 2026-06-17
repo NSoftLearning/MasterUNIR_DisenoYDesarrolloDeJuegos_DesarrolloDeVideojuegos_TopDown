@@ -1,6 +1,5 @@
 using UnityEngine;
 using System.Collections.Generic;
-using UnityEngine.UI;
 
 public class InventoryUIManager : MonoBehaviour
 {
@@ -42,7 +41,19 @@ public class InventoryUIManager : MonoBehaviour
                 continue;
 
             GameObject newSlot = Instantiate(slotPrefab, inventorySlotsParent);
+            InventoryCellSlot inventoryCellSlot = newSlot.GetComponent<InventoryCellSlot>();
+
+            if (inventoryCellSlot != null)
+            {
+                inventoryCellSlot.Initialize(slot, i);
+            }
+
             GameObject itemInstance = Instantiate(baseItemPrefab, newSlot.transform);
+
+            if (inventoryCellSlot != null)
+            {
+                itemInstance.transform.SetParent(inventoryCellSlot.GetItemParent(), false);
+            }
 
             DraggableItem draggableItem = itemInstance.GetComponent<DraggableItem>();
             draggableItem.Initialize(slot.Item, i);
@@ -53,7 +64,8 @@ public class InventoryUIManager : MonoBehaviour
 
     private void DrawQuickAccess(InventorySO inventoryData)
     {
-        IReadOnlyList<InventorySlot> quickSlots = inventoryData.QuickAccessSlots;
+        IReadOnlyList<QuickAccessSlot> quickSlots = inventoryData.QuickAccessSlots;
+        IReadOnlyList<InventorySlot> inventorySlots = inventoryData.InventorySlots;
 
         for (int i = 0; i < quickAccessSlots.Count; i++)
         {
@@ -62,15 +74,25 @@ public class InventoryUIManager : MonoBehaviour
             if (i >= quickSlots.Count)
                 continue;
 
-            InventorySlot slot = quickSlots[i];
+            QuickAccessSlot quickSlot = quickSlots[i];
 
-            if (slot == null || slot.IsEmpty)
+            if (quickSlot == null || quickSlot.IsEmpty)
+                continue;
+
+            int inventoryIndex = quickSlot.InventoryIndex;
+
+            if (inventoryIndex < 0 || inventoryIndex >= inventorySlots.Count)
+                continue;
+
+            InventorySlot inventorySlot = inventorySlots[inventoryIndex];
+
+            if (inventorySlot == null || inventorySlot.IsEmpty)
                 continue;
 
             GameObject itemGraphic = Instantiate(quickAccessItemPrefab, quickAccessSlots[i]);
 
-            Image image = itemGraphic.GetComponent<Image>();
-            image.sprite = slot.Item.ItemIcon;
+            DraggableItem draggableItem = itemGraphic.GetComponent<DraggableItem>();
+            draggableItem.Initialize(inventorySlot.Item, inventoryIndex);
 
             quickAccessItemGraphics[i] = itemGraphic;
         }

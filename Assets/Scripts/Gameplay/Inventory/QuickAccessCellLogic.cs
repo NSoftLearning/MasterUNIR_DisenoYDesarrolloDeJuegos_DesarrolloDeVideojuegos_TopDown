@@ -21,5 +21,7 @@ public class QuickAccessCellLogic : MonoBehaviour, IDropHandler
             draggableItem.InventoryIndex,
             quickAccessIndex
         );
+
+        draggableItem.MarkAsDroppedSuccessfully();
     }
 }

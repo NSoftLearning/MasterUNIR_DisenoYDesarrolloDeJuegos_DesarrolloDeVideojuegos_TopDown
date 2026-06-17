@@ -7,14 +7,14 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
 {
     [Header("Events")]
     [SerializeField] private UnityEvent OnDropNullEvent;
-    
 
-    public Image image;
+    [SerializeField] private Image image;
 
     private RectTransform _rectTransform;
     private Canvas _canvas;
 
-    public Transform parentAfterDrag;
+    private Transform _parentAfterDrag;
+    private bool _wasDroppedSuccessfully;
 
     public ItemSO ItemData { get; private set; }
     public int InventoryIndex { get; private set; }
@@ -36,12 +36,17 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     {
         _rectTransform = GetComponent<RectTransform>();
         _canvas = GetComponentInParent<Canvas>();
-        image = GetComponent<Image>();
+
+        if (image == null)
+        {
+            image = GetComponent<Image>();
+        }
     }
 
     public void OnBeginDrag(PointerEventData eventData)
     {
-        parentAfterDrag = transform.parent;
+        _wasDroppedSuccessfully = false;
+        _parentAfterDrag = transform.parent;
 
         transform.SetParent(_canvas.transform);
         transform.SetAsLastSibling();
@@ -56,19 +61,19 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        transform.SetParent(parentAfterDrag);
+        transform.SetParent(_parentAfterDrag);
         transform.localPosition = Vector3.zero;
-       
-        image.raycastTarget = true;
-        
-            OnDropNullEvent.Invoke();
 
-        
-        
-        
+        image.raycastTarget = true;
+
+        if (!_wasDroppedSuccessfully)
+        {
+            OnDropNullEvent.Invoke();
+        }
     }
 
-
-
-    
+    public void MarkAsDroppedSuccessfully()
+    {
+        _wasDroppedSuccessfully = true;
+    }
 }

@@ -63,6 +63,7 @@ public class InventoryManager : MonoBehaviour
         currentInventory.AssignItemToQuickAccess(inventoryIndex, quickAccessIndex);
         RefreshUI();
     }
+
     public void RemoveItemFromQuickAccess(int quickAccessIndex)
     {
         currentInventory.RemoveItemFromQuickAccess(quickAccessIndex);

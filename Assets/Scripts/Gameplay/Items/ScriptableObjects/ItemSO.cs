@@ -7,6 +7,7 @@ public class ItemSO : ScriptableObject
     public string itemName;
     public int price;
 
-    public void UseItem() {}
-
+    public void UseItem()
+    {
+    }
 }
