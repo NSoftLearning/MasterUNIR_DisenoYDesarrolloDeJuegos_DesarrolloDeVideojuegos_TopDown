@@ -25,6 +25,7 @@ public class Life : MonoBehaviour, IDamageReceiver
         currentLife = startLife;
         hurtCollider = GetComponent<HurtCollider>();
         hurtCollider.onHitReceived.AddListener(OnHitReceived);
+        onLifeChanged.Invoke(currentLife, startLife);
     }
 
     private void OnHitReceived()
@@ -63,4 +64,27 @@ public class Life : MonoBehaviour, IDamageReceiver
     {
         return transform.position;
     }
+
+    public bool Heal(float amount)
+{
+    if (amount <= 0)
+        return false;
+
+    if (currentLife >= startLife)
+    {
+        Debug.Log("Life is already full.");
+        return false;
+    }
+
+    currentLife += amount;
+
+    if (currentLife > startLife)
+    {
+        currentLife = startLife;
+    }
+
+    onLifeChanged.Invoke(currentLife, startLife);
+
+    return true;
+}
 }

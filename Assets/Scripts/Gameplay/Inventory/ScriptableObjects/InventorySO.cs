@@ -71,7 +71,7 @@ public class InventorySO : ScriptableObject
         _inventorySlots.Add(itemSlot);
     }
 
-    public bool UseItemAt(int inventoryIndex)
+    public bool UseItemAt(int inventoryIndex, GameObject user)
     {
         if (inventoryIndex < 0 || inventoryIndex >= _inventorySlots.Count)
         {
@@ -87,15 +87,27 @@ public class InventorySO : ScriptableObject
             return false;
         }
 
-        slot.Item.UseItem();
-        slot.RemoveAmount(1);
+        ItemSO item = slot.Item;
 
-        if (slot.IsEmpty)
+        if (item == null)
+            return false;
+
+        bool usedSuccessfully = item.UseItem(user);
+
+        if (!usedSuccessfully)
+            return false;
+
+        if (item.ConsumeOnUse)
         {
-            _inventorySlots.RemoveAt(inventoryIndex);
+            slot.RemoveAmount(1);
 
-            ClearQuickAccessSlotsWithInventoryIndex(inventoryIndex);
-            FixQuickAccessIndexesAfterInventoryRemove(inventoryIndex);
+            if (slot.IsEmpty)
+            {
+                _inventorySlots.RemoveAt(inventoryIndex);
+
+                ClearQuickAccessSlotsWithInventoryIndex(inventoryIndex);
+                FixQuickAccessIndexesAfterInventoryRemove(inventoryIndex);
+            }
         }
 
         return true;

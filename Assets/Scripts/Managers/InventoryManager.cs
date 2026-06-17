@@ -5,7 +5,7 @@ public class InventoryManager : MonoBehaviour
 {
     [SerializeField] private InventoryUIManager inventoryUI;
     [SerializeField] private InventorySO currentInventory;
-
+    [SerializeField] private GameObject itemUser;
     public static InventoryManager Instance;
 
     [Header("Debug Settings")]
@@ -88,7 +88,7 @@ public class InventoryManager : MonoBehaviour
 
     public bool UseItemAt(int inventoryIndex)
     {
-        bool used = currentInventory.UseItemAt(inventoryIndex);
+        bool used = currentInventory.UseItemAt(inventoryIndex, itemUser);
 
         if (used)
         {

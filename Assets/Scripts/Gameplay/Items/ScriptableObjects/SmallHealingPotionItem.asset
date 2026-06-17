@@ -15,3 +15,7 @@ MonoBehaviour:
   ItemIcon: {fileID: -8919412109016482982, guid: d326e931fc8c72f4387b209bf07695c5, type: 3}
   itemName: Small Healing Potion
   price: 15
+  canBeUsed: 1
+  consumeOnUse: 1
+  effects:
+  - {fileID: 11400000, guid: 4c959b4f5f5ca544db5aca0db1ec2c7f, type: 2}

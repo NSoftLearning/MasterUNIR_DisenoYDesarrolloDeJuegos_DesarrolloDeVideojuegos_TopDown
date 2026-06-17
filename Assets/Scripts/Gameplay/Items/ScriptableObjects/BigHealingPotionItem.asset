@@ -15,3 +15,7 @@ MonoBehaviour:
   ItemIcon: {fileID: -420770097697643720, guid: bc444d451d80a3148b3d10b23da4be52, type: 3}
   itemName: Big Healing Potion
   price: 30
+  canBeUsed: 1
+  consumeOnUse: 1
+  effects:
+  - {fileID: 11400000, guid: 48566a1972495064ab4d4b2ebc52bbed, type: 2}
