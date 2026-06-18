@@ -370,10 +370,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InventoryManager
   inventoryUI: {fileID: 312426661}
-  currentInventory: {fileID: 11400000, guid: 902127f2b9da0f041a011b309cd6e58b, type: 2}
+  inventorySO: {fileID: 11400000, guid: 902127f2b9da0f041a011b309cd6e58b, type: 2}
   itemUser: {fileID: 1079372462}
   clearInventory: 0
   updateQuickAccess: 0
+  saveRuntimeToInventorySO: 0
   inventoryIndexToSetInFirstQuickAccess: 0
   inventoryIndexToSetInSecondQuickAccess: 0
 --- !u!1 &107660377
