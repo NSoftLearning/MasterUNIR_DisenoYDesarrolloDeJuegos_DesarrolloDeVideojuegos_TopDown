@@ -541,6 +541,8 @@ MonoBehaviour:
   _interact: {fileID: 1781555164194001046, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   _roll: {fileID: -7471211009204490832, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   _changeWeapon: {fileID: -7268751259513978244, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
+  _quickAccessOne: {fileID: -1723628257676900786, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
+  _quickAccessTwo: {fileID: 4194439079775097290, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
 --- !u!114 &9112945282021465350
 MonoBehaviour:
   m_ObjectHideFlags: 0
