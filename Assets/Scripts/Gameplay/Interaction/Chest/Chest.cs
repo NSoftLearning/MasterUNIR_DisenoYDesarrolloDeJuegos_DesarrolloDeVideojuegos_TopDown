@@ -14,6 +14,9 @@ public class Chest : MonoBehaviour, IInteractables
     [Header("Chest Event")]
     public UnityEvent eventoEfecto;
 
+    Coroutine fadeRoutine;
+
+
     void Awake()
     {
         anim = GetComponent<Animator>();
@@ -29,21 +32,23 @@ public class Chest : MonoBehaviour, IInteractables
 
     public void Select()
     {
-        if (!isOpen)
+        if (fadeRoutine != null)
         {
-            StopAllCoroutines();
-            StartCoroutine(FadeInKey());
-            Debug.Log("Cofre seleccionado");
+            StopCoroutine(fadeRoutine);
+            fadeRoutine = StartCoroutine(FadeInVisual());
         }
-            
+
     }
 
     public void Unselect()
     {
         if (!isOpen)
         {
-            StopAllCoroutines();
-            StartCoroutine(FadeOutKey());
+            if (fadeRoutine != null)
+            {
+                StopCoroutine(fadeRoutine);
+                fadeRoutine = StartCoroutine(FadeOutVisual());
+            }
             Debug.Log("Cofre deseleccionado");
         }
     }
@@ -58,8 +63,11 @@ public class Chest : MonoBehaviour, IInteractables
 
             eventoEfecto?.Invoke();
 
-            StopAllCoroutines();
-            StartCoroutine(FadeOutKey());
+            if (fadeRoutine != null)
+            {
+                StopCoroutine(fadeRoutine);
+                fadeRoutine = StartCoroutine(FadeOutVisual());
+            }
         }
         else
         {
@@ -67,9 +75,9 @@ public class Chest : MonoBehaviour, IInteractables
         }
     }
 
-    IEnumerator FadeInKey()
+    IEnumerator FadeInVisual()
     {
-        float alpha = 0f;
+        float alpha = spriteKey.color.a;
         while (alpha < 1f)
         {
             alpha += Time.deltaTime / fadeShowKey;
@@ -79,9 +87,9 @@ public class Chest : MonoBehaviour, IInteractables
         alpha = 1f;
     }
 
-    IEnumerator FadeOutKey()
+    IEnumerator FadeOutVisual()
     {
-        float alpha = 1f;
+        float alpha = spriteKey.color.a;
         while (alpha > 0f)
         {
             alpha -= Time.deltaTime / fadeShowKey;

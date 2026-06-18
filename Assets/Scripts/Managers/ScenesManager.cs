@@ -37,7 +37,7 @@ public class ScenesManager : MonoBehaviour
         Application.Quit();
     }
 
-IEnumerator FadeIn()
+    IEnumerator FadeIn()
     {
         fadeCanvasGroup.blocksRaycasts = true; // Bloquea la interacción mientras se realiza el fade
 
@@ -49,7 +49,7 @@ IEnumerator FadeIn()
             yield return null;
         }
         fadeCanvasGroup.alpha = 0f;
-        fadeCanvasGroup.blocksRaycasts = false; // Desbloquea la interacción mientras se realiza el fade
+        fadeCanvasGroup.blocksRaycasts = false; // Desbloquea la interacción cuando termina el fade
 
     }
 
