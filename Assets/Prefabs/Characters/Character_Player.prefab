@@ -443,6 +443,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7154107614453434666, guid: 7529b2afa91c15d4a883be5ae07470e6, type: 3}
+      propertyPath: stamina
+      value: 
+      objectReference: {fileID: 5138318767072083860}
     - target: {fileID: 7807025985240862038, guid: 7529b2afa91c15d4a883be5ae07470e6, type: 3}
       propertyPath: m_Name
       value: Character_Player
@@ -500,7 +504,21 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7807025985240862038, guid: 7529b2afa91c15d4a883be5ae07470e6, type: 3}
       insertIndex: -1
       addedObject: {fileID: 9112945282021465350}
+    - targetCorrespondingSourceObject: {fileID: 7807025985240862038, guid: 7529b2afa91c15d4a883be5ae07470e6, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1325760068058816757}
   m_SourcePrefab: {fileID: 100100000, guid: 7529b2afa91c15d4a883be5ae07470e6, type: 3}
+--- !u!114 &5138318767072083860 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4736413475477760085, guid: 7529b2afa91c15d4a883be5ae07470e6, type: 3}
+  m_PrefabInstance: {fileID: 501561229093132225}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7687019504038238871}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f89545d076d1354b8e5e5739854331a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CharacterController
 --- !u!1 &7687019504038238871 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7807025985240862038, guid: 7529b2afa91c15d4a883be5ae07470e6, type: 3}
@@ -539,6 +557,24 @@ MonoBehaviour:
   attackPosDown: {fileID: 2254046336094183226}
   attackPosLeft: {fileID: 6424038961447758484}
   attackPosRight: {fileID: 8163314322000277955}
+--- !u!114 &1325760068058816757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7687019504038238871}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9587d63bd6c12f42a4f79655cb57b32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DamageFeedback
+  _damage: {fileID: 8300000, guid: 5d6d90867c581a54d8ab7748f8c30dd7, type: 3}
+  _death: {fileID: 8300000, guid: bc358ad128756f74c94813f541eb9fb6, type: 3}
+  _heal: {fileID: 8300000, guid: 1682adcfb6e592c4b895649b3433ca56, type: 3}
+  _damageVolume: 0.166
+  _deathVolume: 0.13
+  _healVolume: 0.166
 --- !u!4 &8292577977202254779 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8494001086697993338, guid: 7529b2afa91c15d4a883be5ae07470e6, type: 3}
