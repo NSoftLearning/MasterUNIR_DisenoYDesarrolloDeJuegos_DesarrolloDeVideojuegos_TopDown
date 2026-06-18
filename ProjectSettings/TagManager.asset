@@ -57,6 +57,9 @@ TagManager:
   - name: Walls
     uniqueID: 1073933119
     locked: 0
+  - name: Foregound
+    uniqueID: 2577505835
+    locked: 0
   - name: UI
     uniqueID: 3193302333
     locked: 0
