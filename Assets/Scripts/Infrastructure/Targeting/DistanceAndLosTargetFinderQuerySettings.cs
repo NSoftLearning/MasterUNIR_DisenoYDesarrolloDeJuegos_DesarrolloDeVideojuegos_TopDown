@@ -1,11 +1,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public struct BasicTargetFinderQuerySettings <TARGET_TYPE> : IOrientedTargetFinderQuery, ITargetFinderWithIgnoreQuery<TARGET_TYPE>
+public struct DistanceAndLosTargetFinderQuerySettings <TARGET_TYPE> : IOrientedTargetFinderQuery, ITargetFinderWithIgnoreQuery<TARGET_TYPE>
 {
     public LayerMask layersToSearch;
     public float range;
-    public List<SideSO> sidesToSearch;
     public Transform origintransform;
     public Vector3 originForward;
     public float halfFieldOfView;
@@ -16,10 +15,9 @@ public struct BasicTargetFinderQuerySettings <TARGET_TYPE> : IOrientedTargetFind
         set => originForward = value; }
     public TARGET_TYPE IgnoredTarget { get => ignoredTarget; set =>ignoredTarget = value; }
 
-    public BasicTargetFinderQuerySettings (
+    public DistanceAndLosTargetFinderQuerySettings (
         LayerMask layersToSearch,
-        float range, 
-        List<SideSO> sidesToSearch, 
+        float range,  
         Transform originTransform,
         Vector3 originForward,
         float halfFieldOfView,
@@ -28,7 +26,6 @@ public struct BasicTargetFinderQuerySettings <TARGET_TYPE> : IOrientedTargetFind
     {
         this.layersToSearch = layersToSearch;
         this.range = range;
-        this.sidesToSearch = sidesToSearch;
         this.origintransform = originTransform;
         this.closeRange = closeRange;
         this.halfFieldOfView = halfFieldOfView;

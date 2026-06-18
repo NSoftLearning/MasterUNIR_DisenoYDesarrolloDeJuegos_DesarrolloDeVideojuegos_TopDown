@@ -13,7 +13,9 @@ public class SeekingState<TStateId> : IGenericState<TStateId> where TStateId : E
     private Transform _transform;
 
     private StateChangeDelegate<TStateId> _stateChangeDelegate;
-    DetectionWithForwardAndIgnoreContext<IDamageReceiver, BasicTargetFinderQuerySettings<IDamageReceiver>> _detectionContext;
+    private List<DamageableTypeSO> _damageableTypesOfInterest;
+    private DamageReceiverTargetSelector _targetSelector;
+    DetectionWithForwardAndIgnoreContext<IDamageReceiver, DistanceAndLosTargetFinderQuerySettings<IDamageReceiver>> _detectionContext;
     float _searchPersistenceTime;
 
 
@@ -26,7 +28,9 @@ public class SeekingState<TStateId> : IGenericState<TStateId> where TStateId : E
         float searchPersistenceTime,
         CustomCharacterController customCharacterController,
         Transform thisTransform,
-        DetectionWithForwardAndIgnoreContext<IDamageReceiver, BasicTargetFinderQuerySettings<IDamageReceiver>>  detectionContext,
+        DetectionWithForwardAndIgnoreContext<IDamageReceiver, DistanceAndLosTargetFinderQuerySettings<IDamageReceiver>>  detectionContext,
+        List<DamageableTypeSO> damageableTypesOfInterest,
+        DamageReceiverTargetSelector targetSelector,
         StateChangeDelegate <TStateId> stateChangeDelegate)
     {
         StateId = thisStateId;
@@ -36,6 +40,8 @@ public class SeekingState<TStateId> : IGenericState<TStateId> where TStateId : E
         _customCharacterController = customCharacterController;
         _transform = thisTransform;
         _stateChangeDelegate = stateChangeDelegate;
+        _damageableTypesOfInterest = damageableTypesOfInterest;
+        _targetSelector = targetSelector; 
         _detectionContext = detectionContext;
     }
 
@@ -60,22 +66,26 @@ public class SeekingState<TStateId> : IGenericState<TStateId> where TStateId : E
 
     private bool ChangeStateDueTargetLost()
     {
-        _targetsFound.Clear();
+        List<FoundTargetDTO<IDamageReceiver>> detectedTargets =
+            _detectionContext.targetFinder.FindTargets(_detectionContext.GetCurrentQueryData());
 
-        _targetsFound = _detectionContext.targetFinder.FindTargets(_detectionContext.GetCurrentQueryData());
-        if (_targetsFound.Count > 0)
+        if (_targetSelector.TryGetTargetOfInterest(
+                detectedTargets,
+                out FoundTargetDTO<IDamageReceiver> targetOfInterest))
         {
+            _targetsFound.Clear();
+            _targetsFound.Add(targetOfInterest);
+
             _willDesistAt = Time.time + _searchPersistenceTime;
             return false;
         }
-        else
+
+        if (Time.time > _willDesistAt)
         {
-            if (Time.time > _willDesistAt)
-            {
-                _stateChangeDelegate.Invoke(StateId, _handleTargetLost);
-                return true;
-            }
-            return false;
+            _stateChangeDelegate.Invoke(StateId, _handleTargetLost);
+            return true;
         }
+
+        return false;
     }
 }

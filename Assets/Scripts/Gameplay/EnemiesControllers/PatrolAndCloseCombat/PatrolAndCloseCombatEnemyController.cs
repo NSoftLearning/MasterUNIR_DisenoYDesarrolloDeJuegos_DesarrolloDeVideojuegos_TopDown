@@ -7,7 +7,7 @@ public class PatrolAndCloseCombatEnemyController : MonoBehaviour
 {
     [SerializeField] float _detectionRange;
     [SerializeField] float _closeDetectionRange;
-    [SerializeField] List<SideSO> _sidesToSearchFor;
+    [SerializeField] List<DamageableTypeSO> _damageableTypesOfInterest;
     [SerializeField] LayerMask layerstToSearchForTarget;
     [SerializeField] float _searchPersistenceTime;
     [SerializeField] float _halfFieldOfView;
@@ -15,14 +15,14 @@ public class PatrolAndCloseCombatEnemyController : MonoBehaviour
     GenericStateMachine<PatrolAndCloseCombatStateId> _statesMachine;
 
     CustomCharacterController _characterController;
-    ITargetFinder<IDamageReceiver, BasicTargetFinderQuerySettings<IDamageReceiver>> _targetFinder;
-    DetectionWithForwardAndIgnoreContext<IDamageReceiver, BasicTargetFinderQuerySettings<IDamageReceiver>> _detecionStatesContext;
+    ITargetFinder<IDamageReceiver, DistanceAndLosTargetFinderQuerySettings<IDamageReceiver>> _targetFinder;
+    DetectionWithForwardAndIgnoreContext<IDamageReceiver, DistanceAndLosTargetFinderQuerySettings<IDamageReceiver>> _detecionStatesContext;
 
     IOrientationService _orientationService;
-
+    DamageReceiverTargetSelector _targetSelector;
     
     public void InjectDependencies (
-        ITargetFinder<IDamageReceiver, BasicTargetFinderQuerySettings<IDamageReceiver>> targetFinder,
+        ITargetFinder<IDamageReceiver, DistanceAndLosTargetFinderQuerySettings<IDamageReceiver>> targetFinder,
         IOrientationService orientationService,
         CustomCharacterController custmCharacterController)
     {
@@ -33,12 +33,13 @@ public class PatrolAndCloseCombatEnemyController : MonoBehaviour
 
     private void Start()
     {
+        _targetSelector = new DamageReceiverTargetSelector(_damageableTypesOfInterest);
+
         _detecionStatesContext =
-            new DetectionWithForwardAndIgnoreContext<IDamageReceiver, BasicTargetFinderQuerySettings<IDamageReceiver>>(
-                new BasicTargetFinderQuerySettings<IDamageReceiver>(
+            new DetectionWithForwardAndIgnoreContext<IDamageReceiver, DistanceAndLosTargetFinderQuerySettings<IDamageReceiver>>(
+                new DistanceAndLosTargetFinderQuerySettings<IDamageReceiver>(
                     layerstToSearchForTarget,
                     _detectionRange,
-                    _sidesToSearchFor,
                     _detectionOriginTransform,
                     _orientationService.Forward,
                     _halfFieldOfView,
@@ -66,6 +67,8 @@ public class PatrolAndCloseCombatEnemyController : MonoBehaviour
                 PatrolAndCloseCombatStateId.Patrolling,
                 PatrolAndCloseCombatStateId.Seeking,
                 _detecionStatesContext,
+                _targetSelector,
+                _damageableTypesOfInterest,
                 _statesMachine.FromStateToState),
             new SeekingState<PatrolAndCloseCombatStateId> (
                 PatrolAndCloseCombatStateId.Seeking,
@@ -75,6 +78,8 @@ public class PatrolAndCloseCombatEnemyController : MonoBehaviour
                 _characterController,
                 transform,
                 _detecionStatesContext,
+                _damageableTypesOfInterest,
+                _targetSelector,
                 _statesMachine.FromStateToState)                
         };
 

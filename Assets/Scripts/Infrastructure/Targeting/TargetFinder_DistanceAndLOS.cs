@@ -2,10 +2,10 @@ using System.Collections.Generic;
 
 using UnityEngine;
 
-public class TargetFinder_DistanceAndLOS<TARGET_TYPE> : ITargetFinder<TARGET_TYPE, BasicTargetFinderQuerySettings <TARGET_TYPE>>
+public class TargetFinder_DistanceAndLOS<TARGET_TYPE> : ITargetFinder<TARGET_TYPE, DistanceAndLosTargetFinderQuerySettings <TARGET_TYPE>>
 { 
 
-    public List<FoundTargetDTO<TARGET_TYPE>> FindTargets(BasicTargetFinderQuerySettings<TARGET_TYPE> queryData)
+    public List<FoundTargetDTO<TARGET_TYPE>> FindTargets(DistanceAndLosTargetFinderQuerySettings<TARGET_TYPE> queryData)
     {
         List<FoundTargetDTO<TARGET_TYPE>> typedTargetsCandidateList =  GetTypedTargetsByDistance(queryData);
         List<FoundTargetDTO<TARGET_TYPE>> typedTargetsFinalList = new List<FoundTargetDTO<TARGET_TYPE>>();
@@ -23,7 +23,7 @@ public class TargetFinder_DistanceAndLOS<TARGET_TYPE> : ITargetFinder<TARGET_TYP
         return typedTargetsFinalList;
     }
 
-    List<FoundTargetDTO<TARGET_TYPE>> GetTypedTargetsByDistance(BasicTargetFinderQuerySettings<TARGET_TYPE> queryData)
+    List<FoundTargetDTO<TARGET_TYPE>> GetTypedTargetsByDistance(DistanceAndLosTargetFinderQuerySettings<TARGET_TYPE> queryData)
     {
         Collider2D[] candidatesToTarget = Physics2D.OverlapCircleAll(
             queryData.origintransform.position,
