@@ -35,14 +35,14 @@ public class SpikeTrap : MonoBehaviour, ITrap
 
         Invoke(nameof(SetCanActivate), _timeToCanActivateAgain);
 
-        OnActivate.Invoke();
+        OnActivate?.Invoke();
     }
 
     public void Deactivate()
     {
         anim.SetBool("Activated", false);
 
-        OnDeactivate.Invoke();
+        OnDeactivate?.Invoke();
     }
 
     private void SetCanActivate()

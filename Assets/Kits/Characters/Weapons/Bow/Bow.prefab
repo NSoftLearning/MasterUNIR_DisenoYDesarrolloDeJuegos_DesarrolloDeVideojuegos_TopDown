@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1464993690060409064}
   - component: {fileID: -8851718440514811819}
   - component: {fileID: 8938443947246277629}
+  - component: {fileID: -7740583118634584139}
   m_Layer: 0
   m_Name: Bow
   m_TagString: Untagged
@@ -108,3 +109,17 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!114 &-7740583118634584139
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6332721537476513053}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1f3678e432ece84e85ee81686e41519, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WeaponFeedback
+  _attack: {fileID: 8300000, guid: 26d951f02554aa3419a8ed8c0756a934, type: 3}
+  _attackVolume: 0.1
