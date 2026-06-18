@@ -31,7 +31,7 @@ public class FireBallTrap : MonoBehaviour, ITrap
         Projectile proj = spawned.GetComponent<Projectile>();
         proj.SetDirection(_direction);
 
-        OnActivate.Invoke();
+        OnActivate?.Invoke();
     }
 
     IEnumerator SpawnBalls()
@@ -50,6 +50,6 @@ public class FireBallTrap : MonoBehaviour, ITrap
     {
         StopCoroutine(SpawnBalls());
 
-        OnDeactivate.Invoke();
+        OnDeactivate?.Invoke();
     }
 }

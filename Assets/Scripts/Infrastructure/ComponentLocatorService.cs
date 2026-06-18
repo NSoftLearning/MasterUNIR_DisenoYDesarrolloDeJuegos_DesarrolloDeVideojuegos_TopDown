@@ -1,5 +1,6 @@
 using UnityEngine;
 
+//Unico singleton
 public class ComponentLocatorService
 {
     public static ComponentsLibrary Components => _componentsLibrary;

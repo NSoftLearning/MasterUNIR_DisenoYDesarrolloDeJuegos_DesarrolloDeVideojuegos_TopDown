@@ -339,14 +339,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 5848659352727746750, guid: 3ec7e9a66537dc1458d79c1432887ca7, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7331184815814631147, guid: 3ec7e9a66537dc1458d79c1432887ca7, type: 3}
-      propertyPath: stamina
-      value: 
-      objectReference: {fileID: 128296464}
     - target: {fileID: 7687019504038238871, guid: 3ec7e9a66537dc1458d79c1432887ca7, type: 3}
       propertyPath: m_Name
       value: Character_Player
@@ -394,17 +386,14 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 7687019504038238871, guid: 3ec7e9a66537dc1458d79c1432887ca7, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 128296467}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3ec7e9a66537dc1458d79c1432887ca7, type: 3}
 --- !u!114 &128296464 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5138318767072083860, guid: 3ec7e9a66537dc1458d79c1432887ca7, type: 3}
   m_PrefabInstance: {fileID: 128296463}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 128296466}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8f89545d076d1354b8e5e5739854331a, type: 3}
@@ -415,33 +404,12 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 192494241397025574, guid: 3ec7e9a66537dc1458d79c1432887ca7, type: 3}
   m_PrefabInstance: {fileID: 128296463}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 128296466}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e58d3f57365ac4d4cb4b2a181331496d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Life
---- !u!1 &128296466 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7687019504038238871, guid: 3ec7e9a66537dc1458d79c1432887ca7, type: 3}
-  m_PrefabInstance: {fileID: 128296463}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &128296467
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 128296466}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b9587d63bd6c12f42a4f79655cb57b32, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DamageFeedback
-  _damage: {fileID: 8300000, guid: 5d6d90867c581a54d8ab7748f8c30dd7, type: 3}
-  _death: {fileID: 8300000, guid: bc358ad128756f74c94813f541eb9fb6, type: 3}
-  _damageVolume: 0.166
-  _deathVolume: 0.13
 --- !u!1 &229913592
 GameObject:
   m_ObjectHideFlags: 0
@@ -1465,6 +1433,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2853373700699954859, guid: 2664b29c60afb234babf4f7346b40f34, type: 3}
+      propertyPath: _sfxManager
+      value: 
+      objectReference: {fileID: 1838547495}
     - target: {fileID: 8054697394798661580, guid: 2664b29c60afb234babf4f7346b40f34, type: 3}
       propertyPath: m_LocalPosition.x
       value: -4.41273
@@ -2078,14 +2050,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 345938593783253856, guid: c2811d92977b1ec4da277e08ba4ddb5e, type: 3}
-      propertyPath: m_Size.x
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 345938593783253856, guid: c2811d92977b1ec4da277e08ba4ddb5e, type: 3}
-      propertyPath: m_SpriteTilingProperty.newSize.x
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 4061181765763812478, guid: c2811d92977b1ec4da277e08ba4ddb5e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 6.32
@@ -2126,10 +2090,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
-    - target: {fileID: 6900221959645759255, guid: c2811d92977b1ec4da277e08ba4ddb5e, type: 3}
-      propertyPath: m_Size.x
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 7666863077999301388, guid: c2811d92977b1ec4da277e08ba4ddb5e, type: 3}
       propertyPath: m_Name
       value: LinearTrap
@@ -2147,13 +2107,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 934804880651141395, guid: 2d6664fbeafee234d80ebe262502609f, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3180989980127624292, guid: 2d6664fbeafee234d80ebe262502609f, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 5.01
+    - target: {fileID: 1120534993330081903, guid: 2d6664fbeafee234d80ebe262502609f, type: 3}
+      propertyPath: _trapVolume
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 8445904293515666297, guid: 2d6664fbeafee234d80ebe262502609f, type: 3}
       propertyPath: m_Name
