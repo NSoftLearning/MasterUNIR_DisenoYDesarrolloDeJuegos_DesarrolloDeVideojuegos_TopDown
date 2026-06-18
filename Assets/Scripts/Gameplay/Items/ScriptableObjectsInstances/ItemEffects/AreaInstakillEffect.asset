@@ -12,4 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 379ea51985a257d47a214a0cf342131e, type: 3}
   m_Name: AreaInstakillEffect
   m_EditorClassIdentifier: Assembly-CSharp::AreaDamageEffectSO
+  damage: 100
+  targetDamageables:
+  - {fileID: 11400000, guid: 5ed885d083d7ece418e4eec0dd191588, type: 2}
   radius: 3
+  knockbackForce: 1
