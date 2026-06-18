@@ -6,7 +6,7 @@ using static UnityEngine.UI.Image;
 public class PatrolAndCloseCombatEnemyController : MonoBehaviour
 {
     [SerializeField] float _detectionRange;
-    [SerializeField] float _closeDetectionRange;
+    [SerializeField] float closeQuartersRange;
     [SerializeField] List<DamageableTypeSO> _damageableTypesOfInterest;
     [SerializeField] LayerMask layerstToSearchForTarget;
     [SerializeField] float _searchPersistenceTime;
@@ -17,7 +17,7 @@ public class PatrolAndCloseCombatEnemyController : MonoBehaviour
     CustomCharacterController _characterController;
     ITargetFinder<IDamageReceiver, DistanceAndLosTargetFinderQuerySettings<IDamageReceiver>> _targetFinder;
     DetectionWithForwardAndIgnoreContext<IDamageReceiver, DistanceAndLosTargetFinderQuerySettings<IDamageReceiver>> _detecionStatesContext;
-
+    IEnemyAttack _enemyAttack;
     IOrientationService _orientationService;
     DamageReceiverTargetSelector _targetSelector;
     
@@ -43,7 +43,7 @@ public class PatrolAndCloseCombatEnemyController : MonoBehaviour
                     _detectionOriginTransform,
                     _orientationService.Forward,
                     _halfFieldOfView,
-                    _closeDetectionRange,
+                    closeQuartersRange,
                     GetComponent<IDamageReceiver>()),
                 _targetFinder,
                 _orientationService,
@@ -78,8 +78,9 @@ public class PatrolAndCloseCombatEnemyController : MonoBehaviour
                 _characterController,
                 transform,
                 _detecionStatesContext,
-                _damageableTypesOfInterest,
+                //_damageableTypesOfInterest,
                 _targetSelector,
+                _enemyAttack,
                 _statesMachine.FromStateToState)                
         };
 
@@ -96,7 +97,7 @@ public class PatrolAndCloseCombatEnemyController : MonoBehaviour
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(_detectionOriginTransform.transform.position, _detectionRange);
-        Gizmos.DrawWireSphere(_detectionOriginTransform.position, _closeDetectionRange);
+        Gizmos.DrawWireSphere(_detectionOriginTransform.position, closeQuartersRange);
 
         if (_orientationService == null)
             return;

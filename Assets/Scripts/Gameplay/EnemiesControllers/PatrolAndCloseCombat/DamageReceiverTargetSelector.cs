@@ -16,7 +16,7 @@ public class DamageReceiverTargetSelector
     {
         foreach (FoundTargetDTO<IDamageReceiver> foundTarget in targetsFound)
         {
-            if (foundTarget.target.CanDamage(_damageableTypesOfInterest))
+            if (foundTarget.target.DamageIsCompatible(_damageableTypesOfInterest))
             {
                 targetOfInterest = foundTarget;
                 return true;

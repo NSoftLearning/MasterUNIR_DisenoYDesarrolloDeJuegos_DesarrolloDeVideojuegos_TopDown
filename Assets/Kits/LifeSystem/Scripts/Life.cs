@@ -62,22 +62,23 @@ public class Life : MonoBehaviour, IDamageReceiver
 
         currentLife -= damageData.damageAmount;
 
-        LifeChanged.Invoke(
+        LifeChanged?.Invoke(
             new LifeChangedDTO { 
                 currentValue = currentLife,
                 maxValue = startLife,
                 deltaValue = damageData.damageAmount});
 
         if (currentLife <= 0)
-            Died.Invoke();
+            Died?.Invoke();
 
         return true;
 
     }
 
-    public bool CanDamage(List<DamageableTypeSO> targetTypes)
+    public bool CanDamage(FoundTargetDTO<IDamageReceiver> candidateTargets)
     {
-        return targetTypes.Contains(type);
+        //return targetTypes.Contains(type);
+        return false;
     }
 
 
@@ -113,5 +114,12 @@ public class Life : MonoBehaviour, IDamageReceiver
    // onLifeChanged.Invoke(currentLife, startLife);
 
     return true;
-}
+    }
+
+    public bool DamageIsCompatible(List<DamageableTypeSO> compatibleTargetTypes)
+    {
+        if (compatibleTargetTypes.Contains(type))
+            return true;
+        return false;
+    }
 }

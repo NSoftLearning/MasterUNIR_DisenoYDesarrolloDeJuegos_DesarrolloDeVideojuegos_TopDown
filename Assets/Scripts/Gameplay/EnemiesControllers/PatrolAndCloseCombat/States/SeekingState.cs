@@ -13,24 +13,26 @@ public class SeekingState<TStateId> : IGenericState<TStateId> where TStateId : E
     private Transform _transform;
 
     private StateChangeDelegate<TStateId> _stateChangeDelegate;
-    private List<DamageableTypeSO> _damageableTypesOfInterest;
+    //private List<DamageableTypeSO> _damageableTypesOfInterest;
     private DamageReceiverTargetSelector _targetSelector;
     DetectionWithForwardAndIgnoreContext<IDamageReceiver, DistanceAndLosTargetFinderQuerySettings<IDamageReceiver>> _detectionContext;
+    private IEnemyAttack _enemyAttack;
     float _searchPersistenceTime;
 
 
-    List<FoundTargetDTO<IDamageReceiver>> _targetsFound = new ();
+    List<FoundTargetDTO<IDamageReceiver>> _currentTargetsOfInterest = new ();
     float _willDesistAt = 0;
-    public SeekingState (
+    public SeekingState(
         TStateId thisStateId,
         TStateId handleTargetReached,
         TStateId handleTargetMissed,
         float searchPersistenceTime,
         CustomCharacterController customCharacterController,
         Transform thisTransform,
-        DetectionWithForwardAndIgnoreContext<IDamageReceiver, DistanceAndLosTargetFinderQuerySettings<IDamageReceiver>>  detectionContext,
-        List<DamageableTypeSO> damageableTypesOfInterest,
+        DetectionWithForwardAndIgnoreContext<IDamageReceiver, DistanceAndLosTargetFinderQuerySettings<IDamageReceiver>> detectionContext,
+       // List<DamageableTypeSO> damageableTypesOfInterest,
         DamageReceiverTargetSelector targetSelector,
+        IEnemyAttack enemyAttack,
         StateChangeDelegate <TStateId> stateChangeDelegate)
     {
         StateId = thisStateId;
@@ -40,9 +42,10 @@ public class SeekingState<TStateId> : IGenericState<TStateId> where TStateId : E
         _customCharacterController = customCharacterController;
         _transform = thisTransform;
         _stateChangeDelegate = stateChangeDelegate;
-        _damageableTypesOfInterest = damageableTypesOfInterest;
+       // _damageableTypesOfInterest = damageableTypesOfInterest;
         _targetSelector = targetSelector; 
         _detectionContext = detectionContext;
+        _enemyAttack = enemyAttack;
     }
 
     public void Enter()
@@ -58,14 +61,29 @@ public class SeekingState<TStateId> : IGenericState<TStateId> where TStateId : E
 
     public void Tick()
     {
-        if (ChangeStateDueTargetLost())
-            return;
-        if (_targetsFound.Count > 0)
-            _customCharacterController.SetRawMovement((_targetsFound[0].target.GetPosition() - _transform.position).normalized);
+        RefreshDetectedTargets();
+      // if (_currentTargetsOfInterest.Count == 0)
+        //{
+          //  _willDesistAt = Time.time + _searchPersistenceTime;
+       // }
+       
+
+        if (_currentTargetsOfInterest.Count > 0)
+        {
+            _customCharacterController.SetRawMovement((_currentTargetsOfInterest[0].target.GetPosition() - _transform.position).normalized);
+            _willDesistAt = Time.time + _searchPersistenceTime;
+        }
+        
+        if (Time.time > _willDesistAt)
+        {
+            _stateChangeDelegate.Invoke(StateId, _handleTargetLost);
+            return;            
+        }
     }
 
-    private bool ChangeStateDueTargetLost()
+    private void RefreshDetectedTargets()
     {
+        _currentTargetsOfInterest.Clear();
         List<FoundTargetDTO<IDamageReceiver>> detectedTargets =
             _detectionContext.targetFinder.FindTargets(_detectionContext.GetCurrentQueryData());
 
@@ -73,19 +91,21 @@ public class SeekingState<TStateId> : IGenericState<TStateId> where TStateId : E
                 detectedTargets,
                 out FoundTargetDTO<IDamageReceiver> targetOfInterest))
         {
-            _targetsFound.Clear();
-            _targetsFound.Add(targetOfInterest);
+            
+            _currentTargetsOfInterest.Add(targetOfInterest);
 
-            _willDesistAt = Time.time + _searchPersistenceTime;
-            return false;
+           // _willDesistAt = Time.time + _searchPersistenceTime;
+           // return false;
         }
 
-        if (Time.time > _willDesistAt)
-        {
-            _stateChangeDelegate.Invoke(StateId, _handleTargetLost);
-            return true;
-        }
+   //     if (Time.time > _willDesistAt)
+     //   {
+   //         _stateChangeDelegate.Invoke(StateId, _handleTargetLost);
+  //          return true;
+   //     }
 
-        return false;
+   //     return false;
     }
+
+
 }
