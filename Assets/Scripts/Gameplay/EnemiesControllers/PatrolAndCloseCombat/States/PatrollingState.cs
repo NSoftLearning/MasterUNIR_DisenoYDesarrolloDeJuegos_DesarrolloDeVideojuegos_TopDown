@@ -8,28 +8,19 @@ public class PatrollingState<TStateId> : IGenericState<TStateId> where TStateId 
 
     TStateId _nextStateId; 
     private StateChangeDelegate<TStateId> _stateChangeDelegate;
-    private ITargetFinder<IDamageReceiver, BasicTargetFinderQuerySettings> _targetFinder;
-    private IOrientationService _orientationService;
-    private List <IDamageReceiver> _selfDamageRecevier;
-    private BasicTargetFinderQuerySettings _targetFinderDTO;
-     
+    DetectionWithForwardAndIgnoreContext<IDamageReceiver, BasicTargetFinderQuerySettings<IDamageReceiver>> _context;
+         
     public PatrollingState (
         TStateId thisStateId,
         TStateId nextStateId,
-        BasicTargetFinderQuerySettings targetFinderQuerySettings,
-        ITargetFinder <IDamageReceiver, BasicTargetFinderQuerySettings> targetFidner, 
-        IDamageReceiver selfDamageReceiver,
-        IOrientationService orientationService,
+        DetectionWithForwardAndIgnoreContext<IDamageReceiver, BasicTargetFinderQuerySettings<IDamageReceiver>> context,
         StateChangeDelegate<TStateId> stateChangeDelegate
         )
     {
         StateId = thisStateId;
         _nextStateId = nextStateId;
-        _targetFinderDTO = targetFinderQuerySettings;
+        _context = context;
         _stateChangeDelegate = stateChangeDelegate;
-        _targetFinder = targetFidner;
-        _orientationService = orientationService;
-        _selfDamageRecevier = new List<IDamageReceiver> { selfDamageReceiver };
     }
 
     public void Enter()
@@ -44,7 +35,8 @@ public class PatrollingState<TStateId> : IGenericState<TStateId> where TStateId 
 
     public void Tick()
     {
-        List<FoundTargetDTO<IDamageReceiver>> targetsFound = _targetFinder.FindTargets(_targetFinderDTO, _selfDamageRecevier, _orientationService.Forward);
+        List<FoundTargetDTO<IDamageReceiver>> targetsFound =
+            _context.targetFinder.FindTargets(_context.GetCurrentQueryData());
         if (targetsFound.Count > 0)
             _stateChangeDelegate.Invoke(StateId, _nextStateId);
             

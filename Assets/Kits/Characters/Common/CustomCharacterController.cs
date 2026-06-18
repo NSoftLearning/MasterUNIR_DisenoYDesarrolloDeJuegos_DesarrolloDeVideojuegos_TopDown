@@ -34,7 +34,7 @@ public class CustomCharacterController : MonoBehaviour, IVisible, IOrientationSe
     public Vector3 Position => _position;
     public Vector3 Forward => _forward;
 
-    float stamina = 0;
+    float stamina = 0; // Stamina actual
     private void Awake()
     {
         _capsuleCollider = GetComponent<CapsuleCollider2D>();
