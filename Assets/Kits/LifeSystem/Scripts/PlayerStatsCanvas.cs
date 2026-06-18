@@ -43,9 +43,9 @@ public class PlayerStatsCanvas : MonoBehaviour
 
     private void OnStaminaChange(float currentStamina, float startingStamina)
     {
-        //staminaBar.maxValue = startingStamina;
-      //  staminaBar.wholeNumbers = false; //NO baja por segmentos enteros
-       // staminaBar.value = currentStamina;
+        staminaBar.maxValue = startingStamina;
+        staminaBar.wholeNumbers = false; //NO baja por segmentos enteros
+        staminaBar.value = currentStamina;
     }
 
     private void OnDisable()
