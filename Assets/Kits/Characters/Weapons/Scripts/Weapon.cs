@@ -8,6 +8,7 @@ public abstract class Weapon : MonoBehaviour
     [SerializeField] protected float _neededStamina = 0.2f;
     [SerializeField] bool _destroyAttackOnFinish = true;
 
+    public event Action OnAttack;
     public event Action FinishedAttack;
 
     public float GetNeededStamina()
@@ -35,6 +36,8 @@ public abstract class Weapon : MonoBehaviour
         anim.SetFloat("VerticalDirection", y);
 
         Invoke(nameof(FinishAttack), _timeBetweenAttacks);
+
+        OnAttack?.Invoke();
     }
 
     private void FinishAttack()

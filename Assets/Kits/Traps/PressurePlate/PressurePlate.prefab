@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6816808994699658023}
   - component: {fileID: 4026002418560380024}
   - component: {fileID: 2677839642039568366}
+  - component: {fileID: 6918756949011746475}
   m_Layer: 0
   m_Name: PressurePlate
   m_TagString: Untagged
@@ -143,6 +144,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TrapTrigger
   _trapObj: {fileID: 5326287822861723545}
+  _deactivateOnExit: 1
 --- !u!61 &2677839642039568366
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -189,3 +191,19 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.6, y: 0.6}
   m_EdgeRadius: 0
+--- !u!114 &6918756949011746475
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5326287822861723545}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce3cefcbd6eea6445b449bea51139ef6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TrapFeedback
+  _trapSound: {fileID: 8300000, guid: f3d69e576cdd6e94c93f172d40059e98, type: 3}
+  _trapDeactivateSound: {fileID: 8300000, guid: f3d69e576cdd6e94c93f172d40059e98, type: 3}
+  _trapVolume: 0.166
+  _trapDeactivateSoundVolume: 0.166

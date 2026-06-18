@@ -24,13 +24,13 @@ public class PressurePlate : MonoBehaviour, ITrap
 
         trap.Activate();
 
-        OnActivate.Invoke();
+        OnActivate?.Invoke();
     }
 
     public void Deactivate()
     {
         anim.SetBool("Activated", false);
 
-        OnDeactivate.Invoke();
+        OnDeactivate?.Invoke();
     }
 }

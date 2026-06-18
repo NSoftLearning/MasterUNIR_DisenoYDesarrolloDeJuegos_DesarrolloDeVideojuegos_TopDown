@@ -1433,6 +1433,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2853373700699954859, guid: 2664b29c60afb234babf4f7346b40f34, type: 3}
+      propertyPath: _sfxManager
+      value: 
+      objectReference: {fileID: 1838547495}
     - target: {fileID: 8054697394798661580, guid: 2664b29c60afb234babf4f7346b40f34, type: 3}
       propertyPath: m_LocalPosition.x
       value: -4.41273
@@ -2046,14 +2050,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 345938593783253856, guid: c2811d92977b1ec4da277e08ba4ddb5e, type: 3}
-      propertyPath: m_Size.x
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 345938593783253856, guid: c2811d92977b1ec4da277e08ba4ddb5e, type: 3}
-      propertyPath: m_SpriteTilingProperty.newSize.x
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 4061181765763812478, guid: c2811d92977b1ec4da277e08ba4ddb5e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 6.32
@@ -2094,10 +2090,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
-    - target: {fileID: 6900221959645759255, guid: c2811d92977b1ec4da277e08ba4ddb5e, type: 3}
-      propertyPath: m_Size.x
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 7666863077999301388, guid: c2811d92977b1ec4da277e08ba4ddb5e, type: 3}
       propertyPath: m_Name
       value: LinearTrap
@@ -2115,13 +2107,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 934804880651141395, guid: 2d6664fbeafee234d80ebe262502609f, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3180989980127624292, guid: 2d6664fbeafee234d80ebe262502609f, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 5.01
+    - target: {fileID: 1120534993330081903, guid: 2d6664fbeafee234d80ebe262502609f, type: 3}
+      propertyPath: _trapVolume
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 8445904293515666297, guid: 2d6664fbeafee234d80ebe262502609f, type: 3}
       propertyPath: m_Name
