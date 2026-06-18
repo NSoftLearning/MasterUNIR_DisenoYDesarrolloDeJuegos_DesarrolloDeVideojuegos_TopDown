@@ -4,7 +4,6 @@ using System.Collections;
 
 public class ScenesManager : MonoBehaviour
 {
-    
     [Header("Canvas UI")]
     [SerializeField] CanvasGroup fadeCanvasGroup;
 
@@ -33,7 +32,12 @@ public class ScenesManager : MonoBehaviour
         }
     }
 
-    IEnumerator FadeIn()
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
+
+IEnumerator FadeIn()
     {
         fadeCanvasGroup.blocksRaycasts = true; // Bloquea la interacción mientras se realiza el fade
 
@@ -44,7 +48,7 @@ public class ScenesManager : MonoBehaviour
             elapsedTime += Time.deltaTime;
             yield return null;
         }
-        fadeCanvasGroup.alpha = 0f; 
+        fadeCanvasGroup.alpha = 0f;
         fadeCanvasGroup.blocksRaycasts = false; // Desbloquea la interacción mientras se realiza el fade
 
     }
@@ -60,7 +64,7 @@ public class ScenesManager : MonoBehaviour
             elapsedTime += Time.deltaTime;
             yield return null;
         }
-        fadeCanvasGroup.alpha = 1f; 
+        fadeCanvasGroup.alpha = 1f;
 
         SceneManager.LoadScene(nameScene);
 

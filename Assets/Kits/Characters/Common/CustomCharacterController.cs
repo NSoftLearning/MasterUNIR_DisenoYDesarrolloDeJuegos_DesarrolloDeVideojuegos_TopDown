@@ -3,6 +3,7 @@ using Unity.VisualScripting.Antlr3.Runtime;
 using UnityEditor.U2D.Animation;
 using UnityEngine;
 using static UnityEditor.PlayerSettings.SplashScreen;
+using UnityEngine.Events;
 
 public enum Direction
 {
@@ -29,24 +30,29 @@ public class CustomCharacterController : MonoBehaviour, IVisible, IOrientationSe
     [SerializeField] float _recoverStaminaSpeedPerSecond = 0.15f;
     [SerializeField] float _rollStamina = 0.25f;
 
+    public UnityEvent<float, float> onStaminaChanged;
+    float stamina = 0; // Stamina actual
+
     private PlayerWeaponController _weaponController;
 
     public Vector3 Position => _position;
     public Vector3 Forward => _forward;
 
-    float stamina = 0; // Stamina actual
+   
     private void Awake()
     {
         _capsuleCollider = GetComponent<CapsuleCollider2D>();
         _weaponController = GetComponent<PlayerWeaponController>();
 
         stamina = _maxStamina;
+        onStaminaChanged.Invoke(stamina, _maxStamina);
 
         if (_weaponController != null)
         {
             _weaponController.FinishedAttack += OnFinishedAttack;
         }
     }
+
 
     bool canMove = true;
     Vector3 _position;
@@ -82,6 +88,7 @@ public class CustomCharacterController : MonoBehaviour, IVisible, IOrientationSe
         canMove = false;
         _rigidbody.linearVelocity = _rawMovement * _rollSpeed;
         stamina -= _rollStamina;
+        onStaminaChanged.Invoke(stamina, _maxStamina);
 
         Invoke(nameof(FinishedRoll), _rollTime);
     }
@@ -128,9 +135,16 @@ public class CustomCharacterController : MonoBehaviour, IVisible, IOrientationSe
 
     private void RecoverStamina()
     {
+        float previousStamina = stamina;
+
         float newStamina = stamina + _recoverStaminaSpeedPerSecond * Time.deltaTime;
         if (newStamina >= _maxStamina) stamina = _maxStamina;
-        else stamina = newStamina;
+        else stamina = newStamina;      
+
+        if (previousStamina != stamina)
+        {
+            onStaminaChanged.Invoke(stamina, _maxStamina);
+        }
     }
 
     public void Attack()
@@ -143,7 +157,10 @@ public class CustomCharacterController : MonoBehaviour, IVisible, IOrientationSe
         if (newStamina <= 0) return;
 
         canMove = false;
+
         stamina = newStamina;
+        onStaminaChanged.Invoke(stamina, _maxStamina);
+
         _rigidbody.linearVelocity = Vector2.zero;
         
         _weaponController.Attack(lastDirection);

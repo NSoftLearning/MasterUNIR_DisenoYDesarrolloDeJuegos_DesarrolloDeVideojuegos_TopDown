@@ -155,9 +155,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 8
-        y: 172
+        y: 170
         width: 16
-        height: 16
+        height: 18
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -221,9 +221,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 8
-        y: 143
+        y: 142
         width: 16
-        height: 16
+        height: 17
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -287,9 +287,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 7
-        y: 107
+        y: 106
         width: 18
-        height: 18
+        height: 19
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -309,9 +309,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 41
-        y: 108
+        y: 107
         width: 12
-        height: 13
+        height: 14
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -375,9 +375,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 41
-        y: 80
+        y: 79
         width: 12
-        height: 13
+        height: 14
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -419,9 +419,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 9
-        y: 44
+        y: 42
         width: 14
-        height: 15
+        height: 17
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -441,9 +441,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 40
-        y: 44
+        y: 43
         width: 14
-        height: 14
+        height: 15
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -463,9 +463,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 72
-        y: 43
+        y: 44
         width: 15
-        height: 15
+        height: 14
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -485,9 +485,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 9
-        y: 16
+        y: 14
         width: 14
-        height: 14
+        height: 16
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -507,9 +507,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 40
-        y: 16
+        y: 15
         width: 14
-        height: 14
+        height: 15
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -529,9 +529,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 72
-        y: 15
+        y: 16
         width: 15
-        height: 15
+        height: 14
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -560,7 +560,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries:
       - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":16.0,"y":16.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.0},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":7,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       fire_animation2_0: 7457898849070156403
       fire_animation2_1: -6205515954121075453

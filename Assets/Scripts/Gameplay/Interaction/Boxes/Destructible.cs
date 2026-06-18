@@ -3,9 +3,6 @@ using UnityEngine;
 
 public class Destructible : MonoBehaviour
 {
-    [Header("Destruction Settings")]
-    [SerializeField] float destroyDelay = 0.5f;
-
     [Header("Object References")]
     [SerializeField] SpriteRenderer spriteRender;
     [SerializeField] SplashItem splashItem;
