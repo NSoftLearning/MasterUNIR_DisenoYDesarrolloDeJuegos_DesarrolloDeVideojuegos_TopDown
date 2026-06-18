@@ -3,7 +3,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "HealItemEffect", menuName = "Content/Items/Effects/Heal Effect")]
 public class HealingEffectSO : ItemEffectSO
 {
-    [SerializeField] private float healAmount = 1f;
+    [SerializeField] private int healAmount = 10;
 
     public override bool Use(GameObject user)
     {

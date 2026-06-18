@@ -5,17 +5,19 @@ using UnityEngine.Events;
 
 public class Life : MonoBehaviour, IDamageReceiver
 {
-    [SerializeField] float startLife = 1;
-    [SerializeField] float damagePerHit = .3f;
+    [SerializeField] int startLife = 10;
+    [SerializeField] int damagePerHit = 3;
     [SerializeField] DamageableTypeSO type;
 
     public UnityEvent <float, float> onLifeChanged;
     public UnityEvent <float> onLifeDepleted;
 
-    HurtCollider hurtCollider;
-    private float currentLife;
+    //HurtCollider hurtCollider;
+    private int currentLife;
 
-    public event Action<DamageDataDTO> DamageReceived;
+    
+    public event Action Died;
+    public event Action<LifeChangedDTO> LifeChanged;
 
     public DamageableTypeSO Type => type;
 
@@ -23,12 +25,13 @@ public class Life : MonoBehaviour, IDamageReceiver
     private void Awake()
     {
         currentLife = startLife;
-        hurtCollider = GetComponent<HurtCollider>();
+        /*hurtCollider = GetComponent<HurtCollider>();
         hurtCollider.onHitReceived.AddListener(OnHitReceived);
         onLifeChanged.Invoke(currentLife, startLife);
+        */
     }
 
-    private void OnHitReceived()
+  /*  private void OnHitReceived()
     {
         if (currentLife > 0)
         {
@@ -42,30 +45,49 @@ public class Life : MonoBehaviour, IDamageReceiver
             }
         }
     }
+  */
 
-
+    /*
     [ContextMenu (nameof(SimulateHitReceived))]
     public void SimulateHitReceived () 
     {
         OnHitReceived();
     }
 
+    */
     public bool TryToDealDamage(DamageDataDTO damageData)
     {
-        throw new NotImplementedException();
+        if (currentLife <= 0)
+            return false;
+
+        currentLife -= damageData.damageAmount;
+
+        LifeChanged?.Invoke(
+            new LifeChangedDTO { 
+                currentValue = currentLife,
+                maxValue = startLife,
+                deltaValue = damageData.damageAmount});
+
+        if (currentLife <= 0)
+            Died?.Invoke();
+
+        return true;
+
     }
 
-    public bool CanDamage(List<DamageableTypeSO> targetTypes)
+    public bool CanDamage(FoundTargetDTO<IDamageReceiver> candidateTargets)
     {
-        throw new NotImplementedException();
+        //return targetTypes.Contains(type);
+        return false;
     }
+
 
     public Vector3 GetPosition()
     {
         return transform.position;
     }
 
-    public bool Heal(float amount)
+    public bool Heal(int amount)
 {
     if (amount <= 0)
         return false;
@@ -82,9 +104,22 @@ public class Life : MonoBehaviour, IDamageReceiver
     {
         currentLife = startLife;
     }
-
-    onLifeChanged.Invoke(currentLife, startLife);
+        LifeChanged.Invoke(
+            new LifeChangedDTO
+            {
+                currentValue = currentLife,
+                maxValue = startLife,
+                deltaValue = amount
+            });
+   // onLifeChanged.Invoke(currentLife, startLife);
 
     return true;
-}
+    }
+
+    public bool DamageIsCompatible(List<DamageableTypeSO> compatibleTargetTypes)
+    {
+        if (compatibleTargetTypes.Contains(type))
+            return true;
+        return false;
+    }
 }
