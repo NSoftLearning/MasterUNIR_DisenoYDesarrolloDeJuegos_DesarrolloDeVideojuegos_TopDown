@@ -1,8 +1,19 @@
 using UnityEngine;
+using System.Collections;
 using System.Collections.Generic;
 
 public class InventoryUIManager : MonoBehaviour
 {
+    [Header("Inventory Panel Slide")]
+    [SerializeField] private RectTransform slidingPanel;
+    [SerializeField] private GameObject openButton;
+    [SerializeField] private GameObject closeButton;
+
+    [SerializeField] private Vector2 openedPosition;
+    [SerializeField] private Vector2 closedPosition;
+    [SerializeField] private float slideDuration = 0.25f;
+    [SerializeField] private bool startClosed = true;
+
     [Header("Inventory UI")]
     [SerializeField] private Transform inventorySlotsParent;
     [SerializeField] private GameObject slotPrefab;
@@ -14,6 +25,127 @@ public class InventoryUIManager : MonoBehaviour
 
     private readonly List<GameObject> inventorySlotGraphics = new List<GameObject>();
     private readonly List<GameObject> quickAccessItemGraphics = new List<GameObject>();
+
+    private bool isOpen;
+    private Coroutine slideCoroutine;
+
+    private void Start()
+    {
+        if (startClosed)
+        {
+            SetClosedInstant();
+        }
+        else
+        {
+            SetOpenInstant();
+        }
+    }
+
+    public void OpenInventory()
+    {
+        if (slidingPanel == null)
+            return;
+
+        StartSlide(openedPosition, true);
+    }
+
+    public void CloseInventory()
+    {
+        if (slidingPanel == null)
+            return;
+
+        StartSlide(closedPosition, false);
+    }
+
+    public void ToggleInventory()
+    {
+        if (isOpen)
+        {
+            CloseInventory();
+        }
+        else
+        {
+            OpenInventory();
+        }
+    }
+
+    private void SetOpenInstant()
+    {
+        if (slidingPanel != null)
+        {
+            slidingPanel.anchoredPosition = openedPosition;
+        }
+
+        isOpen = true;
+        RefreshPanelButtons();
+    }
+
+    private void SetClosedInstant()
+    {
+        if (slidingPanel != null)
+        {
+            slidingPanel.anchoredPosition = closedPosition;
+        }
+
+        isOpen = false;
+        RefreshPanelButtons();
+    }
+
+    private void StartSlide(Vector2 targetPosition, bool targetOpenState)
+    {
+        if (slideCoroutine != null)
+        {
+            StopCoroutine(slideCoroutine);
+        }
+
+        slideCoroutine = StartCoroutine(SlidePanel(targetPosition, targetOpenState));
+    }
+
+    private IEnumerator SlidePanel(Vector2 targetPosition, bool targetOpenState)
+    {
+        SetButtonsVisible(false, false);
+
+        Vector2 startPosition = slidingPanel.anchoredPosition;
+        float elapsed = 0f;
+
+        while (elapsed < slideDuration)
+        {
+            elapsed += Time.deltaTime;
+
+            float t = elapsed / slideDuration;
+            t = Mathf.Clamp01(t);
+            t = Mathf.SmoothStep(0f, 1f, t);
+
+            slidingPanel.anchoredPosition = Vector2.Lerp(startPosition, targetPosition, t);
+
+            yield return null;
+        }
+
+        slidingPanel.anchoredPosition = targetPosition;
+
+        isOpen = targetOpenState;
+        RefreshPanelButtons();
+
+        slideCoroutine = null;
+    }
+
+    private void RefreshPanelButtons()
+    {
+        SetButtonsVisible(!isOpen, isOpen);
+    }
+
+    private void SetButtonsVisible(bool showOpenButton, bool showCloseButton)
+    {
+        if (openButton != null)
+        {
+            openButton.SetActive(showOpenButton);
+        }
+
+        if (closeButton != null)
+        {
+            closeButton.SetActive(showCloseButton);
+        }
+    }
 
     public void InitializeInventoryUI(InventoryRuntime inventoryData)
     {
