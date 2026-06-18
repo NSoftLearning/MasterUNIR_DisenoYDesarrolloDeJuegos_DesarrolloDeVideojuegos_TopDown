@@ -15,7 +15,8 @@ public class DI_PatrolAndCloseCombatEnemyController : MonoBehaviour
         _enemyAttackObject.GetComponent<CloseQuartersAttack>().InjectDependencies(
             ComponentLocatorService.Components.TargetFinderService_BoxOverlap,
             _characterRoot.GetComponent<IDamageReceiver>(),
-            _characterRoot.GetComponent<IOrientationService>());
+            _characterRoot.GetComponent<IOrientationService>(),
+            _characterRoot.GetComponentInChildren<AnimationEventsAdapter>());
 
         patrolAndCloseCombatController
             .InjectDependencies(
