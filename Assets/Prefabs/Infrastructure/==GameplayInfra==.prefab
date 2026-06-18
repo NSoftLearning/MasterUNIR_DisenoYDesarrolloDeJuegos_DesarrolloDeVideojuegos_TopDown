@@ -1,5 +1,104 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3208542070403245994
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8678721250883660112}
+  - component: {fileID: 8889581965294648836}
+  m_Layer: 0
+  m_Name: SfxManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8678721250883660112
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3208542070403245994}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 2.5350802, y: -2.0069098, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8054697394798661580}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8889581965294648836
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3208542070403245994}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6e6e772ae09bcd46a96b05a60023439, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SfxManager
+  _numOfAudioSources: 6
+  _numOfLoopAudioSources: 6
+  _audioSourcesPrefab: {fileID: 1752858065650685638, guid: e674eaf0b853f4a4690a424d3e4f7d0f, type: 3}
+--- !u!1 &4255254496072567347
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3531945100676042337}
+  - component: {fileID: 8483224371258384520}
+  m_Layer: 0
+  m_Name: InventoryManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3531945100676042337
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4255254496072567347}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.8450999, y: 1.37943, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8054697394798661580}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8483224371258384520
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4255254496072567347}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85d6554da839d89478f4b7ef16ee5477, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InventoryManager
+  inventoryUI: {fileID: 0}
+  inventorySO: {fileID: 11400000, guid: 902127f2b9da0f041a011b309cd6e58b, type: 2}
+  itemUser: {fileID: 0}
+  clearInventory: 0
+  updateQuickAccess: 0
+  saveRuntimeToInventorySO: 0
+  inventoryIndexToSetInFirstQuickAccess: 0
+  inventoryIndexToSetInSecondQuickAccess: 0
 --- !u!1 &8651478354645814383
 GameObject:
   m_ObjectHideFlags: 0
@@ -30,7 +129,9 @@ Transform:
   m_LocalPosition: {x: -4.41273, y: 2.07737, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 8678721250883660112}
+  - {fileID: 3531945100676042337}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2853373700699954859
@@ -45,7 +146,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed4d5b2b4257ef44db4674a90be89ccb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ComponentsLibrary
-  _inventorySlot: {fileID: 11400000, guid: 902127f2b9da0f041a011b309cd6e58b, type: 2}
+  _inventory: {fileID: 8483224371258384520}
+  _sfxManager: {fileID: 8889581965294648836}
 --- !u!114 &9082283650887705534
 MonoBehaviour:
   m_ObjectHideFlags: 0
