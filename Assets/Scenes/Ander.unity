@@ -576,58 +576,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 69404927}
   m_CullTransparentMesh: 1
---- !u!1 &76768654
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 76768655}
-  - component: {fileID: 76768656}
-  m_Layer: 0
-  m_Name: InventoryManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &76768655
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 76768654}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.8450999, y: 1.37943, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1219940965}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &76768656
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 76768654}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 85d6554da839d89478f4b7ef16ee5477, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::InventoryManager
-  inventoryUI: {fileID: 2096554572}
-  inventorySO: {fileID: 11400000, guid: 902127f2b9da0f041a011b309cd6e58b, type: 2}
-  itemUser: {fileID: 1079372462}
-  clearInventory: 0
-  updateQuickAccess: 0
-  saveRuntimeToInventorySO: 0
-  inventoryIndexToSetInFirstQuickAccess: 0
-  inventoryIndexToSetInSecondQuickAccess: 0
 --- !u!1 &107660377
 GameObject:
   m_ObjectHideFlags: 0
@@ -2614,53 +2562,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 996237220}
   m_CullTransparentMesh: 1
---- !u!1 &1002137655
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1002137657}
-  - component: {fileID: 1002137656}
-  m_Layer: 0
-  m_Name: SfxManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1002137656
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1002137655}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c6e6e772ae09bcd46a96b05a60023439, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SfxManager
-  _numOfAudioSources: 6
-  _numOfLoopAudioSources: 6
-  _audioSourcesPrefab: {fileID: 1752858065650685638, guid: e674eaf0b853f4a4690a424d3e4f7d0f, type: 3}
---- !u!4 &1002137657
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1002137655}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.5350802, y: -2.0069098, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1219940965}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1007366541
 GameObject:
   m_ObjectHideFlags: 0
@@ -3498,11 +3399,11 @@ PrefabInstance:
     - target: {fileID: 2853373700699954859, guid: 2664b29c60afb234babf4f7346b40f34, type: 3}
       propertyPath: _inventory
       value: 
-      objectReference: {fileID: 76768656}
+      objectReference: {fileID: 1219940966}
     - target: {fileID: 2853373700699954859, guid: 2664b29c60afb234babf4f7346b40f34, type: 3}
       propertyPath: _sfxManager
       value: 
-      objectReference: {fileID: 1002137656}
+      objectReference: {fileID: 1219940965}
     - target: {fileID: 8054697394798661580, guid: 2664b29c60afb234babf4f7346b40f34, type: 3}
       propertyPath: m_LocalPosition.x
       value: -4.41273
@@ -3549,20 +3450,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 8054697394798661580, guid: 2664b29c60afb234babf4f7346b40f34, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1002137657}
-    - targetCorrespondingSourceObject: {fileID: 8054697394798661580, guid: 2664b29c60afb234babf4f7346b40f34, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 76768655}
+    m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2664b29c60afb234babf4f7346b40f34, type: 3}
---- !u!4 &1219940965 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8054697394798661580, guid: 2664b29c60afb234babf4f7346b40f34, type: 3}
+--- !u!114 &1219940965 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8889581965294648836, guid: 2664b29c60afb234babf4f7346b40f34, type: 3}
   m_PrefabInstance: {fileID: 1219940964}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6e6e772ae09bcd46a96b05a60023439, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SfxManager
+--- !u!114 &1219940966 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8483224371258384520, guid: 2664b29c60afb234babf4f7346b40f34, type: 3}
+  m_PrefabInstance: {fileID: 1219940964}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85d6554da839d89478f4b7ef16ee5477, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InventoryManager
 --- !u!1001 &1276110411
 PrefabInstance:
   m_ObjectHideFlags: 0
