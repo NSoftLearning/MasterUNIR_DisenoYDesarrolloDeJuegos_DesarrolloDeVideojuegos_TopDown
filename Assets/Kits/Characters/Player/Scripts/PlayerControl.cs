@@ -8,7 +8,9 @@ public class PlayerControl : MonoBehaviour
     [SerializeField] InputActionReference _attack;
     [SerializeField] InputActionReference _interact;
     [SerializeField] InputActionReference _roll;
-    [SerializeField] InputActionReference _changeWeapon;
+    [SerializeField] InputActionReference _changeWeapon; 
+    [SerializeField] InputActionReference _quickAccessOne;
+    [SerializeField] InputActionReference _quickAccessTwo;
 
     CustomCharacterController _characterController;
     Vector2 _rawMove;
@@ -37,6 +39,20 @@ public class PlayerControl : MonoBehaviour
         _roll.action.performed += OnRoll;
          _attack.action.performed += OnAttack;
         _changeWeapon.action.performed += OnChangeWeapon;
+        _quickAccessOne.action.performed += OnQuickAccessOne;
+        _quickAccessTwo.action.performed += OnQuickAccessTwo;
+    }
+
+    private void OnQuickAccessOne(InputAction.CallbackContext context)
+    {
+        if (!context.performed) return;
+        InventoryManager.Instance.UseQuickAccessItem(0);
+    }
+
+    private void OnQuickAccessTwo(InputAction.CallbackContext context)
+    {
+        if (!context.performed) return;
+        InventoryManager.Instance.UseQuickAccessItem(1);
     }
 
     private void Move(InputAction.CallbackContext context)

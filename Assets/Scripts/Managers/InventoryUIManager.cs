@@ -15,12 +15,12 @@ public class InventoryUIManager : MonoBehaviour
     private readonly List<GameObject> inventorySlotGraphics = new List<GameObject>();
     private readonly List<GameObject> quickAccessItemGraphics = new List<GameObject>();
 
-    public void InitializeInventoryUI(InventorySO inventoryData)
+    public void InitializeInventoryUI(InventoryRuntime inventoryData)
     {
         RefreshInventoryUI(inventoryData);
     }
 
-    public void RefreshInventoryUI(InventorySO inventoryData)
+    public void RefreshInventoryUI(InventoryRuntime inventoryData)
     {
         ClearInventoryUI();
         ClearQuickAccessUI();
@@ -32,7 +32,7 @@ public class InventoryUIManager : MonoBehaviour
         DrawQuickAccess(inventoryData);
     }
 
-    private void DrawInventory(InventorySO inventoryData)
+    private void DrawInventory(InventoryRuntime inventoryData)
     {
         IReadOnlyList<InventorySlot> inventorySlots = inventoryData.InventorySlots;
 
@@ -74,7 +74,7 @@ public class InventoryUIManager : MonoBehaviour
         }
     }
 
-    private void DrawQuickAccess(InventorySO inventoryData)
+    private void DrawQuickAccess(InventoryRuntime inventoryData)
     {
         IReadOnlyList<QuickAccessSlot> quickSlots = inventoryData.QuickAccessSlots;
         IReadOnlyList<InventorySlot> inventorySlots = inventoryData.InventorySlots;

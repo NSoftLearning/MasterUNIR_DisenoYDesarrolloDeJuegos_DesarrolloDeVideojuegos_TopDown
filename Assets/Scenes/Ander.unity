@@ -3805,6 +3805,14 @@ PrefabInstance:
       propertyPath: _interact
       value: 
       objectReference: {fileID: 1781555164194001046, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
+    - target: {fileID: 2322022285900161180, guid: 3ec7e9a66537dc1458d79c1432887ca7, type: 3}
+      propertyPath: _quickAccessOne
+      value: 
+      objectReference: {fileID: -1723628257676900786, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
+    - target: {fileID: 2322022285900161180, guid: 3ec7e9a66537dc1458d79c1432887ca7, type: 3}
+      propertyPath: _quickAccessTwo
+      value: 
+      objectReference: {fileID: 4194439079775097290, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
     - target: {fileID: 7687019504038238871, guid: 3ec7e9a66537dc1458d79c1432887ca7, type: 3}
       propertyPath: m_Name
       value: Character_Player

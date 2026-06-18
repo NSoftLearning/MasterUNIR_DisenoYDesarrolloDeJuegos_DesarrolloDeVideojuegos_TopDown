@@ -12,9 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d28bc7b3c4bd8646a72b30ae4a6782e, type: 3}
   m_Name: NewInventory
   m_EditorClassIdentifier: Assembly-CSharp::InventorySO
-  _inventorySlots: []
-  _allowStacking: 1
+  savedSlots: []
+  savedQuickAccessIndexes: ffffffffffffffff
+  allowStacking: 1
   quickAccessSlotCount: 2
-  _quickAccessSlots:
-  - _inventoryIndex: -1
-  - _inventoryIndex: -1

@@ -1,16 +1,25 @@
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
+
 using System.Collections.Generic;
 using UnityEngine;
 
 public class InventoryManager : MonoBehaviour
 {
     [SerializeField] private InventoryUIManager inventoryUI;
-    [SerializeField] private InventorySO currentInventory;
+    [SerializeField] private InventorySO inventorySO;
     [SerializeField] private GameObject itemUser;
+
+    private InventoryRuntime currentInventory;
+
     public static InventoryManager Instance;
 
     [Header("Debug Settings")]
     public bool clearInventory = false;
     public bool updateQuickAccess = false;
+    public bool saveRuntimeToInventorySO = false;
+
     public int inventoryIndexToSetInFirstQuickAccess = 0;
     public int inventoryIndexToSetInSecondQuickAccess = 1;
 
@@ -20,14 +29,14 @@ public class InventoryManager : MonoBehaviour
         {
             Instance = this;
             DontDestroyOnLoad(gameObject);
+
+            LoadInventoryFromSO();
+            RefreshUI();
         }
         else
         {
             Destroy(gameObject);
-            return;
         }
-
-        RefreshUI();
     }
 
     private void Update()
@@ -45,34 +54,102 @@ public class InventoryManager : MonoBehaviour
             AssignItemToQuickAccess(inventoryIndexToSetInFirstQuickAccess, 0);
             AssignItemToQuickAccess(inventoryIndexToSetInSecondQuickAccess, 1);
         }
+
+        if (saveRuntimeToInventorySO)
+        {
+            saveRuntimeToInventorySO = false;
+            SaveRuntimeToInventorySO();
+        }
+    }
+
+    public void LoadInventoryFromSO()
+    {
+        currentInventory = new InventoryRuntime(inventorySO);
+    }
+
+    public void SaveRuntimeToInventorySO()
+    {
+        if (inventorySO == null || currentInventory == null)
+        {
+            Debug.LogWarning("Cannot save inventory. Missing InventorySO or InventoryRuntime.");
+            return;
+        }
+
+        inventorySO.SaveFromRuntime(currentInventory);
+        MarkInventorySOAsDirty();
+
+        Debug.Log("Runtime inventory saved to InventorySO.");
+    }
+
+    private void MarkInventorySOAsDirty()
+    {
+#if UNITY_EDITOR
+        EditorUtility.SetDirty(inventorySO);
+        AssetDatabase.SaveAssets();
+#endif
+    }
+
+    public void CheckpointSave()
+    {
+        SaveRuntimeToInventorySO();
     }
 
     public void AddItem(ItemSO itemData)
     {
+        if (currentInventory == null)
+            return;
+
         currentInventory.AddItem(itemData);
         RefreshUI();
     }
 
     public void ClearInventory()
     {
+        if (currentInventory == null)
+            return;
+
         currentInventory.ClearInventory();
         RefreshUI();
     }
 
     public void AssignItemToQuickAccess(int inventoryIndex, int quickAccessIndex)
     {
+        if (currentInventory == null)
+            return;
+
         currentInventory.AssignItemToQuickAccess(inventoryIndex, quickAccessIndex);
         RefreshUI();
     }
 
     public void RemoveItemFromQuickAccess(int quickAccessIndex)
     {
+        if (currentInventory == null)
+            return;
+
         currentInventory.RemoveItemFromQuickAccess(quickAccessIndex);
         RefreshUI();
     }
 
+    public bool UseItemAt(int inventoryIndex)
+    {
+        if (currentInventory == null)
+            return false;
+
+        bool used = currentInventory.UseItemAt(inventoryIndex, itemUser);
+
+        if (used)
+        {
+            RefreshUI();
+        }
+
+        return used;
+    }
+
     public void UseQuickAccessItem(int quickAccessIndex)
     {
+        if (currentInventory == null)
+            return;
+
         IReadOnlyList<QuickAccessSlot> quickSlots = currentInventory.QuickAccessSlots;
 
         if (quickAccessIndex < 0 || quickAccessIndex >= quickSlots.Count)
@@ -86,20 +163,11 @@ public class InventoryManager : MonoBehaviour
         UseItemAt(quickSlot.InventoryIndex);
     }
 
-    public bool UseItemAt(int inventoryIndex)
-    {
-        bool used = currentInventory.UseItemAt(inventoryIndex, itemUser);
-
-        if (used)
-        {
-            RefreshUI();
-        }
-
-        return used;
-    }
-
     public bool RemoveItem(ItemSO itemData, int amount = 1)
     {
+        if (currentInventory == null)
+            return false;
+
         bool removed = currentInventory.RemoveItem(itemData, amount);
 
         if (removed)
@@ -112,6 +180,9 @@ public class InventoryManager : MonoBehaviour
 
     public bool RemoveItemAt(int inventoryIndex)
     {
+        if (currentInventory == null)
+            return false;
+
         bool removed = currentInventory.RemoveItemAt(inventoryIndex);
 
         if (removed)
@@ -122,7 +193,7 @@ public class InventoryManager : MonoBehaviour
         return removed;
     }
 
-    public InventorySO GetInventory()
+    public InventoryRuntime GetInventory()
     {
         return currentInventory;
     }
