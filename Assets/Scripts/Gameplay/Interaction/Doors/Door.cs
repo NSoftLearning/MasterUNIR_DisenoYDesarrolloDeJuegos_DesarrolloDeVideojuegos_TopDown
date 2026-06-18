@@ -10,8 +10,7 @@ public class Door : MonoBehaviour
     [Header("Door Settings")]
     [SerializeField] Animator anim;
     [SerializeField] public bool isOpen = false;
-    [SerializeField] DoorLevel doorLevel = DoorLevel.NotLevelDoor;
-
+    [SerializeField] int requiredLevel = 0;
     GameManager gameManager;
 
     [Header("Lever Conections")]
@@ -20,17 +19,10 @@ public class Door : MonoBehaviour
     [Header("Collider")]
     [SerializeField] Collider2D doorCollider;
 
-    public enum DoorLevel
-    {
-        NotLevelDoor,
-        Level1,
-        Level2,
-        Level3
-    }
-
     void Awake()
     {
         anim = GetComponent<Animator>();
+        gameManager = FindAnyObjectByType<GameManager>();
 
         if (doorCollider == null)
         {
@@ -39,70 +31,44 @@ public class Door : MonoBehaviour
 
     }
 
-    private void Start()
-    {
-        gameManager = GameManager.Instance;
-    }
-
     void Update()
     {
-        if (leversToActivate == null && !isOpen && doorLevel == DoorLevel.NotLevelDoor)
+        if (leversToActivate == null && !isOpen && requiredLevel <= 0)
         {
-            doorCollider.enabled = false;
-            anim.SetTrigger("Open");
-            isOpen = true;
-            Debug.Log("Puerta abierta");
+            OpenDoor();
         }
 
-        if (leversToActivate.All(lever => lever.activated) && !isOpen && doorLevel == DoorLevel.NotLevelDoor)
+        if (leversToActivate.All(lever => lever.activated) && !isOpen && requiredLevel <= 0)
         {
-            doorCollider.enabled = false;
-            anim.SetTrigger("Open");
-            isOpen = true;
-            Debug.Log("Puerta abierta");
+            OpenDoor(); 
 
         }
         
-        if (leversToActivate.Any(lever => !lever.activated) && isOpen && doorLevel == DoorLevel.NotLevelDoor)
+        if (leversToActivate.Any(lever => !lever.activated) && isOpen && requiredLevel <= 0)
         {
-            doorCollider.enabled = true;
-            anim.SetTrigger("Close");
-            isOpen = false;
-            Debug.Log("Puerta cerrada");
+            CloseDoor();
 
         }
 
-        switch (doorLevel)
+        if (requiredLevel > 0 && gameManager.IsLevelCompleted(requiredLevel) && !isOpen)
         {
-            case DoorLevel.Level1:
-                if (gameManager.level1Completed && !isOpen)
-                {
-                    doorCollider.enabled = false;
-                    anim.SetTrigger("Open");
-                    isOpen = true;
-                    Debug.Log("Puerta de nivel 1 abierta");
-                }
-                    break;
-            case DoorLevel.Level2:
-                if (gameManager.level2Completed && !isOpen)
-                {
-                    doorCollider.enabled = false;
-                    anim.SetTrigger("Open");
-                    isOpen = true;
-                    Debug.Log("Puerta de nivel 2 abierta");
-                }
-                break;
-            case DoorLevel.Level3:
-                if (gameManager.level3Completed && !isOpen)
-                {
-                    doorCollider.enabled = false;
-                    anim.SetTrigger("Open");
-                    isOpen = true;
-                    Debug.Log("Puerta de nivel 3 abierta");
-                }
-                break;
+            OpenDoor();
         }
 
+    }
+
+    void OpenDoor()
+    {
+        doorCollider.enabled = false;
+        anim.SetTrigger("Open");
+        isOpen = true;
+    }
+
+    void CloseDoor()
+    {
+        doorCollider.enabled = true;
+        anim.SetTrigger("Close");
+        isOpen = false;
     }
 
 

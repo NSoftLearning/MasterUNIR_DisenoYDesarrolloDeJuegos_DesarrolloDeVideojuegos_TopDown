@@ -10,6 +10,8 @@ public class Lever : MonoBehaviour, IInteractables
     [SerializeField] SpriteRenderer spriteKey;
     [SerializeField] float fadeShowKey = 0.2f;
 
+    Coroutine fadeRoutine;
+
     void Awake()
     {
         anim = GetComponent<Animator>();
@@ -25,15 +27,24 @@ public class Lever : MonoBehaviour, IInteractables
 
     public void Select()
     {
-        StopAllCoroutines();
-        StartCoroutine(FadeInKey());
+
+        if (fadeRoutine != null)
+        {
+            StopCoroutine(fadeRoutine);
+            fadeRoutine = StartCoroutine(FadeInVisual());
+        }
+            
+
         Debug.Log("Palanca seleccionada");
     }
 
     public void Unselect()
     {
-        StopAllCoroutines();
-        StartCoroutine(FadeOutKey());
+        if (fadeRoutine != null)
+        {
+            StopCoroutine(fadeRoutine);
+            fadeRoutine = StartCoroutine(FadeOutVisual());
+        }
         Debug.Log("Palanca deseleccionada");
     }
 
@@ -67,9 +78,9 @@ public class Lever : MonoBehaviour, IInteractables
 
     }
 
-    IEnumerator FadeInKey()
+    IEnumerator FadeInVisual()
     {
-        float alpha = 0f;
+        float alpha = spriteKey.color.a;
         while (alpha < 1f)
         {
             alpha += Time.deltaTime / fadeShowKey;
@@ -79,12 +90,9 @@ public class Lever : MonoBehaviour, IInteractables
         alpha = 1f;
     }
 
-
-
-
-    IEnumerator FadeOutKey()
+    IEnumerator FadeOutVisual()
     {
-        float alpha = 1f;
+        float alpha = spriteKey.color.a;
         while (alpha > 0f)
         {
             alpha -= Time.deltaTime / fadeShowKey;

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 431042320970476682}
   - component: {fileID: 2503438395579873685}
   - component: {fileID: 1101930869347302770}
+  - component: {fileID: 3209702176519807738}
   m_Layer: 0
   m_Name: Coin
   m_TagString: Untagged
@@ -85,7 +86,7 @@ SpriteRenderer:
   m_SortingLayer: 3
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 6731983292893766776, guid: 47dcc51cc988bc74a8630fbb7808bd04, type: 3}
+  m_Sprite: {fileID: -1110126541007599292, guid: 8a89e0904187d6441bd7cf8db1a126cc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -157,7 +158,7 @@ CapsuleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.28039563, y: 0.4694699}
+  m_Size: {x: 0.20331863, y: 0.20331863}
   m_Direction: 0
 --- !u!114 &1101930869347302770
 MonoBehaviour:
@@ -177,6 +178,28 @@ MonoBehaviour:
   coinPointTransfer: {fileID: 0}
   flySpeed: 120
   delayBeforeCollect: 1
+--- !u!95 &3209702176519807738
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1905671399633139356}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &8304343274406471286
 GameObject:
   m_ObjectHideFlags: 0
@@ -186,7 +209,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8336354653187814539}
-  - component: {fileID: 2663003966734165057}
+  - component: {fileID: 6786360634400144783}
   m_Layer: 3
   m_Name: Collider
   m_TagString: Untagged
@@ -209,8 +232,8 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1508618481109446238}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &2663003966734165057
-BoxCollider2D:
+--- !u!58 &6786360634400144783
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -225,7 +248,7 @@ BoxCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 72
+    m_Bits: 0
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -244,14 +267,4 @@ BoxCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.17, y: 0.3}
-    newSize: {x: 0.17, y: 0.3}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Size: {x: 0.089632116, y: 0.21952948}
-  m_EdgeRadius: 0
+  m_Radius: 0.052637678

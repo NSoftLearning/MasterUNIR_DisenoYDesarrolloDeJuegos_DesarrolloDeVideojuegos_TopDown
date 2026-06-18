@@ -1,16 +1,25 @@
 using TMPro;
 using UnityEngine;
+using System.Collections;
 
 public class PillarShop : MonoBehaviour, IInteractables
 {
+    [Header("Item Sale")]
     [SerializeField] ItemSO itemData;
-    //[SerializeField] InventorySO inventoryData;
+
+    [Header("References")]
     [SerializeField] Animator anim;
     [SerializeField] TextMeshProUGUI priceText;
     [SerializeField] bool isSelected;
 
+    [Header("Feddback Key")]
+    [SerializeField] SpriteRenderer spriteKey;
+    [SerializeField] float fadeShowKey = 0.2f;
+
     CoinManager coinManager;
-    
+    Coroutine fadeRoutine;
+
+
     void Awake()
     {
         coinManager = FindAnyObjectByType<CoinManager>();
@@ -20,7 +29,15 @@ public class PillarShop : MonoBehaviour, IInteractables
 
         priceText.text = ("$" + itemData.price.ToString());
 
-        
+        if (spriteKey == null)
+        {
+            Debug.LogWarning("No se ha asignado un SpriteRenderer del Keyboard para el feedback visual del pilar de tienda.");
+        }
+        else
+        {
+            spriteKey.color = new Color(spriteKey.color.r, spriteKey.color.g, spriteKey.color.b, 0f);
+        }
+
     }
    
 
@@ -45,15 +62,52 @@ public class PillarShop : MonoBehaviour, IInteractables
 
     public void Select()
     {
-        anim.SetBool("ShowText", true);
+        if (fadeRoutine != null)
+        {
+            StopCoroutine(fadeRoutine);
+            fadeRoutine = StartCoroutine(FadeInVisual());
+        }
 
         Debug.Log("Pilar seleccionado");
     }
 
     public void Unselect()
     {
-        anim.SetBool("ShowText", false);
+        if (fadeRoutine != null)
+        {
+            StopCoroutine(fadeRoutine);
+            fadeRoutine = StartCoroutine(FadeOutVisual());
+        }
 
         Debug.Log("Pilar deseleccionado");
     }
+
+    IEnumerator FadeInVisual()
+    {
+        anim.SetBool("ShowText", true);
+
+        float alpha = spriteKey.color.a;
+        while (alpha < 1f)
+        {
+            alpha += Time.deltaTime / fadeShowKey;
+            spriteKey.color = new Color(spriteKey.color.r, spriteKey.color.g, spriteKey.color.b, alpha);
+            yield return null;
+        }
+        alpha = 1f;
+    }
+
+    IEnumerator FadeOutVisual()
+    {
+        anim.SetBool("ShowText", false);
+
+        float alpha = spriteKey.color.a;
+        while (alpha > 0f)
+        {
+            alpha -= Time.deltaTime / fadeShowKey;
+            spriteKey.color = new Color(spriteKey.color.r, spriteKey.color.g, spriteKey.color.b, alpha);
+            yield return null;
+        }
+        alpha = 0f;
+    }
 }
+
