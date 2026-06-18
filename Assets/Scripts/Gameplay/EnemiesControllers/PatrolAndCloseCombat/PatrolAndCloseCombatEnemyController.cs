@@ -24,11 +24,13 @@ public class PatrolAndCloseCombatEnemyController : MonoBehaviour
     public void InjectDependencies (
         ITargetFinder<IDamageReceiver, DistanceAndLosTargetFinderQuerySettings<IDamageReceiver>> targetFinder,
         IOrientationService orientationService,
-        CustomCharacterController custmCharacterController)
+        CustomCharacterController custmCharacterController,
+        IEnemyAttack enemyAttack)
     {
         _targetFinder = targetFinder;
         _orientationService = orientationService;
         _characterController = custmCharacterController;
+        _enemyAttack = enemyAttack;
     }
 
     private void Start()
@@ -78,10 +80,13 @@ public class PatrolAndCloseCombatEnemyController : MonoBehaviour
                 _characterController,
                 transform,
                 _detecionStatesContext,
-                //_damageableTypesOfInterest,
                 _targetSelector,
                 _enemyAttack,
-                _statesMachine.FromStateToState)                
+                _statesMachine.FromStateToState),
+            new AttackingStatee <PatrolAndCloseCombatStateId> (
+                PatrolAndCloseCombatStateId.Attacking,
+                PatrolAndCloseCombatStateId.Patrolling,
+                _statesMachine.FromStateToState)
         };
 
         _statesMachine.InitializeMachine(states, PatrolAndCloseCombatStateId.InitialState);

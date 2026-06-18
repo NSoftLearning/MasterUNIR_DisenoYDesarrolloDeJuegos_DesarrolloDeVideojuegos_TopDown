@@ -49,10 +49,6 @@ public class PatrollingState<TStateId> : IGenericState<TStateId> where TStateId 
             out FoundTargetDTO<IDamageReceiver> foundTarget))
         {
             _stateChangeDelegate.Invoke (StateId, _nextStateId);
-        }
-
-
-
-            
+        }            
     } 
 }

@@ -13,7 +13,6 @@ public class SeekingState<TStateId> : IGenericState<TStateId> where TStateId : E
     private Transform _transform;
 
     private StateChangeDelegate<TStateId> _stateChangeDelegate;
-    //private List<DamageableTypeSO> _damageableTypesOfInterest;
     private DamageReceiverTargetSelector _targetSelector;
     DetectionWithForwardAndIgnoreContext<IDamageReceiver, DistanceAndLosTargetFinderQuerySettings<IDamageReceiver>> _detectionContext;
     private IEnemyAttack _enemyAttack;
@@ -30,7 +29,6 @@ public class SeekingState<TStateId> : IGenericState<TStateId> where TStateId : E
         CustomCharacterController customCharacterController,
         Transform thisTransform,
         DetectionWithForwardAndIgnoreContext<IDamageReceiver, DistanceAndLosTargetFinderQuerySettings<IDamageReceiver>> detectionContext,
-       // List<DamageableTypeSO> damageableTypesOfInterest,
         DamageReceiverTargetSelector targetSelector,
         IEnemyAttack enemyAttack,
         StateChangeDelegate <TStateId> stateChangeDelegate)
@@ -42,7 +40,6 @@ public class SeekingState<TStateId> : IGenericState<TStateId> where TStateId : E
         _customCharacterController = customCharacterController;
         _transform = thisTransform;
         _stateChangeDelegate = stateChangeDelegate;
-       // _damageableTypesOfInterest = damageableTypesOfInterest;
         _targetSelector = targetSelector; 
         _detectionContext = detectionContext;
         _enemyAttack = enemyAttack;
@@ -51,7 +48,7 @@ public class SeekingState<TStateId> : IGenericState<TStateId> where TStateId : E
     public void Enter()
     {
         _willDesistAt = Time.time + _searchPersistenceTime;
-        //ChangeStateDueTargetLost();
+
     }
 
     public void Exit()
@@ -61,12 +58,7 @@ public class SeekingState<TStateId> : IGenericState<TStateId> where TStateId : E
 
     public void Tick()
     {
-        RefreshDetectedTargets();
-      // if (_currentTargetsOfInterest.Count == 0)
-        //{
-          //  _willDesistAt = Time.time + _searchPersistenceTime;
-       // }
-       
+        RefreshDetectedTargets();            
 
         if (_currentTargetsOfInterest.Count > 0)
         {
@@ -79,6 +71,9 @@ public class SeekingState<TStateId> : IGenericState<TStateId> where TStateId : E
             _stateChangeDelegate.Invoke(StateId, _handleTargetLost);
             return;            
         }
+
+        if (_enemyAttack.CanAttack(_targetSelector.DamageableTypes))// _currentTargetsOfInterest))
+            _stateChangeDelegate.Invoke(StateId, _handleTargetReached);
     }
 
     private void RefreshDetectedTargets()
@@ -93,19 +88,6 @@ public class SeekingState<TStateId> : IGenericState<TStateId> where TStateId : E
         {
             
             _currentTargetsOfInterest.Add(targetOfInterest);
-
-           // _willDesistAt = Time.time + _searchPersistenceTime;
-           // return false;
         }
-
-   //     if (Time.time > _willDesistAt)
-     //   {
-   //         _stateChangeDelegate.Invoke(StateId, _handleTargetLost);
-  //          return true;
-   //     }
-
-   //     return false;
     }
-
-
 }

@@ -60,6 +60,10 @@ public class Life : MonoBehaviour, IDamageReceiver
         if (currentLife <= 0)
             return false;
 
+        if (!damageData.validTargets.Contains(type))
+            return false;
+
+
         currentLife -= damageData.damageAmount;
 
         LifeChanged?.Invoke(
@@ -75,11 +79,11 @@ public class Life : MonoBehaviour, IDamageReceiver
 
     }
 
-    public bool CanDamage(FoundTargetDTO<IDamageReceiver> candidateTargets)
+    /*public bool CanDamage(FoundTargetDTO<IDamageReceiver> candidateTargets)
     {
         //return targetTypes.Contains(type);
         return false;
-    }
+    }*/
 
 
     public Vector3 GetPosition()

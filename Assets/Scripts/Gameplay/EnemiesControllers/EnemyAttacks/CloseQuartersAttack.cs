@@ -1,7 +1,8 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CloseQuartersAttack :MonoBehaviour,  IEnemyAttack
+public class CloseQuartersAttack : MonoBehaviour, IEnemyAttack
 {
     [SerializeField]
     float _attackRange;
@@ -9,21 +10,24 @@ public class CloseQuartersAttack :MonoBehaviour,  IEnemyAttack
     float _attackDelay;
     float _attackAvailableAtSecond;
 
+    public event Action Performed;
 
     void Start ()
     {
         _attackAvailableAtSecond = Time.time + _attackDelay;
     }
-    public bool CanAttack(List<IDamageReceiver> candidatesForAttack)
-    {
-        if (Time.time < _attackAvailableAtSecond)
-            return false;
-        //aqui ver si al menos un candidate esta in range Y si el ataque esta listo
-        throw new System.NotImplementedException();
-    }
 
     public void PerformAttack()
     {
         throw new System.NotImplementedException();
+    }
+
+    public bool CanAttack(List<DamageableTypeSO> attackValidTarget)
+    {
+        return false;
+        if (Time.time < _attackAvailableAtSecond)
+            return false;
+
+        return true;
     }
 }

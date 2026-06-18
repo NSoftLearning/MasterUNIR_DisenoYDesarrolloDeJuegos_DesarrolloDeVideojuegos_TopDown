@@ -1,9 +1,11 @@
 using NUnit.Framework;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
 public interface IEnemyAttack
 {
-    bool CanAttack(List<IDamageReceiver> candidatesForAttack);
+    public event Action Performed;
+    bool CanAttack(List<DamageableTypeSO> attackValidTarget);// List<FoundTargetDTO<IDamageReceiver>> potentialTargets);
     void  PerformAttack();
 }
