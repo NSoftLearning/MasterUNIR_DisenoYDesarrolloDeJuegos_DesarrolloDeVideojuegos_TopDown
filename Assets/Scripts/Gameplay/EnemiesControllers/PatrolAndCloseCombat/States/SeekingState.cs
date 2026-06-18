@@ -13,7 +13,7 @@ public class SeekingState<TStateId> : IGenericState<TStateId> where TStateId : E
     private Transform _transform;
 
     private StateChangeDelegate<TStateId> _stateChangeDelegate;
-    DetectionWithForwardContext<IDamageReceiver, BasicTargetFinderQuerySettings> _detectionContext;
+    DetectionWithForwardAndIgnoreContext<IDamageReceiver, BasicTargetFinderQuerySettings<IDamageReceiver>> _detectionContext;
     float _searchPersistenceTime;
 
 
@@ -26,7 +26,7 @@ public class SeekingState<TStateId> : IGenericState<TStateId> where TStateId : E
         float searchPersistenceTime,
         CustomCharacterController customCharacterController,
         Transform thisTransform,
-        DetectionWithForwardContext<IDamageReceiver, BasicTargetFinderQuerySettings>  detectionContext,
+        DetectionWithForwardAndIgnoreContext<IDamageReceiver, BasicTargetFinderQuerySettings<IDamageReceiver>>  detectionContext,
         StateChangeDelegate <TStateId> stateChangeDelegate)
     {
         StateId = thisStateId;
@@ -62,7 +62,7 @@ public class SeekingState<TStateId> : IGenericState<TStateId> where TStateId : E
     {
         _targetsFound.Clear();
 
-        _targetsFound = _detectionContext.targetFinder.FindTargets(_detectionContext.GetCurrentQueryData(),_detectionContext.objectToIgnore);
+        _targetsFound = _detectionContext.targetFinder.FindTargets(_detectionContext.GetCurrentQueryData());
         if (_targetsFound.Count > 0)
         {
             _willDesistAt = Time.time + _searchPersistenceTime;

@@ -15,14 +15,14 @@ public class PatrolAndCloseCombatEnemyController : MonoBehaviour
     GenericStateMachine<PatrolAndCloseCombatStateId> _statesMachine;
 
     CustomCharacterController _characterController;
-    ITargetFinder<IDamageReceiver, BasicTargetFinderQuerySettings> _targetFinder;
-    DetectionWithForwardContext<IDamageReceiver, BasicTargetFinderQuerySettings> _detecionStatesContext;
+    ITargetFinder<IDamageReceiver, BasicTargetFinderQuerySettings<IDamageReceiver>> _targetFinder;
+    DetectionWithForwardAndIgnoreContext<IDamageReceiver, BasicTargetFinderQuerySettings<IDamageReceiver>> _detecionStatesContext;
 
     IOrientationService _orientationService;
 
     
     public void InjectDependencies (
-        ITargetFinder<IDamageReceiver, BasicTargetFinderQuerySettings> targetFinder,
+        ITargetFinder<IDamageReceiver, BasicTargetFinderQuerySettings<IDamageReceiver>> targetFinder,
         IOrientationService orientationService,
         CustomCharacterController custmCharacterController)
     {
@@ -33,21 +33,20 @@ public class PatrolAndCloseCombatEnemyController : MonoBehaviour
 
     private void Start()
     {
-        _detecionStatesContext = 
-            new DetectionWithForwardContext<IDamageReceiver, BasicTargetFinderQuerySettings>(
-                new BasicTargetFinderQuerySettings(
+        _detecionStatesContext =
+            new DetectionWithForwardAndIgnoreContext<IDamageReceiver, BasicTargetFinderQuerySettings<IDamageReceiver>>(
+                new BasicTargetFinderQuerySettings<IDamageReceiver>(
                     layerstToSearchForTarget,
                     _detectionRange,
                     _sidesToSearchFor,
                     _detectionOriginTransform,
                     _orientationService.Forward,
                     _halfFieldOfView,
-                    _closeDetectionRange
-                    ),
-            _targetFinder,
-            _orientationService,
-            GetComponent<IDamageReceiver>()
-        );
+                    _closeDetectionRange,
+                    GetComponent<IDamageReceiver>()),
+                _targetFinder,
+                _orientationService,
+                GetComponent<IDamageReceiver>());
 
         InitializeStateMachine();
     }

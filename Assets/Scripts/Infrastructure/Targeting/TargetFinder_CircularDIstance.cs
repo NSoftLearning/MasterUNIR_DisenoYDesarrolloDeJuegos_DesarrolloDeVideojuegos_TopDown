@@ -12,10 +12,10 @@ public struct CircleTargetFinderQuerySettings
 }
 public class TargetFinder_CircularDIstance<TARGET_TYPE> : ITargetFinder<TARGET_TYPE, CircleTargetFinderQuerySettings>
 {
-    
-    public List<FoundTargetDTO<TARGET_TYPE>> FindTargets(CircleTargetFinderQuerySettings circleTargetFinderQuerySettings, List<TARGET_TYPE> ignoreList, Vector3 originForward)
+
+    public List<FoundTargetDTO<TARGET_TYPE>> FindTargets(CircleTargetFinderQuerySettings queryData)
     {
-        Collider2D[] colliderList = Physics2D.OverlapCircleAll(circleTargetFinderQuerySettings.position, circleTargetFinderQuerySettings.radius);
+        Collider2D[] colliderList = Physics2D.OverlapCircleAll(queryData.position, queryData.radius);
         List<FoundTargetDTO<TARGET_TYPE>> targetList = new List<FoundTargetDTO<TARGET_TYPE>>();
         TARGET_TYPE currentTarget;
         FoundTargetDTO<TARGET_TYPE> targetDTO;
@@ -32,4 +32,6 @@ public class TargetFinder_CircularDIstance<TARGET_TYPE> : ITargetFinder<TARGET_T
         }
         return targetList;
     }
+
+
 }

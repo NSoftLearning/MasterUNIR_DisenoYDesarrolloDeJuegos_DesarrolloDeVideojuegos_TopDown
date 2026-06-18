@@ -19,7 +19,7 @@ public class TargetFinderCircularTest : MonoBehaviour
 
     private void Update()
     {
-        List<FoundTargetDTO<IDamageReceiver>> resultList = targetFinder.FindTargets(targetFinderQuerySettings, new List<IDamageReceiver>(), transform.forward);
+        List<FoundTargetDTO<IDamageReceiver>> resultList = targetFinder.FindTargets(targetFinderQuerySettings);
         Debug.Log(resultList.Count);
     }
 }

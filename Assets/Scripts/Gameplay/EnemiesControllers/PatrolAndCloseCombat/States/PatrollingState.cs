@@ -8,12 +8,12 @@ public class PatrollingState<TStateId> : IGenericState<TStateId> where TStateId 
 
     TStateId _nextStateId; 
     private StateChangeDelegate<TStateId> _stateChangeDelegate;
-    DetectionWithForwardContext<IDamageReceiver, BasicTargetFinderQuerySettings> _context;
+    DetectionWithForwardAndIgnoreContext<IDamageReceiver, BasicTargetFinderQuerySettings<IDamageReceiver>> _context;
          
     public PatrollingState (
         TStateId thisStateId,
         TStateId nextStateId,
-        DetectionWithForwardContext<IDamageReceiver, BasicTargetFinderQuerySettings> context,
+        DetectionWithForwardAndIgnoreContext<IDamageReceiver, BasicTargetFinderQuerySettings<IDamageReceiver>> context,
         StateChangeDelegate<TStateId> stateChangeDelegate
         )
     {
@@ -36,7 +36,7 @@ public class PatrollingState<TStateId> : IGenericState<TStateId> where TStateId 
     public void Tick()
     {
         List<FoundTargetDTO<IDamageReceiver>> targetsFound =
-            _context.targetFinder.FindTargets(_context.GetCurrentQueryData(),_context.objectToIgnore);
+            _context.targetFinder.FindTargets(_context.GetCurrentQueryData());
         if (targetsFound.Count > 0)
             _stateChangeDelegate.Invoke(StateId, _nextStateId);
             
