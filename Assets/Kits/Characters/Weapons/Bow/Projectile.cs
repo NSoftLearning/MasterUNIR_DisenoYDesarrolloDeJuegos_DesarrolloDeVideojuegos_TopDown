@@ -15,13 +15,19 @@ public class Projectile : MonoBehaviour
         float x = 0, y = 0;
         switch (dir)
         {
-            case Direction.Up: y = linearVelocity; break;
-            case Direction.Down: y = -linearVelocity; break;
-            case Direction.Left: x = -linearVelocity; break;
-            case Direction.Right: x = linearVelocity; break;
+            case Direction.Up: y = 1; break;
+            case Direction.Down: y = -1; break;
+            case Direction.Left: x = -1; break;
+            case Direction.Right: x = 1; break;
         }
 
-        rb.linearVelocityX = x;
-        rb.linearVelocityY = y;
+        rb.linearVelocityX = x * linearVelocity;
+        rb.linearVelocityY = y * linearVelocity;
+
+
+        Animator anim = GetComponent<Animator>();
+
+        anim.SetFloat("HorizontalDirection", x);
+        anim.SetFloat("VerticalDirection", -y);
     }
 }
