@@ -17,7 +17,7 @@ public class SeekingState<TStateId> : IGenericState<TStateId> where TStateId : E
     DetectionWithForwardAndIgnoreContext<IDamageReceiver, DistanceAndLosTargetFinderQuerySettings<IDamageReceiver>> _detectionContext;
     private IEnemyAttack _enemyAttack;
     float _searchPersistenceTime;
-
+    List<DamageableTypeSO> _damageableTypesOfInterest;
 
     List<FoundTargetDTO<IDamageReceiver>> _currentTargetsOfInterest = new ();
     float _willDesistAt = 0;
@@ -31,7 +31,8 @@ public class SeekingState<TStateId> : IGenericState<TStateId> where TStateId : E
         DetectionWithForwardAndIgnoreContext<IDamageReceiver, DistanceAndLosTargetFinderQuerySettings<IDamageReceiver>> detectionContext,
         DamageReceiverTargetSelector targetSelector,
         IEnemyAttack enemyAttack,
-        StateChangeDelegate <TStateId> stateChangeDelegate)
+        List<DamageableTypeSO> damageableTypesOfInterest,
+    StateChangeDelegate <TStateId> stateChangeDelegate)
     {
         StateId = thisStateId;
         _handleTargetReached = handleTargetReached;
@@ -43,6 +44,7 @@ public class SeekingState<TStateId> : IGenericState<TStateId> where TStateId : E
         _targetSelector = targetSelector; 
         _detectionContext = detectionContext;
         _enemyAttack = enemyAttack;
+        _damageableTypesOfInterest = damageableTypesOfInterest;
     }
 
     public void Enter()
@@ -72,7 +74,7 @@ public class SeekingState<TStateId> : IGenericState<TStateId> where TStateId : E
             return;            
         }
 
-        if (_enemyAttack.CanAttack(_targetSelector.DamageableTypes))// _currentTargetsOfInterest))
+        if (_enemyAttack.CanAttackSomething(_detectionContext.GetCurrentQueryData().layersToSearch, _damageableTypesOfInterest))// _targetSelector.DamageableTypes))// _currentTargetsOfInterest))
             _stateChangeDelegate.Invoke(StateId, _handleTargetReached);
     }
 

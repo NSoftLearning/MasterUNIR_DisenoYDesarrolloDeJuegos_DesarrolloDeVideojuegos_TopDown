@@ -82,10 +82,15 @@ public class PatrolAndCloseCombatEnemyController : MonoBehaviour
                 _detecionStatesContext,
                 _targetSelector,
                 _enemyAttack,
+                _damageableTypesOfInterest,
                 _statesMachine.FromStateToState),
             new AttackingStatee <PatrolAndCloseCombatStateId> (
                 PatrolAndCloseCombatStateId.Attacking,
                 PatrolAndCloseCombatStateId.Patrolling,
+                _enemyAttack,
+                layerstToSearchForTarget, 
+                _damageableTypesOfInterest,
+                _detectionOriginTransform,
                 _statesMachine.FromStateToState)
         };
 

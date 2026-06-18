@@ -13,7 +13,7 @@ public class Life : MonoBehaviour, IDamageReceiver
     public UnityEvent <float> onLifeDepleted;
 
     //HurtCollider hurtCollider;
-    private int currentLife;
+   [SerializeField] private int currentLife;
 
     
     public event Action Died;

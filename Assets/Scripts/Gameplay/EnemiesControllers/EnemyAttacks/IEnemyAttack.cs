@@ -6,6 +6,6 @@ using UnityEngine;
 public interface IEnemyAttack
 {
     public event Action Performed;
-    bool CanAttack(List<DamageableTypeSO> attackValidTarget);// List<FoundTargetDTO<IDamageReceiver>> potentialTargets);
-    void  PerformAttack();
+    bool CanAttackSomething(LayerMask _targetLayers, List<DamageableTypeSO> _validDamageables);//List<DamageableTypeSO> attackValidTarget);// List<FoundTargetDTO<IDamageReceiver>> potentialTargets);
+    void PerformAttack(LayerMask _targetLayers, List<DamageableTypeSO> validDamageables, Vector3 damageOrigin);
 }
