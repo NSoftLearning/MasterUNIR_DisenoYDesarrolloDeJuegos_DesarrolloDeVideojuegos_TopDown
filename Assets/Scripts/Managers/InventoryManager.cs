@@ -4,6 +4,7 @@ using UnityEditor;
 
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class InventoryManager : MonoBehaviour
 {
@@ -12,6 +13,10 @@ public class InventoryManager : MonoBehaviour
     [SerializeField] private GameObject itemUser;
 
     private InventoryRuntime currentInventory;
+    public event Action OnBasicClick;
+    public event Action<bool> OnUse;
+    public event Action<bool> OnMove;
+
 
 
 
@@ -30,7 +35,14 @@ public class InventoryManager : MonoBehaviour
         RefreshUI();
        
     }
-
+    public void SwitchInventorySO(InventorySO inventory)
+    {
+        if (inventory == null)
+            return;
+        inventorySO = inventory;
+        LoadInventoryFromSO();
+        RefreshUI();
+    }
     private void Update()
     {
         if (clearInventory)
