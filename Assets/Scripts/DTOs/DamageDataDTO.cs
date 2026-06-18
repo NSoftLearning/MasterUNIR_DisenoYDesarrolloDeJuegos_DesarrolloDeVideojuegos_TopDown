@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public struct DamageDataDTO
 {
     public int damageAmount;
