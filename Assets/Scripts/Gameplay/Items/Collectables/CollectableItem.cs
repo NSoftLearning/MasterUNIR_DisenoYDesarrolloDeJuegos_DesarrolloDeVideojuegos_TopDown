@@ -22,7 +22,7 @@ public class CollectableItem : MonoBehaviour
 
     public void Collect()
     {
-        InventoryManager.Instance.AddItem(itemData);
+        ComponentLocatorService.Components.InventoryManager.AddItem(itemData);
         Destroy(gameObject);
     }
 }

@@ -2,12 +2,12 @@ using UnityEngine;
 
 public class ComponentsLibrary : MonoBehaviour
 {
-    public InventorySO InventorySO => _inventory;
+    public InventoryManager InventoryManager => _inventory;
     public SfxManager SfxManager => _sfxManager;
     public ITargetFinder<IDamageReceiver, DistanceAndLosTargetFinderQuerySettings<IDamageReceiver>> TargetFinderService_DistanceAndLOS => _damageableFinderService_DistanceAndLOS;
 
 
-    [SerializeField] InventorySO _inventory;
+    [SerializeField] InventoryManager _inventory;
     [SerializeField] SfxManager _sfxManager;
 
 

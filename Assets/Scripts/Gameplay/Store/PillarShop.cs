@@ -53,7 +53,7 @@ public class PillarShop : MonoBehaviour, IInteractables
         coinManager.currentCoins -= itemData.price;
         anim.SetTrigger("Buy It");
 
-       InventoryManager.Instance.AddItem(itemData);
+        ComponentLocatorService.Components.InventoryManager.AddItem(itemData);
        // Agregar función de agregado del item al inventario
 
         Debug.Log("Compraste: " + itemData.itemName);

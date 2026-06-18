@@ -46,13 +46,13 @@ public class PlayerControl : MonoBehaviour
     private void OnQuickAccessOne(InputAction.CallbackContext context)
     {
         if (!context.performed) return;
-        InventoryManager.Instance.UseQuickAccessItem(0);
+        ComponentLocatorService.Components.InventoryManager.UseQuickAccessItem(0);
     }
 
     private void OnQuickAccessTwo(InputAction.CallbackContext context)
     {
         if (!context.performed) return;
-        InventoryManager.Instance.UseQuickAccessItem(1);
+        ComponentLocatorService.Components.InventoryManager.UseQuickAccessItem(1);
     }
 
     private void Move(InputAction.CallbackContext context)

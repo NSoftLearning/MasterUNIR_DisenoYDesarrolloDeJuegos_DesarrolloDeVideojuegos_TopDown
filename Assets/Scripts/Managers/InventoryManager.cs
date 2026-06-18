@@ -13,7 +13,7 @@ public class InventoryManager : MonoBehaviour
 
     private InventoryRuntime currentInventory;
 
-    public static InventoryManager Instance;
+
 
     [Header("Debug Settings")]
     public bool clearInventory = false;
@@ -25,18 +25,10 @@ public class InventoryManager : MonoBehaviour
 
     private void Awake()
     {
-        if (Instance == null)
-        {
-            Instance = this;
-            DontDestroyOnLoad(gameObject);
-
-            LoadInventoryFromSO();
-            RefreshUI();
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
+  
+        LoadInventoryFromSO();
+        RefreshUI();
+       
     }
 
     private void Update()

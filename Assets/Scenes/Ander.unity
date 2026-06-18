@@ -877,8 +877,8 @@ Canvas:
   m_GameObject: {fileID: 252443793}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
+  m_RenderMode: 1
+  m_Camera: {fileID: 1073092748}
   m_PlaneDistance: 1.63
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -1668,6 +1668,8 @@ MonoBehaviour:
   anim: {fileID: 0}
   priceText: {fileID: 0}
   isSelected: 0
+  spriteKey: {fileID: 0}
+  fadeShowKey: 0.2
 --- !u!58 &475620739
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -2612,6 +2614,53 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 996237220}
   m_CullTransparentMesh: 1
+--- !u!1 &1002137655
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1002137657}
+  - component: {fileID: 1002137656}
+  m_Layer: 0
+  m_Name: SfxManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1002137656
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1002137655}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6e6e772ae09bcd46a96b05a60023439, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SfxManager
+  _numOfAudioSources: 6
+  _numOfLoopAudioSources: 6
+  _audioSourcesPrefab: {fileID: 1752858065650685638, guid: e674eaf0b853f4a4690a424d3e4f7d0f, type: 3}
+--- !u!4 &1002137657
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1002137655}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.87765, y: 0.07046, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1007366541
 GameObject:
   m_ObjectHideFlags: 0
@@ -3056,6 +3105,8 @@ MonoBehaviour:
   anim: {fileID: 0}
   priceText: {fileID: 0}
   isSelected: 0
+  spriteKey: {fileID: 0}
+  fadeShowKey: 0.2
 --- !u!58 &1078662022
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -3436,6 +3487,71 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -20, y: -20}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1001 &1219940964
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2853373700699954859, guid: 2664b29c60afb234babf4f7346b40f34, type: 3}
+      propertyPath: _inventory
+      value: 
+      objectReference: {fileID: 76768656}
+    - target: {fileID: 2853373700699954859, guid: 2664b29c60afb234babf4f7346b40f34, type: 3}
+      propertyPath: _sfxManager
+      value: 
+      objectReference: {fileID: 1002137656}
+    - target: {fileID: 8054697394798661580, guid: 2664b29c60afb234babf4f7346b40f34, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -4.41273
+      objectReference: {fileID: 0}
+    - target: {fileID: 8054697394798661580, guid: 2664b29c60afb234babf4f7346b40f34, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.07737
+      objectReference: {fileID: 0}
+    - target: {fileID: 8054697394798661580, guid: 2664b29c60afb234babf4f7346b40f34, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8054697394798661580, guid: 2664b29c60afb234babf4f7346b40f34, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8054697394798661580, guid: 2664b29c60afb234babf4f7346b40f34, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8054697394798661580, guid: 2664b29c60afb234babf4f7346b40f34, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8054697394798661580, guid: 2664b29c60afb234babf4f7346b40f34, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8054697394798661580, guid: 2664b29c60afb234babf4f7346b40f34, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8054697394798661580, guid: 2664b29c60afb234babf4f7346b40f34, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8054697394798661580, guid: 2664b29c60afb234babf4f7346b40f34, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8651478354645814383, guid: 2664b29c60afb234babf4f7346b40f34, type: 3}
+      propertyPath: m_Name
+      value: ==GameplayInfra==
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2664b29c60afb234babf4f7346b40f34, type: 3}
 --- !u!1001 &1276110411
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3658,7 +3774,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -241.40009, y: 196.4}
+  m_AnchoredPosition: {x: -241.40005, y: 196.4}
   m_SizeDelta: {x: -482.8, y: -392.79}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1425320168
@@ -5867,6 +5983,8 @@ MonoBehaviour:
   anim: {fileID: 0}
   priceText: {fileID: 0}
   isSelected: 0
+  spriteKey: {fileID: 0}
+  fadeShowKey: 0.2
 --- !u!58 &2050541379
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -6331,7 +6449,9 @@ SceneRoots:
   - {fileID: 1276110411}
   - {fileID: 1987869622163646870}
   - {fileID: 1880867769}
-  - {fileID: 76768655}
   - {fileID: 1786880938}
   - {fileID: 1858627701}
   - {fileID: 252443797}
+  - {fileID: 1219940964}
+  - {fileID: 1002137657}
+  - {fileID: 76768655}

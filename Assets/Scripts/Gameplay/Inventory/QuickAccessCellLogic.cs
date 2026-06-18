@@ -19,7 +19,7 @@ public class QuickAccessCellLogic : MonoBehaviour, IDropHandler
 
         draggableItem.MarkAsDroppedSuccessfully();
 
-        InventoryManager.Instance.AssignItemToQuickAccess(
+        ComponentLocatorService.Components.InventoryManager.AssignItemToQuickAccess(
             draggableItem.InventoryIndex,
             quickAccessIndex
         );

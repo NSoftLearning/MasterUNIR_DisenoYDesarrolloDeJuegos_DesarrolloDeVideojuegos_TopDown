@@ -65,6 +65,6 @@ public class InventoryCellSlot : MonoBehaviour
         if (_inventoryIndex < 0)
             return;
 
-        InventoryManager.Instance.UseItemAt(_inventoryIndex);
+        ComponentLocatorService.Components.InventoryManager.UseItemAt(_inventoryIndex);
     }
 }
