@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -9,6 +10,9 @@ public class FireBallTrap : MonoBehaviour, ITrap
     [SerializeField] float _timeBetweenBalls = 0.5f;
     [SerializeField] Direction _direction;
 
+    public event Action OnActivate;
+    public event Action OnDeactivate;
+
     public void Activate()
     {
         StopCoroutine(SpawnBalls());
@@ -17,7 +21,6 @@ public class FireBallTrap : MonoBehaviour, ITrap
 
         if (_numOfBalls > 1)
         {
-
             StartCoroutine(SpawnBalls());
         }
     }
@@ -27,7 +30,8 @@ public class FireBallTrap : MonoBehaviour, ITrap
         GameObject spawned = Instantiate(_fireBall, _spawnPoint.position, Quaternion.identity);
         Projectile proj = spawned.GetComponent<Projectile>();
         proj.SetDirection(_direction);
-        //proj.transform.eulerAngles = new Vector3(0, 0, -90);
+
+        OnActivate.Invoke();
     }
 
     IEnumerator SpawnBalls()
@@ -45,5 +49,7 @@ public class FireBallTrap : MonoBehaviour, ITrap
     public void Deactivate()
     {
         StopCoroutine(SpawnBalls());
+
+        OnDeactivate.Invoke();
     }
 }
