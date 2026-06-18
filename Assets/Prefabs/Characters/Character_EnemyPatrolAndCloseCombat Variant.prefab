@@ -39,6 +39,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 314696968896216295, guid: 7529b2afa91c15d4a883be5ae07470e6, type: 3}
+      propertyPath: type
+      value: 
+      objectReference: {fileID: 11400000, guid: 5ed885d083d7ece418e4eec0dd191588, type: 2}
     - target: {fileID: 4736413475477760085, guid: 7529b2afa91c15d4a883be5ae07470e6, type: 3}
       propertyPath: _movementSpeed
       value: 0.2
@@ -151,8 +155,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PatrolAndCloseCombatEnemyController
   _detectionRange: 8
   _closeDetectionRange: 1.5
-  _sidesToSearchFor:
-  - {fileID: 11400000, guid: b1bd0b50c8b3ca24bab4d8ac30f38768, type: 2}
+  _damageableTypesOfInterest:
+  - {fileID: 11400000, guid: 6a2fdd1649abac645acbed71391b40f4, type: 2}
   layerstToSearchForTarget:
     serializedVersion: 2
     m_Bits: 4294967295
