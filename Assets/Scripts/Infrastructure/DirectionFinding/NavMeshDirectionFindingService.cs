@@ -11,13 +11,14 @@ public class NavMeshDirectionFindingService : MonoBehaviour, IDirectionFindingSe
 
     private NavMeshPath _path ;
 
-    void Start()
+    void Awake()
     {
         _path = new();
     }
-    public bool TryGetDirection(Vector2 origin, Vector2 destination, out Vector2 direction)
+    public bool TryGetDirection(Vector3 origin, Vector3 destination, out Vector3 directionToNextCorner, out Vector3 nextCornerPosition)
     {
-        direction = Vector2.zero;
+        directionToNextCorner = Vector3.zero;
+        nextCornerPosition = Vector3.zero;
 
         Vector3 origin3D = new Vector3(origin.x, origin.y, _navMeshZ);
         Vector3 destination3D = new Vector3(destination.x, destination.y, _navMeshZ);
@@ -38,16 +39,19 @@ public class NavMeshDirectionFindingService : MonoBehaviour, IDirectionFindingSe
             return false;
 
         Vector3 nextWaypoint = _path.corners[1];
+        Debug.Log($"Raw navmesh corner: {_path.corners[1]}");
 
-        Vector2 fromCurrentPositionToNextWaypoint = new Vector2(
-            nextWaypoint.x - origin.x,
-            nextWaypoint.y - origin.y
-        );
+        nextCornerPosition = new Vector3(nextWaypoint.x, nextWaypoint.y, 0f);
+
+        Vector3 originOnMovementPlane = new Vector3(origin.x, origin.y, 0f);
+
+        Vector3 fromCurrentPositionToNextWaypoint = nextCornerPosition - originOnMovementPlane;
+        fromCurrentPositionToNextWaypoint.z = 0f;
 
         if (fromCurrentPositionToNextWaypoint.sqrMagnitude <= 0.0001f)
             return false;
 
-        direction = fromCurrentPositionToNextWaypoint.normalized;
+        directionToNextCorner = fromCurrentPositionToNextWaypoint.normalized;
         return true;
     }
 }

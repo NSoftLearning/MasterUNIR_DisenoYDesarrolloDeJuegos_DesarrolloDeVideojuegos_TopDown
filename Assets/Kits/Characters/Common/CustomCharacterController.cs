@@ -35,7 +35,7 @@ public class CustomCharacterController : MonoBehaviour, IVisible, IOrientationSe
 
     private PlayerWeaponController _weaponController;
 
-    public Vector3 Position => _position;
+    public Vector3 Position => transform.position;
     public Vector3 Forward => _forward;
 
    
@@ -45,7 +45,7 @@ public class CustomCharacterController : MonoBehaviour, IVisible, IOrientationSe
         _weaponController = GetComponent<PlayerWeaponController>();
 
         stamina = _maxStamina;
-        onStaminaChanged.Invoke(stamina, _maxStamina);
+       // onStaminaChanged.Invoke(stamina, _maxStamina);
 
         if (_weaponController != null)
         {
@@ -55,7 +55,7 @@ public class CustomCharacterController : MonoBehaviour, IVisible, IOrientationSe
 
 
     bool canMove = true;
-    Vector3 _position;
+
     Vector3 _forward;
     Direction lastDirection;
     private void Update()
@@ -103,7 +103,7 @@ public class CustomCharacterController : MonoBehaviour, IVisible, IOrientationSe
 
     void RefreshOrientation()
     {
-        _position = transform.position;
+        //_position = transform.position;
         if (_rigidbody.linearVelocity.magnitude != 0)
             _forward = _rigidbody.linearVelocity.normalized;
     }

@@ -8,17 +8,26 @@ public struct DetectionWithForwardAndIgnoreContext <SEARCHED_TYPE, SEARCH_QUERY_
     public ITargetFinder<SEARCHED_TYPE, SEARCH_QUERY_DATA> targetFinder;
     public IOrientationService orientationService;
     public SEARCHED_TYPE objectToIgnore;
+    public IDirectionFindingService directionFindingService;
+    public PatrolRoute patrolRoute;
+    public CustomCharacterController customCharacterController;
 
     public DetectionWithForwardAndIgnoreContext(
-        SEARCH_QUERY_DATA querySettings, 
-        ITargetFinder<SEARCHED_TYPE, SEARCH_QUERY_DATA> targetFinder, 
+        SEARCH_QUERY_DATA querySettings,
+        ITargetFinder<SEARCHED_TYPE, SEARCH_QUERY_DATA> targetFinder,
         IOrientationService orientationService,
-        SEARCHED_TYPE damageReceiverToIgnore) 
+        PatrolRoute patrolRoute,
+        IDirectionFindingService directionFindingService,
+        SEARCHED_TYPE damageReceiverToIgnore,
+        CustomCharacterController customCharacterController) 
     {
         this.querySettings = querySettings;
         this.targetFinder = targetFinder;
         this.orientationService = orientationService;
         this.objectToIgnore = damageReceiverToIgnore;
+        this.directionFindingService = directionFindingService;
+        this.patrolRoute = patrolRoute;
+        this.customCharacterController = customCharacterController;
     }
     public SEARCH_QUERY_DATA GetCurrentQueryData()
     {

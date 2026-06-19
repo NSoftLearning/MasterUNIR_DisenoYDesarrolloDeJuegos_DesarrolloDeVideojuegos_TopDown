@@ -149,6 +149,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ComponentsLibrary
   _inventory: {fileID: 8483224371258384520}
   _sfxManager: {fileID: 8889581965294648836}
+  _directionFindingService: {fileID: 8651478354645814383}
 --- !u!114 &9082283650887705534
 MonoBehaviour:
   m_ObjectHideFlags: 0
