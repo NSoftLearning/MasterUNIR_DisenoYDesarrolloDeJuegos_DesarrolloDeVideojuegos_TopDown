@@ -2,7 +2,8 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-    [SerializeField] float linearVelocity = 2f;
+    [SerializeField] float _linearVelocity = 2f;
+    [SerializeField] GameObject _explosionPrefab;
 
     Rigidbody2D rb;
     private void Awake()
@@ -21,13 +22,21 @@ public class Projectile : MonoBehaviour
             case Direction.Right: x = 1; break;
         }
 
-        rb.linearVelocityX = x * linearVelocity;
-        rb.linearVelocityY = y * linearVelocity;
+        rb.linearVelocityX = x * _linearVelocity;
+        rb.linearVelocityY = y * _linearVelocity;
 
 
         Animator anim = GetComponent<Animator>();
 
         anim.SetFloat("HorizontalDirection", x);
         anim.SetFloat("VerticalDirection", -y);
+    }
+
+    public void FinishMovement()
+    {
+        // Particulas de explosion
+        Instantiate(_explosionPrefab, transform.position, Quaternion.identity);
+
+        Destroy(gameObject);
     }
 }

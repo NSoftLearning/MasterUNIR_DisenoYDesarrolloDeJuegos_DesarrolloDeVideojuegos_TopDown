@@ -3,13 +3,13 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "HealItemEffect", menuName = "Content/Items/Effects/Heal Effect")]
 public class HealingEffectSO : ItemEffectSO
 {
-    [SerializeField] private int healAmount = 10;
+    [SerializeField] private int healAmount = 3;
 
-    public override bool Use(GameObject user)
+    public override bool ApplyEffect(GameObject user)
     {
         if (user == null)
         {
-            Debug.LogWarning("No user assigned for item use.");
+            Debug.LogWarning("Cannot use heal item. User is null.");
             return false;
         }
 
@@ -17,7 +17,7 @@ public class HealingEffectSO : ItemEffectSO
 
         if (life == null)
         {
-            Debug.LogWarning("Life component not found on user.");
+            Debug.LogWarning("Cannot use heal item. Life component not found.");
             return false;
         }
 

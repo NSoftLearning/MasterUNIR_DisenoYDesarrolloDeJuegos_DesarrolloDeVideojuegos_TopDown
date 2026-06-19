@@ -12,4 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6855503138da4ac47a05ed8eee6bfbc6, type: 3}
   m_Name: BigHealEffect
   m_EditorClassIdentifier: Assembly-CSharp::HealingEffectSO
+  useVfxPrefab: {fileID: 3565931892240202546, guid: 3184498d15aef38418edb4e2f4e5e856, type: 3}
+  attachVfxToUser: 1
+  vfxOffset: {x: 0, y: 0, z: 0}
+  destroyVfxAfterSeconds: 2
   healAmount: 60

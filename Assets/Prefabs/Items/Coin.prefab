@@ -31,8 +31,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.93, y: 0.93, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 8336354653187814539}
   m_Father: {fileID: 0}
@@ -82,8 +82,8 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 2138572193
-  m_SortingLayer: 3
+  m_SortingLayerID: -1717461461
+  m_SortingLayer: 6
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: -1110126541007599292, guid: 8a89e0904187d6441bd7cf8db1a126cc, type: 3}
@@ -178,6 +178,7 @@ MonoBehaviour:
   coinPointTransfer: {fileID: 0}
   flySpeed: 120
   delayBeforeCollect: 1
+  coinCollider: {fileID: 0}
 --- !u!95 &3209702176519807738
 Animator:
   serializedVersion: 7
@@ -188,7 +189,7 @@ Animator:
   m_GameObject: {fileID: 1905671399633139356}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a12dec8824419774594671276c1147f7, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
