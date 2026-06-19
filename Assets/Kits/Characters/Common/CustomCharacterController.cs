@@ -85,10 +85,12 @@ public class CustomCharacterController : MonoBehaviour, IVisible, IOrientationSe
             return;
         } 
         
-        _animator.SetFloat("HorizontalVelocity", rawMove.x);
-        _animator.SetFloat("VerticalVelocity", rawMove.y);
-
-        if (rawMove.x != 0 || rawMove.y != 0) Walking();
+        if (rawMove.x != 0 || rawMove.y != 0) 
+        { 
+            _animator.SetFloat("HorizontalVelocity", rawMove.x);
+            _animator.SetFloat("VerticalVelocity", rawMove.y);
+            Walking(); 
+        }
         else StopWalking();
     }
 
@@ -97,6 +99,7 @@ public class CustomCharacterController : MonoBehaviour, IVisible, IOrientationSe
         if (!walk)
         {
             walk = true;
+            _animator.SetBool("Walk", true);
             OnWalking?.Invoke();
         }
     }
@@ -106,6 +109,7 @@ public class CustomCharacterController : MonoBehaviour, IVisible, IOrientationSe
         if (walk)
         {
             walk = false;
+            _animator.SetBool("Walk", false);
             OnStopWalking?.Invoke();
         }
     }
@@ -118,9 +122,8 @@ public class CustomCharacterController : MonoBehaviour, IVisible, IOrientationSe
 
         //_capsuleCollider.enabled = false;
         OnRoll?.Invoke();
-
         canMove = false;
-        _rigidbody.linearVelocity = _rawMovement * _rollSpeed;
+        _rigidbody.linearVelocity = _forward * _rollSpeed;
         stamina -= _rollStamina;
         onStaminaChanged.Invoke(stamina, _maxStamina);
 
