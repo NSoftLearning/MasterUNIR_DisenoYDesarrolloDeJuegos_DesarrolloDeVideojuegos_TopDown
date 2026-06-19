@@ -331,7 +331,7 @@ TextureImporter:
         height: 160
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 12, y: 12, z: 12, w: 12}
       customData: 
       outline: []
       physicsShape: []
@@ -353,7 +353,7 @@ TextureImporter:
         height: 147
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 5, y: 7, z: 5, w: 5}
       customData: 
       outline: []
       physicsShape: []
@@ -1987,30 +1987,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c4f8c59e48969b842a840e5c997ee8f7
-      internalID: 1402322059
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: UI_TravelBook_Spritesheet01a_76
-      rect:
-        serializedVersion: 2
-        x: 97
-        y: 295
-        width: 30
-        height: 2
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f0f5ad3998729e244897274b94197981
-      internalID: 567624519
+      spriteID: ec7e758168e28ad478894c358faab231
+      internalID: -926674637
       vertices: []
       indices: 
       edges: []
@@ -2104,8 +2082,7 @@ TextureImporter:
       UI_TravelBook_Spritesheet01a_72: 440659322342832948
       UI_TravelBook_Spritesheet01a_73: 860274235407915612
       UI_TravelBook_Spritesheet01a_74: -1678856124046620459
-      UI_TravelBook_Spritesheet01a_75: 1402322059
-      UI_TravelBook_Spritesheet01a_76: 567624519
+      UI_TravelBook_Spritesheet01a_75: -926674637
       UI_TravelBook_Spritesheet01a_8: 7260228440296810101
       UI_TravelBook_Spritesheet01a_9: -8858865788211059562
   mipmapLimitGroupName: 

@@ -10,6 +10,8 @@ public class ScenesManager : MonoBehaviour
     [Header("Fade Settings")]
     [SerializeField] float fadeDuration = 1f;
 
+    public bool onTransition = false;
+
     private void Awake()
     {
         fadeCanvasGroup = GameObject.Find("FadePanel").GetComponent<CanvasGroup>();
@@ -40,6 +42,7 @@ public class ScenesManager : MonoBehaviour
     IEnumerator FadeIn()
     {
         fadeCanvasGroup.blocksRaycasts = true; // Bloquea la interacción mientras se realiza el fade
+        onTransition = true;
 
         float elapsedTime = 0f;
         while (elapsedTime < fadeDuration)
@@ -50,18 +53,19 @@ public class ScenesManager : MonoBehaviour
         }
         fadeCanvasGroup.alpha = 0f;
         fadeCanvasGroup.blocksRaycasts = false; // Desbloquea la interacción cuando termina el fade
-
+        onTransition = false;
     }
 
     IEnumerator FadeOut(string nameScene)
     {
         fadeCanvasGroup.blocksRaycasts = true;
+        onTransition = true;
 
         float elapsedTime = 0f;
         while (elapsedTime < fadeDuration)
         {
             fadeCanvasGroup.alpha = Mathf.Lerp(0f, 1f, elapsedTime / fadeDuration);
-            elapsedTime += Time.deltaTime;
+            elapsedTime += Time.unscaledDeltaTime;
             yield return null;
         }
         fadeCanvasGroup.alpha = 1f;

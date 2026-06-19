@@ -826,7 +826,7 @@ AnimationClip:
   m_Events:
   - time: 0.6666667
     functionName: CallFadeOut_LoadScene
-    data: Lobby
+    data: Intro
     objectReferenceParameter: {fileID: 11400000, guid: c2679168d047adc4a96a09b06823a812, type: 2}
     floatParameter: 0
     intParameter: 0
