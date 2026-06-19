@@ -31,19 +31,19 @@ public class DamageFeedback : MonoBehaviour
         if (amount > 0)
         {
             AudioInfo heal= new AudioInfo(_heal, _healVolume);
-            ComponentLocatorService.Components.SfxManager.PlaySound(heal);
+            ComponentLocatorService.Components.SfxManager?.PlaySound(heal);
         }
         else
         {
             AudioInfo damage = new AudioInfo(_damage, _damageVolume);
-            ComponentLocatorService.Components.SfxManager.PlaySound(damage);
+            ComponentLocatorService.Components.SfxManager?.PlaySound(damage);
         }
     }
 
     private void OnDied()
     {
         AudioInfo death = new AudioInfo(_death, _deathVolume);
-        ComponentLocatorService.Components.SfxManager.PlaySound(death);
+        ComponentLocatorService.Components.SfxManager?.PlaySound(death);
     }
 
     private void OnDisable()

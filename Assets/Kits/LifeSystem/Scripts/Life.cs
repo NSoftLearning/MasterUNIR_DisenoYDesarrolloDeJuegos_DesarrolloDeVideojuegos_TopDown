@@ -6,14 +6,14 @@ using UnityEngine.Events;
 public class Life : MonoBehaviour, IDamageReceiver
 {
     [SerializeField] int startLife = 10;
-    [SerializeField] int damagePerHit = 3;
+    //[SerializeField] int damagePerHit = 3;
     [SerializeField] DamageableTypeSO type;
 
     public UnityEvent <float, float> onLifeChanged;
     public UnityEvent <float> onLifeDepleted;
 
     //HurtCollider hurtCollider;
-    private int currentLife;
+   [SerializeField] private int currentLife;
 
     
     public event Action Died;
@@ -31,21 +31,21 @@ public class Life : MonoBehaviour, IDamageReceiver
         */
     }
 
-  /*  private void OnHitReceived()
-    {
-        if (currentLife > 0)
-        {
-            currentLife -= damagePerHit;
-            onLifeChanged.Invoke(currentLife, startLife);
+    /*  private void OnHitReceived()
+      {
+          if (currentLife > 0)
+          {
+              currentLife -= damagePerHit;
+              onLifeChanged.Invoke(currentLife, startLife);
 
-            if (currentLife <= 0)
-            {
-                currentLife = 0;
-                onLifeDepleted.Invoke(startLife);
-            }
-        }
-    }
-  */
+              if (currentLife <= 0)
+              {
+                  currentLife = 0;
+                  onLifeDepleted.Invoke(startLife);
+              }
+          }
+      }
+    */
 
     /*
     [ContextMenu (nameof(SimulateHitReceived))]
@@ -55,10 +55,16 @@ public class Life : MonoBehaviour, IDamageReceiver
     }
 
     */
+
+    bool inmune = false;
     public bool TryToDealDamage(DamageDataDTO damageData)
     {
-        if (currentLife <= 0)
+        if (currentLife <= 0 || inmune)
             return false;
+
+        if (!damageData.validTargets.Contains(type))
+            return false;
+
 
         currentLife -= damageData.damageAmount;
 
@@ -66,20 +72,24 @@ public class Life : MonoBehaviour, IDamageReceiver
             new LifeChangedDTO { 
                 currentValue = currentLife,
                 maxValue = startLife,
-                deltaValue = damageData.damageAmount});
+                deltaValue = -damageData.damageAmount});
 
         if (currentLife <= 0)
             Died?.Invoke();
 
         return true;
-
     }
 
-    public bool CanDamage(FoundTargetDTO<IDamageReceiver> candidateTargets)
+    public void SetInmunity(bool inmune) 
+    {
+        this.inmune = inmune;
+    }
+
+    /*public bool CanDamage(FoundTargetDTO<IDamageReceiver> candidateTargets)
     {
         //return targetTypes.Contains(type);
         return false;
-    }
+    }*/
 
 
     public Vector3 GetPosition()

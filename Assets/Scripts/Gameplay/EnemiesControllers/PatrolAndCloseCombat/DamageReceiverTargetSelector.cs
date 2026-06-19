@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class DamageReceiverTargetSelector 
 {
+    public List<DamageableTypeSO> DamageableTypes => _damageableTypesOfInterest;
+
     private List<DamageableTypeSO> _damageableTypesOfInterest;
 
     public DamageReceiverTargetSelector(List<DamageableTypeSO> damageableTypesOfInterest)

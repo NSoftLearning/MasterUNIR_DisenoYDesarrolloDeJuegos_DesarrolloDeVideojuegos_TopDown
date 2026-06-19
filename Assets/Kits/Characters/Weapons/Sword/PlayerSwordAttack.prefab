@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 598181076215678468}
   - component: {fileID: 8674861928208327035}
   m_Layer: 0
-  m_Name: AxeAttack
+  m_Name: PlayerSwordAttack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30,7 +30,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -104,7 +104,7 @@ Animator:
   m_GameObject: {fileID: 4856673312323477086}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 380978dbfb89fcd4baa75bd610c86373, type: 2}
+  m_Controller: {fileID: 9100000, guid: 8434409386c10bd498f413a1d0951da9, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -174,3 +174,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69916b96308a11446935b4428217297f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HitCollider
+  _validDamageables:
+  - {fileID: 11400000, guid: 5ed885d083d7ece418e4eec0dd191588, type: 2}
+  - {fileID: 11400000, guid: 5c4bdde3db7682447ab9767bdc4da70c, type: 2}
+  _damageAmount: 5
+  _pushForce: 0

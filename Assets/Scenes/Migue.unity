@@ -1606,26 +1606,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2959662474283222880, guid: 2326b0a1459f0b4448ba4aea2f74f72c, type: 3}
-      propertyPath: _weaponData
-      value: 
-      objectReference: {fileID: 11400000, guid: ee97504c6f4fc054b8a8b54ec33570c7, type: 2}
-    - target: {fileID: 4914822654797302318, guid: 2326b0a1459f0b4448ba4aea2f74f72c, type: 3}
-      propertyPath: m_Size.x
-      value: 0.9
-      objectReference: {fileID: 0}
-    - target: {fileID: 4914822654797302318, guid: 2326b0a1459f0b4448ba4aea2f74f72c, type: 3}
-      propertyPath: m_Size.y
-      value: 0.88
-      objectReference: {fileID: 0}
-    - target: {fileID: 4914822654797302318, guid: 2326b0a1459f0b4448ba4aea2f74f72c, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 832966e1be5cfd24392c8bb64b0a83d8, type: 3}
-    - target: {fileID: 4914822654797302318, guid: 2326b0a1459f0b4448ba4aea2f74f72c, type: 3}
-      propertyPath: m_WasSpriteAssigned
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7716657810363601488, guid: 2326b0a1459f0b4448ba4aea2f74f72c, type: 3}
       propertyPath: m_Name
       value: AxeCollectible
@@ -1705,6 +1685,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SfxManager
   _numOfAudioSources: 6
+  _numOfLoopAudioSources: 6
   _audioSourcesPrefab: {fileID: 1752858065650685638, guid: e674eaf0b853f4a4690a424d3e4f7d0f, type: 3}
 --- !u!4 &1838547496
 Transform:
@@ -2107,10 +2088,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1120534993330081903, guid: 2d6664fbeafee234d80ebe262502609f, type: 3}
-      propertyPath: _trapVolume
-      value: 0.1
-      objectReference: {fileID: 0}
     - target: {fileID: 8445904293515666297, guid: 2d6664fbeafee234d80ebe262502609f, type: 3}
       propertyPath: m_Name
       value: FireBallTrap

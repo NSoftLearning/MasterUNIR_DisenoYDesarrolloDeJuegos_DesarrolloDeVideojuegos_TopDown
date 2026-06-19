@@ -137,7 +137,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e525da0a695105489c14558993598cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FireBallTrap
-  _fireBall: {fileID: 4856673312323477086, guid: ff0302b169b9f774fae24ebcc7690313, type: 3}
+  _fireBall: {fileID: 2448344331246417173, guid: 818dc7624a0ae3a41809e522d85fa808, type: 3}
   _spawnPoint: {fileID: 3180989980127624292}
   _numOfBalls: 3
   _timeBetweenBalls: 0.3
@@ -156,7 +156,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TrapFeedback
   _trapSound: {fileID: 8300000, guid: 26d951f02554aa3419a8ed8c0756a934, type: 3}
   _trapDeactivateSound: {fileID: 0}
-  _trapVolume: 0
+  _trapVolume: 0.1
   _trapDeactivateSoundVolume: 0
 --- !u!1 &8445904293515666297
 GameObject:

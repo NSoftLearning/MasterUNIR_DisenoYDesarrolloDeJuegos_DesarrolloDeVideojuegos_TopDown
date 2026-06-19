@@ -2540,6 +2540,72 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: CharacterTextures_2
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 505
+        width: 34
+        height: 59
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ec3ffe156aff79498f94d2794556db5
+      internalID: 2071226055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CharacterTextures_3
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 217
+        width: 34
+        height: 59
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac3f2be7d013a2442ac477fb64b9257e
+      internalID: -847234709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CharacterTextures_4
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 218
+        width: 34
+        height: 58
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d8110b34e2bec641875a73cb35d940b
+      internalID: 268660122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
@@ -2558,6 +2624,9 @@ TextureImporter:
     nameFileIdTable:
       CharacterTextures_0: -301045443
       CharacterTextures_1: 299822615
+      CharacterTextures_2: 2071226055
+      CharacterTextures_3: -847234709
+      CharacterTextures_4: 268660122
       kindpng_1637601_0: -8661417700680405879
       kindpng_1637601_1: -2582850678860025792
       kindpng_1637601_10: 5085595615374694967
