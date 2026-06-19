@@ -27,6 +27,7 @@ public class SfxManager : MonoBehaviour
         {
             GameObject newSource = Instantiate(_audioSourcesPrefab, transform);
             _audioSources.Add(newSource.GetComponent<AudioSource>());
+            
         }
 
         for (int i = 0; i < _numOfLoopAudioSources; i++)
