@@ -38,6 +38,12 @@ public class CustomCharacterController : MonoBehaviour, IVisible, IOrientationSe
     public Vector3 Position => _position;
     public Vector3 Forward => _forward;
 
+    bool walk = false;
+    public event Action OnWalking;
+    public event Action OnStopWalking;
+    public event Action OnRoll;
+    public event Action OnFinishRoll;
+
    
     private void Awake()
     {
@@ -73,10 +79,35 @@ public class CustomCharacterController : MonoBehaviour, IVisible, IOrientationSe
     {
         _rawMovement = rawMove;
 
-        if (!canMove) return;
+        if (!canMove) 
+        {
+            StopWalking();
+            return;
+        } 
         
         _animator.SetFloat("HorizontalVelocity", rawMove.x);
         _animator.SetFloat("VerticalVelocity", rawMove.y);
+
+        if (rawMove.x != 0 || rawMove.y != 0) Walking();
+        else StopWalking();
+    }
+
+    private void Walking()
+    {
+        if (!walk)
+        {
+            walk = true;
+            OnWalking?.Invoke();
+        }
+    }
+
+    private void StopWalking()
+    {
+        if (walk)
+        {
+            walk = false;
+            OnStopWalking?.Invoke();
+        }
     }
 
     public void Roll()
@@ -84,7 +115,10 @@ public class CustomCharacterController : MonoBehaviour, IVisible, IOrientationSe
         if (stamina - _rollStamina <= 0 || !canMove) return;
 
         _animator.SetTrigger("Roll");
-        _capsuleCollider.enabled = false;
+
+        //_capsuleCollider.enabled = false;
+        OnRoll?.Invoke();
+
         canMove = false;
         _rigidbody.linearVelocity = _rawMovement * _rollSpeed;
         stamina -= _rollStamina;
@@ -96,7 +130,10 @@ public class CustomCharacterController : MonoBehaviour, IVisible, IOrientationSe
     private void FinishedRoll()
     {
         _rigidbody.linearVelocity = Vector3.zero;
-        _capsuleCollider.enabled = true;
+
+        //_capsuleCollider.enabled = true;
+        OnFinishRoll?.Invoke();
+
         canMove = true;
     }
 

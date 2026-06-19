@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6900221959645759255}
   - component: {fileID: 7041009740320524281}
   - component: {fileID: 345938593783253856}
+  - component: {fileID: 1807960407262763562}
   m_Layer: 0
   m_Name: LinearTrap
   m_TagString: Untagged
@@ -161,3 +162,20 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 5, y: 0.34}
   m_EdgeRadius: 0
+--- !u!114 &1807960407262763562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7666863077999301388}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69916b96308a11446935b4428217297f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HitCollider
+  _validDamageables:
+  - {fileID: 11400000, guid: 6a2fdd1649abac645acbed71391b40f4, type: 2}
+  - {fileID: 11400000, guid: 5ed885d083d7ece418e4eec0dd191588, type: 2}
+  _damageAmount: 5
+  _pushForce: 0

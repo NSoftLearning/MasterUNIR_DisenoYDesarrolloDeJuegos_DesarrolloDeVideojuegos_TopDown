@@ -30,4 +30,10 @@ public class Projectile : MonoBehaviour
         anim.SetFloat("HorizontalDirection", x);
         anim.SetFloat("VerticalDirection", -y);
     }
+
+    public void FinishMovement()
+    {
+        // Particulas de explosion
+        Destroy(gameObject);
+    }
 }
