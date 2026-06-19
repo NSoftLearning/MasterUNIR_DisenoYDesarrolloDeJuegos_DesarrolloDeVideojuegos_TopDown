@@ -83,12 +83,12 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 7028616704906629411, guid: 832966e1be5cfd24392c8bb64b0a83d8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 832966e1be5cfd24392c8bb64b0a83d8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.8, y: 0.78}
+  m_Size: {x: 0.9, y: 0.88}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -131,8 +131,8 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.45, y: 0.44}
-    newSize: {x: 0.8, y: 0.78}
+    oldSize: {x: 0.9, y: 0.88}
+    newSize: {x: 0.9, y: 0.88}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -151,4 +151,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32e1dee7708da914ea07ae1d037c232f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CollectibleWeapon
-  _weaponData: {fileID: 11400000, guid: b1175618499165f49b80cd0f7f33d761, type: 2}
+  _weaponData: {fileID: 11400000, guid: ee97504c6f4fc054b8a8b54ec33570c7, type: 2}
