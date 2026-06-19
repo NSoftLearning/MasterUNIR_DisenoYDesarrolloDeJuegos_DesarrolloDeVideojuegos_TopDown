@@ -110,6 +110,7 @@ GameObject:
   - component: {fileID: 8054697394798661580}
   - component: {fileID: 2853373700699954859}
   - component: {fileID: 9082283650887705534}
+  - component: {fileID: 6634570494397006491}
   m_Layer: 0
   m_Name: ==GameplayInfra==
   m_TagString: Untagged
@@ -160,3 +161,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d958dee840a41349aac2f78ba51a435, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DomainEventsBinder
+--- !u!114 &6634570494397006491
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8651478354645814383}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf56b588be0a6624ab42d0977e273a3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NavMeshDirectionFindingService
+  _sampleDistance: 0.5
+  _navMeshZ: 0

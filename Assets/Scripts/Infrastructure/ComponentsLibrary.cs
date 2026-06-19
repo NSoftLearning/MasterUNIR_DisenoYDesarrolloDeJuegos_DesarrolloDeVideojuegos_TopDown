@@ -6,10 +6,11 @@ public class ComponentsLibrary : MonoBehaviour
     public SfxManager SfxManager => _sfxManager;
     public ITargetFinder<IDamageReceiver, DistanceAndLosTargetFinderQuerySettings<IDamageReceiver>> TargetFinderService_DistanceAndLOS => _damageableFinderService_DistanceAndLOS;
     public ITargetFinder<IDamageReceiver, BoxTargetFinderQuerySettings<IDamageReceiver>> TargetFinderService_BoxOverlap => _damageableFinderService_BoxOverlap;
+    public IDirectionFindingService DirectionFindingService { get; set; }
 
     [SerializeField] InventoryManager _inventory;
     [SerializeField] SfxManager _sfxManager;
-
+    [SerializeField] GameObject _directionFindingService;
 
     private ITargetFinder<IDamageReceiver, DistanceAndLosTargetFinderQuerySettings<IDamageReceiver>> _damageableFinderService_DistanceAndLOS;
     private ITargetFinder<IDamageReceiver, BoxTargetFinderQuerySettings<IDamageReceiver>> _damageableFinderService_BoxOverlap;
@@ -19,6 +20,7 @@ public class ComponentsLibrary : MonoBehaviour
         _damageableFinderService_DistanceAndLOS = new TargetFinder_DistanceAndLOS<IDamageReceiver>();
         _damageableFinderService_BoxOverlap = new TargetFinder_BoxOverlap<IDamageReceiver>();
 
+        DirectionFindingService = _directionFindingService.GetComponent<IDirectionFindingService>();
         ComponentLocatorService.BuildComponentsLibrary(this);
 
     }

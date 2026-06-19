@@ -19,18 +19,21 @@ public class PatrolAndCloseCombatEnemyController : MonoBehaviour
     DetectionWithForwardAndIgnoreContext<IDamageReceiver, DistanceAndLosTargetFinderQuerySettings<IDamageReceiver>> _detecionStatesContext;
     IEnemyAttack _enemyAttack;
     IOrientationService _orientationService;
+    IDirectionFindingService _directionFindingService;
     DamageReceiverTargetSelector _targetSelector;
     
     public void InjectDependencies (
         ITargetFinder<IDamageReceiver, DistanceAndLosTargetFinderQuerySettings<IDamageReceiver>> targetFinder,
         IOrientationService orientationService,
         CustomCharacterController custmCharacterController,
-        IEnemyAttack enemyAttack)
+        IEnemyAttack enemyAttack,
+        IDirectionFindingService directionFindingService)
     {
         _targetFinder = targetFinder;
         _orientationService = orientationService;
         _characterController = custmCharacterController;
         _enemyAttack = enemyAttack;
+        _directionFindingService = directionFindingService;
     }
 
     private void Start()
