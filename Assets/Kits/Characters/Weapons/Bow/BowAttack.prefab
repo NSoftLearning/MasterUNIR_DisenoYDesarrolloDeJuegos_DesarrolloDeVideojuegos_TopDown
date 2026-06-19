@@ -194,7 +194,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfba8c3a4edbdb041bac431ae4ac6f06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Projectile
-  linearVelocity: 5
+  _linearVelocity: 4
+  _explosionPrefab: {fileID: 4333372847334156985, guid: 59f175084ffca92478dfd17a88fed543, type: 3}
 --- !u!50 &-7703904619045399532
 Rigidbody2D:
   serializedVersion: 5

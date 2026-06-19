@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class DamageFeedback : MonoBehaviour
 {
+    [SerializeField] GameObject _healEffect;
+
     [Header("Clips")]
     [SerializeField] AudioClip _damage;
     [SerializeField] AudioClip _death;
@@ -30,8 +32,9 @@ public class DamageFeedback : MonoBehaviour
 
         if (amount > 0)
         {
-            AudioInfo heal= new AudioInfo(_heal, _healVolume);
+            AudioInfo heal = new AudioInfo(_heal, _healVolume);
             ComponentLocatorService.Components.SfxManager?.PlaySound(heal);
+            Instantiate(_healEffect, gameObject.transform);
         }
         else
         {
