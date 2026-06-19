@@ -88,13 +88,18 @@ public class CustomCharacterController : MonoBehaviour, IVisible, IOrientationSe
         {
             StopWalking();
             return;
-        } 
-        
-        if (rawMove.x != 0 || rawMove.y != 0) 
-        { 
-            _animator.SetFloat("HorizontalVelocity", rawMove.x);
-            _animator.SetFloat("VerticalVelocity", rawMove.y);
-            Walking(); 
+        }
+
+        ActualizeMoveAnimation();
+    }
+
+    private void ActualizeMoveAnimation()
+    {
+        if (_rawMovement.x != 0 || _rawMovement.y != 0)
+        {
+            _animator.SetFloat("HorizontalVelocity", _rawMovement.x);
+            _animator.SetFloat("VerticalVelocity", _rawMovement.y);
+            Walking();
         }
         else StopWalking();
     }
@@ -143,6 +148,8 @@ public class CustomCharacterController : MonoBehaviour, IVisible, IOrientationSe
         OnFinishRoll?.Invoke();
 
         canMove = true;
+
+        ActualizeMoveAnimation();
     }
 
 
@@ -209,11 +216,15 @@ public class CustomCharacterController : MonoBehaviour, IVisible, IOrientationSe
         _rigidbody.linearVelocity = Vector2.zero;
         
         _weaponController.Attack(lastDirection);
+
+        StopWalking();
     }
 
     private void OnFinishedAttack()
     {
         canMove = true;
+
+        ActualizeMoveAnimation();
     }
 
     public void Die()
@@ -223,4 +234,3 @@ public class CustomCharacterController : MonoBehaviour, IVisible, IOrientationSe
         _animator.SetBool("Dead", true);
     }
 }
- 
