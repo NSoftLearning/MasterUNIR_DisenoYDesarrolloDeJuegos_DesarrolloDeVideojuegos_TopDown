@@ -17,7 +17,7 @@ public class AreaDamageEffectSO : ItemEffectSO
     {
         hasCorrectlyDamagedAnyTarget = false;
     }
-    public override bool Use(GameObject user)
+    public override bool ApplyEffect(GameObject user)
     {
         if (user == null)
         {
@@ -42,6 +42,6 @@ public class AreaDamageEffectSO : ItemEffectSO
             }
         }
 
-        return hasCorrectlyDamagedAnyTarget;
+        return true;
     }
 }

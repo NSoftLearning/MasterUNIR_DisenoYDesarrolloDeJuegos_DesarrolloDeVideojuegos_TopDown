@@ -1,57 +1,64 @@
 using System;
-using Unity.VisualScripting.Antlr3.Runtime;
-using UnityEditor.U2D.Animation;
 using UnityEngine;
-using static UnityEditor.PlayerSettings.SplashScreen;
 using UnityEngine.Events;
 
 public enum Direction
 {
     Down,
-    Up, 
-    Left, 
+    Up,
+    Left,
     Right
 }
 
 public class CustomCharacterController : MonoBehaviour, IVisible, IOrientationService
 {
-    [SerializeField] IVisible.Side side;
-    [SerializeField] float _movementSpeed = 3f;
-    [SerializeField] float _rollSpeed = 4f;
-    [SerializeField] float _rollTime = 1f;
-    [SerializeField] Rigidbody2D _rigidbody;
+    [SerializeField] private IVisible.Side side;
+    [SerializeField] private float _movementSpeed = 3f;
+    [SerializeField] private float _rollSpeed = 4f;
+    [SerializeField] private float _rollTime = 1f;
+    [SerializeField] private Rigidbody2D _rigidbody;
 
     private Vector2 _rawMovement;
     private CapsuleCollider2D _capsuleCollider;
-    [SerializeField] Animator _animator;
+
+    [SerializeField] private Animator _animator;
 
     [Header("Stamina")]
-    [SerializeField] float _maxStamina = 1f;
-    [SerializeField] float _recoverStaminaSpeedPerSecond = 0.15f;
-    [SerializeField] float _rollStamina = 0.25f;
+    [SerializeField] private float _maxStamina = 1f;
+    [SerializeField] private float _recoverStaminaSpeedPerSecond = 0.15f;
+    [SerializeField] private float _rollStamina = 0.25f;
 
-    public UnityEvent<float, float> onStaminaChanged;
-    float stamina = 0; // Stamina actual
+    public UnityEvent<float, float> onStaminaChanged = new UnityEvent<float, float>();
+
+    private float stamina = 0f;
 
     private PlayerWeaponController _weaponController;
+    private CharacterTemporaryStats _temporaryStats;
 
     public Vector3 Position => _position;
     public Vector3 Forward => _forward;
 
-    bool walk = false;
+    private bool walk = false;
     public event Action OnWalking;
     public event Action OnStopWalking;
     public event Action OnRoll;
     public event Action OnFinishRoll;
 
-   
+    private bool isDead = false;
+    private bool canMove = true;
+
+    private Vector3 _position;
+    private Vector3 _forward;
+    private Direction lastDirection;
+
     private void Awake()
     {
         _capsuleCollider = GetComponent<CapsuleCollider2D>();
         _weaponController = GetComponent<PlayerWeaponController>();
+        _temporaryStats = GetComponent<CharacterTemporaryStats>();
 
         stamina = _maxStamina;
-        onStaminaChanged.Invoke(stamina, _maxStamina);
+        NotifyStaminaChanged();
 
         if (_weaponController != null)
         {
@@ -59,32 +66,40 @@ public class CustomCharacterController : MonoBehaviour, IVisible, IOrientationSe
         }
     }
 
+    private void OnDestroy()
+    {
+        if (_weaponController != null)
+        {
+            _weaponController.FinishedAttack -= OnFinishedAttack;
+        }
+    }
 
-    bool isDead = false;
-    bool canMove = true;
-    Vector3 _position;
-    Vector3 _forward;
-    Direction lastDirection;
     private void Update()
     {
-        if (isDead) return;
+        if (isDead)
+            return;
 
         RecoverStamina();
 
-        if (!canMove) return;
+        if (!canMove)
+            return;
 
         RefreshDirection();
-        _rigidbody.linearVelocity = _rawMovement * _movementSpeed;
+
+        float moveMultiplier = GetMoveSpeedMultiplier();
+        _rigidbody.linearVelocity = _rawMovement * _movementSpeed * moveMultiplier;
+
         RefreshOrientation();
     }
 
     public void SetRawMovement(Vector2 rawMove)
     {
-        if (isDead) return;
+        if (isDead)
+            return;
 
         _rawMovement = rawMove;
 
-        if (!canMove) 
+        if (!canMove)
         {
             StopWalking();
             return;
@@ -101,7 +116,10 @@ public class CustomCharacterController : MonoBehaviour, IVisible, IOrientationSe
             _animator.SetFloat("VerticalVelocity", _rawMovement.y);
             Walking();
         }
-        else StopWalking();
+        else
+        {
+            StopWalking();
+        }
     }
 
     private void Walking()
@@ -126,16 +144,20 @@ public class CustomCharacterController : MonoBehaviour, IVisible, IOrientationSe
 
     public void Roll()
     {
-        if (stamina - _rollStamina <= 0 || !canMove || isDead) return;
+        if (stamina - _rollStamina <= 0 || !canMove || isDead)
+            return;
 
         _animator.SetTrigger("Roll");
 
-        //_capsuleCollider.enabled = false;
         OnRoll?.Invoke();
+
         canMove = false;
-        _rigidbody.linearVelocity = _forward * _rollSpeed;
+
+        float moveMultiplier = GetMoveSpeedMultiplier();
+        _rigidbody.linearVelocity = _forward * _rollSpeed * moveMultiplier;
+
         stamina -= _rollStamina;
-        onStaminaChanged.Invoke(stamina, _maxStamina);
+        NotifyStaminaChanged();
 
         Invoke(nameof(FinishedRoll), _rollTime);
     }
@@ -144,7 +166,6 @@ public class CustomCharacterController : MonoBehaviour, IVisible, IOrientationSe
     {
         _rigidbody.linearVelocity = Vector3.zero;
 
-        //_capsuleCollider.enabled = true;
         OnFinishRoll?.Invoke();
 
         canMove = true;
@@ -152,15 +173,17 @@ public class CustomCharacterController : MonoBehaviour, IVisible, IOrientationSe
         ActualizeMoveAnimation();
     }
 
-
-    void RefreshOrientation()
+    private void RefreshOrientation()
     {
         _position = transform.position;
+
         if (_rigidbody.linearVelocity.magnitude != 0)
+        {
             _forward = _rigidbody.linearVelocity.normalized;
+        }
     }
 
-    void RefreshDirection()
+    private void RefreshDirection()
     {
         if (_rawMovement != Vector2.zero)
         {
@@ -190,31 +213,46 @@ public class CustomCharacterController : MonoBehaviour, IVisible, IOrientationSe
         float previousStamina = stamina;
 
         float newStamina = stamina + _recoverStaminaSpeedPerSecond * Time.deltaTime;
-        if (newStamina >= _maxStamina) stamina = _maxStamina;
-        else stamina = newStamina;      
+
+        if (newStamina >= _maxStamina)
+        {
+            stamina = _maxStamina;
+        }
+        else
+        {
+            stamina = newStamina;
+        }
 
         if (previousStamina != stamina)
         {
-            onStaminaChanged.Invoke(stamina, _maxStamina);
+            NotifyStaminaChanged();
         }
     }
 
     public void Attack()
     {
-        if (!canMove || !_weaponController.HasWeapon() || isDead) return;
-        
+        if (isDead)
+            return;
+
+        if (!canMove)
+            return;
+
+        if (_weaponController == null || !_weaponController.HasWeapon())
+            return;
+
         float neededStamina = _weaponController.GetNeededStamina();
         float newStamina = stamina - neededStamina;
 
-        if (newStamina <= 0) return;
+        if (newStamina <= 0)
+            return;
 
         canMove = false;
 
         stamina = newStamina;
-        onStaminaChanged.Invoke(stamina, _maxStamina);
+        NotifyStaminaChanged();
 
         _rigidbody.linearVelocity = Vector2.zero;
-        
+
         _weaponController.Attack(lastDirection);
 
         StopWalking();
@@ -232,5 +270,18 @@ public class CustomCharacterController : MonoBehaviour, IVisible, IOrientationSe
         _rigidbody.linearVelocity = new Vector2(0, -2);
         isDead = true;
         _animator.SetBool("Dead", true);
+    }
+
+    private float GetMoveSpeedMultiplier()
+    {
+        if (_temporaryStats == null)
+            return 1f;
+
+        return _temporaryStats.MoveSpeedMultiplier;
+    }
+
+    private void NotifyStaminaChanged()
+    {
+        onStaminaChanged?.Invoke(stamina, _maxStamina);
     }
 }

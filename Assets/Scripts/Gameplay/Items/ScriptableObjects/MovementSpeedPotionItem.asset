@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a503a5da5d75fef46b3a053ee7460e3b, type: 3}
+  m_Name: MovementSpeedPotionItem
+  m_EditorClassIdentifier: Assembly-CSharp::ItemSO
+  ItemIcon: {fileID: -6881738985962191329, guid: 7adf7beb1530a74418a467c0c3c3ff1d, type: 3}
+  itemName: Move Speed Potion
+  price: 20
+  canBeUsed: 1
+  consumeOnUse: 1
+  effects:
+  - {fileID: 11400000, guid: b583e7932e011e249a3b10850db9bb40, type: 2}

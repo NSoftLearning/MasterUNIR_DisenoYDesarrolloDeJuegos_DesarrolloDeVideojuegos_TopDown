@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-public class PlayerTemporaryStats : MonoBehaviour
+public class CharacterTemporaryStats : MonoBehaviour
 {
     [Header("Runtime Multipliers")]
     [SerializeField] private float damageMultiplier = 1f;

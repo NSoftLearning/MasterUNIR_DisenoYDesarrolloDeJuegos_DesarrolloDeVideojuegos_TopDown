@@ -46,6 +46,7 @@ public class Inmunity : MonoBehaviour
             yield return new WaitForSeconds(_blinkTime);
             _blinkSprite.enabled = !_blinkSprite.enabled;
         }
+        _blinkSprite.enabled = true;
     }
 
     private void OnDisable()
