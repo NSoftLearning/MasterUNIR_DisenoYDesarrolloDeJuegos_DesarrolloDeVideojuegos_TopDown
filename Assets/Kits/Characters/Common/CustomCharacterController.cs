@@ -60,12 +60,15 @@ public class CustomCharacterController : MonoBehaviour, IVisible, IOrientationSe
     }
 
 
+    bool isDead = false;
     bool canMove = true;
     Vector3 _position;
     Vector3 _forward;
     Direction lastDirection;
     private void Update()
     {
+        if (isDead) return;
+
         RecoverStamina();
 
         if (!canMove) return;
@@ -77,6 +80,8 @@ public class CustomCharacterController : MonoBehaviour, IVisible, IOrientationSe
 
     public void SetRawMovement(Vector2 rawMove)
     {
+        if (isDead) return;
+
         _rawMovement = rawMove;
 
         if (!canMove) 
@@ -85,10 +90,12 @@ public class CustomCharacterController : MonoBehaviour, IVisible, IOrientationSe
             return;
         } 
         
-        _animator.SetFloat("HorizontalVelocity", rawMove.x);
-        _animator.SetFloat("VerticalVelocity", rawMove.y);
-
-        if (rawMove.x != 0 || rawMove.y != 0) Walking();
+        if (rawMove.x != 0 || rawMove.y != 0) 
+        { 
+            _animator.SetFloat("HorizontalVelocity", rawMove.x);
+            _animator.SetFloat("VerticalVelocity", rawMove.y);
+            Walking(); 
+        }
         else StopWalking();
     }
 
@@ -97,6 +104,7 @@ public class CustomCharacterController : MonoBehaviour, IVisible, IOrientationSe
         if (!walk)
         {
             walk = true;
+            _animator.SetBool("Walk", true);
             OnWalking?.Invoke();
         }
     }
@@ -106,21 +114,21 @@ public class CustomCharacterController : MonoBehaviour, IVisible, IOrientationSe
         if (walk)
         {
             walk = false;
+            _animator.SetBool("Walk", false);
             OnStopWalking?.Invoke();
         }
     }
 
     public void Roll()
     {
-        if (stamina - _rollStamina <= 0 || !canMove) return;
+        if (stamina - _rollStamina <= 0 || !canMove || isDead) return;
 
         _animator.SetTrigger("Roll");
 
         //_capsuleCollider.enabled = false;
         OnRoll?.Invoke();
-
         canMove = false;
-        _rigidbody.linearVelocity = _rawMovement * _rollSpeed;
+        _rigidbody.linearVelocity = _forward * _rollSpeed;
         stamina -= _rollStamina;
         onStaminaChanged.Invoke(stamina, _maxStamina);
 
@@ -186,7 +194,7 @@ public class CustomCharacterController : MonoBehaviour, IVisible, IOrientationSe
 
     public void Attack()
     {
-        if (!canMove || !_weaponController.HasWeapon()) return;
+        if (!canMove || !_weaponController.HasWeapon() || isDead) return;
         
         float neededStamina = _weaponController.GetNeededStamina();
         float newStamina = stamina - neededStamina;
@@ -206,6 +214,13 @@ public class CustomCharacterController : MonoBehaviour, IVisible, IOrientationSe
     private void OnFinishedAttack()
     {
         canMove = true;
+    }
+
+    public void Die()
+    {
+        _rigidbody.linearVelocity = new Vector2(0, -2);
+        isDead = true;
+        _animator.SetBool("Dead", true);
     }
 }
  

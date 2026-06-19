@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: d0469f77e4d924b898128569592a0c51
+guid: 8424cb2c2488842268458b4906b6e83f
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6214006015050931938
-    second: explosion-8_0
+      213: 4588304714857030240
+    second: cure28_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -126,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: explosion-8_0
+      name: cure28_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 32
-        height: 32
+        width: 48
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2ee50472c859c3650800000000000000
-      internalID: 6214006015050931938
+      spriteID: 062ad4a04deecaf30800000000000000
+      internalID: 4588304714857030240
       vertices: []
       indices: 
       edges: []
@@ -161,7 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      explosion-8_0: 6214006015050931938
+      cure28_0: 4588304714857030240
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

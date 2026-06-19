@@ -20,7 +20,7 @@ public class Inmunity : MonoBehaviour
 
     private void OnLifeChanged(LifeChangedDTO lifeChangedDTO)
     {
-        if (_inmunityTimer == 0) return;
+        if (_inmunityTimer == 0 || lifeChangedDTO.currentValue <= 0) return;
 
         StopAllCoroutines();
         StartCoroutine(Inmune());
