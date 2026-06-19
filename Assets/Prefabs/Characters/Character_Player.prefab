@@ -459,6 +459,10 @@ PrefabInstance:
       propertyPath: stamina
       value: 
       objectReference: {fileID: 5138318767072083860}
+    - target: {fileID: 7172689892765839884, guid: 7529b2afa91c15d4a883be5ae07470e6, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7807025985240862038, guid: 7529b2afa91c15d4a883be5ae07470e6, type: 3}
       propertyPath: m_Name
       value: Character_Player
@@ -597,6 +601,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9587d63bd6c12f42a4f79655cb57b32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DamageFeedback
+  _healEffect: {fileID: 3565931892240202546, guid: 3184498d15aef38418edb4e2f4e5e856, type: 3}
   _damage: {fileID: 8300000, guid: 5d6d90867c581a54d8ab7748f8c30dd7, type: 3}
   _death: {fileID: 8300000, guid: bc358ad128756f74c94813f541eb9fb6, type: 3}
   _heal: {fileID: 8300000, guid: 1682adcfb6e592c4b895649b3433ca56, type: 3}

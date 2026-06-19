@@ -60,12 +60,15 @@ public class CustomCharacterController : MonoBehaviour, IVisible, IOrientationSe
     }
 
 
+    bool isDead = false;
     bool canMove = true;
     Vector3 _position;
     Vector3 _forward;
     Direction lastDirection;
     private void Update()
     {
+        if (isDead) return;
+
         RecoverStamina();
 
         if (!canMove) return;
@@ -77,6 +80,8 @@ public class CustomCharacterController : MonoBehaviour, IVisible, IOrientationSe
 
     public void SetRawMovement(Vector2 rawMove)
     {
+        if (isDead) return;
+
         _rawMovement = rawMove;
 
         if (!canMove) 
@@ -116,7 +121,7 @@ public class CustomCharacterController : MonoBehaviour, IVisible, IOrientationSe
 
     public void Roll()
     {
-        if (stamina - _rollStamina <= 0 || !canMove) return;
+        if (stamina - _rollStamina <= 0 || !canMove || isDead) return;
 
         _animator.SetTrigger("Roll");
 
@@ -189,7 +194,7 @@ public class CustomCharacterController : MonoBehaviour, IVisible, IOrientationSe
 
     public void Attack()
     {
-        if (!canMove || !_weaponController.HasWeapon()) return;
+        if (!canMove || !_weaponController.HasWeapon() || isDead) return;
         
         float neededStamina = _weaponController.GetNeededStamina();
         float newStamina = stamina - neededStamina;
@@ -209,6 +214,13 @@ public class CustomCharacterController : MonoBehaviour, IVisible, IOrientationSe
     private void OnFinishedAttack()
     {
         canMove = true;
+    }
+
+    public void Die()
+    {
+        _rigidbody.linearVelocity = new Vector2(0, -2);
+        isDead = true;
+        _animator.SetBool("Dead", true);
     }
 }
  
