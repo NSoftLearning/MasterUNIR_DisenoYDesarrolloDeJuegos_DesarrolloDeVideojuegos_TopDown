@@ -35,7 +35,7 @@ public class CustomCharacterController : MonoBehaviour, IVisible, IOrientationSe
     private PlayerWeaponController _weaponController;
     private CharacterTemporaryStats _temporaryStats;
 
-    public Vector3 Position => _position;
+    public Vector3 Position => transform.position;
     public Vector3 Forward => _forward;
 
     private bool walk = false;
@@ -47,7 +47,7 @@ public class CustomCharacterController : MonoBehaviour, IVisible, IOrientationSe
     private bool isDead = false;
     private bool canMove = true;
 
-    private Vector3 _position;
+    
     private Vector3 _forward;
     private Direction lastDirection;
 
@@ -175,7 +175,6 @@ public class CustomCharacterController : MonoBehaviour, IVisible, IOrientationSe
 
     private void RefreshOrientation()
     {
-        _position = transform.position;
 
         if (_rigidbody.linearVelocity.magnitude != 0)
         {

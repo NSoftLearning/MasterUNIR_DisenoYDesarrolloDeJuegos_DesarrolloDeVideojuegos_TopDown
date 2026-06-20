@@ -5,13 +5,17 @@ using static UnityEngine.UI.Image;
 
 public class PatrolAndCloseCombatEnemyController : MonoBehaviour
 {
-    [SerializeField] float _detectionRange;
+    [SerializeField] float _unawareDetectionRange;
+    [SerializeField] float _alertDetectionRange;
     [SerializeField] float closeQuartersRange;
     [SerializeField] List<DamageableTypeSO> _damageableTypesOfInterest;
     [SerializeField] LayerMask layerstToSearchForTarget;
+    [SerializeField] private LayerMask _lineOfSightBlockers;
     [SerializeField] float _searchPersistenceTime;
     [SerializeField] float _halfFieldOfView;
     [SerializeField] Transform _detectionOriginTransform;
+    [SerializeField] PatrolRoute _patrolRoute;
+    
     GenericStateMachine<PatrolAndCloseCombatStateId> _statesMachine;
 
     CustomCharacterController _characterController;
@@ -19,18 +23,22 @@ public class PatrolAndCloseCombatEnemyController : MonoBehaviour
     DetectionWithForwardAndIgnoreContext<IDamageReceiver, DistanceAndLosTargetFinderQuerySettings<IDamageReceiver>> _detecionStatesContext;
     IEnemyAttack _enemyAttack;
     IOrientationService _orientationService;
+    IDirectionFindingService _directionFindingService;
     DamageReceiverTargetSelector _targetSelector;
     
+
     public void InjectDependencies (
         ITargetFinder<IDamageReceiver, DistanceAndLosTargetFinderQuerySettings<IDamageReceiver>> targetFinder,
         IOrientationService orientationService,
         CustomCharacterController custmCharacterController,
-        IEnemyAttack enemyAttack)
+        IEnemyAttack enemyAttack,
+        IDirectionFindingService directionFindingService)
     {
         _targetFinder = targetFinder;
         _orientationService = orientationService;
         _characterController = custmCharacterController;
         _enemyAttack = enemyAttack;
+        _directionFindingService = directionFindingService;
     }
 
     private void Start()
@@ -40,16 +48,21 @@ public class PatrolAndCloseCombatEnemyController : MonoBehaviour
         _detecionStatesContext =
             new DetectionWithForwardAndIgnoreContext<IDamageReceiver, DistanceAndLosTargetFinderQuerySettings<IDamageReceiver>>(
                 new DistanceAndLosTargetFinderQuerySettings<IDamageReceiver>(
+                    _lineOfSightBlockers,
                     layerstToSearchForTarget,
-                    _detectionRange,
+                    _unawareDetectionRange,
                     _detectionOriginTransform,
                     _orientationService.Forward,
                     _halfFieldOfView,
                     closeQuartersRange,
-                    GetComponent<IDamageReceiver>()),
+                    GetComponent<IDamageReceiver>()
+                    ),
                 _targetFinder,
                 _orientationService,
-                GetComponent<IDamageReceiver>());
+                _patrolRoute,
+                _directionFindingService,
+                GetComponent<IDamageReceiver>(),
+                _characterController);
 
         InitializeStateMachine();
     }
@@ -77,12 +90,12 @@ public class PatrolAndCloseCombatEnemyController : MonoBehaviour
                 PatrolAndCloseCombatStateId.Attacking,
                 PatrolAndCloseCombatStateId.Patrolling,
                 _searchPersistenceTime,
-                _characterController,
                 transform,
                 _detecionStatesContext,
                 _targetSelector,
                 _enemyAttack,
                 _damageableTypesOfInterest,
+                _alertDetectionRange,
                 _statesMachine.FromStateToState),
             new AttackingStatee <PatrolAndCloseCombatStateId> (
                 PatrolAndCloseCombatStateId.Attacking,
@@ -106,8 +119,9 @@ public class PatrolAndCloseCombatEnemyController : MonoBehaviour
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(_detectionOriginTransform.transform.position, _detectionRange);
+        Gizmos.DrawWireSphere(_detectionOriginTransform.transform.position, _unawareDetectionRange);
         Gizmos.DrawWireSphere(_detectionOriginTransform.position, closeQuartersRange);
+        Gizmos.DrawWireSphere(_detectionOriginTransform.transform.position, _alertDetectionRange);
 
         if (_orientationService == null)
             return;
@@ -116,7 +130,7 @@ public class PatrolAndCloseCombatEnemyController : MonoBehaviour
         Vector3 forward = _orientationService.Forward.normalized;
 
         Gizmos.color = Color.cyan;
-        Gizmos.DrawLine(_detectionOriginTransform.position, _detectionOriginTransform.position + forward * _detectionRange);
+        Gizmos.DrawLine(_detectionOriginTransform.position, _detectionOriginTransform.position + forward * _unawareDetectionRange);
 
         Vector3 leftLimitDirection =
             Quaternion.AngleAxis(-_halfFieldOfView, Vector3.forward) * forward;
@@ -125,10 +139,10 @@ public class PatrolAndCloseCombatEnemyController : MonoBehaviour
             Quaternion.AngleAxis(_halfFieldOfView, Vector3.forward) * forward;
 
         Gizmos.color = Color.magenta;
-        Gizmos.DrawLine(_detectionOriginTransform.position, _detectionOriginTransform.position + leftLimitDirection.normalized * _detectionRange);
+        Gizmos.DrawLine(_detectionOriginTransform.position, _detectionOriginTransform.position + leftLimitDirection.normalized * _unawareDetectionRange);
 
         Gizmos.color = Color.magenta;
-        Gizmos.DrawLine(_detectionOriginTransform.position, _detectionOriginTransform.position + rightLimitDirection.normalized * _detectionRange);
+        Gizmos.DrawLine(_detectionOriginTransform.position, _detectionOriginTransform.position + rightLimitDirection.normalized * _unawareDetectionRange);
     }
 }
  

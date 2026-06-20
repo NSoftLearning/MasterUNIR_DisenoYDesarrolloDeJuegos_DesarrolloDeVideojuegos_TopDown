@@ -12,9 +12,9 @@ TagManager:
   - Item
   - Water
   - UI
-  - MapCollider
-  - 
-  - 
+  - MapColliders
+  - Enemies
+  - Player
   - 
   - 
   - 
