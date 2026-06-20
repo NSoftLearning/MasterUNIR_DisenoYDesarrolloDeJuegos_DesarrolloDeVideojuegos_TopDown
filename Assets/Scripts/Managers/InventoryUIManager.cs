@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -23,9 +24,15 @@ public class InventoryUIManager : MonoBehaviour
     [SerializeField] private List<Transform> quickAccessSlots;
     [SerializeField] private GameObject quickAccessItemPrefab;
 
-    [Header("Weapon Access UI")]
-    [SerializeField] private Transform WeaponSlotParent;
+    [Header("Weapon UI")]
+    [SerializeField] private Image weaponIcon;
+    [SerializeField] private RectTransform weaponIconRect;
 
+    [Header("Weapon Change Animation")]
+    [SerializeField] private Vector2 weaponCenterPosition = Vector2.zero;
+    [SerializeField] private Vector2 weaponExitLeftPosition = new Vector2(-80f, 0f);
+    [SerializeField] private Vector2 weaponEnterRightPosition = new Vector2(80f, 0f);
+    [SerializeField] private float weaponSlideDuration = 0.15f;
 
     private readonly List<GameObject> inventorySlotGraphics = new List<GameObject>();
     private readonly List<GameObject> quickAccessItemGraphics = new List<GameObject>();
@@ -33,8 +40,21 @@ public class InventoryUIManager : MonoBehaviour
     private bool isOpen;
     private Coroutine slideCoroutine;
 
+    private WeaponData currentDisplayedWeapon;
+    private Coroutine weaponAnimationCoroutine;
+
     private void Start()
     {
+        if (weaponIcon != null)
+        {
+            weaponIcon.preserveAspect = true;
+        }
+
+        if (weaponIconRect == null && weaponIcon != null)
+        {
+            weaponIconRect = weaponIcon.GetComponent<RectTransform>();
+        }
+
         if (startClosed)
         {
             SetClosedInstant();
@@ -162,10 +182,14 @@ public class InventoryUIManager : MonoBehaviour
         ClearQuickAccessUI();
 
         if (inventoryData == null)
+        {
+            DrawWeaponSlot(null);
             return;
+        }
 
         DrawInventory(inventoryData);
         DrawQuickAccess(inventoryData);
+        DrawWeaponSlot(inventoryData);
     }
 
     private void DrawInventory(InventoryRuntime inventoryData)
@@ -248,6 +272,89 @@ public class InventoryUIManager : MonoBehaviour
 
             quickAccessItemGraphics[i] = itemGraphic;
         }
+    }
+
+    private void DrawWeaponSlot(InventoryRuntime inventoryData)
+    {
+        if (weaponIcon == null)
+            return;
+
+        if (weaponIconRect == null)
+        {
+            weaponIconRect = weaponIcon.GetComponent<RectTransform>();
+        }
+
+        WeaponData equippedWeapon = null;
+
+        if (inventoryData != null)
+        {
+            equippedWeapon = inventoryData.EquippedWeapon;
+        }
+
+        if (equippedWeapon == currentDisplayedWeapon)
+            return;
+
+        if (weaponAnimationCoroutine != null)
+        {
+            StopCoroutine(weaponAnimationCoroutine);
+        }
+
+        weaponAnimationCoroutine = StartCoroutine(AnimateWeaponChange(equippedWeapon));
+    }
+
+    private IEnumerator AnimateWeaponChange(WeaponData newWeapon)
+    {
+        WeaponData previousWeapon = currentDisplayedWeapon;
+
+        if (weaponIconRect == null)
+            yield break;
+
+        if (previousWeapon != null && weaponIcon.sprite != null)
+        {
+            yield return SlideWeaponIcon(weaponCenterPosition, weaponExitLeftPosition);
+        }
+
+        currentDisplayedWeapon = newWeapon;
+
+        if (newWeapon == null || newWeapon._weaponSprite == null)
+        {
+            weaponIcon.enabled = false;
+            weaponIcon.sprite = null;
+            weaponIconRect.anchoredPosition = weaponCenterPosition;
+            weaponAnimationCoroutine = null;
+            yield break;
+        }
+
+        weaponIcon.gameObject.SetActive(true);
+        weaponIcon.enabled = true;
+        weaponIcon.sprite = newWeapon._weaponSprite;
+        weaponIcon.preserveAspect = true;
+
+        weaponIconRect.anchoredPosition = weaponEnterRightPosition;
+
+        yield return SlideWeaponIcon(weaponEnterRightPosition, weaponCenterPosition);
+
+        weaponAnimationCoroutine = null;
+    }
+
+    private IEnumerator SlideWeaponIcon(Vector2 from, Vector2 to)
+    {
+        float elapsed = 0f;
+
+        while (elapsed < weaponSlideDuration)
+        {
+            elapsed += Time.deltaTime;
+
+            float t = elapsed / weaponSlideDuration;
+            t = Mathf.Clamp01(t);
+            t = Mathf.SmoothStep(0f, 1f, t);
+
+            weaponIconRect.anchoredPosition = Vector2.Lerp(from, to, t);
+
+            yield return null;
+        }
+
+        weaponIconRect.anchoredPosition = to;
     }
 
     private void ClearInventoryUI()

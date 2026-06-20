@@ -2,9 +2,9 @@
 using UnityEditor;
 #endif
 
+using System;
 using System.Collections.Generic;
 using UnityEngine;
-using System;
 
 public class InventoryManager : MonoBehaviour
 {
@@ -12,37 +12,43 @@ public class InventoryManager : MonoBehaviour
     [SerializeField] private InventorySO inventorySO;
     [SerializeField] private GameObject itemUser;
 
+    [Header("Weapon")]
+    [SerializeField] private PlayerWeaponController playerWeaponController;
+
     private InventoryRuntime currentInventory;
+
+    public static InventoryManager Instance;
+
     public event Action OnBasicClick;
     public event Action<bool> OnUse;
     public event Action<bool> OnMove;
-
-
-
 
     [Header("Debug Settings")]
     public bool clearInventory = false;
     public bool updateQuickAccess = false;
     public bool saveRuntimeToInventorySO = false;
+    public bool changeNextWeapon = false;
 
     public int inventoryIndexToSetInFirstQuickAccess = 0;
     public int inventoryIndexToSetInSecondQuickAccess = 1;
 
     private void Awake()
     {
-  
-        LoadInventoryFromSO();
-        RefreshUI();
-       
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+
+            LoadInventoryFromSO();
+            ApplySavedWeaponToPlayer();
+            RefreshUI();
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
-    public void SwitchInventorySO(InventorySO inventory)
-    {
-        if (inventory == null)
-            return;
-        inventorySO = inventory;
-        LoadInventoryFromSO();
-        RefreshUI();
-    }
+
     private void Update()
     {
         if (clearInventory)
@@ -64,11 +70,29 @@ public class InventoryManager : MonoBehaviour
             saveRuntimeToInventorySO = false;
             SaveRuntimeToInventorySO();
         }
+
+        if (changeNextWeapon)
+        {
+            changeNextWeapon = false;
+            EquipNextWeapon();
+        }
     }
 
     public void LoadInventoryFromSO()
     {
         currentInventory = new InventoryRuntime(inventorySO);
+    }
+
+    private void ApplySavedWeaponToPlayer()
+    {
+        if (playerWeaponController == null || currentInventory == null)
+            return;
+
+        if (currentInventory.EquippedWeapon == null)
+            return;
+
+        playerWeaponController.SetWeapons(currentInventory.Weapons);
+        playerWeaponController.EquipWeapon(currentInventory.EquippedWeapon);
     }
 
     public void SaveRuntimeToInventorySO()
@@ -113,16 +137,79 @@ public class InventoryManager : MonoBehaviour
             return;
 
         currentInventory.ClearInventory();
+
+        if (playerWeaponController != null)
+        {
+            playerWeaponController.ClearWeapon();
+        }
+
+        RefreshUI();
+    }
+
+    public void AddWeapon(WeaponData weaponData)
+    {
+        if (currentInventory == null)
+            return;
+
+        bool added = currentInventory.AddWeapon(weaponData);
+
+        if (added && currentInventory.EquippedWeapon == null)
+        {
+            EquipWeapon(weaponData);
+            return;
+        }
+
+        RefreshUI();
+    }
+
+    public void EquipWeapon(WeaponData weaponData)
+    {
+        if (currentInventory == null)
+            return;
+
+        currentInventory.EquipWeapon(weaponData);
+
+        if (playerWeaponController != null)
+        {
+            playerWeaponController.SetWeapons(currentInventory.Weapons);
+            playerWeaponController.EquipWeapon(weaponData);
+        }
+
+        RefreshUI();
+    }
+
+    public void EquipNextWeapon()
+    {
+        if (currentInventory == null)
+            return;
+
+        currentInventory.EquipNextWeapon();
+
+        if (playerWeaponController != null && currentInventory.EquippedWeapon != null)
+        {
+            playerWeaponController.SetWeapons(currentInventory.Weapons);
+            playerWeaponController.EquipWeapon(currentInventory.EquippedWeapon);
+        }
+
         RefreshUI();
     }
 
     public void AssignItemToQuickAccess(int inventoryIndex, int quickAccessIndex)
     {
         if (currentInventory == null)
+        {
+            NotifyMove(false);
             return;
+        }
 
-        currentInventory.AssignItemToQuickAccess(inventoryIndex, quickAccessIndex);
-        RefreshUI();
+        bool moved = currentInventory.AssignItemToQuickAccess(inventoryIndex, quickAccessIndex);
+
+        NotifyMove(moved);
+
+        if (moved)
+        {
+            RefreshUI();
+        }
     }
 
     public void RemoveItemFromQuickAccess(int quickAccessIndex)
@@ -137,9 +224,21 @@ public class InventoryManager : MonoBehaviour
     public bool UseItemAt(int inventoryIndex)
     {
         if (currentInventory == null)
+        {
+            NotifyUse(false);
             return false;
+        }
+
+        if (itemUser == null)
+        {
+            Debug.LogWarning("Cannot use item. ItemUser is not assigned in InventoryManager.");
+            NotifyUse(false);
+            return false;
+        }
 
         bool used = currentInventory.UseItemAt(inventoryIndex, itemUser);
+
+        NotifyUse(used);
 
         if (used)
         {
@@ -152,17 +251,32 @@ public class InventoryManager : MonoBehaviour
     public void UseQuickAccessItem(int quickAccessIndex)
     {
         if (currentInventory == null)
+        {
+            NotifyUse(false);
             return;
+        }
 
         IReadOnlyList<QuickAccessSlot> quickSlots = currentInventory.QuickAccessSlots;
 
-        if (quickAccessIndex < 0 || quickAccessIndex >= quickSlots.Count)
+        if (quickSlots == null)
+        {
+            NotifyUse(false);
             return;
+        }
+
+        if (quickAccessIndex < 0 || quickAccessIndex >= quickSlots.Count)
+        {
+            NotifyUse(false);
+            return;
+        }
 
         QuickAccessSlot quickSlot = quickSlots[quickAccessIndex];
 
         if (quickSlot == null || quickSlot.IsEmpty)
+        {
+            NotifyUse(false);
             return;
+        }
 
         UseItemAt(quickSlot.InventoryIndex);
     }
@@ -208,5 +322,20 @@ public class InventoryManager : MonoBehaviour
         {
             inventoryUI.RefreshInventoryUI(currentInventory);
         }
+    }
+
+    public void NotifyBasicClick()
+    {
+        OnBasicClick?.Invoke();
+    }
+
+    private void NotifyUse(bool isValid)
+    {
+        OnUse?.Invoke(isValid);
+    }
+
+    private void NotifyMove(bool isValid)
+    {
+        OnMove?.Invoke(isValid);
     }
 }

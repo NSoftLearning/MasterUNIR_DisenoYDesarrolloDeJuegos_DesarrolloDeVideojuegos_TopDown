@@ -2,7 +2,54 @@ using UnityEngine;
 
 public class CollectibleWeapon : MonoBehaviour
 {
-    [SerializeField] WeaponData _weaponData;
+    [SerializeField] private WeaponData _weaponData;
 
-    public WeaponData GetWeapon() { return _weaponData; }
+    private bool isCollected = false;
+
+    public WeaponData GetWeapon()
+    {
+        return _weaponData;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (isCollected)
+            return;
+
+        if (!collision.CompareTag("Player"))
+            return;
+
+        if (_weaponData == null)
+        {
+            Debug.LogWarning("CollectibleWeapon has no WeaponData assigned.");
+            return;
+        }
+
+        isCollected = true;
+
+        Collect(collision.gameObject);
+    }
+
+    private void Collect(GameObject player)
+    {
+        PlayerWeaponController weaponController = player.GetComponent<PlayerWeaponController>();
+
+        if (weaponController != null)
+        {
+            weaponController.NewWeapon(gameObject);
+        }
+        else if (InventoryManager.Instance != null)
+        {
+            InventoryManager.Instance.AddWeapon(_weaponData);
+            InventoryManager.Instance.EquipWeapon(_weaponData);
+        }
+        else
+        {
+            Debug.LogWarning("No PlayerWeaponController or InventoryManager found to collect weapon.");
+            isCollected = false;
+            return;
+        }
+
+        Destroy(gameObject);
+    }
 }

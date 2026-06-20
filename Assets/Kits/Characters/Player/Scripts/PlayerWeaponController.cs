@@ -4,60 +4,115 @@ using UnityEngine;
 
 public class PlayerWeaponController : MonoBehaviour
 {
-    [SerializeField] Transform attackPosUp;
-    [SerializeField] Transform attackPosDown;
-    [SerializeField] Transform attackPosLeft;
-    [SerializeField] Transform attackPosRight;
+    [SerializeField] private Transform attackPosUp;
+    [SerializeField] private Transform attackPosDown;
+    [SerializeField] private Transform attackPosLeft;
+    [SerializeField] private Transform attackPosRight;
 
     public event Action FinishedAttack;
     public event Action OnNewWeapon;
-    
-    private List<WeaponData> weapons;
+
+    private readonly List<WeaponData> weapons = new List<WeaponData>();
+
     private Weapon currentWeapon;
     private int currentWeaponIndex = -1;
+    private bool isAttacking = false;
 
-    private void Awake()
+    public void SetWeapons(IReadOnlyList<WeaponData> weaponList)
     {
-        weapons = new List<WeaponData>();
+        weapons.Clear();
+
+        if (weaponList == null)
+            return;
+
+        for (int i = 0; i < weaponList.Count; i++)
+        {
+            AddWeaponIfMissing(weaponList[i]);
+        }
     }
 
     public void NewWeapon(GameObject newWeapon)
     {
-        WeaponData weapon = newWeapon.GetComponent<CollectibleWeapon>().GetWeapon();
+        if (newWeapon == null)
+            return;
 
-        for (int i = 0; i < weapons.Count; i++)
+        CollectibleWeapon collectibleWeapon = newWeapon.GetComponent<CollectibleWeapon>();
+
+        if (collectibleWeapon == null)
+            return;
+
+        WeaponData weapon = collectibleWeapon.GetWeapon();
+
+        if (weapon == null)
+            return;
+
+        if (InventoryManager.Instance != null)
         {
-            WeaponData act = weapons[i];
-            if (act._weaponName == weapon._weaponName) return;
+            InventoryManager.Instance.AddWeapon(weapon);
+            InventoryManager.Instance.EquipWeapon(weapon);
+        }
+        else
+        {
+            AddWeaponIfMissing(weapon);
+            EquipWeapon(weapon);
+        }
+    }
+
+    public void EquipWeapon(WeaponData weaponData)
+    {
+        if (weaponData == null)
+            return;
+
+        AddWeaponIfMissing(weaponData);
+
+        ClearCurrentWeaponInstance();
+
+        GameObject newWeapon = Instantiate(weaponData._weaponPrefab, transform);
+        currentWeapon = newWeapon.GetComponent<Weapon>();
+
+        if (currentWeapon != null)
+        {
+            currentWeapon.FinishedAttack += OnWeaponFinishedAttack;
         }
 
+        currentWeaponIndex = GetWeaponIndex(weaponData);
+
         OnNewWeapon?.Invoke();
+    }
 
-        weapons.Add(weapon);
-
-        ChangeNextWeapon();
+    public void ClearWeapon()
+    {
+        ClearCurrentWeaponInstance();
+        weapons.Clear();
+        currentWeaponIndex = -1;
+        isAttacking = false;
     }
 
     public void ChangeNextWeapon()
     {
-        if (weapons.Count == 0) return; // Para cuando no hay arma
-        if (currentWeaponIndex == 0 && weapons.Count == 1) return; // Para cuando solo hay un arma
+        if (weapons.Count == 0)
+            return;
+
+        if (currentWeaponIndex == 0 && weapons.Count == 1)
+            return;
 
         currentWeaponIndex++;
-        if (currentWeaponIndex >= weapons.Count) currentWeaponIndex = 0;
 
-        if (currentWeapon != null) 
+        if (currentWeaponIndex >= weapons.Count)
         {
-            currentWeapon.FinishedAttack -= OnWeaponFinishedAttack;
-            currentWeapon.AutoDestroy();
+            currentWeaponIndex = 0;
         }
 
         WeaponData weaponAct = weapons[currentWeaponIndex];
 
-        GameObject newWeapon = Instantiate(weaponAct._weaponPrefab, transform);
-        currentWeapon = newWeapon.GetComponent<Weapon>();
-
-        currentWeapon.FinishedAttack += OnWeaponFinishedAttack;
+        if (InventoryManager.Instance != null)
+        {
+            InventoryManager.Instance.EquipWeapon(weaponAct);
+        }
+        else
+        {
+            EquipWeapon(weaponAct);
+        }
     }
 
     public bool HasWeapon()
@@ -65,29 +120,46 @@ public class PlayerWeaponController : MonoBehaviour
         return currentWeapon != null;
     }
 
-    bool isAttacking = false;
     public void Attack(Direction direction)
     {
-        if (currentWeapon == null) return;
+        if (currentWeapon == null)
+            return;
 
         Transform attackPos = attackPosLeft;
+
         switch (direction)
         {
-            //case Direction.Left: attackPos = attackPosLeft; break;
-            case Direction.Right: attackPos = attackPosRight; break;
-            case Direction.Up: attackPos = attackPosUp; break;
-            case Direction.Down: attackPos = attackPosDown; break;
+            case Direction.Right:
+                attackPos = attackPosRight;
+                break;
+
+            case Direction.Up:
+                attackPos = attackPosUp;
+                break;
+
+            case Direction.Down:
+                attackPos = attackPosDown;
+                break;
+
+            case Direction.Left:
+                attackPos = attackPosLeft;
+                break;
         }
 
         currentWeapon.Attack(direction, attackPos);
         isAttacking = true;
     }
 
-    public bool IsAttacking() { return isAttacking; }
+    public bool IsAttacking()
+    {
+        return isAttacking;
+    }
 
     public float GetNeededStamina()
     {
-        if (currentWeapon == null) return 0;
+        if (currentWeapon == null)
+            return 0;
+
         return currentWeapon.GetNeededStamina();
     }
 
@@ -97,11 +169,62 @@ public class PlayerWeaponController : MonoBehaviour
         FinishedAttack?.Invoke();
     }
 
+    private void AddWeaponIfMissing(WeaponData weaponData)
+    {
+        if (weaponData == null)
+            return;
+
+        for (int i = 0; i < weapons.Count; i++)
+        {
+            WeaponData weapon = weapons[i];
+
+            if (weapon == null)
+                continue;
+
+            if (weapon == weaponData)
+                return;
+
+            if (weapon._weaponName == weaponData._weaponName)
+                return;
+        }
+
+        weapons.Add(weaponData);
+    }
+
+    private int GetWeaponIndex(WeaponData weaponData)
+    {
+        if (weaponData == null)
+            return -1;
+
+        for (int i = 0; i < weapons.Count; i++)
+        {
+            WeaponData weapon = weapons[i];
+
+            if (weapon == null)
+                continue;
+
+            if (weapon == weaponData)
+                return i;
+
+            if (weapon._weaponName == weaponData._weaponName)
+                return i;
+        }
+
+        return -1;
+    }
+
+    private void ClearCurrentWeaponInstance()
+    {
+        if (currentWeapon == null)
+            return;
+
+        currentWeapon.FinishedAttack -= OnWeaponFinishedAttack;
+        currentWeapon.AutoDestroy();
+        currentWeapon = null;
+    }
+
     private void OnDestroy()
     {
-        if (currentWeapon != null)
-        {
-            currentWeapon.FinishedAttack -= OnWeaponFinishedAttack;
-        }
+        ClearCurrentWeaponInstance();
     }
 }

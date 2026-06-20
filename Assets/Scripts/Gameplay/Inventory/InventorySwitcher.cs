@@ -11,7 +11,7 @@ public class InventorySwitcher : MonoBehaviour
             if (manager.GetInventory().Equals(InventorySO))
                 return;
             manager.SaveRuntimeToInventorySO();
-            manager.SwitchInventorySO(InventorySO);
+            //manager.SwitchInventorySO(InventorySO);
         }
     }
 }

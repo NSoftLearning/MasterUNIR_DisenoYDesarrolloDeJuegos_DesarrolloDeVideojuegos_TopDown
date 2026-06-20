@@ -10,6 +10,10 @@ public class InventorySO : ScriptableObject
     [Header("Saved Quick Access")]
     [SerializeField] private List<int> savedQuickAccessIndexes = new List<int>();
 
+    [Header("Saved Weapons")]
+    [SerializeField] private List<WeaponData> savedWeapons = new List<WeaponData>();
+    [SerializeField] private WeaponData savedEquippedWeapon;
+
     [Header("Inventory Settings")]
     [SerializeField] private bool allowStacking = true;
 
@@ -18,6 +22,9 @@ public class InventorySO : ScriptableObject
 
     public IReadOnlyList<InventorySlot> SavedSlots => savedSlots;
     public IReadOnlyList<int> SavedQuickAccessIndexes => savedQuickAccessIndexes;
+    public IReadOnlyList<WeaponData> SavedWeapons => savedWeapons;
+    public WeaponData SavedEquippedWeapon => savedEquippedWeapon;
+
     public bool AllowStacking => allowStacking;
     public int QuickAccessSlotCount => quickAccessSlotCount;
 
@@ -28,6 +35,7 @@ public class InventorySO : ScriptableObject
 
         SaveInventorySlots(runtime);
         SaveQuickAccessSlots(runtime);
+        SaveWeapons(runtime);
     }
 
     private void SaveInventorySlots(InventoryRuntime runtime)
@@ -69,5 +77,27 @@ public class InventorySO : ScriptableObject
                 savedQuickAccessIndexes.Add(quickSlot.InventoryIndex);
             }
         }
+    }
+
+    private void SaveWeapons(InventoryRuntime runtime)
+    {
+        savedWeapons.Clear();
+
+        IReadOnlyList<WeaponData> runtimeWeapons = runtime.Weapons;
+
+        for (int i = 0; i < runtimeWeapons.Count; i++)
+        {
+            WeaponData weapon = runtimeWeapons[i];
+
+            if (weapon == null)
+                continue;
+
+            if (savedWeapons.Contains(weapon))
+                continue;
+
+            savedWeapons.Add(weapon);
+        }
+
+        savedEquippedWeapon = runtime.EquippedWeapon;
     }
 }

@@ -5,10 +5,15 @@ public class InventoryRuntime
 {
     private readonly List<InventorySlot> _inventorySlots = new List<InventorySlot>();
     private readonly QuickAccessSlot[] _quickAccessSlots;
+    private readonly List<WeaponData> _weapons = new List<WeaponData>();
+
     private readonly bool _allowStacking;
 
     public IReadOnlyList<InventorySlot> InventorySlots => _inventorySlots;
     public IReadOnlyList<QuickAccessSlot> QuickAccessSlots => _quickAccessSlots;
+    public IReadOnlyList<WeaponData> Weapons => _weapons;
+
+    public WeaponData EquippedWeapon { get; private set; }
 
     public InventoryRuntime(InventorySO inventorySO)
     {
@@ -30,6 +35,7 @@ public class InventoryRuntime
 
         LoadInventorySlots(inventorySO.SavedSlots);
         LoadQuickAccessSlots(inventorySO.SavedQuickAccessIndexes);
+        LoadWeapons(inventorySO.SavedWeapons, inventorySO.SavedEquippedWeapon);
     }
 
     private void LoadInventorySlots(IReadOnlyList<InventorySlot> savedSlots)
@@ -75,6 +81,110 @@ public class InventoryRuntime
         }
     }
 
+    private void LoadWeapons(IReadOnlyList<WeaponData> savedWeapons, WeaponData savedEquippedWeapon)
+    {
+        _weapons.Clear();
+
+        if (savedWeapons != null)
+        {
+            for (int i = 0; i < savedWeapons.Count; i++)
+            {
+                AddWeapon(savedWeapons[i]);
+            }
+        }
+
+        if (savedEquippedWeapon != null)
+        {
+            AddWeapon(savedEquippedWeapon);
+            EquippedWeapon = savedEquippedWeapon;
+        }
+        else if (_weapons.Count > 0)
+        {
+            EquippedWeapon = _weapons[0];
+        }
+        else
+        {
+            EquippedWeapon = null;
+        }
+    }
+
+    public bool AddWeapon(WeaponData weaponData)
+    {
+        if (weaponData == null)
+            return false;
+
+        for (int i = 0; i < _weapons.Count; i++)
+        {
+            WeaponData existingWeapon = _weapons[i];
+
+            if (existingWeapon == null)
+                continue;
+
+            if (existingWeapon == weaponData)
+                return false;
+
+            if (existingWeapon._weaponName == weaponData._weaponName)
+                return false;
+        }
+
+        _weapons.Add(weaponData);
+        return true;
+    }
+
+    public void EquipWeapon(WeaponData weaponData)
+    {
+        if (weaponData == null)
+            return;
+
+        AddWeapon(weaponData);
+        EquippedWeapon = weaponData;
+    }
+
+    public void EquipNextWeapon()
+    {
+        if (_weapons.Count == 0)
+            return;
+
+        if (EquippedWeapon == null)
+        {
+            EquippedWeapon = _weapons[0];
+            return;
+        }
+
+        int currentIndex = GetWeaponIndex(EquippedWeapon);
+
+        currentIndex++;
+
+        if (currentIndex >= _weapons.Count)
+        {
+            currentIndex = 0;
+        }
+
+        EquippedWeapon = _weapons[currentIndex];
+    }
+
+    public int GetWeaponIndex(WeaponData weaponData)
+    {
+        if (weaponData == null)
+            return -1;
+
+        for (int i = 0; i < _weapons.Count; i++)
+        {
+            WeaponData weapon = _weapons[i];
+
+            if (weapon == null)
+                continue;
+
+            if (weapon == weaponData)
+                return i;
+
+            if (weapon._weaponName == weaponData._weaponName)
+                return i;
+        }
+
+        return -1;
+    }
+
     public void ClearInventory()
     {
         _inventorySlots.Clear();
@@ -83,6 +193,9 @@ public class InventoryRuntime
         {
             _quickAccessSlots[i].Clear();
         }
+
+        _weapons.Clear();
+        EquippedWeapon = null;
     }
 
     public void AddItem(ItemSO itemData)
@@ -201,19 +314,19 @@ public class InventoryRuntime
         return true;
     }
 
-    public void AssignItemToQuickAccess(int inventoryIndex, int quickAccessIndex)
+    public bool AssignItemToQuickAccess(int inventoryIndex, int quickAccessIndex)
     {
         if (quickAccessIndex < 0 || quickAccessIndex >= _quickAccessSlots.Length)
         {
             Debug.LogWarning("Invalid quick access index.");
-            return;
+            return false;
         }
 
         if (inventoryIndex < 0 || inventoryIndex >= _inventorySlots.Count)
         {
             Debug.LogWarning("Invalid inventory index.");
             _quickAccessSlots[quickAccessIndex].Clear();
-            return;
+            return false;
         }
 
         InventorySlot inventorySlot = _inventorySlots[inventoryIndex];
@@ -221,12 +334,13 @@ public class InventoryRuntime
         if (inventorySlot == null || inventorySlot.IsEmpty)
         {
             Debug.LogWarning("Cannot assign an empty inventory slot.");
-            return;
+            return false;
         }
 
         ClearQuickAccessSlotsWithInventoryIndex(inventoryIndex);
 
         _quickAccessSlots[quickAccessIndex].Assign(inventoryIndex);
+        return true;
     }
 
     public void RemoveItemFromQuickAccess(int quickAccessIndex)
