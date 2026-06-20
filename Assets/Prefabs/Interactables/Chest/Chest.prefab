@@ -183,6 +183,7 @@ GameObject:
   - component: {fileID: 4339566600447736805}
   - component: {fileID: 7776212938327782714}
   - component: {fileID: 7865689954960739113}
+  - component: {fileID: 8521910092316378613}
   m_Layer: 0
   m_Name: Chest
   m_TagString: Untagged
@@ -341,21 +342,6 @@ MonoBehaviour:
   isOpen: 0
   spriteKey: {fileID: 3751918920955393452}
   fadeShowKey: 0.2
-  eventoEfecto:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 116221858180943362}
-        m_TargetAssemblyTypeName: SplashItem, Assembly-CSharp
-        m_MethodName: SpawnSplash
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &7865689954960739113
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -372,6 +358,20 @@ MonoBehaviour:
   m_Area: 1
   m_IgnoreFromBuild: 0
   m_AffectedAgents: ffffffff
+--- !u!114 &8521910092316378613
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5678560353825907290}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d4b25db1bd0cf64a80a97fd1bfabd14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ChestFeedback
+  clip: {fileID: 8300000, guid: ce78db83697a9fb4ba9bcd95ad2fad8f, type: 3}
+  volume: 0.166
 --- !u!1 &7744121702786966065
 GameObject:
   m_ObjectHideFlags: 0

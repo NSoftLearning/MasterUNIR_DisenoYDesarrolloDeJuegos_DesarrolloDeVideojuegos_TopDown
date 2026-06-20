@@ -21,6 +21,8 @@ public class Door : MonoBehaviour, IPathFindingBlocker
     [SerializeField] Collider2D doorCollider;
 
     public event Action BlockerStatusChanged;
+    public event Action DoorOpen;
+    public event Action DoorClose;
 
     void Awake()
     {
@@ -66,6 +68,7 @@ public class Door : MonoBehaviour, IPathFindingBlocker
         anim.SetTrigger("Open");
         isOpen = true;
 
+        DoorOpen?.Invoke();
         BlockerStatusChanged?.Invoke();
     }
 
@@ -75,6 +78,7 @@ public class Door : MonoBehaviour, IPathFindingBlocker
         anim.SetTrigger("Close");
         isOpen = false;
 
+        DoorClose?.Invoke();
         BlockerStatusChanged?.Invoke();
     }
 

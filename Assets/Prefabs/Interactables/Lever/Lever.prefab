@@ -283,6 +283,7 @@ GameObject:
   - component: {fileID: 5944406766830510137}
   - component: {fileID: 3603310928696341705}
   - component: {fileID: 8418157706762041054}
+  - component: {fileID: 1520158523391598968}
   - component: {fileID: 4630506077299598767}
   m_Layer: 0
   m_Name: Lever
@@ -443,6 +444,20 @@ MonoBehaviour:
   activated: 0
   spriteKey: {fileID: 2394609649672849946}
   fadeShowKey: 0.2
+--- !u!114 &1520158523391598968
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6655105106901979055}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a721110a7ddd2444b3955acc5c513d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LeverFeedback
+  _lever: {fileID: 8300000, guid: aeec6f56fbb936d45913829188e612d6, type: 3}
+  _leverVolume: 0.166
 --- !u!114 &4630506077299598767
 MonoBehaviour:
   m_ObjectHideFlags: 0
