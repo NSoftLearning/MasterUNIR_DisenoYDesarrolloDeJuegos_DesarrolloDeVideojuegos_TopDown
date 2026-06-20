@@ -27,6 +27,7 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         if (image != null && itemData != null)
         {
             image.sprite = itemData.ItemIcon;
+            image.preserveAspect = true;
         }
     }
 

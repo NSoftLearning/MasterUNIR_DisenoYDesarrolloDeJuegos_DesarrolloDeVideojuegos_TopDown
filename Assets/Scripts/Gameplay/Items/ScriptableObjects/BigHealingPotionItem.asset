@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a503a5da5d75fef46b3a053ee7460e3b, type: 3}
   m_Name: BigHealingPotionItem
   m_EditorClassIdentifier: Assembly-CSharp::ItemSO
-  ItemIcon: {fileID: -420770097697643720, guid: bc444d451d80a3148b3d10b23da4be52, type: 3}
+  ItemIcon: {fileID: 5763745450187910351, guid: fc565bcf12b64c24e90f7a161febbb82, type: 3}
   itemName: Big Healing Potion
   price: 30
   canBeUsed: 1

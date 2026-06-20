@@ -5,6 +5,7 @@ using UnityEngine;
 public class ItemSO : ScriptableObject
 {
     [Header("Basic Info")]
+    public ItemTypeSO ItemType;
     public Sprite ItemIcon;
     public string itemName;
     public int price;

@@ -23,6 +23,10 @@ public class InventoryUIManager : MonoBehaviour
     [SerializeField] private List<Transform> quickAccessSlots;
     [SerializeField] private GameObject quickAccessItemPrefab;
 
+    [Header("Weapon Access UI")]
+    [SerializeField] private Transform WeaponSlotParent;
+
+
     private readonly List<GameObject> inventorySlotGraphics = new List<GameObject>();
     private readonly List<GameObject> quickAccessItemGraphics = new List<GameObject>();
 
