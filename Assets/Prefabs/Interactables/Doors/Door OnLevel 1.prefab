@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 3655374929174884309}
   - component: {fileID: 7440198360684694832}
   - component: {fileID: 4065334329573210968}
+  - component: {fileID: 8769177989377387318}
   m_Layer: 0
   m_Name: Door OnLevel 1
   m_TagString: Untagged
@@ -244,6 +245,22 @@ MonoBehaviour:
   m_Area: 1
   m_IgnoreFromBuild: 0
   m_AffectedAgents: ffffffff
+--- !u!114 &8769177989377387318
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3587156216984118350}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7218a4397a6cd7b4e956d8d2ed4ffff4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DoorFeedback
+  _openDoor: {fileID: 8300000, guid: a83727d803bb4374dab92bc7396c4918, type: 3}
+  _closeDoor: {fileID: 8300000, guid: ee7ade3ff7e5cca4f9792dbb8d182b6d, type: 3}
+  _openDoorVolume: 0.166
+  _closeDoorVolume: 0.166
 --- !u!1 &6724782409671691584
 GameObject:
   m_ObjectHideFlags: 0
