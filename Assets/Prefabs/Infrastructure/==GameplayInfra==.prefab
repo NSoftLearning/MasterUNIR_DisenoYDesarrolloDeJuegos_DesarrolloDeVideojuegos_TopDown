@@ -57,6 +57,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3531945100676042337}
   - component: {fileID: 8483224371258384520}
+  - component: {fileID: 7502223589341787944}
   m_Layer: 0
   m_Name: InventoryManager
   m_TagString: Untagged
@@ -94,11 +95,35 @@ MonoBehaviour:
   inventoryUI: {fileID: 0}
   inventorySO: {fileID: 11400000, guid: 902127f2b9da0f041a011b309cd6e58b, type: 2}
   itemUser: {fileID: 0}
+  playerWeaponController: {fileID: 0}
   clearInventory: 0
   updateQuickAccess: 0
   saveRuntimeToInventorySO: 0
+  changeNextWeapon: 0
   inventoryIndexToSetInFirstQuickAccess: 0
   inventoryIndexToSetInSecondQuickAccess: 0
+--- !u!114 &7502223589341787944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4255254496072567347}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20d03ae674c76ee4cbc37f65f7862063, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InventoryFeedback
+  _basicClick: {fileID: 8300000, guid: 0018946154b8e544fae143c1888892bb, type: 3}
+  _use: {fileID: 8300000, guid: f5487f8d10b9b7948b8c49f34173e4f5, type: 3}
+  _useFailed: {fileID: 8300000, guid: 933b3a38f0fc0464fb4197d399901f82, type: 3}
+  _validMove: {fileID: 8300000, guid: 77d371e118fefa14fa94c6589cf5b8b4, type: 3}
+  _invalidMove: {fileID: 8300000, guid: 933b3a38f0fc0464fb4197d399901f82, type: 3}
+  _basicClickVolume: 1
+  _useVolume: 1
+  _useFailedVolume: 1
+  _validMoveVolume: 1
+  _invalidMoveVolume: 1
 --- !u!1 &8651478354645814383
 GameObject:
   m_ObjectHideFlags: 0
@@ -176,3 +201,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::NavMeshDirectionFindingService
   _sampleDistance: 0.5
   _navMeshZ: 0
+  _navMeshSurface: {fileID: 0}
+  _pathFindingBlockerComponents: []

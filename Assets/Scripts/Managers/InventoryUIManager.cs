@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
+using System;
 
 public class InventoryUIManager : MonoBehaviour
 {
@@ -43,6 +44,9 @@ public class InventoryUIManager : MonoBehaviour
     private WeaponData currentDisplayedWeapon;
     private Coroutine weaponAnimationCoroutine;
 
+    public event Action OnOpenBag;
+    public event Action OnCloseBag;
+
     private void Start()
     {
         if (weaponIcon != null)
@@ -69,7 +73,7 @@ public class InventoryUIManager : MonoBehaviour
     {
         if (slidingPanel == null)
             return;
-
+        OnOpenBag?.Invoke();
         StartSlide(openedPosition, true);
     }
 
@@ -77,7 +81,7 @@ public class InventoryUIManager : MonoBehaviour
     {
         if (slidingPanel == null)
             return;
-
+        OnCloseBag?.Invoke();
         StartSlide(closedPosition, false);
     }
 

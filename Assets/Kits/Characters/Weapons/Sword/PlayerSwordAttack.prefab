@@ -13,7 +13,8 @@ GameObject:
   - component: {fileID: 6627199163494013772}
   - component: {fileID: 598181076215678468}
   - component: {fileID: 8674861928208327035}
-  m_Layer: 0
+  - component: {fileID: 5474215882375315895}
+  m_Layer: 8
   m_Name: PlayerSwordAttack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -80,8 +81,8 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1750654725
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: 6533152992189064857, guid: 6c565cbc1e57ece439e3df1e12aff4ea, type: 3}
@@ -179,3 +180,30 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 5c4bdde3db7682447ab9767bdc4da70c, type: 2}
   _damageAmount: 5
   _pushForce: 0
+--- !u!50 &5474215882375315895
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4856673312323477086}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
