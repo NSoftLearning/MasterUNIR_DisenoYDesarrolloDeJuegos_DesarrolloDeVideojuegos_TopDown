@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 4808522289638093996}
   - component: {fileID: 7873145723562143936}
   - component: {fileID: 9007620263207562687}
+  - component: {fileID: -2555076781695565681}
   m_Layer: 0
   m_Name: Box
   m_TagString: Untagged
@@ -108,7 +109,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93531851c3adb2246a9725d2d7f83737, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Destructible
-  destroyDelay: 0.5
   spriteRender: {fileID: 0}
   splashItem: {fileID: 0}
   destructibleCollider: {fileID: 0}
@@ -125,7 +125,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Life
   startLife: 1
-  damagePerHit: 1
+  currentLife: 0
   type: {fileID: 11400000, guid: 5c4bdde3db7682447ab9767bdc4da70c, type: 2}
   onLifeChanged:
     m_PersistentCalls:
@@ -197,6 +197,22 @@ MonoBehaviour:
   onHitReceived:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &-2555076781695565681
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5840195068280260460}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: NavMeshPlus::NavMeshPlus.Components.NavMeshModifier
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &6479661674305721019
 GameObject:
   m_ObjectHideFlags: 0

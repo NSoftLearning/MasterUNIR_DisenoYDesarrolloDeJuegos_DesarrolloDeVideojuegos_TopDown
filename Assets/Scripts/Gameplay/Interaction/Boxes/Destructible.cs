@@ -1,7 +1,8 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
-public class Destructible : MonoBehaviour
+public class Destructible : MonoBehaviour, IPathFindingBlocker
 {
     [Header("Object References")]
     [SerializeField] SpriteRenderer spriteRender;
@@ -9,6 +10,8 @@ public class Destructible : MonoBehaviour
     [SerializeField] Collider2D destructibleCollider;
 
     private bool isDestroyed = false;
+
+    public event Action BlockerStatusChanged;
 
     private void Awake()
     {
@@ -27,8 +30,11 @@ public class Destructible : MonoBehaviour
             spriteRender.enabled = false;
             destructibleCollider.enabled = false;
 
+            BlockerStatusChanged?.Invoke();
+
             splashItem.SpawnSplash();
             Destroy(gameObject);
+
        }     
     }
 }

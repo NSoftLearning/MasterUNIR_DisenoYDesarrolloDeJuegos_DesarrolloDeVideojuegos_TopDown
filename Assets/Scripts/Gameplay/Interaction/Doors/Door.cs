@@ -4,8 +4,9 @@ using UnityEngine;
 using UnityEngine.Rendering;
 using System.Collections.Generic;
 using System.Linq;
+using System;
 
-public class Door : MonoBehaviour
+public class Door : MonoBehaviour, IPathFindingBlocker
 {
     [Header("Door Settings")]
     [SerializeField] Animator anim;
@@ -18,6 +19,8 @@ public class Door : MonoBehaviour
 
     [Header("Collider")]
     [SerializeField] Collider2D doorCollider;
+
+    public event Action BlockerStatusChanged;
 
     void Awake()
     {
@@ -62,6 +65,8 @@ public class Door : MonoBehaviour
         doorCollider.enabled = false;
         anim.SetTrigger("Open");
         isOpen = true;
+
+        BlockerStatusChanged?.Invoke();
     }
 
     void CloseDoor()
@@ -69,6 +74,8 @@ public class Door : MonoBehaviour
         doorCollider.enabled = true;
         anim.SetTrigger("Close");
         isOpen = false;
+
+        BlockerStatusChanged?.Invoke();
     }
 
 
