@@ -411,8 +411,6 @@ PrefabInstance:
       propertyPath: type
       value: 
       objectReference: {fileID: 11400000, guid: 6a2fdd1649abac645acbed71391b40f4, type: 2}
-<<<<<<< HEAD
-=======
     - target: {fileID: 314696968896216295, guid: 7529b2afa91c15d4a883be5ae07470e6, type: 3}
       propertyPath: startLife
       value: 20
@@ -425,7 +423,6 @@ PrefabInstance:
       propertyPath: m_Offset.y
       value: 0.2866029
       objectReference: {fileID: 0}
->>>>>>> main
     - target: {fileID: 4736413475477760085, guid: 7529b2afa91c15d4a883be5ae07470e6, type: 3}
       propertyPath: side
       value: 0
