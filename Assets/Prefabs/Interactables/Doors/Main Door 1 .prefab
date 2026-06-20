@@ -120,6 +120,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 188a516eb81495c46bd557fd2390d4e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TriggerDoor
+  doorInGame: 0
   levelComplete: 0
   nextSceneName: 
 --- !u!1 &4073319186815841858
@@ -214,6 +215,7 @@ GameObject:
   - component: {fileID: 7929939809038889484}
   - component: {fileID: 488910364072569344}
   - component: {fileID: 5294026624371908507}
+  - component: {fileID: 3598265792493824134}
   m_Layer: 0
   m_Name: 'Main Door 1 '
   m_TagString: Untagged
@@ -428,3 +430,19 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.3995887, y: 2}
   m_EdgeRadius: 0
+--- !u!114 &3598265792493824134
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4284131033820782924}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: NavMeshPlus::NavMeshPlus.Components.NavMeshModifier
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
