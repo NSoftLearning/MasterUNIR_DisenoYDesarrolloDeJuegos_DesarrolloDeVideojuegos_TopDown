@@ -11,7 +11,10 @@ public class PatrollingState<TStateId> : IGenericState<TStateId> where TStateId 
     DetectionWithForwardAndIgnoreContext<IDamageReceiver, DistanceAndLosTargetFinderQuerySettings<IDamageReceiver>> _context;
     private List<DamageableTypeSO> _damageableTypesOfInterest;
     private DamageReceiverTargetSelector _targetSelector;
-
+    PatrolWaypoint currentPatrolWaypoint;
+    bool goingForward;
+    Vector3 targetCornerPosition;
+    Vector3 targetCornerDirection;
     public PatrollingState (
         TStateId thisStateId,
         TStateId nextStateId,
@@ -31,6 +34,8 @@ public class PatrollingState<TStateId> : IGenericState<TStateId> where TStateId 
 
     public void Enter()
     {
+        currentPatrolWaypoint = _context.patrolRoute.GetClosestWaypoint(_context.orientationService.Position);
+        _context.directionFindingService.TryGetDirection(_context.orientationService.Position, currentPatrolWaypoint.transform.position, out targetCornerDirection, out targetCornerPosition);
        
     }
 
@@ -41,6 +46,8 @@ public class PatrollingState<TStateId> : IGenericState<TStateId> where TStateId 
 
     public void Tick()
     {
+        RefreshMovementDirection();
+        CheckForCurrentTargetCornerChange();
         List<FoundTargetDTO<IDamageReceiver>> targetsFound =
             _context.targetFinder.FindTargets(_context.GetCurrentQueryData());
 
@@ -50,5 +57,28 @@ public class PatrollingState<TStateId> : IGenericState<TStateId> where TStateId 
         {
             _stateChangeDelegate.Invoke (StateId, _nextStateId);
         }            
-    } 
+    }
+
+    private void CheckForCurrentTargetCornerChange()
+    {
+        if (Vector3.Distance(currentPatrolWaypoint.transform.position, _context.orientationService.Position) < .1f)
+        {
+            currentPatrolWaypoint = _context.patrolRoute.GetNextWaypoint(currentPatrolWaypoint, ref goingForward);
+            _context.directionFindingService.TryGetDirection(_context.orientationService.Position, currentPatrolWaypoint.transform.position, out targetCornerDirection, out targetCornerPosition);
+            return;
+        }
+
+        if (Vector3.Distance (targetCornerPosition, _context.orientationService.Position) < .1f)
+        {
+            _context.directionFindingService.TryGetDirection(_context.orientationService.Position, currentPatrolWaypoint.transform.position, out targetCornerDirection, out targetCornerPosition);
+        }
+
+    }
+
+    private void RefreshMovementDirection ()
+    {
+        _context.customCharacterController.SetRawMovement((targetCornerPosition - _context.orientationService.Position).normalized);
+    }
+
+   
 }

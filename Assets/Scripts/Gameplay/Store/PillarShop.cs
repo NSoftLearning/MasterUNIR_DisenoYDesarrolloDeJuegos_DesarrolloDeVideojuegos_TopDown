@@ -67,8 +67,12 @@ public class PillarShop : MonoBehaviour, IInteractables
             StopCoroutine(fadeRoutine);
             fadeRoutine = StartCoroutine(FadeInVisual());
         }
+        else
+        {
+            fadeRoutine = StartCoroutine(FadeInVisual());
+        }
 
-        Debug.Log("Pilar seleccionado");
+            Debug.Log("Pilar seleccionado");
     }
 
     public void Unselect()
@@ -78,8 +82,12 @@ public class PillarShop : MonoBehaviour, IInteractables
             StopCoroutine(fadeRoutine);
             fadeRoutine = StartCoroutine(FadeOutVisual());
         }
+        else
+        {
+            fadeRoutine = StartCoroutine(FadeOutVisual());
+        }
 
-        Debug.Log("Pilar deseleccionado");
+            Debug.Log("Pilar deseleccionado");
     }
 
     IEnumerator FadeInVisual()

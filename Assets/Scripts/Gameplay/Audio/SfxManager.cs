@@ -27,6 +27,7 @@ public class SfxManager : MonoBehaviour
         {
             GameObject newSource = Instantiate(_audioSourcesPrefab, transform);
             _audioSources.Add(newSource.GetComponent<AudioSource>());
+            
         }
 
         for (int i = 0; i < _numOfLoopAudioSources; i++)
@@ -42,6 +43,8 @@ public class SfxManager : MonoBehaviour
     int index = 0;
     public void PlaySound(AudioInfo info)
     {
+        if (_audioSources.Count == 0) return;
+
         AudioSource actSource = _audioSources[index];
 
         actSource.clip = info.clip;
@@ -56,6 +59,8 @@ public class SfxManager : MonoBehaviour
     // Devuelve un id del indice para que se lo guarde quien lo llame y luego poder pararlo
     public int PlayLoopSound(AudioInfo info)
     {
+        if (_loopAudioSources.Count == 0) return -1;
+
         int selectedIndex = -1;
 
         bool encountered = false;

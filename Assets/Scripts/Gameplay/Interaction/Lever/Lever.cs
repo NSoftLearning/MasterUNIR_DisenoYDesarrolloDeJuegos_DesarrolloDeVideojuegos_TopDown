@@ -33,7 +33,11 @@ public class Lever : MonoBehaviour, IInteractables
             StopCoroutine(fadeRoutine);
             fadeRoutine = StartCoroutine(FadeInVisual());
         }
-            
+        else
+        {
+            fadeRoutine = StartCoroutine(FadeInVisual());
+        }
+
 
         Debug.Log("Palanca seleccionada");
     }
@@ -43,6 +47,10 @@ public class Lever : MonoBehaviour, IInteractables
         if (fadeRoutine != null)
         {
             StopCoroutine(fadeRoutine);
+            fadeRoutine = StartCoroutine(FadeOutVisual());
+        }
+        else
+        {
             fadeRoutine = StartCoroutine(FadeOutVisual());
         }
         Debug.Log("Palanca deseleccionada");

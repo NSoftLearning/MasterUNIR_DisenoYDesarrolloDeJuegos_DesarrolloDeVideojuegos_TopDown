@@ -23,7 +23,8 @@ public class DI_PatrolAndCloseCombatEnemyController : MonoBehaviour
             ComponentLocatorService.Components.TargetFinderService_DistanceAndLOS,
             _characterRoot.GetComponent<IOrientationService>(),
             _characterRoot.GetComponent<CustomCharacterController>(),
-            _enemyAttackObject.GetComponent<IEnemyAttack>());
+            _enemyAttackObject.GetComponent<IEnemyAttack>(),
+            ComponentLocatorService.Components.DirectionFindingService);
     }
 }
 

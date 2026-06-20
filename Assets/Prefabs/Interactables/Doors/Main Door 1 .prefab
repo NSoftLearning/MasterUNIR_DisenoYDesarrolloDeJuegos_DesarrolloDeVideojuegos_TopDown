@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3063427213164584978}
   - component: {fileID: 2192465410816259018}
   - component: {fileID: 8893498382271304423}
+  - component: {fileID: 8838372355366275326}
   m_Layer: 0
   m_Name: Trigger
   m_TagString: Untagged
@@ -67,7 +68,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0.06384039}
+  m_Offset: {x: -0.98, y: 0.99}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -107,6 +108,20 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   triggerOnce: 1
+--- !u!114 &8838372355366275326
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 997566120752183961}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 188a516eb81495c46bd557fd2390d4e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TriggerDoor
+  levelComplete: 0
+  nextSceneName: 
 --- !u!1 &4073319186815841858
 GameObject:
   m_ObjectHideFlags: 0
@@ -173,7 +188,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.029508948, y: -1.0463443}
+  m_Offset: {x: -0.97, y: -0.05}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -318,7 +333,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Door
   anim: {fileID: 192380317375085878}
   isOpen: 0
-  doorLevel: 0
+  requiredLevel: 0
   leversToActivate: []
   doorCollider: {fileID: 5725140058607216070}
 --- !u!61 &488910364072569344
@@ -355,10 +370,10 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.7830254, y: 0}
+  m_Offset: {x: -1.78, y: 0.99}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 1, y: 0}
     oldSize: {x: 2, y: 2}
     newSize: {x: 2, y: 2}
     adaptiveTilingThreshold: 0.5
@@ -401,10 +416,10 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.79718024, y: 0}
+  m_Offset: {x: -0.19, y: 0.99}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 1, y: 0}
     oldSize: {x: 2, y: 2}
     newSize: {x: 2, y: 2}
     adaptiveTilingThreshold: 0.5

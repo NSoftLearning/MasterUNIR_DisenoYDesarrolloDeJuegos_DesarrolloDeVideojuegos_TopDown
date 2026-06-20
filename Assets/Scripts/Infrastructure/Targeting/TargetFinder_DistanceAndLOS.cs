@@ -16,9 +16,42 @@ public class TargetFinder_DistanceAndLOS<TARGET_TYPE> : ITargetFinder<TARGET_TYP
             Vector3 fromOriginToTarget = item.position - queryData.origintransform.position;
             fromOriginToTarget.z = 0;
 
+
             float signedAngle = Vector3.SignedAngle(originForward, fromOriginToTarget, Vector3.forward);
-            if (Mathf.Abs(signedAngle) <= queryData.halfFieldOfView)
-                typedTargetsFinal_HS.Add(item);         
+            if (Mathf.Abs(signedAngle) > queryData.halfFieldOfView)
+                continue;
+            Vector3 rayOrigin = queryData.origintransform.position;
+            Vector3 directionToTarget = item.position - rayOrigin;
+            directionToTarget.z = 0f;
+
+            float rayDistance = directionToTarget.magnitude;
+
+            if (rayDistance <= 0.0001f)
+                continue;
+
+            Vector3 rayDirection = directionToTarget.normalized;
+
+            RaycastHit2D blockerHit = Physics2D.Raycast(
+                rayOrigin,
+                rayDirection,
+                rayDistance,
+                queryData.lineOfSightBlockers
+            );
+
+            
+            Debug.DrawRay(
+                rayOrigin,
+                rayDirection * rayDistance,
+                blockerHit.collider == null ? Color.green : Color.red,
+                0.1f
+            );
+
+            
+            if (blockerHit.collider != null)
+                continue;
+
+
+            typedTargetsFinal_HS.Add(item);         
         }
 
         typedTargetsFinal_HS.UnionWith(GetTypedTargetsByDistance(queryData, queryData.closeRange));

@@ -32,12 +32,19 @@ public class Chest : MonoBehaviour, IInteractables
 
     public void Select()
     {
-        if (fadeRoutine != null)
+        if (!isOpen)
         {
-            StopCoroutine(fadeRoutine);
-            fadeRoutine = StartCoroutine(FadeInVisual());
+            if (fadeRoutine != null)
+            {
+                StopCoroutine(fadeRoutine);
+                fadeRoutine = StartCoroutine(FadeInVisual());
+            }
+            else
+            {
+                fadeRoutine = StartCoroutine(FadeInVisual());
+            }
         }
-
+        
     }
 
     public void Unselect()
@@ -47,6 +54,10 @@ public class Chest : MonoBehaviour, IInteractables
             if (fadeRoutine != null)
             {
                 StopCoroutine(fadeRoutine);
+                fadeRoutine = StartCoroutine(FadeOutVisual());
+            }
+            else
+            {
                 fadeRoutine = StartCoroutine(FadeOutVisual());
             }
             Debug.Log("Cofre deseleccionado");
@@ -66,6 +77,10 @@ public class Chest : MonoBehaviour, IInteractables
             if (fadeRoutine != null)
             {
                 StopCoroutine(fadeRoutine);
+                fadeRoutine = StartCoroutine(FadeOutVisual());
+            }
+            else
+            {
                 fadeRoutine = StartCoroutine(FadeOutVisual());
             }
         }
