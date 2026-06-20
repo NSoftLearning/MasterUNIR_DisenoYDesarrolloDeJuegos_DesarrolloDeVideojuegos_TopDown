@@ -12,6 +12,8 @@ public enum Direction
 
 public class CustomCharacterController : MonoBehaviour, IVisible, IOrientationService
 {
+    public float MovementSpeed { get => _movementSpeed; set {  _movementSpeed = value; } }
+
     [SerializeField] private IVisible.Side side;
     [SerializeField] private float _movementSpeed = 3f;
     [SerializeField] private float _rollSpeed = 4f;
@@ -287,6 +289,6 @@ public class CustomCharacterController : MonoBehaviour, IVisible, IOrientationSe
 
     private void NotifyStaminaChanged()
     {
-        onStaminaChanged?.Invoke(stamina, _maxStamina);
+        //onStaminaChanged?.Invoke(stamina, _maxStamina);
     }
 }

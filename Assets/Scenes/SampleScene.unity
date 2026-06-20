@@ -12743,7 +12743,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3476943960244857115, guid: 36ee0d053cd101c4bbc95da9475d74eb, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4028882310137395756, guid: 36ee0d053cd101c4bbc95da9475d74eb, type: 3}
       propertyPath: _patrolRoute
@@ -16921,11 +16921,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 458012449140282973, guid: 3ec7e9a66537dc1458d79c1432887ca7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -19.430002
       objectReference: {fileID: 0}
     - target: {fileID: 458012449140282973, guid: 3ec7e9a66537dc1458d79c1432887ca7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 8.219999
       objectReference: {fileID: 0}
     - target: {fileID: 1705727390619946126, guid: 3ec7e9a66537dc1458d79c1432887ca7, type: 3}
       propertyPath: m_Layer
@@ -16977,11 +16977,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8292577977202254779, guid: 3ec7e9a66537dc1458d79c1432887ca7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 15.91
+      value: 42.99
       objectReference: {fileID: 0}
     - target: {fileID: 8292577977202254779, guid: 3ec7e9a66537dc1458d79c1432887ca7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.07
+      value: 5.93
       objectReference: {fileID: 0}
     - target: {fileID: 8292577977202254779, guid: 3ec7e9a66537dc1458d79c1432887ca7, type: 3}
       propertyPath: m_LocalPosition.z
@@ -17210,17 +17210,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: Character_EnemyKamikaze
       objectReference: {fileID: 0}
-    - target: {fileID: 138855706372028777, guid: 1756a79f1b219da45a817f58d2d8fecc, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1753501961660645445, guid: 1756a79f1b219da45a817f58d2d8fecc, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 39.72
+      value: 23.56
       objectReference: {fileID: 0}
     - target: {fileID: 1753501961660645445, guid: 1756a79f1b219da45a817f58d2d8fecc, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.71
+      value: 14.15
       objectReference: {fileID: 0}
     - target: {fileID: 1753501961660645445, guid: 1756a79f1b219da45a817f58d2d8fecc, type: 3}
       propertyPath: m_LocalPosition.z
@@ -17254,6 +17250,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3940912972616844646, guid: 1756a79f1b219da45a817f58d2d8fecc, type: 3}
+      propertyPath: _patrolRoute
+      value: 
+      objectReference: {fileID: 1870523157}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
