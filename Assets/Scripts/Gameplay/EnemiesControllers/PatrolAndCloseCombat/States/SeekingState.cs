@@ -20,8 +20,10 @@ public class SeekingState<TStateId> : IGenericState<TStateId> where TStateId : E
     
     List<FoundTargetDTO<IDamageReceiver>> _currentTargetsOfInterest = new ();
     float _willDesistAt = 0;
-    float _thisStateDetectionRange; 
-   // DistanceAndLosTargetFinderQuerySettings<IDamageReceiver> thisStateQueryOverride;
+    float _thisStateDetectionRange;
+    Vector3 _targetLastKnownPosition;
+    bool _hasTargetLastKnownPosition;
+    // DistanceAndLosTargetFinderQuerySettings<IDamageReceiver> thisStateQueryOverride;
     public SeekingState(
         TStateId thisStateId,
         TStateId handleTargetReached,
@@ -63,22 +65,64 @@ public class SeekingState<TStateId> : IGenericState<TStateId> where TStateId : E
 
     public void Tick()
     {
-        RefreshDetectedTargets();            
+        RefreshDetectedTargets();
+
+        if (_enemyAttack.CanAttackSomething(_detectionContext.GetCurrentQueryData().layersToSearch, _damageableTypesOfInterest))
+        { // _targetSelector.DamageableTypes))// _currentTargetsOfInterest))
+            _stateChangeDelegate.Invoke(StateId, _handleTargetReached);
+            return;
+        }
+
 
         if (_currentTargetsOfInterest.Count > 0)
         {
-            _detectionContext.customCharacterController.SetRawMovement((_currentTargetsOfInterest[0].target.GetPosition() - _transform.position).normalized);
+            _targetLastKnownPosition = _currentTargetsOfInterest[0].target.GetPosition();
+            _hasTargetLastKnownPosition = true;
+
+            _detectionContext.customCharacterController.SetRawMovement(
+                (_targetLastKnownPosition - _transform.position).normalized);
+
             _willDesistAt = Time.time + _searchPersistenceTime;
+            return;
         }
-        
-        if (Time.time > _willDesistAt)
+        if (_currentTargetsOfInterest.Count == 0)
         {
-            _stateChangeDelegate.Invoke(StateId, _handleTargetLost);
-            return;            
+            if (Time.time > _willDesistAt)
+            {
+                _stateChangeDelegate.Invoke(StateId, _handleTargetLost);
+                return;
+            }
+
+            if (!_hasTargetLastKnownPosition)
+            {
+                _detectionContext.customCharacterController.SetRawMovement(Vector2.zero);
+                return;
+            }
+
+            if (Vector3.Distance(_transform.position, _targetLastKnownPosition) < .1f)
+            {
+                _detectionContext.customCharacterController.SetRawMovement(Vector2.zero);
+                return;
+            }
+
+            bool directionFound = _detectionContext.directionFindingService.TryGetDirection(
+                _detectionContext.orientationService.Position,
+                _targetLastKnownPosition,
+                out Vector3 targetDirection,
+                out Vector3 targetCornerPosition);
+
+            if (!directionFound)
+            {
+                _detectionContext.customCharacterController.SetRawMovement(Vector2.zero);
+                return;
+            }
+
+            _detectionContext.customCharacterController.SetRawMovement(targetDirection.normalized);
+            return;
         }
 
-        if (_enemyAttack.CanAttackSomething(_detectionContext.GetCurrentQueryData().layersToSearch, _damageableTypesOfInterest))// _targetSelector.DamageableTypes))// _currentTargetsOfInterest))
-            _stateChangeDelegate.Invoke(StateId, _handleTargetReached);
+
+
     }
 
     private void RefreshDetectedTargets()
