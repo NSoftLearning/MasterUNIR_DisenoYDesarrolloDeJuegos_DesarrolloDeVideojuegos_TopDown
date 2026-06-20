@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: -4482640964646384529}
   - component: {fileID: -7703904619045399532}
   - component: {fileID: 6626694250240618121}
+  - component: {fileID: 1881330455483589914}
   m_Layer: 0
   m_Name: BowAttack
   m_TagString: Untagged
@@ -235,3 +236,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3a17698a192c8148b913c6f828e1cac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ProjectileCollisionManager
+--- !u!114 &1881330455483589914
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4856673312323477086}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6be46d5c0643b44387f060d6d1a1d19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Dissapear
+  _timeToDissapear: 10

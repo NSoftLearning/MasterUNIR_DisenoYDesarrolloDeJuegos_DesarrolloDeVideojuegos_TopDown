@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,7 +13,7 @@ public class Chest : MonoBehaviour, IInteractables
     [SerializeField] float fadeShowKey = 0.2f;
 
     [Header("Chest Event")]
-    public UnityEvent eventoEfecto;
+    public Action eventoEfecto;
 
     Coroutine fadeRoutine;
 

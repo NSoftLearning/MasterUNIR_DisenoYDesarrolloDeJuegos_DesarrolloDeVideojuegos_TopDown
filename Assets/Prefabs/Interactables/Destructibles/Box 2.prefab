@@ -52,6 +52,14 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 734368628706365288, guid: b79c55e8b93aa5545a53c0c613eba29a, type: 3}
+    - target: {fileID: 5076094368235998590, guid: a2d407d22b95b1d4cac1ecbe11c1855b, type: 3}
+      propertyPath: _destructible
+      value: 
+      objectReference: {fileID: 8300000, guid: d5cbdd4f959b5d14abf882ae34e94307, type: 3}
+    - target: {fileID: 5076094368235998590, guid: a2d407d22b95b1d4cac1ecbe11c1855b, type: 3}
+      propertyPath: _destructibleVolume
+      value: 0.166
+      objectReference: {fileID: 0}
     - target: {fileID: 5840195068280260460, guid: a2d407d22b95b1d4cac1ecbe11c1855b, type: 3}
       propertyPath: m_Name
       value: Box 2

@@ -365,6 +365,7 @@ GameObject:
   - component: {fileID: 8934521518892496175}
   - component: {fileID: 8341462500092668700}
   - component: {fileID: 9003900566754072480}
+  - component: {fileID: 7466056575483207867}
   m_Layer: 0
   m_Name: Totem Shop
   m_TagString: Untagged
@@ -525,6 +526,22 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &7466056575483207867
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4159199054469386176}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d604b479bdcb36c478cc066b29de4fbe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PillarShopFeedback
+  _buy: {fileID: 8300000, guid: 5fe9e24f9aa94174fa87bc6b9c8b8408, type: 3}
+  _buyError: {fileID: 8300000, guid: 1179b33228cfbfa4987fb85837ad5c2d, type: 3}
+  _buyVolume: 0.166
+  _buyVolumeError: 0.12
 --- !u!1 &4605073947565065649
 GameObject:
   m_ObjectHideFlags: 0
