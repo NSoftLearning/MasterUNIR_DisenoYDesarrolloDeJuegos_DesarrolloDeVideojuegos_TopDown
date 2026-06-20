@@ -88,8 +88,8 @@ public class PatrolAndCloseCombatEnemyController : MonoBehaviour
             new SeekingState<PatrolAndCloseCombatStateId> (
                 PatrolAndCloseCombatStateId.Seeking,
                 PatrolAndCloseCombatStateId.Attacking,
-                PatrolAndCloseCombatStateId.Patrolling,
-                _searchPersistenceTime,
+                PatrolAndCloseCombatStateId.GuardingLastKnownPosition,
+                //_searchPersistenceTime,
                 transform,
                 _detecionStatesContext,
                 _targetSelector,
@@ -104,6 +104,15 @@ public class PatrolAndCloseCombatEnemyController : MonoBehaviour
                 layerstToSearchForTarget, 
                 _damageableTypesOfInterest,
                 _detectionOriginTransform,
+                _statesMachine.FromStateToState),
+            new GuardingLastKnownPosition <PatrolAndCloseCombatStateId> (
+                PatrolAndCloseCombatStateId.GuardingLastKnownPosition,
+                PatrolAndCloseCombatStateId.Patrolling,
+                PatrolAndCloseCombatStateId.Seeking,
+                _searchPersistenceTime,
+                _targetSelector,
+                _detecionStatesContext,
+                _alertDetectionRange,
                 _statesMachine.FromStateToState)
         };
 

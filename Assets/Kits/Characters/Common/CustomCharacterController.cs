@@ -271,6 +271,12 @@ public class CustomCharacterController : MonoBehaviour, IVisible, IOrientationSe
         _animator.SetBool("Dead", true);
     }
 
+    public void NotMoveAnymore()
+    {
+        isDead = true;
+        _rigidbody.linearVelocity = new Vector2(0, 0);
+    }
+
     private float GetMoveSpeedMultiplier()
     {
         if (_temporaryStats == null)

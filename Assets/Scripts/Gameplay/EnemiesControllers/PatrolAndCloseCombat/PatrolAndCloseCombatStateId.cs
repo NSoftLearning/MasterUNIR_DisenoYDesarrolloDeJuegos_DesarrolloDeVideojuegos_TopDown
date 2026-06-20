@@ -4,5 +4,5 @@ public enum PatrolAndCloseCombatStateId
     Patrolling,
     Seeking,
     Attacking,
-    ReturningToPatrol
+    GuardingLastKnownPosition
 }

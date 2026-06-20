@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2430624068435295256}
   - component: {fileID: 3504888723165811560}
   - component: {fileID: 2316038820549334006}
+  - component: {fileID: 3558782410295911593}
   m_Layer: 6
   m_Name: Light 4
   m_TagString: Untagged
@@ -152,6 +153,22 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0.76330423}
   m_Radius: 0.63854074
+--- !u!114 &3558782410295911593
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6691425561989833016}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: NavMeshPlus::NavMeshPlus.Components.NavMeshModifier
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &8559728501978688256
 GameObject:
   m_ObjectHideFlags: 0
