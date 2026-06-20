@@ -10,6 +10,7 @@ public class PlayerWeaponController : MonoBehaviour
     [SerializeField] Transform attackPosRight;
 
     public event Action FinishedAttack;
+    public event Action OnNewWeapon;
     
     private List<WeaponData> weapons;
     private Weapon currentWeapon;
@@ -29,6 +30,8 @@ public class PlayerWeaponController : MonoBehaviour
             WeaponData act = weapons[i];
             if (act._weaponName == weapon._weaponName) return;
         }
+
+        OnNewWeapon?.Invoke();
 
         weapons.Add(weapon);
 

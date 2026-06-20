@@ -10,6 +10,8 @@ public class HitCollider : MonoBehaviour
     [SerializeField] int _damageAmount;
     [SerializeField] float _pushForce;
     DamageDataDTO damageDataDTO;
+
+    public event Action OnHit;
     
     private void Start()
     {
@@ -22,10 +24,15 @@ public class HitCollider : MonoBehaviour
         //HurtCollider hit = collision.GetComponent<HurtCollider>();
         //hit?.NotifyHit(this);
         IDamageReceiver damageReceiver = collision.GetComponent<IDamageReceiver>();
-        damageReceiver.TryToDealDamage(damageDataDTO);
 
-
-
+        if (damageReceiver != null) 
+        { 
+            bool success = damageReceiver.TryToDealDamage(damageDataDTO); 
+            if (success)
+            {
+                OnHit?.Invoke();
+            }
+        }
     }
 
 }

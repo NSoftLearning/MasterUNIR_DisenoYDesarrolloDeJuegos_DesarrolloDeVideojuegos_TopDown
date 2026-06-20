@@ -411,6 +411,21 @@ PrefabInstance:
       propertyPath: type
       value: 
       objectReference: {fileID: 11400000, guid: 6a2fdd1649abac645acbed71391b40f4, type: 2}
+<<<<<<< HEAD
+=======
+    - target: {fileID: 314696968896216295, guid: 7529b2afa91c15d4a883be5ae07470e6, type: 3}
+      propertyPath: startLife
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1988660819103835746, guid: 7529b2afa91c15d4a883be5ae07470e6, type: 3}
+      propertyPath: m_Size.y
+      value: 0.60364354
+      objectReference: {fileID: 0}
+    - target: {fileID: 1988660819103835746, guid: 7529b2afa91c15d4a883be5ae07470e6, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.2866029
+      objectReference: {fileID: 0}
+>>>>>>> main
     - target: {fileID: 4736413475477760085, guid: 7529b2afa91c15d4a883be5ae07470e6, type: 3}
       propertyPath: side
       value: 0
@@ -447,6 +462,10 @@ PrefabInstance:
       propertyPath: stamina
       value: 
       objectReference: {fileID: 5138318767072083860}
+    - target: {fileID: 7172689892765839884, guid: 7529b2afa91c15d4a883be5ae07470e6, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7807025985240862038, guid: 7529b2afa91c15d4a883be5ae07470e6, type: 3}
       propertyPath: m_Name
       value: Character_Player
@@ -508,6 +527,18 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7807025985240862038, guid: 7529b2afa91c15d4a883be5ae07470e6, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1325760068058816757}
+    - targetCorrespondingSourceObject: {fileID: 7807025985240862038, guid: 7529b2afa91c15d4a883be5ae07470e6, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 987941463058361682}
+    - targetCorrespondingSourceObject: {fileID: 7807025985240862038, guid: 7529b2afa91c15d4a883be5ae07470e6, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5443073620856516763}
+    - targetCorrespondingSourceObject: {fileID: 7807025985240862038, guid: 7529b2afa91c15d4a883be5ae07470e6, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7188497630532998660}
+    - targetCorrespondingSourceObject: {fileID: 7807025985240862038, guid: 7529b2afa91c15d4a883be5ae07470e6, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3248234236273807424}
   m_SourcePrefab: {fileID: 100100000, guid: 7529b2afa91c15d4a883be5ae07470e6, type: 3}
 --- !u!114 &5138318767072083860 stripped
 MonoBehaviour:
@@ -520,6 +551,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f89545d076d1354b8e5e5739854331a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CharacterController
+--- !u!212 &7313674493222970829 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 7172689892765839884, guid: 7529b2afa91c15d4a883be5ae07470e6, type: 3}
+  m_PrefabInstance: {fileID: 501561229093132225}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &7687019504038238871 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7807025985240862038, guid: 7529b2afa91c15d4a883be5ae07470e6, type: 3}
@@ -572,12 +608,68 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9587d63bd6c12f42a4f79655cb57b32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DamageFeedback
+  _healEffect: {fileID: 3565931892240202546, guid: 3184498d15aef38418edb4e2f4e5e856, type: 3}
   _damage: {fileID: 8300000, guid: 5d6d90867c581a54d8ab7748f8c30dd7, type: 3}
   _death: {fileID: 8300000, guid: bc358ad128756f74c94813f541eb9fb6, type: 3}
   _heal: {fileID: 8300000, guid: 1682adcfb6e592c4b895649b3433ca56, type: 3}
   _damageVolume: 0.166
-  _deathVolume: 0.13
+  _deathVolume: 0.1
   _healVolume: 0.166
+--- !u!114 &987941463058361682
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7687019504038238871}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d70de3680ff2d7349afe3ea5f964a8a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CharacterFeedback
+  _walk: {fileID: 8300000, guid: cc4f0775e9e902343b8c3f119ee03a24, type: 3}
+  _collectWeapon: {fileID: 8300000, guid: df13f486d2e56b14599c487de4687ef0, type: 3}
+  _walkVolume: 0.12
+  _collectWeaponVolume: 0.166
+--- !u!114 &5443073620856516763
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7687019504038238871}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48373e71a13c5b548a7e215ff1e006d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Inmunity
+  _inmunityTimer: 1
+  _blinkTime: 0.1
+  _blinkSprite: {fileID: 7313674493222970829}
+--- !u!114 &7188497630532998660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7687019504038238871}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7956a0895dc3c854cb407bc613bc0d4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CharacterRollInmune
+--- !u!114 &3248234236273807424
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7687019504038238871}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68c603f0f56ca534683f7954ac189d38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CharacterDeath
 --- !u!4 &8292577977202254779 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8494001086697993338, guid: 7529b2afa91c15d4a883be5ae07470e6, type: 3}

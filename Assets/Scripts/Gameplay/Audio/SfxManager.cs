@@ -57,6 +57,41 @@ public class SfxManager : MonoBehaviour
     // Devuelve un id del indice para que se lo guarde quien lo llame y luego poder pararlo
     public int PlayLoopSound(AudioInfo info)
     {
-        return 0;
+        int selectedIndex = -1;
+
+        bool encountered = false;
+        int auxIndex = loopIndex;
+        for (int i = 0; i < _loopAudioSources.Count; ++i)
+        {
+            AudioSource source = _audioSources[auxIndex];
+            if (!source.isPlaying)
+            {
+                selectedIndex = auxIndex;
+                encountered = true;
+                break;
+            }
+
+            ++auxIndex;
+            if (auxIndex == _numOfLoopAudioSources) auxIndex = 0;
+        }
+
+        if (!encountered) return -1;
+
+        AudioSource sourceL = _loopAudioSources[selectedIndex];
+        sourceL.clip = info.clip;
+        sourceL.volume = info.volume;
+        sourceL.Play();
+
+        loopIndex = selectedIndex + 1;
+        if (loopIndex == _numOfLoopAudioSources) loopIndex = 0;
+
+        return auxIndex;
+    }
+
+    public void StopLoopSound(int indexId)
+    {
+        if (indexId == -1) return;
+
+        _loopAudioSources[indexId].Stop();
     }
 }
