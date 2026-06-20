@@ -22,6 +22,7 @@ public class Destructible : MonoBehaviour, IPathFindingBlocker
         splashItem = GetComponentInChildren<SplashItem>();
     }
 
+    [ContextMenu(nameof(DestroyObject))]
     public void DestroyObject()
     {
        if (!isDestroyed) 

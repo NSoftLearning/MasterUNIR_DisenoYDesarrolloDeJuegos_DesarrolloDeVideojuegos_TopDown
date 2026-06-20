@@ -15,6 +15,7 @@ public class TriggerDoor : MonoBehaviour
     {
         gameManager = FindAnyObjectByType<GameManager>();
         scenesManager = FindAnyObjectByType<ScenesManager>();
+        col = GetComponent<Collider2D>();
         col.enabled = true;
 
     }

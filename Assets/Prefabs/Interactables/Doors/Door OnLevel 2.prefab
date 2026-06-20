@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 1850644881685270377}
   - component: {fileID: 5332348376783985267}
   - component: {fileID: 3453045542125463987}
+  - component: {fileID: 74484933671755547}
   m_Layer: 0
   m_Name: Door OnLevel 2
   m_TagString: Untagged
@@ -227,6 +228,22 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.44252014, y: 2.511709}
   m_EdgeRadius: 0
+--- !u!114 &74484933671755547
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2916718654515001649}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: NavMeshPlus::NavMeshPlus.Components.NavMeshModifier
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &7754802532616117331
 GameObject:
   m_ObjectHideFlags: 0
