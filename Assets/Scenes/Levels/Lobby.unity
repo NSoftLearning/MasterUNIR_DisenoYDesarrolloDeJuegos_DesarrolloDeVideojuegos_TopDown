@@ -37140,6 +37140,10 @@ PrefabInstance:
       propertyPath: m_Size
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2688729612373749682, guid: 281b78e88c91baf49a9d69f5be2a9259, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 97614201824372231, guid: 8b2ab2f7e6b210d428c570c28ba100fd, type: 3}
     - target: {fileID: 3860313946399343747, guid: 281b78e88c91baf49a9d69f5be2a9259, type: 3}
       propertyPath: musicAudio
       value: 
@@ -37191,6 +37195,14 @@ PrefabInstance:
     - target: {fileID: 6568098718327531685, guid: 281b78e88c91baf49a9d69f5be2a9259, type: 3}
       propertyPath: m_AnchorMin.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6889436363450589527, guid: 281b78e88c91baf49a9d69f5be2a9259, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -34.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 6889436363450589527, guid: 281b78e88c91baf49a9d69f5be2a9259, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 26.73
       objectReference: {fileID: 0}
     - target: {fileID: 7062193874590410225, guid: 281b78e88c91baf49a9d69f5be2a9259, type: 3}
       propertyPath: m_AnchorMax.x
