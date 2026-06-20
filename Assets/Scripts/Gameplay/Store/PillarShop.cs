@@ -1,6 +1,7 @@
 using TMPro;
 using UnityEngine;
 using System.Collections;
+using System;
 
 public class PillarShop : MonoBehaviour, IInteractables
 {
@@ -18,6 +19,9 @@ public class PillarShop : MonoBehaviour, IInteractables
 
     CoinManager coinManager;
     Coroutine fadeRoutine;
+
+    public event Action OnBuy;
+    public event Action OnBuyError;
 
 
     void Awake()
@@ -47,9 +51,11 @@ public class PillarShop : MonoBehaviour, IInteractables
         {
             Debug.Log("Saldo insuficiente");
             anim.SetTrigger("Missing");
+            OnBuyError?.Invoke();
             return;
         }
 
+        OnBuy?.Invoke();
         coinManager.currentCoins -= itemData.price;
         anim.SetTrigger("Buy It");
 

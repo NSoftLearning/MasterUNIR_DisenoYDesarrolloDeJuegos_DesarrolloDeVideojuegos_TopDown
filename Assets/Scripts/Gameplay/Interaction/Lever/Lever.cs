@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -9,6 +10,8 @@ public class Lever : MonoBehaviour, IInteractables
     [SerializeField] public bool activated = false;
     [SerializeField] SpriteRenderer spriteKey;
     [SerializeField] float fadeShowKey = 0.2f;
+
+    public event Action OnPress;
 
     Coroutine fadeRoutine;
 
@@ -38,8 +41,8 @@ public class Lever : MonoBehaviour, IInteractables
             fadeRoutine = StartCoroutine(FadeInVisual());
         }
 
-
         Debug.Log("Palanca seleccionada");
+        OnPress?.Invoke();
     }
 
     public void Unselect()
@@ -53,7 +56,9 @@ public class Lever : MonoBehaviour, IInteractables
         {
             fadeRoutine = StartCoroutine(FadeOutVisual());
         }
+
         Debug.Log("Palanca deseleccionada");
+        OnPress?.Invoke();
     }
 
     public void StartInteraction()

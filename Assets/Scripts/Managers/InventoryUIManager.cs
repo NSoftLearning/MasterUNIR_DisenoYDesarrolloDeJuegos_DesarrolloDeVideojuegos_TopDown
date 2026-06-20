@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using System;
 
 public class InventoryUIManager : MonoBehaviour
 {
@@ -29,6 +30,9 @@ public class InventoryUIManager : MonoBehaviour
     private bool isOpen;
     private Coroutine slideCoroutine;
 
+    public event Action OnOpenBag;
+    public event Action OnCloseBag;
+
     private void Start()
     {
         if (startClosed)
@@ -46,6 +50,7 @@ public class InventoryUIManager : MonoBehaviour
         if (slidingPanel == null)
             return;
 
+        OnOpenBag?.Invoke();
         StartSlide(openedPosition, true);
     }
 
@@ -54,6 +59,7 @@ public class InventoryUIManager : MonoBehaviour
         if (slidingPanel == null)
             return;
 
+        OnCloseBag?.Invoke();
         StartSlide(closedPosition, false);
     }
 

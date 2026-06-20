@@ -1,6 +1,7 @@
 using System.Xml.Serialization;
 using UnityEngine;
 using System.Collections;
+using System;
 
 public class Coin : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class Coin : MonoBehaviour
     [SerializeField] float flySpeed = 8f;
     [SerializeField] float delayBeforeCollect = 1f;
     [SerializeField] Collider2D coinCollider;
+
+    public event Action OnCatch;
 
     private bool canTake = false;
 
@@ -61,6 +64,7 @@ public class Coin : MonoBehaviour
         }
 
         coinManager.AddCoin();
+        OnCatch?.Invoke();
         Destroy(gameObject);
     }
 
