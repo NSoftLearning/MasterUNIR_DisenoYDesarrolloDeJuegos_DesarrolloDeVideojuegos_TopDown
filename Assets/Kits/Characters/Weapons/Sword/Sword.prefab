@@ -122,4 +122,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WeaponFeedback
   _attack: {fileID: 8300000, guid: 11c81278bed523c458ad6615c6061eb5, type: 3}
-  _attackVolume: 0.155
+  _attackVolume: 0.15
