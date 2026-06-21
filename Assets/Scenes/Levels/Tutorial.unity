@@ -4832,6 +4832,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8838372355366275326, guid: 4f485cffeb70957429de29a89d09dc74, type: 3}
+      propertyPath: levelComplete
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8838372355366275326, guid: 4f485cffeb70957429de29a89d09dc74, type: 3}
       propertyPath: nextSceneName
       value: Lobby
       objectReference: {fileID: 0}
