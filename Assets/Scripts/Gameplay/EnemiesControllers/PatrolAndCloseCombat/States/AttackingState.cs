@@ -13,6 +13,7 @@ public class AttackingStatee <TStateId> : IGenericState<TStateId> where TStateId
     LayerMask _layerstToSearchForTarget;
     List<DamageableTypeSO> _damageableTypesOfInterest;
     Transform _damageOriginTransform;
+    DetectionWithForwardAndIgnoreContext<IDamageReceiver, DistanceAndLosTargetFinderQuerySettings<IDamageReceiver>> _detectionContext;
     public AttackingStatee (
         TStateId thisStateId,
         TStateId nextStateId,
@@ -20,6 +21,7 @@ public class AttackingStatee <TStateId> : IGenericState<TStateId> where TStateId
         LayerMask layersToSearchForTarget,
         List<DamageableTypeSO> damageableTypeSo,
         Transform damageOriginTransform,
+        DetectionWithForwardAndIgnoreContext<IDamageReceiver, DistanceAndLosTargetFinderQuerySettings<IDamageReceiver>> detectionContext,
         StateChangeDelegate<TStateId> stateChangeDelegate)
     {
         StateId = thisStateId;
@@ -29,10 +31,13 @@ public class AttackingStatee <TStateId> : IGenericState<TStateId> where TStateId
         _layerstToSearchForTarget = layersToSearchForTarget;
         _damageableTypesOfInterest = damageableTypeSo;
         _damageOriginTransform = damageOriginTransform;
+        _detectionContext = detectionContext;
     }
 
     public void Enter()
     {
+        _detectionContext.customCharacterController.SetRawMovement(Vector2.zero);
+        
         _enemyAttack.Performed += TeardownAndStateChange;
         _enemyAttack.PerformAttack(_layerstToSearchForTarget, _damageableTypesOfInterest, _damageOriginTransform.position);
     }

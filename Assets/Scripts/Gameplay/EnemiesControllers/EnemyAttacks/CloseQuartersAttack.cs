@@ -58,13 +58,19 @@ public class CloseQuartersAttack : MonoBehaviour, IEnemyAttack
 
  
 
-    bool IEnemyAttack.CanAttackSomething(LayerMask _targetLayers, List<DamageableTypeSO> validDamageables)
+    CanAttackStatus IEnemyAttack.CanAttackSomething(LayerMask _targetLayers, List<DamageableTypeSO> validDamageables)
     {
 
-        if (Time.time < _attackAvailableAtSecond)
-            return false;
+        CanAttackStatus returnValue;
 
-        float angle = _attackBox.transform.eulerAngles.z;
+        returnValue.isInRange = false;
+        if (Time.time < _attackAvailableAtSecond)
+            returnValue.canAttack = false;
+        else
+            returnValue.canAttack = true;
+
+
+            float angle = _attackBox.transform.eulerAngles.z;
 
         BoxTargetFinderQuerySettings<IDamageReceiver> queryData =
             new BoxTargetFinderQuerySettings<IDamageReceiver>(
@@ -78,9 +84,11 @@ public class CloseQuartersAttack : MonoBehaviour, IEnemyAttack
 
         foreach (FoundTargetDTO<IDamageReceiver> targetFound in targetsFound)
             if (targetFound.target.DamageIsCompatible(validDamageables))
-                return true;
+                returnValue.isInRange = true;
 
-        return false;
+        
+
+        return returnValue;
 
     }
 

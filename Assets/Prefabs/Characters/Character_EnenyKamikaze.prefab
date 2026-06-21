@@ -159,6 +159,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 1985575073999076372, guid: 7529b2afa91c15d4a883be5ae07470e6, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 22100000, guid: 8200e488ef20cc745a426b546ae43685, type: 2}
     - target: {fileID: 1996174892976248316, guid: 7529b2afa91c15d4a883be5ae07470e6, type: 3}
       propertyPath: m_Layer
       value: 7
@@ -175,6 +179,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 7172689892765839884, guid: 7529b2afa91c15d4a883be5ae07470e6, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -3966875280856557594, guid: fdde976d339edbd4f84254d02591e509, type: 3}
     - target: {fileID: 7807025985240862038, guid: 7529b2afa91c15d4a883be5ae07470e6, type: 3}
       propertyPath: m_Name
       value: Character_EnenyKamikaze
@@ -226,6 +234,10 @@ PrefabInstance:
     - target: {fileID: 8494001086697993338, guid: 7529b2afa91c15d4a883be5ae07470e6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8574626175682560530, guid: 7529b2afa91c15d4a883be5ae07470e6, type: 3}
+      propertyPath: m_Mass
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8930010906506598981, guid: 7529b2afa91c15d4a883be5ae07470e6, type: 3}
       propertyPath: m_Layer
