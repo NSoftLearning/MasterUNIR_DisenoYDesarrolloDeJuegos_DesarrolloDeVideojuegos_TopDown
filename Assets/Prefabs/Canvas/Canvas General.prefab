@@ -126,6 +126,8 @@ MonoBehaviour:
   sfxAudio: {fileID: 967571610029084110}
   pauseClip: {fileID: 8300000, guid: d19abafe4bf780f4da6197bcf1b76ae3, type: 3}
   panelPause: {fileID: 2234426689018159811}
+  isForCinematic: 0
+  cinematic: {fileID: 0}
 --- !u!82 &967571610029084110
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3761,7 +3763,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -7341873914826428395, guid: 045bde5da20ad4a44bcd38f80a6e4f5a, type: 3}
+  m_Sprite: {fileID: 3177093337271930595, guid: 135786a21c8e3974e89639fd6c6767b1, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
