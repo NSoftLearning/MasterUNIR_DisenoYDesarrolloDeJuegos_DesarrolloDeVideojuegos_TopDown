@@ -11,10 +11,13 @@ public class PlayerStatsCanvas : MonoBehaviour
 
     private void OnEnable()
     {
-        life.onLifeChanged.AddListener(OnLifechanged);
-        life.onLifeDepleted.AddListener(OnLifeDepleted);
-
-        stamina.onStaminaChanged.AddListener(OnStaminaChange);
+        if(healthBar != null) 
+        { 
+            life.onLifeChanged.AddListener(OnLifechanged);
+            life.onLifeDepleted.AddListener(OnLifeDepleted);
+        }
+        if (staminaBar != null)
+            stamina.onStaminaChanged.AddListener(OnStaminaChange);
     }
 
     private void Awake()
@@ -49,9 +52,12 @@ public class PlayerStatsCanvas : MonoBehaviour
 
     private void OnDisable()
     {
-        life.onLifeChanged.RemoveListener(OnLifechanged);
-        life.onLifeDepleted.RemoveListener(OnLifeDepleted);
-
-        stamina.onStaminaChanged.RemoveListener(OnStaminaChange);
+        if (healthBar != null)
+        {
+            life.onLifeChanged.RemoveListener(OnLifechanged);
+            life.onLifeDepleted.RemoveListener(OnLifeDepleted);
+        }
+        if (staminaBar != null)
+            stamina.onStaminaChanged.RemoveListener(OnStaminaChange);
     }
 }
