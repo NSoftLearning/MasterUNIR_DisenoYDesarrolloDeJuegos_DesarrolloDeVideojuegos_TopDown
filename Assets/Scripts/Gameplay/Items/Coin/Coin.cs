@@ -58,7 +58,7 @@ public class Coin : MonoBehaviour
             return;
         }
 
-        inventoryManager = InventoryManager.Instance;
+        inventoryManager = ComponentLocatorService.Components.InventoryManager;
     }
 
     public void OnTriggerEnter2D(Collider2D collision)

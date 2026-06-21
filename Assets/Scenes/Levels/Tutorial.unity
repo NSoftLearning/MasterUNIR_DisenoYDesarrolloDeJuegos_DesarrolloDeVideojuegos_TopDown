@@ -4852,7 +4852,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8838372355366275326, guid: 4f485cffeb70957429de29a89d09dc74, type: 3}
       propertyPath: saveInventory
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8893498382271304423, guid: 4f485cffeb70957429de29a89d09dc74, type: 3}
       propertyPath: onTriggerEvent.m_PersistentCalls.m_Calls.Array.size

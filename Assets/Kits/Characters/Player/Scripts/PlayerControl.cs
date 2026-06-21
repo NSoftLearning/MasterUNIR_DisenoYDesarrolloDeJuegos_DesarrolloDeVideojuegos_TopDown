@@ -221,7 +221,7 @@ public class PlayerControl : MonoBehaviour
             return ComponentLocatorService.Components.InventoryManager;
         }
 
-        return InventoryManager.Instance;
+        return ComponentLocatorService.Components.InventoryManager;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

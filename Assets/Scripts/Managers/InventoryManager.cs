@@ -17,7 +17,7 @@ public class InventoryManager : MonoBehaviour
 
     private InventoryRuntime currentInventory;
 
-    public static InventoryManager Instance;
+    
 
     public event Action OnBasicClick;
     public event Action<ItemSO, bool> OnUse;
@@ -34,19 +34,12 @@ public class InventoryManager : MonoBehaviour
 
     private void Awake()
     {
-        if (Instance == null)
-        {
-            Instance = this;
-            DontDestroyOnLoad(gameObject);
-
-            LoadInventoryFromSO();
-            ApplySavedWeaponToPlayer();
-            RefreshUI();
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
+        
+        LoadInventoryFromSO();
+        ApplySavedWeaponToPlayer();
+        RefreshUI();
+        
+        
     }
 
     private void Update()
