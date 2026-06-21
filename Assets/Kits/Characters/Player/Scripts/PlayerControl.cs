@@ -233,27 +233,7 @@ public class PlayerControl : MonoBehaviour
             return;
         }
 
-        if (collision.TryGetComponent(out CollectibleWeapon collectibleWeapon))
-        {
-            WeaponData weaponData = collectibleWeapon.GetWeapon();
-
-            if (weaponData == null)
-                return;
-
-            InventoryManager inventoryManager = GetInventoryManager();
-
-            if (inventoryManager != null)
-            {
-                inventoryManager.AddWeapon(weaponData);
-                inventoryManager.EquipWeapon(weaponData);
-            }
-            else if (_weaponController != null)
-            {
-                _weaponController.NewWeapon(collision.gameObject);
-            }
-
-            Destroy(collision.gameObject);
-        }
+        
     }
 
     private void OnTriggerExit2D(Collider2D collision)

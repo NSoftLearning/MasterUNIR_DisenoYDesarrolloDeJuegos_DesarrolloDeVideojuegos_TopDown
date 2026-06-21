@@ -46,10 +46,10 @@ public class PlayerWeaponController : MonoBehaviour
         if (weapon == null)
             return;
 
-        if (InventoryManager.Instance != null)
+        if (ComponentLocatorService.Components.InventoryManager != null)
         {
-            InventoryManager.Instance.AddWeapon(weapon);
-            InventoryManager.Instance.EquipWeapon(weapon);
+            ComponentLocatorService.Components.InventoryManager.AddWeapon(weapon);
+            ComponentLocatorService.Components.InventoryManager.EquipWeapon(weapon);
         }
         else
         {
@@ -105,9 +105,9 @@ public class PlayerWeaponController : MonoBehaviour
 
         WeaponData weaponAct = weapons[currentWeaponIndex];
 
-        if (InventoryManager.Instance != null)
+        if (ComponentLocatorService.Components.InventoryManager != null)
         {
-            InventoryManager.Instance.EquipWeapon(weaponAct);
+            ComponentLocatorService.Components.InventoryManager.EquipWeapon(weaponAct);
         }
         else
         {
