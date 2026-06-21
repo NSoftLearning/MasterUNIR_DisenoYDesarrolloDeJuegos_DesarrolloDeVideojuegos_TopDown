@@ -2967,6 +2967,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
+--- !u!114 &374452069 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4843006159567929737, guid: 281b78e88c91baf49a9d69f5be2a9259, type: 3}
+  m_PrefabInstance: {fileID: 374452067}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b386ae160b259034f9e0791a50540465, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InventoryUIManager
 --- !u!1001 &376151137
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9191,6 +9202,10 @@ PrefabInstance:
       propertyPath: itemUser
       value: 
       objectReference: {fileID: 1843328509}
+    - target: {fileID: 8483224371258384520, guid: 2664b29c60afb234babf4f7346b40f34, type: 3}
+      propertyPath: inventoryUI
+      value: 
+      objectReference: {fileID: 374452069}
     - target: {fileID: 8483224371258384520, guid: 2664b29c60afb234babf4f7346b40f34, type: 3}
       propertyPath: playerWeaponController
       value: 
