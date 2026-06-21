@@ -21,7 +21,6 @@ public class WeaponFeedback : MonoBehaviour
 
     private void OnAttack()
     {
-        Debug.Log("HOLA");
         AudioInfo attackAudio = new AudioInfo(_attack, _attackVolume);
         ComponentLocatorService.Components.SfxManager.PlaySound(attackAudio);
     }
