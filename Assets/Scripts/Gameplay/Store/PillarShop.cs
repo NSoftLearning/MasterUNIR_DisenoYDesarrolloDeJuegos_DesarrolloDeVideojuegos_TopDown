@@ -66,7 +66,7 @@ public class PillarShop : MonoBehaviour, IInteractables
             return;
         }
 
-        inventoryManager = InventoryManager.Instance;
+        inventoryManager = ComponentLocatorService.Components.InventoryManager;
     }
 
     private void RefreshPriceText()

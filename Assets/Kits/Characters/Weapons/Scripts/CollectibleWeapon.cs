@@ -38,10 +38,10 @@ public class CollectibleWeapon : MonoBehaviour
         {
             weaponController.NewWeapon(gameObject);
         }
-        else if (InventoryManager.Instance != null)
+        else if (ComponentLocatorService.Components.InventoryManager != null)
         {
-            InventoryManager.Instance.AddWeapon(_weaponData);
-            InventoryManager.Instance.EquipWeapon(_weaponData);
+            ComponentLocatorService.Components.InventoryManager.AddWeapon(_weaponData);
+            ComponentLocatorService.Components.InventoryManager.EquipWeapon(_weaponData);
         }
         else
         {
