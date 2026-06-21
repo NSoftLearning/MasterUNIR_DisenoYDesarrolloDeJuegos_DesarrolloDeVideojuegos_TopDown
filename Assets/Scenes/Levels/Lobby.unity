@@ -9887,17 +9887,6 @@ Transform:
   - {fileID: 567987712}
   m_Father: {fileID: 972333306}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &608822044 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1996910104844738358, guid: 281b78e88c91baf49a9d69f5be2a9259, type: 3}
-  m_PrefabInstance: {fileID: 6391230633487945941}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
 --- !u!1001 &636703605
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17227,52 +17216,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1447099410
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1447099412}
-  - component: {fileID: 1447099411}
-  m_Layer: 0
-  m_Name: CoinManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1447099411
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1447099410}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a9bebe79a1e4484a85df73e74a78164, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CoinManager
-  textCoin: {fileID: 608822044}
-  currentCoins: 0
---- !u!4 &1447099412
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1447099410}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1333.3827, y: 810.87103, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1557194869
 GameObject:
   m_ObjectHideFlags: 0
@@ -19178,7 +19121,6 @@ SceneRoots:
   - {fileID: 1804991396}
   - {fileID: 6313365}
   - {fileID: 163515908}
-  - {fileID: 1447099412}
   - {fileID: 1265855253}
   - {fileID: 1439874028}
   - {fileID: 1394565411}
