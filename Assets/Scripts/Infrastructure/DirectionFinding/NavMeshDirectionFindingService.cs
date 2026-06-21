@@ -88,6 +88,11 @@ public class NavMeshDirectionFindingService : MonoBehaviour, IDirectionFindingSe
         _pathFindingBlockers = _pathFindingBlockerComponents
             .Cast<IPathFindingBlocker>()
             .ToArray();
+
+#if UNITY_EDITOR
+        UnityEditor.EditorUtility.SetDirty(this);
+        UnityEditor.SceneManagement.EditorSceneManager.MarkSceneDirty(gameObject.scene);
+#endif
     }
     public void RebuildMesh()
     {
