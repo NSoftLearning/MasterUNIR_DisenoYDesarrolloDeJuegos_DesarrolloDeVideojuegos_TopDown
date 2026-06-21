@@ -7,6 +7,13 @@ public class AudioSettings : MonoBehaviour
     public Slider musicSlider;
     public Slider sfxSlider;
 
+    private void Awake()
+    {
+        masterSlider = GameObject.Find("SliderMaster").GetComponent<Slider>();
+        musicSlider = GameObject.Find("SliderMusic").GetComponent<Slider>();
+        sfxSlider = GameObject.Find("SliderSFX").GetComponent<Slider>();
+    }
+
     void Start()
     {
         // Cargar valores guardados

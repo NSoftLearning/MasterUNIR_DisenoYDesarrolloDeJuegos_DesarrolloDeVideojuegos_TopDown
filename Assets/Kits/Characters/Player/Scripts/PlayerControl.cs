@@ -11,6 +11,7 @@ public class PlayerControl : MonoBehaviour
     [SerializeField] private InputActionReference _changeWeapon;
     [SerializeField] private InputActionReference _quickAccessOne;
     [SerializeField] private InputActionReference _quickAccessTwo;
+    [SerializeField] private InputActionReference _inventory;
 
     private CustomCharacterController _characterController;
     private PlayerWeaponController _weaponController;
@@ -33,6 +34,7 @@ public class PlayerControl : MonoBehaviour
         EnableAction(_changeWeapon);
         EnableAction(_quickAccessOne);
         EnableAction(_quickAccessTwo);
+        EnableAction(_inventory);
 
         if (_movement != null)
         {
@@ -58,6 +60,10 @@ public class PlayerControl : MonoBehaviour
 
         if (_quickAccessTwo != null)
             _quickAccessTwo.action.performed += OnQuickAccessTwo;
+
+        if (_inventory != null)
+            _inventory.action.performed += OnInventory;
+
     }
 
     private void OnDisable()
@@ -87,6 +93,9 @@ public class PlayerControl : MonoBehaviour
         if (_quickAccessTwo != null)
             _quickAccessTwo.action.performed -= OnQuickAccessTwo;
 
+        if (_inventory != null)
+            _inventory.action.performed -= OnInventory;
+
         DisableAction(_movement);
         DisableAction(_attack);
         DisableAction(_interact);
@@ -94,6 +103,7 @@ public class PlayerControl : MonoBehaviour
         DisableAction(_changeWeapon);
         DisableAction(_quickAccessOne);
         DisableAction(_quickAccessTwo);
+        DisableAction(_inventory);
     }
 
     private void EnableAction(InputActionReference actionReference)
@@ -196,6 +206,11 @@ public class PlayerControl : MonoBehaviour
         {
             inventoryManager.UseQuickAccessItem(1);
         }
+    }
+
+    private void OnInventory(InputAction.CallbackContext context)
+    {
+        GetInventoryManager().ToggleInventory();
     }
 
     private InventoryManager GetInventoryManager()

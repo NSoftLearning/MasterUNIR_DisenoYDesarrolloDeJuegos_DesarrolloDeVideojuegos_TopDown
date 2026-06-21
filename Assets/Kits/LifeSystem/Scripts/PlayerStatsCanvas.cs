@@ -21,9 +21,8 @@ public class PlayerStatsCanvas : MonoBehaviour
     {
         if (life == null || stamina == null)
         {
-            Debug.LogWarning("No se asigno un slider en PlayerStatesCanvas, se buscara automaticamente");
-            life = FindAnyObjectByType<Life>();
-            stamina = FindAnyObjectByType<CustomCharacterController>();
+            Debug.LogWarning("No se asignaron las referencias en PlayerStatesCanvas");
+            
         }
         
       

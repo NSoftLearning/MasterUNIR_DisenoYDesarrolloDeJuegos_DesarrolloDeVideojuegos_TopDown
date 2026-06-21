@@ -2433,7 +2433,6 @@ GameObject:
   m_Component:
   - component: {fileID: 791692951}
   - component: {fileID: 791692950}
-  - component: {fileID: 791692949}
   m_Layer: 0
   m_Name: AudioManager
   m_TagString: Untagged
@@ -2441,21 +2440,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &791692949
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 791692948}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dfa571bc9e777874f92ffd197d776b38, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::AudioSettings
-  masterSlider: {fileID: 1635125743}
-  musicSlider: {fileID: 166410720}
-  sfxSlider: {fileID: 1502728524}
 --- !u!114 &791692950
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3346,6 +3330,7 @@ GameObject:
   - component: {fileID: 1080686499}
   - component: {fileID: 1080686498}
   - component: {fileID: 1080686497}
+  - component: {fileID: 1080686502}
   m_Layer: 5
   m_Name: Canvas3DOptions
   m_TagString: Untagged
@@ -3453,6 +3438,21 @@ RectTransform:
   m_AnchoredPosition: {x: 10.64644, y: 250.4967}
   m_SizeDelta: {x: 600.6794, y: 338.1359}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1080686502
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1080686496}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfa571bc9e777874f92ffd197d776b38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AudioSettings
+  masterSlider: {fileID: 1635125743}
+  musicSlider: {fileID: 166410720}
+  sfxSlider: {fileID: 1502728524}
 --- !u!1 &1205743824
 GameObject:
   m_ObjectHideFlags: 0

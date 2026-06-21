@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 9007620263207562687}
   - component: {fileID: -2555076781695565681}
   - component: {fileID: 5076094368235998590}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Box
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -238,7 +238,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4554312592569027680}
   - component: {fileID: 7994862142287188717}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: TargetSlash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -275,11 +275,13 @@ MonoBehaviour:
   splashPoint: {fileID: 4554312592569027680}
   coinPrefab: {fileID: 1905671399633139356, guid: 75e45c35bfa6c814ab8bb6c6e597d212, type: 3}
   potionsPrefabs:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 3447433338231310459, guid: a3d7a90a3f1f13344a237c537061a6c8, type: 3}
+  - {fileID: 3447433338231310459, guid: 6198e347150a19c4db3ff417b23f11f4, type: 3}
+  - {fileID: 3447433338231310459, guid: bcddae7a6365f90419ef11d6d4da430d, type: 3}
+  - {fileID: 3447433338231310459, guid: 96c82d92fbbf8984b94c5c3b8ea92d51, type: 3}
+  - {fileID: 3447433338231310459, guid: cf051a297353c594aa398349068dc68f, type: 3}
   spellsPrefabs:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 3447433338231310459, guid: 0d9a11c5a9586634d9b9ae7842b46dfc, type: 3}
   minCoinAmount: 0
   maxCoinAmount: 2
   potionChance: 0.01

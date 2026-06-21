@@ -13,7 +13,7 @@ public class PillarShop : MonoBehaviour, IInteractables
     [SerializeField] TextMeshProUGUI priceText;
     [SerializeField] bool isSelected;
 
-    [Header("Feddback Key")]
+    [Header("Feedback Key")]
     [SerializeField] SpriteRenderer spriteKey;
     [SerializeField] float fadeShowKey = 0.2f;
 
@@ -28,10 +28,13 @@ public class PillarShop : MonoBehaviour, IInteractables
     {
         coinManager = FindAnyObjectByType<CoinManager>();
         anim = GetComponent<Animator>();
+       
+        if (priceText == null) { priceText = GameObject.Find("PriceText").GetComponent<TextMeshProUGUI>();
 
-        if (priceText == null) { priceText = GameObject.Find("PriceText").GetComponent<TextMeshProUGUI>(); }
+            priceText.text = ("$" + itemData.price.ToString());
 
-        priceText.text = ("$" + itemData.price.ToString());
+
+        }
 
         if (spriteKey == null)
         {
@@ -41,9 +44,10 @@ public class PillarShop : MonoBehaviour, IInteractables
         {
             spriteKey.color = new Color(spriteKey.color.r, spriteKey.color.g, spriteKey.color.b, 0f);
         }
-
     }
-   
+
+
+
 
     public void StartInteraction()
     {
@@ -107,6 +111,8 @@ public class PillarShop : MonoBehaviour, IInteractables
             spriteKey.color = new Color(spriteKey.color.r, spriteKey.color.g, spriteKey.color.b, alpha);
             yield return null;
         }
+
+
         alpha = 1f;
     }
 

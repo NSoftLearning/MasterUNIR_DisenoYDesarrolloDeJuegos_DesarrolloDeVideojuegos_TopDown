@@ -338,4 +338,9 @@ public class InventoryManager : MonoBehaviour
     {
         OnMove?.Invoke(isValid);
     }
+
+    public void ToggleInventory()
+    {
+        inventoryUI.ToggleInventory();
+    }
 }

@@ -3,9 +3,10 @@ using UnityEngine;
 public class TriggerDoor : MonoBehaviour
 {
     [Header("Level Transition Trigger")]
-    public bool doorInGame = false;
-    public int levelComplete;
-    public string nextSceneName;
+    [SerializeField] public bool doorInGame = false;
+    [SerializeField] public int levelComplete;
+    [SerializeField] public string nextSceneName;
+    [SerializeField] bool saveInventory = true;
 
     GameManager gameManager;
     ScenesManager scenesManager;
@@ -17,12 +18,16 @@ public class TriggerDoor : MonoBehaviour
         scenesManager = FindAnyObjectByType<ScenesManager>();
         col = GetComponent<Collider2D>();
         col.enabled = true;
-
     }
+
     public void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player") && doorInGame)
         {
+            if (saveInventory)
+            {
+                ComponentLocatorService.Components.InventoryManager.SaveRuntimeToInventorySO();
+            }
             col.enabled = false;
             gameManager.CompleteLevel(levelComplete);
             scenesManager.CallFadeOut_LoadScene(nextSceneName);

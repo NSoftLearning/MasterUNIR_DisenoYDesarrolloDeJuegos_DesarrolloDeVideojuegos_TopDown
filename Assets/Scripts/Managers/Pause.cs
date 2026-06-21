@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Playables;
 
 public class Pause : MonoBehaviour
 {
@@ -12,6 +13,10 @@ public class Pause : MonoBehaviour
 
     [Header("UI Pause")]
     [SerializeField] GameObject panelPause;
+
+    [Header("Optional")]
+    [SerializeField] bool isForCinematic = false;
+    [SerializeField] PlayableDirector cinematic;
 
     private void OnEnable()
     {
@@ -33,6 +38,11 @@ public class Pause : MonoBehaviour
 
         panelPause = GameObject.Find("PanelPause");
         panelPause.SetActive(false);
+
+        if (isForCinematic)
+        {
+            cinematic = FindAnyObjectByType<PlayableDirector>();
+        }
     }
 
     void OnPausePerformed(InputAction.CallbackContext context)
@@ -53,6 +63,11 @@ public class Pause : MonoBehaviour
         Time.timeScale = 0f;
         sfxAudio.Play();
         Debug.Log("Juego pausado");
+
+        if (isForCinematic)
+        {
+            cinematic.Pause();
+        }
     }
 
     public void Resume()
@@ -61,6 +76,11 @@ public class Pause : MonoBehaviour
         Time.timeScale = 1f;
         sfxAudio.Play();
         Debug.Log("Juego reanudado");
+
+        if (isForCinematic)
+        {
+            cinematic.Play();
+        }
 
     }
 

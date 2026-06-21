@@ -417,11 +417,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1988660819103835746, guid: 7529b2afa91c15d4a883be5ae07470e6, type: 3}
       propertyPath: m_Size.y
-      value: 0.60364354
+      value: 1.1677638
       objectReference: {fileID: 0}
     - target: {fileID: 1988660819103835746, guid: 7529b2afa91c15d4a883be5ae07470e6, type: 3}
       propertyPath: m_Offset.y
-      value: 0.2866029
+      value: 0.56866306
       objectReference: {fileID: 0}
     - target: {fileID: 4736413475477760085, guid: 7529b2afa91c15d4a883be5ae07470e6, type: 3}
       propertyPath: side
@@ -540,6 +540,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7807025985240862038, guid: 7529b2afa91c15d4a883be5ae07470e6, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3248234236273807424}
+    - targetCorrespondingSourceObject: {fileID: 7807025985240862038, guid: 7529b2afa91c15d4a883be5ae07470e6, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5796608552551103965}
   m_SourcePrefab: {fileID: 100100000, guid: 7529b2afa91c15d4a883be5ae07470e6, type: 3}
 --- !u!114 &5138318767072083860 stripped
 MonoBehaviour:
@@ -581,6 +584,7 @@ MonoBehaviour:
   _changeWeapon: {fileID: -7268751259513978244, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   _quickAccessOne: {fileID: -1723628257676900786, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   _quickAccessTwo: {fileID: 4194439079775097290, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
+  _inventory: {fileID: -8958165985440133093, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
 --- !u!114 &9112945282021465350
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -671,6 +675,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68c603f0f56ca534683f7954ac189d38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CharacterDeath
+--- !u!114 &5796608552551103965
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7687019504038238871}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3eb9fd50eeac874289039ac044f13cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CharacterTemporaryStats
+  damageMultiplier: 1
+  moveSpeedMultiplier: 1
+  attackSpeedMultiplier: 1
+  isInvulnerable: 0
 --- !u!4 &8292577977202254779 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8494001086697993338, guid: 7529b2afa91c15d4a883be5ae07470e6, type: 3}

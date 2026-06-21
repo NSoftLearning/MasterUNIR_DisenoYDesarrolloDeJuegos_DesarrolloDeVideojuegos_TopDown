@@ -82,7 +82,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: -2970548507443532398, guid: 612d4a81a2c0f234f8e52c52c72ce905, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.6098335, b: 0.36320752, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -101,6 +101,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2386339592414203141}
   - component: {fileID: 8851308329730353106}
+  - component: {fileID: 4635270904912427669}
   m_Layer: 0
   m_Name: Collider
   m_TagString: Untagged
@@ -157,7 +158,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0.18781585}
+  m_Offset: {x: 0, y: 0.33446032}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0}
@@ -167,8 +168,24 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.8720281, y: 0.29306996}
+  m_Size: {x: 0.8720281, y: 0.5863589}
   m_EdgeRadius: 0
+--- !u!114 &4635270904912427669
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4404539003772748094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: NavMeshPlus::NavMeshPlus.Components.NavMeshModifier
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &6187436051129939969
 GameObject:
   m_ObjectHideFlags: 0
@@ -284,7 +301,6 @@ GameObject:
   - component: {fileID: 3603310928696341705}
   - component: {fileID: 8418157706762041054}
   - component: {fileID: 1520158523391598968}
-  - component: {fileID: 4630506077299598767}
   m_Layer: 0
   m_Name: Lever
   m_TagString: Untagged
@@ -458,19 +474,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::LeverFeedback
   _lever: {fileID: 8300000, guid: aeec6f56fbb936d45913829188e612d6, type: 3}
   _leverVolume: 0.166
---- !u!114 &4630506077299598767
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6655105106901979055}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: NavMeshPlus::NavMeshPlus.Components.NavMeshModifier
-  m_OverrideArea: 1
-  m_Area: 1
-  m_IgnoreFromBuild: 0
-  m_AffectedAgents: ffffffff

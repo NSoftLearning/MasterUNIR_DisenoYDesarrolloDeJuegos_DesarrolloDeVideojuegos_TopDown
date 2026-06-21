@@ -252,7 +252,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 42
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -414,8 +414,8 @@ TextureImporter:
       name: Border All 8_5
       rect:
         serializedVersion: 2
-        x: 384
-        y: 384
+        x: 385
+        y: 383
         width: 192
         height: 128
       alignment: 0
@@ -486,7 +486,7 @@ TextureImporter:
         height: 62
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 15, y: 15, z: 15, w: 15}
       customData: 
       outline: []
       physicsShape: []
@@ -1796,6 +1796,28 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Border All 8_68
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 448
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 8, y: 8, z: 8, w: 8}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aafe0d4edc0693a4f83fadd11d039ca8
+      internalID: -417189011
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
@@ -1877,6 +1899,7 @@ TextureImporter:
       Border All 8_65: 5302496465941837692
       Border All 8_66: -9141846359616986874
       Border All 8_67: 3635842012574472895
+      Border All 8_68: -417189011
       Border All 8_7: 4613020364388258136
       Border All 8_8: -1169749878255669950
       Border All 8_9: 8861071877184591831

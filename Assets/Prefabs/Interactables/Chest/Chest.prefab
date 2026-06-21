@@ -82,7 +82,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: -2970548507443532398, guid: 612d4a81a2c0f234f8e52c52c72ce905, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.6117647, b: 0.3647059, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -101,6 +101,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3270095753216395094}
   - component: {fileID: 3633017808488535060}
+  - component: {fileID: 3280646801112459927}
   m_Layer: 0
   m_Name: Collider
   m_TagString: Untagged
@@ -169,6 +170,22 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.1875, y: 0.9325526}
   m_EdgeRadius: 0
+--- !u!114 &3280646801112459927
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5381767925419745427}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: NavMeshPlus::NavMeshPlus.Components.NavMeshModifier
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &5678560353825907290
 GameObject:
   m_ObjectHideFlags: 0
@@ -182,7 +199,6 @@ GameObject:
   - component: {fileID: 3811081947898246573}
   - component: {fileID: 4339566600447736805}
   - component: {fileID: 7776212938327782714}
-  - component: {fileID: 7865689954960739113}
   - component: {fileID: 8521910092316378613}
   m_Layer: 0
   m_Name: Chest
@@ -342,22 +358,6 @@ MonoBehaviour:
   isOpen: 0
   spriteKey: {fileID: 3751918920955393452}
   fadeShowKey: 0.2
---- !u!114 &7865689954960739113
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5678560353825907290}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: NavMeshPlus::NavMeshPlus.Components.NavMeshModifier
-  m_OverrideArea: 1
-  m_Area: 1
-  m_IgnoreFromBuild: 0
-  m_AffectedAgents: ffffffff
 --- !u!114 &8521910092316378613
 MonoBehaviour:
   m_ObjectHideFlags: 0
