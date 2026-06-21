@@ -373,6 +373,10 @@ PrefabInstance:
       propertyPath: startLife
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 1985575073999076372, guid: 7529b2afa91c15d4a883be5ae07470e6, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 22100000, guid: ad6dd1305959c614aa5cd9781204b8bb, type: 2}
     - target: {fileID: 1988660819103835746, guid: 7529b2afa91c15d4a883be5ae07470e6, type: 3}
       propertyPath: m_ExcludeLayers.m_Bits
       value: 128
@@ -406,16 +410,20 @@ PrefabInstance:
       value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 7172689892765839884, guid: 7529b2afa91c15d4a883be5ae07470e6, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 5085595615374694967, guid: fdde976d339edbd4f84254d02591e509, type: 3}
+    - target: {fileID: 7172689892765839884, guid: 7529b2afa91c15d4a883be5ae07470e6, type: 3}
       propertyPath: m_Color.b
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7172689892765839884, guid: 7529b2afa91c15d4a883be5ae07470e6, type: 3}
       propertyPath: m_Color.g
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7172689892765839884, guid: 7529b2afa91c15d4a883be5ae07470e6, type: 3}
       propertyPath: m_Color.r
-      value: 0.6121421
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7172689892765839884, guid: 7529b2afa91c15d4a883be5ae07470e6, type: 3}
       propertyPath: m_SortingLayer
@@ -480,6 +488,14 @@ PrefabInstance:
     - target: {fileID: 8494001086697993338, guid: 7529b2afa91c15d4a883be5ae07470e6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8574626175682560530, guid: 7529b2afa91c15d4a883be5ae07470e6, type: 3}
+      propertyPath: m_Mass
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8574626175682560530, guid: 7529b2afa91c15d4a883be5ae07470e6, type: 3}
+      propertyPath: m_BodyType
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8930010906506598981, guid: 7529b2afa91c15d4a883be5ae07470e6, type: 3}
       propertyPath: m_Layer
