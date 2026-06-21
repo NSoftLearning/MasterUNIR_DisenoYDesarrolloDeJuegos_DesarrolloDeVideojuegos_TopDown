@@ -104,6 +104,7 @@ public class PatrolAndCloseCombatEnemyController : MonoBehaviour
                 layerstToSearchForTarget, 
                 _damageableTypesOfInterest,
                 _detectionOriginTransform,
+                _detecionStatesContext,
                 _statesMachine.FromStateToState),
             new GuardingLastKnownPosition <PatrolAndCloseCombatStateId> (
                 PatrolAndCloseCombatStateId.GuardingLastKnownPosition,

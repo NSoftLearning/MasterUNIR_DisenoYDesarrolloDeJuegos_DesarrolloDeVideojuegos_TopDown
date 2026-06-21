@@ -20,16 +20,14 @@ public class SeekingState<TStateId> : IGenericState<TStateId> where TStateId : E
     List<DamageableTypeSO> _damageableTypesOfInterest;
     
     List<FoundTargetDTO<IDamageReceiver>> _currentTargetsOfInterest = new ();
-    //float _willDesistAt = 0;
     float _thisStateDetectionRange;
     Vector3 _targetLastKnownPosition;
     bool _hasTargetLastKnownPosition;
-    // DistanceAndLosTargetFinderQuerySettings<IDamageReceiver> thisStateQueryOverride;
+
     public SeekingState(
         TStateId thisStateId,
         TStateId handleTargetReached,
         TStateId handleLastKnownPositionReached,
-       // float searchPersistenceTime,
         Transform thisTransform,
         DetectionWithForwardAndIgnoreContext<IDamageReceiver, DistanceAndLosTargetFinderQuerySettings<IDamageReceiver>> detectionContext,
         DamageReceiverTargetSelector targetSelector,
@@ -41,7 +39,6 @@ public class SeekingState<TStateId> : IGenericState<TStateId> where TStateId : E
         StateId = thisStateId;
         _handleTargetReached = handleTargetReached;
         _handleLastKnownPositionReached = handleLastKnownPositionReached;
-       // _searchPersistenceTime = searchPersistenceTime;
         _transform = thisTransform;
         _stateChangeDelegate = stateChangeDelegate;
         _targetSelector = targetSelector; 
@@ -53,8 +50,6 @@ public class SeekingState<TStateId> : IGenericState<TStateId> where TStateId : E
 
     public void Enter()
     {
-       // _willDesistAt = Time.time + _searchPersistenceTime;
-
     }
 
     public void Exit()
@@ -66,12 +61,20 @@ public class SeekingState<TStateId> : IGenericState<TStateId> where TStateId : E
     {
         RefreshDetectedTargets();
 
-        if (_enemyAttack.CanAttackSomething(_detectionContext.GetCurrentQueryData().layersToSearch, _damageableTypesOfInterest))
-        { // _targetSelector.DamageableTypes))// _currentTargetsOfInterest))
+        var canAttackStatus = _enemyAttack.CanAttackSomething(_detectionContext.GetCurrentQueryData().layersToSearch, _damageableTypesOfInterest);
+
+        if (canAttackStatus.canAttack
+            && canAttackStatus.isInRange)
+        { 
             _stateChangeDelegate.Invoke(StateId, _handleTargetReached);
             return;
         }
-
+        if (_currentTargetsOfInterest.Count > 0
+            && canAttackStatus.isInRange)
+        {
+            _detectionContext.customCharacterController.SetRawMovement(Vector2.zero);
+            return;
+        }
 
         if (_currentTargetsOfInterest.Count > 0)
         {
@@ -81,16 +84,11 @@ public class SeekingState<TStateId> : IGenericState<TStateId> where TStateId : E
             _detectionContext.customCharacterController.SetRawMovement(
                 (_targetLastKnownPosition - _transform.position).normalized);
 
-           // _willDesistAt = Time.time + _searchPersistenceTime;
             return;
         }
         if (_currentTargetsOfInterest.Count == 0)
         {
-   //         if (Time.time > _willDesistAt)
-   //         {
-  //              _stateChangeDelegate.Invoke(StateId, _handleTargetLost);
- //               return;
- //           }
+
 
             if (!_hasTargetLastKnownPosition)
             {
@@ -100,7 +98,6 @@ public class SeekingState<TStateId> : IGenericState<TStateId> where TStateId : E
 
             if (Vector3.Distance(_transform.position, _targetLastKnownPosition) < .1f)
             {
-                //_detectionContext.customCharacterController.SetRawMovement(Vector2.zero);
                 _stateChangeDelegate.Invoke(StateId, _handleLastKnownPositionReached);
                 return;
             }
