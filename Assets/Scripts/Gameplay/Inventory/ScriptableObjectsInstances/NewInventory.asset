@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::InventorySO
   savedSlots: []
   savedQuickAccessIndexes: ffffffffffffffff
-  savedWeapons:
-  - {fileID: 11400000, guid: ee97504c6f4fc054b8a8b54ec33570c7, type: 2}
-  savedEquippedWeapon: {fileID: 11400000, guid: ee97504c6f4fc054b8a8b54ec33570c7, type: 2}
+  savedWeapons: []
+  savedEquippedWeapon: {fileID: 0}
+  savedCoins: 0
   allowStacking: 1
   quickAccessSlotCount: 2

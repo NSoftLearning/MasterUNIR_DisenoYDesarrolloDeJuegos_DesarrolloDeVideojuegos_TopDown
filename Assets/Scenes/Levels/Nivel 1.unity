@@ -1492,6 +1492,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8483224371258384520, guid: 2664b29c60afb234babf4f7346b40f34, type: 3}
+      propertyPath: itemUser
+      value: 
+      objectReference: {fileID: 2078580374}
+    - target: {fileID: 8483224371258384520, guid: 2664b29c60afb234babf4f7346b40f34, type: 3}
+      propertyPath: inventoryUI
+      value: 
+      objectReference: {fileID: 1193873477}
+    - target: {fileID: 8483224371258384520, guid: 2664b29c60afb234babf4f7346b40f34, type: 3}
+      propertyPath: playerWeaponController
+      value: 
+      objectReference: {fileID: 2078580373}
     - target: {fileID: 8651478354645814383, guid: 2664b29c60afb234babf4f7346b40f34, type: 3}
       propertyPath: m_Name
       value: ==GameplayInfra==
@@ -36838,7 +36850,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 192494241397025574, guid: 3ec7e9a66537dc1458d79c1432887ca7, type: 3}
   m_PrefabInstance: {fileID: 2078580372}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 2078580374}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e58d3f57365ac4d4cb4b2a181331496d, type: 3}
@@ -36849,7 +36861,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5138318767072083860, guid: 3ec7e9a66537dc1458d79c1432887ca7, type: 3}
   m_PrefabInstance: {fileID: 2078580372}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 2078580374}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8f89545d076d1354b8e5e5739854331a, type: 3}
@@ -51369,52 +51381,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6330932596804797179, guid: 9667a0878b97bf24b9045c2c645675e0, type: 3}
   m_PrefabInstance: {fileID: 902724341}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &904594559
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 904594560}
-  - component: {fileID: 904594561}
-  m_Layer: 0
-  m_Name: CoinManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &904594560
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 904594559}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1327.9584, y: 809.9818, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 939092203}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &904594561
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 904594559}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a9bebe79a1e4484a85df73e74a78164, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CoinManager
-  textCoin: {fileID: 1193873477}
-  currentCoins: 0
 --- !u!1001 &912656473
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -51652,7 +51618,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 904594560}
   - {fileID: 658230420}
   - {fileID: 1938596270}
   - {fileID: 10328027}
@@ -53631,15 +53596,15 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: 281b78e88c91baf49a9d69f5be2a9259, type: 3}
 --- !u!114 &1193873477 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1996910104844738358, guid: 281b78e88c91baf49a9d69f5be2a9259, type: 3}
+  m_CorrespondingSourceObject: {fileID: 4843006159567929737, guid: 281b78e88c91baf49a9d69f5be2a9259, type: 3}
   m_PrefabInstance: {fileID: 1193873476}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Script: {fileID: 11500000, guid: b386ae160b259034f9e0791a50540465, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
+  m_EditorClassIdentifier: Assembly-CSharp::InventoryUIManager
 --- !u!1001 &1196025356
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -59021,6 +58986,22 @@ PrefabInstance:
       addedObject: {fileID: 2000054172}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3ec7e9a66537dc1458d79c1432887ca7, type: 3}
+--- !u!114 &2078580373 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9112945282021465350, guid: 3ec7e9a66537dc1458d79c1432887ca7, type: 3}
+  m_PrefabInstance: {fileID: 2078580372}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2078580374}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2a966d53511f6f4e840cd86f3b79dcd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerWeaponController
+--- !u!1 &2078580374 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7687019504038238871, guid: 3ec7e9a66537dc1458d79c1432887ca7, type: 3}
+  m_PrefabInstance: {fileID: 2078580372}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2089415446
 PrefabInstance:
   m_ObjectHideFlags: 0

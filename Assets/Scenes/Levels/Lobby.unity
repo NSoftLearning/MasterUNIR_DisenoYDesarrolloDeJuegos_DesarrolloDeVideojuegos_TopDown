@@ -18810,13 +18810,17 @@ PrefabInstance:
       propertyPath: musicAudio
       value: 
       objectReference: {fileID: 1265855252}
+    - target: {fileID: 5421549327110247964, guid: 281b78e88c91baf49a9d69f5be2a9259, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 353.98004
+      objectReference: {fileID: 0}
     - target: {fileID: 5628398411608851583, guid: 281b78e88c91baf49a9d69f5be2a9259, type: 3}
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5628398411608851583, guid: 281b78e88c91baf49a9d69f5be2a9259, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.00012207031
+      value: -0.0009765625
       objectReference: {fileID: 0}
     - target: {fileID: 5835871794738768836, guid: 281b78e88c91baf49a9d69f5be2a9259, type: 3}
       propertyPath: life
@@ -18880,7 +18884,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7401384752222160437, guid: 281b78e88c91baf49a9d69f5be2a9259, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -241.40005
+      value: -241.40009
       objectReference: {fileID: 0}
     - target: {fileID: 8194738508286385115, guid: 281b78e88c91baf49a9d69f5be2a9259, type: 3}
       propertyPath: m_Pivot.x

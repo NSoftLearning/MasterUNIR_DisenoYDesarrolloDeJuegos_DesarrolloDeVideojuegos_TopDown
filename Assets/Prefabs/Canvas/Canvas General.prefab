@@ -524,6 +524,7 @@ MonoBehaviour:
   weaponExitLeftPosition: {x: -80, y: 0}
   weaponEnterRightPosition: {x: 80, y: 0}
   weaponSlideDuration: 0.15
+  coinsText: {fileID: 1996910104844738358}
 --- !u!114 &451297969581806888
 MonoBehaviour:
   m_ObjectHideFlags: 0
