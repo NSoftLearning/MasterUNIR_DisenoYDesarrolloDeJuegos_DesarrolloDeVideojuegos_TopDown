@@ -20,7 +20,7 @@ public class InventoryManager : MonoBehaviour
     public static InventoryManager Instance;
 
     public event Action OnBasicClick;
-    public event Action<bool> OnUse;
+    public event Action<ItemSO, bool> OnUse;
     public event Action<bool> OnMove;
 
     [Header("Debug Settings")]
@@ -120,6 +120,38 @@ public class InventoryManager : MonoBehaviour
     public void CheckpointSave()
     {
         SaveRuntimeToInventorySO();
+    }
+
+    public int GetCoins()
+    {
+        if (currentInventory == null)
+            return 0;
+
+        return currentInventory.Coins;
+    }
+
+    public void AddCoins(int amount)
+    {
+        if (currentInventory == null)
+            return;
+
+        currentInventory.AddCoins(amount);
+        RefreshUI();
+    }
+
+    public bool SpendCoins(int amount)
+    {
+        if (currentInventory == null)
+            return false;
+
+        bool spent = currentInventory.SpendCoins(amount);
+
+        if (spent)
+        {
+            RefreshUI();
+        }
+
+        return spent;
     }
 
     public void AddItem(ItemSO itemData)
@@ -225,20 +257,30 @@ public class InventoryManager : MonoBehaviour
     {
         if (currentInventory == null)
         {
-            NotifyUse(false);
+            NotifyUse(null, false);
             return false;
         }
 
         if (itemUser == null)
         {
             Debug.LogWarning("Cannot use item. ItemUser is not assigned in InventoryManager.");
-            NotifyUse(false);
+            NotifyUse(null, false);
             return false;
         }
 
+        InventorySlot slot = currentInventory.GetInventorySlot(inventoryIndex);
+
+        if (slot == null || slot.IsEmpty)
+        {
+            NotifyUse(null, false);
+            return false;
+        }
+
+        ItemSO itemUsed = slot.Item;
+
         bool used = currentInventory.UseItemAt(inventoryIndex, itemUser);
 
-        NotifyUse(used);
+        NotifyUse(itemUsed, used);
 
         if (used)
         {
@@ -252,7 +294,7 @@ public class InventoryManager : MonoBehaviour
     {
         if (currentInventory == null)
         {
-            NotifyUse(false);
+            NotifyUse(null, false);
             return;
         }
 
@@ -260,13 +302,13 @@ public class InventoryManager : MonoBehaviour
 
         if (quickSlots == null)
         {
-            NotifyUse(false);
+            NotifyUse(null, false);
             return;
         }
 
         if (quickAccessIndex < 0 || quickAccessIndex >= quickSlots.Count)
         {
-            NotifyUse(false);
+            NotifyUse(null, false);
             return;
         }
 
@@ -274,7 +316,7 @@ public class InventoryManager : MonoBehaviour
 
         if (quickSlot == null || quickSlot.IsEmpty)
         {
-            NotifyUse(false);
+            NotifyUse(null, false);
             return;
         }
 
@@ -329,9 +371,9 @@ public class InventoryManager : MonoBehaviour
         OnBasicClick?.Invoke();
     }
 
-    private void NotifyUse(bool isValid)
+    private void NotifyUse(ItemSO item, bool isValid)
     {
-        OnUse?.Invoke(isValid);
+        OnUse?.Invoke(item, isValid);
     }
 
     private void NotifyMove(bool isValid)
@@ -341,6 +383,9 @@ public class InventoryManager : MonoBehaviour
 
     public void ToggleInventory()
     {
+        if (inventoryUI == null)
+            return;
+
         inventoryUI.ToggleInventory();
     }
 }

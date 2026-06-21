@@ -24,7 +24,7 @@ public class InventoryFeedback : MonoBehaviour
 
         if (_inventoryManager == null)
         {
-            Debug.LogWarning("InventoryFeedback could not find InventoryManager.Instance.");
+            Debug.LogWarning("InventoryFeedback could not find InventoryManager.");
             return;
         }
 
@@ -48,16 +48,21 @@ public class InventoryFeedback : MonoBehaviour
         PlaySound(_basicClick, _basicClickVolume);
     }
 
-    private void OnUse(bool isValid)
+    private void OnUse(ItemSO item, bool isValid)
     {
-        if (isValid)
-        {
-            PlaySound(_use, _useVolume);
-        }
-        else
+        if (!isValid)
         {
             PlaySound(_useFailed, _useFailedVolume);
+            return;
         }
+
+        if (item != null && item.UseClip != null)
+        {
+            PlaySound(item.UseClip, item.UseClipVolume);
+            return;
+        }
+
+        PlaySound(_use, _useVolume);
     }
 
     private void OnMove(bool isValid)

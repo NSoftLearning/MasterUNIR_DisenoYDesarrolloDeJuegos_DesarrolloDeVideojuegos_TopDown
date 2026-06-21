@@ -14,6 +14,9 @@ public class InventorySO : ScriptableObject
     [SerializeField] private List<WeaponData> savedWeapons = new List<WeaponData>();
     [SerializeField] private WeaponData savedEquippedWeapon;
 
+    [Header("Saved Coins")]
+    [SerializeField] private int savedCoins;
+
     [Header("Inventory Settings")]
     [SerializeField] private bool allowStacking = true;
 
@@ -24,6 +27,7 @@ public class InventorySO : ScriptableObject
     public IReadOnlyList<int> SavedQuickAccessIndexes => savedQuickAccessIndexes;
     public IReadOnlyList<WeaponData> SavedWeapons => savedWeapons;
     public WeaponData SavedEquippedWeapon => savedEquippedWeapon;
+    public int SavedCoins => savedCoins;
 
     public bool AllowStacking => allowStacking;
     public int QuickAccessSlotCount => quickAccessSlotCount;
@@ -36,6 +40,8 @@ public class InventorySO : ScriptableObject
         SaveInventorySlots(runtime);
         SaveQuickAccessSlots(runtime);
         SaveWeapons(runtime);
+
+        savedCoins = runtime.Coins;
     }
 
     private void SaveInventorySlots(InventoryRuntime runtime)

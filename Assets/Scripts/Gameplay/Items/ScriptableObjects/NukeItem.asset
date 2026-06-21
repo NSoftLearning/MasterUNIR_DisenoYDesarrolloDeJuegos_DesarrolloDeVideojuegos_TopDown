@@ -19,3 +19,5 @@ MonoBehaviour:
   consumeOnUse: 1
   effects:
   - {fileID: 11400000, guid: 120c40a5fb183314581f6b56f86658f8, type: 2}
+  useClip: {fileID: 8300000, guid: 72ca66b54f287e84399009ff97878d9a, type: 3}
+  useClipVolume: 1

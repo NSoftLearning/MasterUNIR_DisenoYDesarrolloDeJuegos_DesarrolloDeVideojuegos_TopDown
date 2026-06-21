@@ -1,17 +1,19 @@
-using System.Xml.Serialization;
 using UnityEngine;
 using System.Collections;
 using System;
 
 public class Coin : MonoBehaviour
 {
-    [SerializeField] CoinManager coinManager;
-    [SerializeField] bool isCollected = false;
-    [SerializeField] Canvas canvas;
-    [SerializeField] RectTransform coinPointTransfer;
-    [SerializeField] float flySpeed = 8f;
-    [SerializeField] float delayBeforeCollect = 1f;
-    [SerializeField] Collider2D coinCollider;
+    [SerializeField] private InventoryManager inventoryManager;
+    [SerializeField] private bool isCollected = false;
+    [SerializeField] private Canvas canvas;
+    [SerializeField] private RectTransform coinPointTransfer;
+    [SerializeField] private float flySpeed = 8f;
+    [SerializeField] private float delayBeforeCollect = 1f;
+    [SerializeField] private Collider2D coinCollider;
+
+    [Header("Coin Value")]
+    [SerializeField] private int coinValue = 1;
 
     public event Action OnCatch;
 
@@ -19,24 +21,45 @@ public class Coin : MonoBehaviour
 
     private void Start()
     {
-        if (coinManager == null)
-        {
-            coinManager = FindAnyObjectByType<CoinManager>();
-        }
+        ResolveInventoryManager();
 
         if (coinPointTransfer == null)
         {
-            coinPointTransfer = GameObject.Find("CoinTarget").GetComponent<RectTransform>();
+            GameObject coinTargetObject = GameObject.Find("CoinTarget");
+
+            if (coinTargetObject != null)
+            {
+                coinPointTransfer = coinTargetObject.GetComponent<RectTransform>();
+            }
         }
 
-        coinCollider = GetComponentInChildren<CircleCollider2D>();
+        if (coinCollider == null)
+        {
+            coinCollider = GetComponentInChildren<Collider2D>();
+        }
 
-        canvas = coinPointTransfer.GetComponentInParent<Canvas>();
+        if (coinPointTransfer != null)
+        {
+            canvas = coinPointTransfer.GetComponentInParent<Canvas>();
+        }
 
         canTake = false;
-
         StartCoroutine(DelayBeforeCollect());
+    }
 
+    private void ResolveInventoryManager()
+    {
+        if (inventoryManager != null)
+            return;
+
+        if (ComponentLocatorService.Components != null &&
+            ComponentLocatorService.Components.InventoryManager != null)
+        {
+            inventoryManager = ComponentLocatorService.Components.InventoryManager;
+            return;
+        }
+
+        inventoryManager = InventoryManager.Instance;
     }
 
     public void OnTriggerEnter2D(Collider2D collision)
@@ -44,35 +67,65 @@ public class Coin : MonoBehaviour
         if (collision.CompareTag("Player") && !isCollected && canTake)
         {
             isCollected = true;
-            coinCollider.enabled = false; // Evita que se pegue en los muros
+
+            if (coinCollider != null)
+            {
+                coinCollider.enabled = false;
+            }
 
             StartCoroutine(MoveToTarget());
         }
     }
 
-    IEnumerator MoveToTarget()
+    private IEnumerator MoveToTarget()
     {
+        if (coinPointTransfer == null || canvas == null)
+        {
+            CollectCoin();
+            yield break;
+        }
+
         Vector3 worldTarget;
 
-        RectTransformUtility.ScreenPointToWorldPointInRectangle(coinPointTransfer, RectTransformUtility.WorldToScreenPoint(canvas.worldCamera, coinPointTransfer.position), canvas.worldCamera, out worldTarget);       
-        
+        RectTransformUtility.ScreenPointToWorldPointInRectangle(
+            coinPointTransfer,
+            RectTransformUtility.WorldToScreenPoint(canvas.worldCamera, coinPointTransfer.position),
+            canvas.worldCamera,
+            out worldTarget
+        );
+
         while (Vector3.Distance(transform.position, worldTarget) > 0.05f)
         {
-            transform.position = Vector3.MoveTowards(transform.position, worldTarget, flySpeed * Time.deltaTime);
+            transform.position = Vector3.MoveTowards(
+                transform.position,
+                worldTarget,
+                flySpeed * Time.deltaTime
+            );
 
             yield return null;
         }
 
-        coinManager.AddCoin();
+        CollectCoin();
+    }
+
+    private void CollectCoin()
+    {
+        if (inventoryManager != null)
+        {
+            inventoryManager.AddCoins(coinValue);
+        }
+        else
+        {
+            Debug.LogWarning("Coin could not find InventoryManager. Coin was not added.");
+        }
+
         OnCatch?.Invoke();
         Destroy(gameObject);
     }
 
-    IEnumerator DelayBeforeCollect()
+    private IEnumerator DelayBeforeCollect()
     {
         yield return new WaitForSeconds(delayBeforeCollect);
-
         canTake = true;
-
     }
 }

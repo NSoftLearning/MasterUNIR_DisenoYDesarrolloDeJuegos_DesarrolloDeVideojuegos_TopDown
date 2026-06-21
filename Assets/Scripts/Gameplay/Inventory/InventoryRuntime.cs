@@ -14,6 +14,7 @@ public class InventoryRuntime
     public IReadOnlyList<WeaponData> Weapons => _weapons;
 
     public WeaponData EquippedWeapon { get; private set; }
+    public int Coins { get; private set; }
 
     public InventoryRuntime(InventorySO inventorySO)
     {
@@ -36,6 +37,8 @@ public class InventoryRuntime
         LoadInventorySlots(inventorySO.SavedSlots);
         LoadQuickAccessSlots(inventorySO.SavedQuickAccessIndexes);
         LoadWeapons(inventorySO.SavedWeapons, inventorySO.SavedEquippedWeapon);
+
+        Coins = inventorySO.SavedCoins;
     }
 
     private void LoadInventorySlots(IReadOnlyList<InventorySlot> savedSlots)
@@ -106,6 +109,31 @@ public class InventoryRuntime
         {
             EquippedWeapon = null;
         }
+    }
+
+    public void AddCoins(int amount)
+    {
+        if (amount <= 0)
+            return;
+
+        Coins += amount;
+    }
+
+    public bool SpendCoins(int amount)
+    {
+        if (amount <= 0)
+            return false;
+
+        if (Coins < amount)
+            return false;
+
+        Coins -= amount;
+        return true;
+    }
+
+    public void SetCoins(int amount)
+    {
+        Coins = Mathf.Max(0, amount);
     }
 
     public bool AddWeapon(WeaponData weaponData)
@@ -196,6 +224,7 @@ public class InventoryRuntime
 
         _weapons.Clear();
         EquippedWeapon = null;
+        Coins = 0;
     }
 
     public void AddItem(ItemSO itemData)

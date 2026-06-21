@@ -6,35 +6,43 @@ using System;
 public class PillarShop : MonoBehaviour, IInteractables
 {
     [Header("Item Sale")]
-    [SerializeField] ItemSO itemData;
+    [SerializeField] private ItemSO itemData;
 
     [Header("References")]
-    [SerializeField] Animator anim;
-    [SerializeField] TextMeshProUGUI priceText;
-    [SerializeField] bool isSelected;
+    [SerializeField] private Animator anim;
+    [SerializeField] private TextMeshProUGUI priceText;
+    [SerializeField] private bool isSelected;
 
     [Header("Feedback Key")]
-    [SerializeField] SpriteRenderer spriteKey;
-    [SerializeField] float fadeShowKey = 0.2f;
+    [SerializeField] private SpriteRenderer spriteKey;
+    [SerializeField] private float fadeShowKey = 0.2f;
 
-    CoinManager coinManager;
-    Coroutine fadeRoutine;
+    private InventoryManager inventoryManager;
+    private Coroutine fadeRoutine;
 
     public event Action OnBuy;
     public event Action OnBuyError;
 
-
-    void Awake()
+    private void Awake()
     {
-        coinManager = FindAnyObjectByType<CoinManager>();
-        anim = GetComponent<Animator>();
-       
-        if (priceText == null) { priceText = GameObject.Find("PriceText").GetComponent<TextMeshProUGUI>();
+        ResolveInventoryManager();
 
-            priceText.text = ("$" + itemData.price.ToString());
-
-
+        if (anim == null)
+        {
+            anim = GetComponent<Animator>();
         }
+
+        if (priceText == null)
+        {
+            GameObject priceTextObject = GameObject.Find("PriceText");
+
+            if (priceTextObject != null)
+            {
+                priceText = priceTextObject.GetComponent<TextMeshProUGUI>();
+            }
+        }
+
+        RefreshPriceText();
 
         if (spriteKey == null)
         {
@@ -46,88 +54,168 @@ public class PillarShop : MonoBehaviour, IInteractables
         }
     }
 
+    private void ResolveInventoryManager()
+    {
+        if (inventoryManager != null)
+            return;
 
+        if (ComponentLocatorService.Components != null &&
+            ComponentLocatorService.Components.InventoryManager != null)
+        {
+            inventoryManager = ComponentLocatorService.Components.InventoryManager;
+            return;
+        }
 
+        inventoryManager = InventoryManager.Instance;
+    }
+
+    private void RefreshPriceText()
+    {
+        if (priceText == null)
+            return;
+
+        if (itemData == null)
+        {
+            priceText.text = "$0";
+            return;
+        }
+
+        priceText.text = "$" + itemData.price.ToString();
+    }
 
     public void StartInteraction()
     {
-        if (coinManager.currentCoins < itemData.price)
+        if (itemData == null)
         {
-            Debug.Log("Saldo insuficiente");
-            anim.SetTrigger("Missing");
+            Debug.LogWarning("No se ha asignado ningún item al PillarShop.");
             OnBuyError?.Invoke();
             return;
         }
 
-        OnBuy?.Invoke();
-        coinManager.currentCoins -= itemData.price;
-        anim.SetTrigger("Buy It");
+        if (inventoryManager == null)
+        {
+            ResolveInventoryManager();
+        }
 
-        ComponentLocatorService.Components.InventoryManager.AddItem(itemData);
-       // Agregar función de agregado del item al inventario
+        if (inventoryManager == null)
+        {
+            Debug.LogWarning("PillarShop no ha podido encontrar InventoryManager.");
+            OnBuyError?.Invoke();
+            return;
+        }
+
+        bool paidSuccessfully = inventoryManager.SpendCoins(itemData.price);
+
+        if (!paidSuccessfully)
+        {
+            Debug.Log("Saldo insuficiente");
+
+            if (anim != null)
+            {
+                anim.SetTrigger("Missing");
+            }
+
+            OnBuyError?.Invoke();
+            return;
+        }
+
+        inventoryManager.AddItem(itemData);
+
+        if (anim != null)
+        {
+            anim.SetTrigger("Buy It");
+        }
+
+        OnBuy?.Invoke();
 
         Debug.Log("Compraste: " + itemData.itemName);
-
     }
 
     public void Select()
     {
+        isSelected = true;
+
         if (fadeRoutine != null)
         {
             StopCoroutine(fadeRoutine);
-            fadeRoutine = StartCoroutine(FadeInVisual());
-        }
-        else
-        {
-            fadeRoutine = StartCoroutine(FadeInVisual());
         }
 
-            Debug.Log("Pilar seleccionado");
+        fadeRoutine = StartCoroutine(FadeInVisual());
+
+        Debug.Log("Pilar seleccionado");
     }
 
     public void Unselect()
     {
+        isSelected = false;
+
         if (fadeRoutine != null)
         {
             StopCoroutine(fadeRoutine);
-            fadeRoutine = StartCoroutine(FadeOutVisual());
-        }
-        else
-        {
-            fadeRoutine = StartCoroutine(FadeOutVisual());
         }
 
-            Debug.Log("Pilar deseleccionado");
+        fadeRoutine = StartCoroutine(FadeOutVisual());
+
+        Debug.Log("Pilar deseleccionado");
     }
 
-    IEnumerator FadeInVisual()
+    private IEnumerator FadeInVisual()
     {
-        anim.SetBool("ShowText", true);
+        if (anim != null)
+        {
+            anim.SetBool("ShowText", true);
+        }
+
+        if (spriteKey == null)
+            yield break;
 
         float alpha = spriteKey.color.a;
+
         while (alpha < 1f)
         {
             alpha += Time.deltaTime / fadeShowKey;
-            spriteKey.color = new Color(spriteKey.color.r, spriteKey.color.g, spriteKey.color.b, alpha);
+            alpha = Mathf.Clamp01(alpha);
+
+            spriteKey.color = new Color(
+                spriteKey.color.r,
+                spriteKey.color.g,
+                spriteKey.color.b,
+                alpha
+            );
+
             yield return null;
         }
 
-
-        alpha = 1f;
+        fadeRoutine = null;
     }
 
-    IEnumerator FadeOutVisual()
+    private IEnumerator FadeOutVisual()
     {
-        anim.SetBool("ShowText", false);
+        if (anim != null)
+        {
+            anim.SetBool("ShowText", false);
+        }
+
+        if (spriteKey == null)
+            yield break;
 
         float alpha = spriteKey.color.a;
+
         while (alpha > 0f)
         {
             alpha -= Time.deltaTime / fadeShowKey;
-            spriteKey.color = new Color(spriteKey.color.r, spriteKey.color.g, spriteKey.color.b, alpha);
+            alpha = Mathf.Clamp01(alpha);
+
+            spriteKey.color = new Color(
+                spriteKey.color.r,
+                spriteKey.color.g,
+                spriteKey.color.b,
+                alpha
+            );
+
             yield return null;
         }
-        alpha = 0f;
+
+        fadeRoutine = null;
     }
 }
-

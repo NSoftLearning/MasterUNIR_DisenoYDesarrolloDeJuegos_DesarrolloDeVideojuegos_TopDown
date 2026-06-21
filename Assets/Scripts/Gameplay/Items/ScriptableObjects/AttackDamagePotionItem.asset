@@ -12,7 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a503a5da5d75fef46b3a053ee7460e3b, type: 3}
   m_Name: AttackDamagePotionItem
   m_EditorClassIdentifier: Assembly-CSharp::ItemSO
-  ItemType: {fileID: 0}
   ItemIcon: {fileID: -7320139605235283626, guid: 93679056a47e181418d92d9eb033a656, type: 3}
   itemName: Damage Potion
   price: 30
@@ -20,3 +19,5 @@ MonoBehaviour:
   consumeOnUse: 1
   effects:
   - {fileID: 11400000, guid: dcc566c03d0b15f45a7ec4f7bc477b4c, type: 2}
+  useClip: {fileID: 8300000, guid: bc36e6d2d6a870941844e7bfc79f1954, type: 3}
+  useClipVolume: 2

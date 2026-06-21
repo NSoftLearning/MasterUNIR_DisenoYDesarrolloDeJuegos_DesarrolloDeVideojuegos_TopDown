@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 using System.Collections;
 using System.Collections.Generic;
 using System;
@@ -34,6 +35,9 @@ public class InventoryUIManager : MonoBehaviour
     [SerializeField] private Vector2 weaponExitLeftPosition = new Vector2(-80f, 0f);
     [SerializeField] private Vector2 weaponEnterRightPosition = new Vector2(80f, 0f);
     [SerializeField] private float weaponSlideDuration = 0.15f;
+
+    [Header("Coins UI")]
+    [SerializeField] private TMP_Text coinsText;
 
     private readonly List<GameObject> inventorySlotGraphics = new List<GameObject>();
     private readonly List<GameObject> quickAccessItemGraphics = new List<GameObject>();
@@ -73,6 +77,7 @@ public class InventoryUIManager : MonoBehaviour
     {
         if (slidingPanel == null)
             return;
+
         OnOpenBag?.Invoke();
         StartSlide(openedPosition, true);
     }
@@ -81,6 +86,7 @@ public class InventoryUIManager : MonoBehaviour
     {
         if (slidingPanel == null)
             return;
+
         OnCloseBag?.Invoke();
         StartSlide(closedPosition, false);
     }
@@ -188,12 +194,14 @@ public class InventoryUIManager : MonoBehaviour
         if (inventoryData == null)
         {
             DrawWeaponSlot(null);
+            DrawCoins(null);
             return;
         }
 
         DrawInventory(inventoryData);
         DrawQuickAccess(inventoryData);
         DrawWeaponSlot(inventoryData);
+        DrawCoins(inventoryData);
     }
 
     private void DrawInventory(InventoryRuntime inventoryData)
@@ -359,6 +367,20 @@ public class InventoryUIManager : MonoBehaviour
         }
 
         weaponIconRect.anchoredPosition = to;
+    }
+
+    private void DrawCoins(InventoryRuntime inventoryData)
+    {
+        if (coinsText == null)
+            return;
+
+        if (inventoryData == null)
+        {
+            coinsText.text = "0";
+            return;
+        }
+
+        coinsText.text = inventoryData.Coins.ToString();
     }
 
     private void ClearInventoryUI()
