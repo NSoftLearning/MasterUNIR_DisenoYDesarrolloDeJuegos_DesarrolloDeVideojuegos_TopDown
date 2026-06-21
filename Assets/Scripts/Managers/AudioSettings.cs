@@ -9,9 +9,21 @@ public class AudioSettings : MonoBehaviour
 
     private void Awake()
     {
-        masterSlider = GameObject.Find("SliderMaster").GetComponent<Slider>();
-        musicSlider = GameObject.Find("SliderMusic").GetComponent<Slider>();
-        sfxSlider = GameObject.Find("SliderSFX").GetComponent<Slider>();
+        if (masterSlider == null)
+        {
+            masterSlider = GameObject.Find("SliderMaster").GetComponent<Slider>();
+        }
+        if (musicSlider == null)
+        {
+            musicSlider = GameObject.Find("SliderMusic").GetComponent<Slider>();
+
+        }
+        if (sfxSlider == null)
+        {
+            sfxSlider = GameObject.Find("SliderSFX").GetComponent<Slider>();
+
+        }
+
     }
 
     void Start()

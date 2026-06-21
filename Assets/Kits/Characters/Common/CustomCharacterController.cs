@@ -289,6 +289,6 @@ public class CustomCharacterController : MonoBehaviour, IVisible, IOrientationSe
 
     private void NotifyStaminaChanged()
     {
-        //onStaminaChanged?.Invoke(stamina, _maxStamina);
+        onStaminaChanged?.Invoke(stamina, _maxStamina);
     }
 }

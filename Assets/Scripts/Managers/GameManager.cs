@@ -29,4 +29,9 @@ public class GameManager : MonoBehaviour
         return completedLevels.Contains(levelNumber);
     }
 
+    public void ResetProgress()
+    {
+        completedLevels.Clear();
+    }
+
 }
