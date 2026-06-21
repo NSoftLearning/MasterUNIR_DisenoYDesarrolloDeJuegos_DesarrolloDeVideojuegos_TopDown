@@ -9,7 +9,7 @@ public class Coin : MonoBehaviour
     [SerializeField] private Canvas canvas;
     [SerializeField] private RectTransform coinPointTransfer;
     [SerializeField] private float flySpeed = 8f;
-    [SerializeField] private float delayBeforeCollect = 1f;
+ 
     [SerializeField] private Collider2D coinCollider;
 
     [Header("Coin Value")]
@@ -43,8 +43,7 @@ public class Coin : MonoBehaviour
             canvas = coinPointTransfer.GetComponentInParent<Canvas>();
         }
 
-        canTake = false;
-        StartCoroutine(DelayBeforeCollect());
+        canTake = true;
     }
 
     private void ResolveInventoryManager()
@@ -123,9 +122,5 @@ public class Coin : MonoBehaviour
         Destroy(gameObject);
     }
 
-    private IEnumerator DelayBeforeCollect()
-    {
-        yield return new WaitForSeconds(delayBeforeCollect);
-        canTake = true;
-    }
+    
 }
