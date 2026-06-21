@@ -516,6 +516,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7807025985240862038, guid: 7529b2afa91c15d4a883be5ae07470e6, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4028882310137395756}
+    - targetCorrespondingSourceObject: {fileID: 7807025985240862038, guid: 7529b2afa91c15d4a883be5ae07470e6, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1494674429375495450}
   m_SourcePrefab: {fileID: 100100000, guid: 7529b2afa91c15d4a883be5ae07470e6, type: 3}
 --- !u!4 &3024297051781943351 stripped
 Transform:
@@ -569,3 +572,16 @@ MonoBehaviour:
   _halfFieldOfView: 80
   _detectionOriginTransform: {fileID: 3688900569078901471}
   _patrolRoute: {fileID: 0}
+--- !u!114 &1494674429375495450
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3476943960244857115}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42c29e1a0ce99fe4e8c5bc4d49aaeb1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyFeedback
+  _deadFX: {fileID: 7099166145921748954, guid: 62ea397735582194a9f63ee651747f50, type: 3}

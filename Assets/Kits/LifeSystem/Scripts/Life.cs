@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -39,7 +40,7 @@ public class Life : MonoBehaviour, IDamageReceiver
 
     public bool TryToDealDamage(DamageDataDTO damageData)
     {
-        if (currentLife <= 0 || hasDied)
+        aif (currentLife <= 0 || hasDied)
             return false;
 
         if (IsInmune)
@@ -67,6 +68,8 @@ public class Life : MonoBehaviour, IDamageReceiver
 
             Died?.Invoke();
             onLifeDepleted?.Invoke(startLife);
+
+            Destroy(gameObject);
         }
 
         return true;
