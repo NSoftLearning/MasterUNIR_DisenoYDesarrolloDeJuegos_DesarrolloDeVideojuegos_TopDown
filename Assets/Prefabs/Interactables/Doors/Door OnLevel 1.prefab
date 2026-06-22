@@ -271,6 +271,7 @@ GameObject:
   m_Component:
   - component: {fileID: 54529975510716444}
   - component: {fileID: 1095848471003388939}
+  - component: {fileID: 4361579687528099919}
   m_Layer: 0
   m_Name: ColliderBlockDoor
   m_TagString: Untagged
@@ -327,7 +328,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.98, y: 0.55}
+  m_Offset: {x: -0.965893, y: 0.55}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -337,5 +338,21 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.1770537, y: 0.4098215}
+  m_Size: {x: 2.347938, y: 0.4098215}
   m_EdgeRadius: 0
+--- !u!114 &4361579687528099919
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6724782409671691584}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: NavMeshPlus::NavMeshPlus.Components.NavMeshModifier
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
