@@ -25,6 +25,9 @@ public class NavMeshDirectionFindingService : MonoBehaviour, IDirectionFindingSe
 
     void Awake()
     {
+        if (_navMeshSurface == null)
+            return;
+
         _path = new();
 
         _pathFindingBlockers = _pathFindingBlockerComponents
@@ -103,6 +106,8 @@ public class NavMeshDirectionFindingService : MonoBehaviour, IDirectionFindingSe
     
     void SubscribeToEvents ()
     {
+        if (_navMeshSurface == null)
+            return;
         foreach (var item in _pathFindingBlockers)
         {
             item.BlockerStatusChanged += RebuildMesh;
@@ -111,6 +116,7 @@ public class NavMeshDirectionFindingService : MonoBehaviour, IDirectionFindingSe
 
     void CreateRuntimeNavmesh ()
     {
+  
         NavMeshData originalNavMeshData = _navMeshSurface.navMeshData;
 
         if (originalNavMeshData == null)
@@ -132,6 +138,8 @@ public class NavMeshDirectionFindingService : MonoBehaviour, IDirectionFindingSe
 
     void OnDestroy()
     {
+        if (_navMeshSurface == null)
+            return;
         UnsubscribeFromEvents();
         _runtimeNavMeshDataInstance.Remove();
     }
