@@ -8,6 +8,8 @@ public class Inmunity : MonoBehaviour
     [SerializeField] SpriteRenderer _blinkSprite;
 
     Life life;
+    bool initialized = false;
+
     private void Awake()
     {
         life = GetComponent<Life>();
@@ -20,6 +22,12 @@ public class Inmunity : MonoBehaviour
 
     private void OnLifeChanged(LifeChangedDTO lifeChangedDTO)
     {
+        if (!initialized)
+        {
+            initialized = true;
+            return;
+        }
+
         if (_inmunityTimer == 0 || lifeChangedDTO.currentValue <= 0) return;
 
         StopAllCoroutines();

@@ -40,7 +40,7 @@ public class Life : MonoBehaviour, IDamageReceiver
 
     public bool TryToDealDamage(DamageDataDTO damageData)
     {
-        aif (currentLife <= 0 || hasDied)
+        if (currentLife <= 0 || hasDied)
             return false;
 
         if (IsInmune)

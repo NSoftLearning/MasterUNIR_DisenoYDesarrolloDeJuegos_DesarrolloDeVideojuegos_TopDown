@@ -507,8 +507,8 @@ MonoBehaviour:
   slidingPanel: {fileID: 6966304606568565751}
   openButton: {fileID: 7530196469686744662}
   closeButton: {fileID: 5101250698978815903}
-  openedPosition: {x: 0, y: 0}
-  closedPosition: {x: -100, y: 0}
+  openedPosition: {x: 0, y: -40}
+  closedPosition: {x: -100, y: -40}
   slideDuration: 0.25
   startClosed: 1
   inventorySlotsParent: {fileID: 5628398411608851583}

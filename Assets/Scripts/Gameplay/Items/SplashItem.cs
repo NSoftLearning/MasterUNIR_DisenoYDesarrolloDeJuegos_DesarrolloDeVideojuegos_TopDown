@@ -24,6 +24,30 @@ public class SplashItem : MonoBehaviour
     [Header("Spread")]
     [SerializeField] float randomAngle = 360f;
 
+    private Life life;
+
+    void Awake()
+    {
+        life = GetComponentInParent<Life>();
+     
+    }
+
+    void OnEnable()
+    {
+        if (life != null)
+        {
+            life.Died += SpawnSplash;
+        }
+    }
+
+    void OnDisable()
+    {
+        if (life != null)
+        {
+            life.Died -= SpawnSplash;
+        }
+    }
+
     void Start()
     {
         if (splashPoint == null)

@@ -6,7 +6,7 @@ public class Destructible : MonoBehaviour, IPathFindingBlocker
 {
     [Header("Object References")]
     [SerializeField] SpriteRenderer spriteRender;
-    [SerializeField] SplashItem splashItem;
+   // [SerializeField] SplashItem splashItem;
     [SerializeField] Collider2D destructibleCollider;
 
     private bool isDestroyed = false;
@@ -19,7 +19,7 @@ public class Destructible : MonoBehaviour, IPathFindingBlocker
         destructibleCollider = GetComponent<Collider2D>();
         destructibleCollider.enabled = true;
         spriteRender = GetComponent<SpriteRenderer>();
-        splashItem = GetComponentInChildren<SplashItem>();
+       // splashItem = GetComponentInChildren<SplashItem>();
     }
 
     [ContextMenu(nameof(DestroyObject))]
@@ -33,7 +33,7 @@ public class Destructible : MonoBehaviour, IPathFindingBlocker
 
             BlockerStatusChanged?.Invoke();
 
-            splashItem.SpawnSplash();
+           // splashItem.SpawnSplash();
             Destroy(gameObject);
 
        }     

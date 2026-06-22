@@ -16,11 +16,14 @@ public class Chest : MonoBehaviour, IInteractables
     public Action eventoEfecto;
 
     Coroutine fadeRoutine;
+    SplashItem splash;
 
 
     void Awake()
     {
         anim = GetComponent<Animator>();
+        splash = GetComponentInChildren<SplashItem>();
+
         isOpen = false;
 
         if (spriteKey == null)
@@ -74,6 +77,8 @@ public class Chest : MonoBehaviour, IInteractables
             Debug.Log("Cofre abierto");
 
             eventoEfecto?.Invoke();
+
+            splash.SpawnSplash();
 
             if (fadeRoutine != null)
             {

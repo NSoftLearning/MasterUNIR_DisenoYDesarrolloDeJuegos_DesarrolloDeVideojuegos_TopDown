@@ -2042,6 +2042,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93531851c3adb2246a9725d2d7f83737, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Destructible
+--- !u!20 &141065322 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 3727980180178170866, guid: 3ec7e9a66537dc1458d79c1432887ca7, type: 3}
+  m_PrefabInstance: {fileID: 1700510362}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &141257780
 GameObject:
   m_ObjectHideFlags: 0
@@ -2071,6 +2076,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ffa00acb988cf743b993671a3148246, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
+  progress: {fileID: 11400000, guid: a6d6059c1ffa7f74c949ab2eda229ca0, type: 2}
 --- !u!4 &141257782
 Transform:
   m_ObjectHideFlags: 0
@@ -114567,6 +114573,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5628398411608851583, guid: 281b78e88c91baf49a9d69f5be2a9259, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.00031080868
+      objectReference: {fileID: 0}
+    - target: {fileID: 5628398411608851583, guid: 281b78e88c91baf49a9d69f5be2a9259, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -0.0009460449
       objectReference: {fileID: 0}
@@ -114581,7 +114591,7 @@ PrefabInstance:
     - target: {fileID: 6057086591979187552, guid: 281b78e88c91baf49a9d69f5be2a9259, type: 3}
       propertyPath: m_Camera
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 141065322}
     - target: {fileID: 6372312206302889077, guid: 281b78e88c91baf49a9d69f5be2a9259, type: 3}
       propertyPath: m_Sprite
       value: 

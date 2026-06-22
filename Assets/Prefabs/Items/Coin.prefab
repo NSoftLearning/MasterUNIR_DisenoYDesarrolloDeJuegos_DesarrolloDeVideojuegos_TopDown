@@ -32,7 +32,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.93, y: 0.93, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 2.5, y: 2.5, z: 2.5}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 8336354653187814539}
@@ -173,13 +173,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4969703420976f4aa1163302e181dd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Coin
-  coinManager: {fileID: 0}
+  inventoryManager: {fileID: 0}
   isCollected: 0
   canvas: {fileID: 0}
   coinPointTransfer: {fileID: 0}
   flySpeed: 120
-  delayBeforeCollect: 1
   coinCollider: {fileID: 0}
+  coinValue: 1
 --- !u!95 &3209702176519807738
 Animator:
   serializedVersion: 7
