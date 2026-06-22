@@ -9,6 +9,7 @@ public class Life : MonoBehaviour, IDamageReceiver
     [Header("Life")]
     [SerializeField] private int startLife = 10;
     [SerializeField] private int currentLife;
+    [SerializeField] bool _destroyOnDeath = true;
 
     [Header("Damage Type")]
     [SerializeField] private DamageableTypeSO type;
@@ -68,8 +69,8 @@ public class Life : MonoBehaviour, IDamageReceiver
 
             Died?.Invoke();
             onLifeDepleted?.Invoke(startLife);
-
-            Destroy(gameObject);
+            if (_destroyOnDeath) 
+                Destroy(gameObject);
         }
 
         return true;

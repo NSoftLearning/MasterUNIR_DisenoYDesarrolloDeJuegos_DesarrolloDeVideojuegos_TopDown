@@ -415,6 +415,10 @@ PrefabInstance:
       propertyPath: startLife
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 314696968896216295, guid: 7529b2afa91c15d4a883be5ae07470e6, type: 3}
+      propertyPath: _destroyOnDeath
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1988660819103835746, guid: 7529b2afa91c15d4a883be5ae07470e6, type: 3}
       propertyPath: m_Size.y
       value: 1.1677638
