@@ -268,7 +268,7 @@ public class CustomCharacterController : MonoBehaviour, IVisible, IOrientationSe
 
     public void Die()
     {
-        _rigidbody.linearVelocity = new Vector2(0, -2);
+        _rigidbody.linearVelocity = new Vector2(0, 0);
         isDead = true;
         _animator.SetBool("Dead", true);
     }

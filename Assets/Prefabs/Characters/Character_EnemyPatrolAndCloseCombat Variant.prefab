@@ -315,7 +315,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CloseQuartersAttack
   _attackRange: 0
   _attackDelay: 2
-  _attackDamage: 2
+  _attackDamage: 5
   _damagePushForce: 0
   _attackBox: {fileID: 145762728728575102}
   _attackAnimator: {fileID: 6617396528112160855}
