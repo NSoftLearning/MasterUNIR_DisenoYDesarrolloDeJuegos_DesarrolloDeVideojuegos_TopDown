@@ -5,10 +5,14 @@ public class DI_PatrolAndCloseCombatEnemyController : MonoBehaviour
     [Header ("[[INJECTABLES]]")]
     [SerializeField] GameObject _characterRoot;
     [SerializeField] GameObject _enemyAttackObject;
+    [SerializeField] GameObject _damageReceiver;
 
     [Header("[[ INJECTION TARGETS]]")]
     [SerializeField] PatrolAndCloseCombatEnemyController patrolAndCloseCombatController;
 
+
+    [Header("[[CALLBACKS]]")]
+    [SerializeField] EnemyFeedback enemyFeedback;
 
     private void Awake()
     {
@@ -24,7 +28,17 @@ public class DI_PatrolAndCloseCombatEnemyController : MonoBehaviour
             _characterRoot.GetComponent<IOrientationService>(),
             _characterRoot.GetComponent<CustomCharacterController>(),
             _enemyAttackObject.GetComponent<IEnemyAttack>(),
-            ComponentLocatorService.Components.DirectionFindingService);
+            ComponentLocatorService.Components.DirectionFindingService);     
+    }
+
+    private void OnEnable()
+    {
+        _damageReceiver.GetComponent<IDamageReceiver>().Died += enemyFeedback.ShowFeedbackDied;
+    }
+
+    private void OnDisable()
+    {
+        _damageReceiver.GetComponent<IDamageReceiver>().Died += enemyFeedback.ShowFeedbackDied;
     }
 }
 
