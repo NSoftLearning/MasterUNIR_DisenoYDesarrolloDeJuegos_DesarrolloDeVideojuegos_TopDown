@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using TMPro.EditorUtilities;
 using UnityEngine;
 
 public class GuardingLastKnownPosition<TStateId> : IGenericState<TStateId> where TStateId : Enum

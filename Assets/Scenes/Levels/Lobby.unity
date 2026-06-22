@@ -18987,6 +18987,18 @@ PrefabInstance:
       propertyPath: m_Size
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3233021986204621137, guid: 281b78e88c91baf49a9d69f5be2a9259, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3233021986204621137, guid: 281b78e88c91baf49a9d69f5be2a9259, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3233021986204621137, guid: 281b78e88c91baf49a9d69f5be2a9259, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3860313946399343747, guid: 281b78e88c91baf49a9d69f5be2a9259, type: 3}
       propertyPath: musicAudio
       value: 
@@ -19154,6 +19166,18 @@ PrefabInstance:
     - target: {fileID: 8403155311931708341, guid: 281b78e88c91baf49a9d69f5be2a9259, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8916230000299303567, guid: 281b78e88c91baf49a9d69f5be2a9259, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8916230000299303567, guid: 281b78e88c91baf49a9d69f5be2a9259, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8916230000299303567, guid: 281b78e88c91baf49a9d69f5be2a9259, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
