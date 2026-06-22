@@ -48,7 +48,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Bow
   _attackPrefab: {fileID: 4856673312323477086, guid: ff0302b169b9f774fae24ebcc7690313, type: 3}
   _timeBetweenAttacks: 0.3
-  _neededStamina: 0.15
+  _neededStamina: 0.33
   _destroyAttackOnFinish: 0
 --- !u!212 &8938443947246277629
 SpriteRenderer:

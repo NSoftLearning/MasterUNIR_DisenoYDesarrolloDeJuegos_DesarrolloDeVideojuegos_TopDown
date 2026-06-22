@@ -111,7 +111,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Destructible
   spriteRender: {fileID: 0}
-  splashItem: {fileID: 0}
   destructibleCollider: {fileID: 0}
 --- !u!114 &4808522289638093996
 MonoBehaviour:
@@ -227,7 +226,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DestructibleFeedback
   _destructible: {fileID: 8300000, guid: 1f29ae2f4f009b543862da1dac7ac0cb, type: 3}
-  _destructibleVolume: 0.166
+  _destructibleVolume: 0.13
 --- !u!1 &6479661674305721019
 GameObject:
   m_ObjectHideFlags: 0

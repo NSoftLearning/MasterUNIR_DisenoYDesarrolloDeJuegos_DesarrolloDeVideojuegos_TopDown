@@ -20,4 +20,4 @@ MonoBehaviour:
   effects:
   - {fileID: 11400000, guid: 4c959b4f5f5ca544db5aca0db1ec2c7f, type: 2}
   useClip: {fileID: 8300000, guid: bc36e6d2d6a870941844e7bfc79f1954, type: 3}
-  useClipVolume: 2
+  useClipVolume: 0.15
