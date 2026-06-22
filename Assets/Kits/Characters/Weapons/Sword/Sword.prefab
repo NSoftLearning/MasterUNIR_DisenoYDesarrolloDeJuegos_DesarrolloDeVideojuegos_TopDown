@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Sword
   _attackPrefab: {fileID: 4856673312323477086, guid: 08a8db63144aed5438e053397372dc30, type: 3}
-  _timeBetweenAttacks: 0.5
+  _timeBetweenAttacks: 0.4
   _neededStamina: 0.2
   _destroyAttackOnFinish: 1
 --- !u!212 &8938443947246277629

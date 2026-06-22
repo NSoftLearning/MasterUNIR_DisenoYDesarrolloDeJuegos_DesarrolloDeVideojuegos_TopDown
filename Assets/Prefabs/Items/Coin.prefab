@@ -215,7 +215,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CoinFeedback
   _coin: {fileID: 8300000, guid: 64d50ab278ad80a478b5ede5f02a22e5, type: 3}
-  _coinVolume: 0.166
+  _coinVolume: 0.1
 --- !u!1 &8304343274406471286
 GameObject:
   m_ObjectHideFlags: 0

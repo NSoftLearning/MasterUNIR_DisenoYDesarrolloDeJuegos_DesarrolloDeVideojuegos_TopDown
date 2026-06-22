@@ -37,7 +37,7 @@ public class InventoryUIFeedback : MonoBehaviour
         if (clip == null) return;
 
         AudioInfo audioInfo = new AudioInfo(clip, vol);
-        ComponentLocatorService.Components.SfxManager.PlaySound(audioInfo);
+        ComponentLocatorService.Components.SfxManager.PlaySound(audioInfo, transform.position);
     }
 
     private void OnDisable()

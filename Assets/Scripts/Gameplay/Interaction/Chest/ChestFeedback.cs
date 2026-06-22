@@ -19,7 +19,7 @@ public class ChestFeedback : MonoBehaviour
     private void OnOpen()
     {
         AudioInfo audioInfo = new AudioInfo();
-        ComponentLocatorService.Components.SfxManager.PlaySound(audioInfo);
+        ComponentLocatorService.Components.SfxManager.PlaySound(audioInfo, transform.position);
     }
 
     private void OnDisable()

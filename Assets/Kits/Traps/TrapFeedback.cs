@@ -27,7 +27,7 @@ public class TrapFeedback : MonoBehaviour
         if (_trapSound == null) return;
 
         AudioInfo trap = new AudioInfo(_trapSound, _trapVolume);
-        ComponentLocatorService.Components.SfxManager.PlaySound(trap);
+        ComponentLocatorService.Components.SfxManager.PlaySound(trap, transform.position);
     }
 
     private void OnDeactivate()
@@ -35,7 +35,7 @@ public class TrapFeedback : MonoBehaviour
         if (_trapDeactivateSound == null) return;
 
         AudioInfo trap = new AudioInfo(_trapDeactivateSound, _trapDeactivateSoundVolume);
-        ComponentLocatorService.Components.SfxManager.PlaySound(trap);
+        ComponentLocatorService.Components.SfxManager.PlaySound(trap, transform.position);
     }
 
     private void OnDisable()

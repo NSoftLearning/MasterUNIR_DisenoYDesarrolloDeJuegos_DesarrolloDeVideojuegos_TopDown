@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7710758526959431010}
   - component: {fileID: 5193877916462077508}
   - component: {fileID: 2485425430003415122}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: TextDescriptionItem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -148,7 +148,7 @@ GameObject:
   - component: {fileID: 8734905843883893830}
   - component: {fileID: 6176966210377207070}
   - component: {fileID: 3093451080755243153}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -286,7 +286,7 @@ GameObject:
   - component: {fileID: 1537231447441206289}
   - component: {fileID: 5003614717665225868}
   - component: {fileID: 395393455219655767}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: BackgroundDescription
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -374,7 +374,7 @@ GameObject:
   - component: {fileID: 2174499130126507588}
   - component: {fileID: 6609505915537066776}
   - component: {fileID: 8668324526361101897}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: PriceText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -727,7 +727,6 @@ MonoBehaviour:
   itemData: {fileID: 11400000, guid: 5fca62b9e3faaef49acf68657442e867, type: 2}
   anim: {fileID: 0}
   priceText: {fileID: 8668324526361101897}
-  isSelected: 0
   spriteKey: {fileID: 2656427340455495073}
   fadeShowKey: 0.2
 --- !u!95 &9003900566754072480
@@ -780,7 +779,7 @@ GameObject:
   - component: {fileID: 3648795420616688626}
   - component: {fileID: 5757894266120484199}
   - component: {fileID: 4167770044735979933}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -974,7 +973,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1434407033417273315}
   - component: {fileID: 2656427340455495073}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Feedback
   m_TagString: Untagged
   m_Icon: {fileID: 0}

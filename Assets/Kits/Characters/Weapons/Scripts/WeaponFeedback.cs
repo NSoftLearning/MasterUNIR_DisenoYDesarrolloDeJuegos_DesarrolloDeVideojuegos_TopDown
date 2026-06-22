@@ -22,7 +22,7 @@ public class WeaponFeedback : MonoBehaviour
     private void OnAttack()
     {
         AudioInfo attackAudio = new AudioInfo(_attack, _attackVolume);
-        ComponentLocatorService.Components.SfxManager.PlaySound(attackAudio);
+        ComponentLocatorService.Components.SfxManager.PlaySound(attackAudio, transform.position);
     }
 
     private void OnDisable()

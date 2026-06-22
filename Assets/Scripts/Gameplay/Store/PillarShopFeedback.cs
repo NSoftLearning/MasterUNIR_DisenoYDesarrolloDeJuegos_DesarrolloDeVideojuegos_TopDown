@@ -38,7 +38,7 @@ public class PillarShopFeedback : MonoBehaviour
     private void PlaySound(AudioClip clip, float vol)
     {
         AudioInfo audioInfo = new AudioInfo(clip, vol);
-        ComponentLocatorService.Components.SfxManager.PlaySound(audioInfo);
+        ComponentLocatorService.Components.SfxManager.PlaySound(audioInfo, transform.position);
     }
 
     private void OnDisable()

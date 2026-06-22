@@ -539,8 +539,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::InventoryUIFeedback
   _openBag: {fileID: 8300000, guid: 0018946154b8e544fae143c1888892bb, type: 3}
   _closeBag: {fileID: 8300000, guid: 0018946154b8e544fae143c1888892bb, type: 3}
-  _openBagVolume: 1
-  _closeBagVolume: 1
+  _openBagVolume: 0.3
+  _closeBagVolume: 0.3
 --- !u!1 &264186054515383865
 GameObject:
   m_ObjectHideFlags: 0

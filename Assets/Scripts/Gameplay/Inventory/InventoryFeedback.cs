@@ -83,6 +83,6 @@ public class InventoryFeedback : MonoBehaviour
             return;
 
         AudioInfo audioInfo = new AudioInfo(clip, volume);
-        ComponentLocatorService.Components.SfxManager.PlaySound(audioInfo);
+        ComponentLocatorService.Components.SfxManager.PlaySound(audioInfo, transform.position);
     }
 }

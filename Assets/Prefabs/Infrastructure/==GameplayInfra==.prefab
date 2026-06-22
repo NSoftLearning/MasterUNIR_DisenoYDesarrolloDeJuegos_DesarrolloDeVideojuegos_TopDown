@@ -119,7 +119,7 @@ MonoBehaviour:
   _useFailed: {fileID: 8300000, guid: 933b3a38f0fc0464fb4197d399901f82, type: 3}
   _validMove: {fileID: 8300000, guid: 77d371e118fefa14fa94c6589cf5b8b4, type: 3}
   _invalidMove: {fileID: 8300000, guid: 933b3a38f0fc0464fb4197d399901f82, type: 3}
-  _basicClickVolume: 1
+  _basicClickVolume: 0.5
   _useVolume: 1
   _useFailedVolume: 1
   _validMoveVolume: 1

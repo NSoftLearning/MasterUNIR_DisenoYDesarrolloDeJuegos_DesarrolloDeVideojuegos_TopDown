@@ -5,10 +5,12 @@ public class CharacterFeedback : MonoBehaviour
     [Header("Clips")]
     [SerializeField] AudioClip _walk;
     [SerializeField] AudioClip _collectWeapon;
+    [SerializeField] AudioClip _roll;
 
     [Header("Volume")]
-    [SerializeField] float _walkVolume = 0.166f;
-    [SerializeField] float _collectWeaponVolume = 0.166f;
+    [SerializeField] float _walkVolume = 0.3f;
+    [SerializeField] float _rollVolume = 0.3f;
+    [SerializeField] float _collectWeaponVolume = 0.3f;
 
     CustomCharacterController controller;
     PlayerWeaponController weaponController;
@@ -22,6 +24,7 @@ public class CharacterFeedback : MonoBehaviour
     {
         controller.OnWalking += OnWalking;
         controller.OnStopWalking += OnStopWalking;
+        controller.OnRoll += OnRoll;
 
         if (weaponController != null)
         {
@@ -33,7 +36,13 @@ public class CharacterFeedback : MonoBehaviour
     private void OnWalking()
     {
         AudioInfo audioInfo = new AudioInfo(_walk, _walkVolume);
-        walkIndex = ComponentLocatorService.Components.SfxManager.PlayLoopSound(audioInfo);
+        walkIndex = ComponentLocatorService.Components.SfxManager.PlayLoopSound(audioInfo, transform);
+    }
+
+    private void OnRoll()
+    {
+        AudioInfo attackAudio = new AudioInfo(_roll, _rollVolume);
+        ComponentLocatorService.Components.SfxManager.PlaySound(attackAudio, transform.position);
     }
 
     private void OnStopWalking()
@@ -48,7 +57,7 @@ public class CharacterFeedback : MonoBehaviour
     private void OnNewWeapon()
     {
         AudioInfo audioInfo = new AudioInfo(_collectWeapon, _collectWeaponVolume);
-        ComponentLocatorService.Components.SfxManager.PlaySound(audioInfo);
+        ComponentLocatorService.Components.SfxManager.PlaySound(audioInfo, transform.position);
     }
 
     private void OnDisable()

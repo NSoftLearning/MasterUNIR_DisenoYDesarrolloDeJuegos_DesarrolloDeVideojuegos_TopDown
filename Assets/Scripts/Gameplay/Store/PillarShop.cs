@@ -11,7 +11,6 @@ public class PillarShop : MonoBehaviour, IInteractables
     [Header("References")]
     [SerializeField] private Animator anim;
     [SerializeField] private TextMeshProUGUI priceText;
-    [SerializeField] private bool isSelected;
 
     [Header("Feedback Key")]
     [SerializeField] private SpriteRenderer spriteKey;
@@ -133,7 +132,7 @@ public class PillarShop : MonoBehaviour, IInteractables
 
     public void Select()
     {
-        isSelected = true;
+        
 
         if (fadeRoutine != null)
         {
@@ -147,7 +146,7 @@ public class PillarShop : MonoBehaviour, IInteractables
 
     public void Unselect()
     {
-        isSelected = false;
+        
 
         if (fadeRoutine != null)
         {

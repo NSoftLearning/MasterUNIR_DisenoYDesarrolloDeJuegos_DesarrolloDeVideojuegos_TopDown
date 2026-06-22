@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public struct AudioInfo
 {
@@ -41,12 +42,13 @@ public class SfxManager : MonoBehaviour
     }
 
     int index = 0;
-    public void PlaySound(AudioInfo info)
+    public void PlaySound(AudioInfo info, Vector3 position)
     {
         if (_audioSources.Count == 0) return;
 
         AudioSource actSource = _audioSources[index];
 
+        actSource.transform.position = position;
         actSource.clip = info.clip;
         actSource.volume = info.volume;
         actSource.Play();
@@ -57,7 +59,7 @@ public class SfxManager : MonoBehaviour
 
     int loopIndex = 0;
     // Devuelve un id del indice para que se lo guarde quien lo llame y luego poder pararlo
-    public int PlayLoopSound(AudioInfo info)
+    public int PlayLoopSound(AudioInfo info, Transform target)
     {
         if (_loopAudioSources.Count == 0) return -1;
 
@@ -67,7 +69,7 @@ public class SfxManager : MonoBehaviour
         int auxIndex = loopIndex;
         for (int i = 0; i < _loopAudioSources.Count; ++i)
         {
-            AudioSource source = _audioSources[auxIndex];
+            AudioSource source = _loopAudioSources[auxIndex];
             if (!source.isPlaying)
             {
                 selectedIndex = auxIndex;
@@ -82,6 +84,10 @@ public class SfxManager : MonoBehaviour
         if (!encountered) return -1;
 
         AudioSource sourceL = _loopAudioSources[selectedIndex];
+
+        sourceL.transform.position = target.position;
+        sourceL.transform.SetParent(target);
+
         sourceL.clip = info.clip;
         sourceL.volume = info.volume;
         sourceL.Play();
@@ -97,5 +103,6 @@ public class SfxManager : MonoBehaviour
         if (indexId == -1) return;
 
         _loopAudioSources[indexId].Stop();
+        _loopAudioSources[indexId].transform.SetParent(transform);
     }
 }
