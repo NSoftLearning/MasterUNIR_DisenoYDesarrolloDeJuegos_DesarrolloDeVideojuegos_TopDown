@@ -15,15 +15,17 @@ public class ScenesManager : MonoBehaviour
     private void Awake()
     {
         fadeCanvasGroup = GameObject.Find("FadePanel").GetComponent<CanvasGroup>();
+        Time.timeScale = 1;
     }
 
     void Start()
     {
         if (fadeCanvasGroup != null)
         {
-            fadeCanvasGroup.alpha = 0f; // Asegura que el panel de fade esté completamente invisible al inicio
+            fadeCanvasGroup.alpha = 0f; // Asegura que el panel de fade esté completamente visible al inicio
             StartCoroutine(FadeIn());
         }
+      
     }
 
     public void CallFadeOut_LoadScene(string nameScene)
@@ -54,6 +56,8 @@ public class ScenesManager : MonoBehaviour
         fadeCanvasGroup.alpha = 0f;
         fadeCanvasGroup.blocksRaycasts = false; // Desbloquea la interacción cuando termina el fade
         onTransition = false;
+
+        Debug.Log("Terminó el FadeIn");
     }
 
     IEnumerator FadeOut(string nameScene)

@@ -100739,6 +100739,38 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 192494241397025574, guid: 3ec7e9a66537dc1458d79c1432887ca7, type: 3}
+      propertyPath: onLifeDepleted.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 192494241397025574, guid: 3ec7e9a66537dc1458d79c1432887ca7, type: 3}
+      propertyPath: onLifeDepleted.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 192494241397025574, guid: 3ec7e9a66537dc1458d79c1432887ca7, type: 3}
+      propertyPath: onLifeDepleted.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1051015786}
+    - target: {fileID: 192494241397025574, guid: 3ec7e9a66537dc1458d79c1432887ca7, type: 3}
+      propertyPath: onLifeDepleted.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 192494241397025574, guid: 3ec7e9a66537dc1458d79c1432887ca7, type: 3}
+      propertyPath: onLifeDepleted.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: CallFadeOut_LoadScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 192494241397025574, guid: 3ec7e9a66537dc1458d79c1432887ca7, type: 3}
+      propertyPath: onLifeDepleted.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ScenesManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 192494241397025574, guid: 3ec7e9a66537dc1458d79c1432887ca7, type: 3}
+      propertyPath: onLifeDepleted.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: Lobby
+      objectReference: {fileID: 0}
+    - target: {fileID: 192494241397025574, guid: 3ec7e9a66537dc1458d79c1432887ca7, type: 3}
+      propertyPath: onLifeDepleted.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 458012449140282973, guid: 3ec7e9a66537dc1458d79c1432887ca7, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
