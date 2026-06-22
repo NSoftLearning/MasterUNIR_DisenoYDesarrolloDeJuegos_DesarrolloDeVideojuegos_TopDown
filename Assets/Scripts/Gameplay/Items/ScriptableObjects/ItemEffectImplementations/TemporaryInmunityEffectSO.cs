@@ -17,7 +17,7 @@ public class TemporaryInvulnerabilityEffectSO : ItemEffectSO
 
         if (temporaryStats == null)
         {
-            Debug.LogWarning("Cannot use invulnerability item. PlayerTemporaryStats component not found.");
+            Debug.LogWarning("Cannot use invulnerability item. CharacterTemporaryStats component not found.");
             return false;
         }
 

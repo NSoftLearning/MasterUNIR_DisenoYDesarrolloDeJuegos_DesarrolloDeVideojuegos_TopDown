@@ -9,6 +9,9 @@ public class CharacterTemporaryStats : MonoBehaviour
     [SerializeField] private float attackSpeedMultiplier = 1f;
     [SerializeField] private bool isInvulnerable;
 
+    private Life life;
+    private Inmunity inmunityVisual;
+
     private Coroutine damageBonusCoroutine;
     private Coroutine moveSpeedBonusCoroutine;
     private Coroutine attackSpeedBonusCoroutine;
@@ -19,8 +22,17 @@ public class CharacterTemporaryStats : MonoBehaviour
     public float AttackSpeedMultiplier => attackSpeedMultiplier;
     public bool IsInvulnerable => isInvulnerable;
 
+    private void Awake()
+    {
+        life = GetComponent<Life>();
+        inmunityVisual = GetComponent<Inmunity>();
+    }
+
     public void ApplyDamageBonus(float multiplier, float duration)
     {
+        if (multiplier <= 0f || duration <= 0f)
+            return;
+
         if (damageBonusCoroutine != null)
         {
             StopCoroutine(damageBonusCoroutine);
@@ -31,6 +43,9 @@ public class CharacterTemporaryStats : MonoBehaviour
 
     public void ApplyMoveSpeedBonus(float multiplier, float duration)
     {
+        if (multiplier <= 0f || duration <= 0f)
+            return;
+
         if (moveSpeedBonusCoroutine != null)
         {
             StopCoroutine(moveSpeedBonusCoroutine);
@@ -41,6 +56,9 @@ public class CharacterTemporaryStats : MonoBehaviour
 
     public void ApplyAttackSpeedBonus(float multiplier, float duration)
     {
+        if (multiplier <= 0f || duration <= 0f)
+            return;
+
         if (attackSpeedBonusCoroutine != null)
         {
             StopCoroutine(attackSpeedBonusCoroutine);
@@ -51,9 +69,34 @@ public class CharacterTemporaryStats : MonoBehaviour
 
     public void ApplyInvulnerability(float duration)
     {
+        if (duration <= 0f)
+            return;
+
+        if (life == null)
+        {
+            life = GetComponent<Life>();
+        }
+
+        if (inmunityVisual == null)
+        {
+            inmunityVisual = GetComponent<Inmunity>();
+        }
+
+        if (life == null)
+        {
+            Debug.LogWarning("Cannot apply invulnerability. Life component not found.");
+            return;
+        }
+
         if (invulnerabilityCoroutine != null)
         {
             StopCoroutine(invulnerabilityCoroutine);
+
+            if (isInvulnerable)
+            {
+                life.RemoveInmunitySource();
+                isInvulnerable = false;
+            }
         }
 
         invulnerabilityCoroutine = StartCoroutine(InvulnerabilityRoutine(duration));
@@ -92,10 +135,27 @@ public class CharacterTemporaryStats : MonoBehaviour
     private IEnumerator InvulnerabilityRoutine(float duration)
     {
         isInvulnerable = true;
+        life.AddInmunitySource();
+
+        if (inmunityVisual != null)
+        {
+            inmunityVisual.PlayBlink(duration);
+        }
 
         yield return new WaitForSeconds(duration);
 
+        life.RemoveInmunitySource();
         isInvulnerable = false;
+
         invulnerabilityCoroutine = null;
+    }
+
+    private void OnDestroy()
+    {
+        if (isInvulnerable && life != null)
+        {
+            life.RemoveInmunitySource();
+            isInvulnerable = false;
+        }
     }
 }

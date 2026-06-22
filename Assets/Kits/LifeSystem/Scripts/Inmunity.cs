@@ -3,21 +3,42 @@ using UnityEngine;
 
 public class Inmunity : MonoBehaviour
 {
-    [SerializeField] float _inmunityTimer = 1f;
-    [SerializeField] float _blinkTime = 0.1f;
-    [SerializeField] SpriteRenderer _blinkSprite;
+    [SerializeField] private float _inmunityTimer = 1f;
+    [SerializeField] private float _blinkTime = 0.1f;
+    [SerializeField] private SpriteRenderer _blinkSprite;
 
-    Life life;
-    bool initialized = false;
+    private Life life;
+    private bool initialized = false;
+
+    private Coroutine postDamageInmunityCoroutine;
+    private Coroutine blinkCoroutine;
+
+    private bool blink = false;
 
     private void Awake()
     {
         life = GetComponent<Life>();
+
+        if (_blinkSprite == null)
+        {
+            _blinkSprite = GetComponentInChildren<SpriteRenderer>();
+        }
     }
 
     private void OnEnable()
     {
-        life.LifeChanged += OnLifeChanged;
+        if (life != null)
+        {
+            life.LifeChanged += OnLifeChanged;
+        }
+    }
+
+    private void OnDisable()
+    {
+        if (life != null)
+        {
+            life.LifeChanged -= OnLifeChanged;
+        }
     }
 
     private void OnLifeChanged(LifeChangedDTO lifeChangedDTO)
@@ -28,37 +49,90 @@ public class Inmunity : MonoBehaviour
             return;
         }
 
-        if (_inmunityTimer == 0 || lifeChangedDTO.currentValue <= 0) return;
+        if (_inmunityTimer <= 0f)
+            return;
 
-        StopAllCoroutines();
-        StartCoroutine(Inmune());
+        if (lifeChangedDTO.currentValue <= 0)
+            return;
+
+        if (lifeChangedDTO.deltaValue >= 0)
+            return;
+
+        StartPostDamageInmunity();
     }
 
-    bool blink = false;
-    IEnumerator Inmune()
+    private void StartPostDamageInmunity()
     {
-        life.SetInmunity(true);
-        blink = true;
-        StartCoroutine(Blink());
+        if (postDamageInmunityCoroutine != null)
+        {
+            StopCoroutine(postDamageInmunityCoroutine);
+
+            if (life != null)
+            {
+                life.SetInmunity(false);
+            }
+        }
+
+        postDamageInmunityCoroutine = StartCoroutine(PostDamageInmunityRoutine());
+    }
+
+    private IEnumerator PostDamageInmunityRoutine()
+    {
+        if (life != null)
+        {
+            life.SetInmunity(true);
+        }
+
+        PlayBlink(_inmunityTimer);
 
         yield return new WaitForSeconds(_inmunityTimer);
 
-        blink = false;
-        life.SetInmunity(false);
-    }
-
-    IEnumerator Blink()
-    {
-        while (blink)
+        if (life != null)
         {
-            yield return new WaitForSeconds(_blinkTime);
-            _blinkSprite.enabled = !_blinkSprite.enabled;
+            life.SetInmunity(false);
         }
-        _blinkSprite.enabled = true;
+
+        postDamageInmunityCoroutine = null;
     }
 
-    private void OnDisable()
+    public void PlayBlink(float duration)
     {
-        life.LifeChanged -= OnLifeChanged;
+        if (duration <= 0f)
+            return;
+
+        if (_blinkSprite == null)
+            return;
+
+        if (blinkCoroutine != null)
+        {
+            StopCoroutine(blinkCoroutine);
+        }
+
+        blinkCoroutine = StartCoroutine(BlinkRoutine(duration));
+    }
+
+    private IEnumerator BlinkRoutine(float duration)
+    {
+        blink = true;
+
+        float elapsed = 0f;
+
+        while (elapsed < duration)
+        {
+            elapsed += _blinkTime;
+
+            _blinkSprite.enabled = !_blinkSprite.enabled;
+
+            yield return new WaitForSeconds(_blinkTime);
+        }
+
+        blink = false;
+
+        if (_blinkSprite != null)
+        {
+            _blinkSprite.enabled = true;
+        }
+
+        blinkCoroutine = null;
     }
 }
