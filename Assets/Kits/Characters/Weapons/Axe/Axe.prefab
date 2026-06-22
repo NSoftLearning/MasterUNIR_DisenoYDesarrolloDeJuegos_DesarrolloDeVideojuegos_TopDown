@@ -106,8 +106,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Axe
   _attackPrefab: {fileID: 4856673312323477086, guid: c1a70e4e82a17fd489920c4b97140fdf, type: 3}
-  _timeBetweenAttacks: 1
-  _neededStamina: 0.33
+  _timeBetweenAttacks: 0.75
+  _neededStamina: 0.3
   _destroyAttackOnFinish: 1
 --- !u!114 &6832510116513783240
 MonoBehaviour:
