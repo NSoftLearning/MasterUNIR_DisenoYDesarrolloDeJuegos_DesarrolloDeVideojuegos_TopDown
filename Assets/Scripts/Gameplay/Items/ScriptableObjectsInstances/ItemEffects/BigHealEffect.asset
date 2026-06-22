@@ -16,4 +16,4 @@ MonoBehaviour:
   attachVfxToUser: 1
   vfxOffset: {x: 0, y: 0, z: 0}
   destroyVfxAfterSeconds: 2
-  healAmount: 25
+  healAmount: 20
