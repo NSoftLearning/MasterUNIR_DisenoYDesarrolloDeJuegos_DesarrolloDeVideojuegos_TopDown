@@ -13,7 +13,7 @@ public class NavMeshDirectionFindingService : MonoBehaviour, IDirectionFindingSe
     [SerializeField]
     private float _navMeshZ = 0f;
 
-    private NavMeshPath _path ;
+    private NavMeshPath _path;
     [SerializeField] private NavMeshSurface _navMeshSurface;
     [SerializeField] private MonoBehaviour[] _pathFindingBlockerComponents;
 
@@ -97,6 +97,7 @@ public class NavMeshDirectionFindingService : MonoBehaviour, IDirectionFindingSe
         UnityEditor.SceneManagement.EditorSceneManager.MarkSceneDirty(gameObject.scene);
 #endif
     }
+    [ContextMenu (nameof(RebuildMesh))]
     public void RebuildMesh()
     {
 

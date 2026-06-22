@@ -24175,6 +24175,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1730788540}
     m_Modifications:
+    - target: {fileID: 1720091024338766534, guid: 36ee0d053cd101c4bbc95da9475d74eb, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1720091024338766534, guid: 36ee0d053cd101c4bbc95da9475d74eb, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1720091024338766534, guid: 36ee0d053cd101c4bbc95da9475d74eb, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3024297051781943351, guid: 36ee0d053cd101c4bbc95da9475d74eb, type: 3}
       propertyPath: m_LocalPosition.x
       value: -4.7
@@ -24215,9 +24227,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3030611206630096315, guid: 36ee0d053cd101c4bbc95da9475d74eb, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3030611206630096315, guid: 36ee0d053cd101c4bbc95da9475d74eb, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3476943960244857115, guid: 36ee0d053cd101c4bbc95da9475d74eb, type: 3}
       propertyPath: m_Name
       value: Character_EnemyPatrolAndCloseCombat Variant (20)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3476943960244857115, guid: 36ee0d053cd101c4bbc95da9475d74eb, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4028882310137395756, guid: 36ee0d053cd101c4bbc95da9475d74eb, type: 3}
       propertyPath: _patrolRoute
@@ -25849,6 +25873,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Character_EnenyKamikaze (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 138855706372028777, guid: 1756a79f1b219da45a817f58d2d8fecc, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 755277743752840069, guid: 1756a79f1b219da45a817f58d2d8fecc, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 755277743752840069, guid: 1756a79f1b219da45a817f58d2d8fecc, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1753501961660645445, guid: 1756a79f1b219da45a817f58d2d8fecc, type: 3}
       propertyPath: m_LocalPosition.x
       value: -11.4936905
@@ -25893,6 +25929,18 @@ PrefabInstance:
       propertyPath: _patrolRoute
       value: 
       objectReference: {fileID: 1400732063}
+    - target: {fileID: 8591828753204131021, guid: 1756a79f1b219da45a817f58d2d8fecc, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8591828753204131021, guid: 1756a79f1b219da45a817f58d2d8fecc, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8591828753204131021, guid: 1756a79f1b219da45a817f58d2d8fecc, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -26308,6 +26356,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1730788540}
     m_Modifications:
+    - target: {fileID: 1720091024338766534, guid: 36ee0d053cd101c4bbc95da9475d74eb, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1720091024338766534, guid: 36ee0d053cd101c4bbc95da9475d74eb, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1720091024338766534, guid: 36ee0d053cd101c4bbc95da9475d74eb, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3024297051781943351, guid: 36ee0d053cd101c4bbc95da9475d74eb, type: 3}
       propertyPath: m_LocalPosition.x
       value: 21.15
@@ -26348,9 +26408,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3030611206630096315, guid: 36ee0d053cd101c4bbc95da9475d74eb, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3030611206630096315, guid: 36ee0d053cd101c4bbc95da9475d74eb, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3476943960244857115, guid: 36ee0d053cd101c4bbc95da9475d74eb, type: 3}
       propertyPath: m_Name
       value: Character_EnemyPatrolAndCloseCombat Variant (17)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3476943960244857115, guid: 36ee0d053cd101c4bbc95da9475d74eb, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4028882310137395756, guid: 36ee0d053cd101c4bbc95da9475d74eb, type: 3}
       propertyPath: _patrolRoute
@@ -27076,6 +27148,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1730788540}
     m_Modifications:
+    - target: {fileID: 1720091024338766534, guid: 36ee0d053cd101c4bbc95da9475d74eb, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1720091024338766534, guid: 36ee0d053cd101c4bbc95da9475d74eb, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1720091024338766534, guid: 36ee0d053cd101c4bbc95da9475d74eb, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3024297051781943351, guid: 36ee0d053cd101c4bbc95da9475d74eb, type: 3}
       propertyPath: m_LocalPosition.x
       value: -35.9
@@ -27116,9 +27200,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3030611206630096315, guid: 36ee0d053cd101c4bbc95da9475d74eb, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3030611206630096315, guid: 36ee0d053cd101c4bbc95da9475d74eb, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3476943960244857115, guid: 36ee0d053cd101c4bbc95da9475d74eb, type: 3}
       propertyPath: m_Name
       value: Character_EnemyPatrolAndCloseCombat Variant (14)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3476943960244857115, guid: 36ee0d053cd101c4bbc95da9475d74eb, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4028882310137395756, guid: 36ee0d053cd101c4bbc95da9475d74eb, type: 3}
       propertyPath: _patrolRoute
@@ -28196,6 +28292,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1730788540}
     m_Modifications:
+    - target: {fileID: 1720091024338766534, guid: 36ee0d053cd101c4bbc95da9475d74eb, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1720091024338766534, guid: 36ee0d053cd101c4bbc95da9475d74eb, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1720091024338766534, guid: 36ee0d053cd101c4bbc95da9475d74eb, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3024297051781943351, guid: 36ee0d053cd101c4bbc95da9475d74eb, type: 3}
       propertyPath: m_LocalPosition.x
       value: 31.69
@@ -28236,9 +28344,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3030611206630096315, guid: 36ee0d053cd101c4bbc95da9475d74eb, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3030611206630096315, guid: 36ee0d053cd101c4bbc95da9475d74eb, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3476943960244857115, guid: 36ee0d053cd101c4bbc95da9475d74eb, type: 3}
       propertyPath: m_Name
       value: Character_EnemyPatrolAndCloseCombat Variant (18)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3476943960244857115, guid: 36ee0d053cd101c4bbc95da9475d74eb, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4028882310137395756, guid: 36ee0d053cd101c4bbc95da9475d74eb, type: 3}
       propertyPath: _patrolRoute
@@ -28842,6 +28962,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1730788540}
     m_Modifications:
+    - target: {fileID: 1720091024338766534, guid: 36ee0d053cd101c4bbc95da9475d74eb, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1720091024338766534, guid: 36ee0d053cd101c4bbc95da9475d74eb, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1720091024338766534, guid: 36ee0d053cd101c4bbc95da9475d74eb, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3024297051781943351, guid: 36ee0d053cd101c4bbc95da9475d74eb, type: 3}
       propertyPath: m_LocalPosition.x
       value: -26.41
@@ -28882,9 +29014,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3030611206630096315, guid: 36ee0d053cd101c4bbc95da9475d74eb, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3030611206630096315, guid: 36ee0d053cd101c4bbc95da9475d74eb, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3476943960244857115, guid: 36ee0d053cd101c4bbc95da9475d74eb, type: 3}
       propertyPath: m_Name
       value: Character_EnemyPatrolAndCloseCombat Variant (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3476943960244857115, guid: 36ee0d053cd101c4bbc95da9475d74eb, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4028882310137395756, guid: 36ee0d053cd101c4bbc95da9475d74eb, type: 3}
       propertyPath: _patrolRoute
@@ -30696,6 +30840,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1730788540}
     m_Modifications:
+    - target: {fileID: 1720091024338766534, guid: 36ee0d053cd101c4bbc95da9475d74eb, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1720091024338766534, guid: 36ee0d053cd101c4bbc95da9475d74eb, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1720091024338766534, guid: 36ee0d053cd101c4bbc95da9475d74eb, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3024297051781943351, guid: 36ee0d053cd101c4bbc95da9475d74eb, type: 3}
       propertyPath: m_LocalPosition.x
       value: -27.88
@@ -30736,9 +30892,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3030611206630096315, guid: 36ee0d053cd101c4bbc95da9475d74eb, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3030611206630096315, guid: 36ee0d053cd101c4bbc95da9475d74eb, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3476943960244857115, guid: 36ee0d053cd101c4bbc95da9475d74eb, type: 3}
       propertyPath: m_Name
       value: Character_EnemyPatrolAndCloseCombat Variant (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3476943960244857115, guid: 36ee0d053cd101c4bbc95da9475d74eb, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4028882310137395756, guid: 36ee0d053cd101c4bbc95da9475d74eb, type: 3}
       propertyPath: _patrolRoute
@@ -30855,6 +31023,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1730788540}
     m_Modifications:
+    - target: {fileID: 1720091024338766534, guid: 36ee0d053cd101c4bbc95da9475d74eb, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1720091024338766534, guid: 36ee0d053cd101c4bbc95da9475d74eb, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1720091024338766534, guid: 36ee0d053cd101c4bbc95da9475d74eb, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3024297051781943351, guid: 36ee0d053cd101c4bbc95da9475d74eb, type: 3}
       propertyPath: m_LocalPosition.x
       value: -26.41
@@ -30895,9 +31075,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3030611206630096315, guid: 36ee0d053cd101c4bbc95da9475d74eb, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3030611206630096315, guid: 36ee0d053cd101c4bbc95da9475d74eb, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3476943960244857115, guid: 36ee0d053cd101c4bbc95da9475d74eb, type: 3}
       propertyPath: m_Name
       value: Character_EnemyPatrolAndCloseCombat Variant (12)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3476943960244857115, guid: 36ee0d053cd101c4bbc95da9475d74eb, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4028882310137395756, guid: 36ee0d053cd101c4bbc95da9475d74eb, type: 3}
       propertyPath: _patrolRoute
@@ -31276,6 +31468,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1730788540}
     m_Modifications:
+    - target: {fileID: 1720091024338766534, guid: 36ee0d053cd101c4bbc95da9475d74eb, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1720091024338766534, guid: 36ee0d053cd101c4bbc95da9475d74eb, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1720091024338766534, guid: 36ee0d053cd101c4bbc95da9475d74eb, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3024297051781943351, guid: 36ee0d053cd101c4bbc95da9475d74eb, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.12
@@ -31316,9 +31520,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3030611206630096315, guid: 36ee0d053cd101c4bbc95da9475d74eb, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3030611206630096315, guid: 36ee0d053cd101c4bbc95da9475d74eb, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3476943960244857115, guid: 36ee0d053cd101c4bbc95da9475d74eb, type: 3}
       propertyPath: m_Name
       value: Character_EnemyPatrolAndCloseCombat Variant (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3476943960244857115, guid: 36ee0d053cd101c4bbc95da9475d74eb, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4028882310137395756, guid: 36ee0d053cd101c4bbc95da9475d74eb, type: 3}
       propertyPath: _patrolRoute
@@ -33232,6 +33448,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Character_EnenyKamikaze (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 138855706372028777, guid: 1756a79f1b219da45a817f58d2d8fecc, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 755277743752840069, guid: 1756a79f1b219da45a817f58d2d8fecc, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 755277743752840069, guid: 1756a79f1b219da45a817f58d2d8fecc, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1753501961660645445, guid: 1756a79f1b219da45a817f58d2d8fecc, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.9936905
@@ -33276,6 +33504,18 @@ PrefabInstance:
       propertyPath: _patrolRoute
       value: 
       objectReference: {fileID: 1400732063}
+    - target: {fileID: 8591828753204131021, guid: 1756a79f1b219da45a817f58d2d8fecc, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8591828753204131021, guid: 1756a79f1b219da45a817f58d2d8fecc, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8591828753204131021, guid: 1756a79f1b219da45a817f58d2d8fecc, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -34062,6 +34302,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1730788540}
     m_Modifications:
+    - target: {fileID: 1720091024338766534, guid: 36ee0d053cd101c4bbc95da9475d74eb, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1720091024338766534, guid: 36ee0d053cd101c4bbc95da9475d74eb, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1720091024338766534, guid: 36ee0d053cd101c4bbc95da9475d74eb, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3024297051781943351, guid: 36ee0d053cd101c4bbc95da9475d74eb, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.19
@@ -34102,9 +34354,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3030611206630096315, guid: 36ee0d053cd101c4bbc95da9475d74eb, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3030611206630096315, guid: 36ee0d053cd101c4bbc95da9475d74eb, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3476943960244857115, guid: 36ee0d053cd101c4bbc95da9475d74eb, type: 3}
       propertyPath: m_Name
       value: Character_EnemyPatrolAndCloseCombat Variant (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3476943960244857115, guid: 36ee0d053cd101c4bbc95da9475d74eb, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4028882310137395756, guid: 36ee0d053cd101c4bbc95da9475d74eb, type: 3}
       propertyPath: _patrolRoute
@@ -93686,6 +93950,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1730788540}
     m_Modifications:
+    - target: {fileID: 1720091024338766534, guid: 36ee0d053cd101c4bbc95da9475d74eb, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1720091024338766534, guid: 36ee0d053cd101c4bbc95da9475d74eb, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1720091024338766534, guid: 36ee0d053cd101c4bbc95da9475d74eb, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3024297051781943351, guid: 36ee0d053cd101c4bbc95da9475d74eb, type: 3}
       propertyPath: m_LocalPosition.x
       value: -27.88
@@ -93726,9 +94002,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3030611206630096315, guid: 36ee0d053cd101c4bbc95da9475d74eb, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3030611206630096315, guid: 36ee0d053cd101c4bbc95da9475d74eb, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3476943960244857115, guid: 36ee0d053cd101c4bbc95da9475d74eb, type: 3}
       propertyPath: m_Name
       value: Character_EnemyPatrolAndCloseCombat Variant (13)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3476943960244857115, guid: 36ee0d053cd101c4bbc95da9475d74eb, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4028882310137395756, guid: 36ee0d053cd101c4bbc95da9475d74eb, type: 3}
       propertyPath: _patrolRoute
@@ -94298,6 +94586,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Character_EnenyKamikaze (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 138855706372028777, guid: 1756a79f1b219da45a817f58d2d8fecc, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 755277743752840069, guid: 1756a79f1b219da45a817f58d2d8fecc, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 755277743752840069, guid: 1756a79f1b219da45a817f58d2d8fecc, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1753501961660645445, guid: 1756a79f1b219da45a817f58d2d8fecc, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.8736897
@@ -94342,6 +94642,18 @@ PrefabInstance:
       propertyPath: _patrolRoute
       value: 
       objectReference: {fileID: 822730954}
+    - target: {fileID: 8591828753204131021, guid: 1756a79f1b219da45a817f58d2d8fecc, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8591828753204131021, guid: 1756a79f1b219da45a817f58d2d8fecc, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8591828753204131021, guid: 1756a79f1b219da45a817f58d2d8fecc, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -94904,6 +95216,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Character_EnenyKamikaze (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 138855706372028777, guid: 1756a79f1b219da45a817f58d2d8fecc, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 755277743752840069, guid: 1756a79f1b219da45a817f58d2d8fecc, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 755277743752840069, guid: 1756a79f1b219da45a817f58d2d8fecc, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1753501961660645445, guid: 1756a79f1b219da45a817f58d2d8fecc, type: 3}
       propertyPath: m_LocalPosition.x
       value: -35.62369
@@ -94948,6 +95272,18 @@ PrefabInstance:
       propertyPath: _patrolRoute
       value: 
       objectReference: {fileID: 270164508}
+    - target: {fileID: 8591828753204131021, guid: 1756a79f1b219da45a817f58d2d8fecc, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8591828753204131021, guid: 1756a79f1b219da45a817f58d2d8fecc, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8591828753204131021, guid: 1756a79f1b219da45a817f58d2d8fecc, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -95515,6 +95851,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Character_EnenyKamikaze (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 138855706372028777, guid: 1756a79f1b219da45a817f58d2d8fecc, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 755277743752840069, guid: 1756a79f1b219da45a817f58d2d8fecc, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 755277743752840069, guid: 1756a79f1b219da45a817f58d2d8fecc, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1753501961660645445, guid: 1756a79f1b219da45a817f58d2d8fecc, type: 3}
       propertyPath: m_LocalPosition.x
       value: -28.983688
@@ -95559,6 +95907,18 @@ PrefabInstance:
       propertyPath: _patrolRoute
       value: 
       objectReference: {fileID: 727992481}
+    - target: {fileID: 8591828753204131021, guid: 1756a79f1b219da45a817f58d2d8fecc, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8591828753204131021, guid: 1756a79f1b219da45a817f58d2d8fecc, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8591828753204131021, guid: 1756a79f1b219da45a817f58d2d8fecc, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -96306,6 +96666,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1730788540}
     m_Modifications:
+    - target: {fileID: 1720091024338766534, guid: 36ee0d053cd101c4bbc95da9475d74eb, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1720091024338766534, guid: 36ee0d053cd101c4bbc95da9475d74eb, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1720091024338766534, guid: 36ee0d053cd101c4bbc95da9475d74eb, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3024297051781943351, guid: 36ee0d053cd101c4bbc95da9475d74eb, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3.99
@@ -96346,9 +96718,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3030611206630096315, guid: 36ee0d053cd101c4bbc95da9475d74eb, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3030611206630096315, guid: 36ee0d053cd101c4bbc95da9475d74eb, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3476943960244857115, guid: 36ee0d053cd101c4bbc95da9475d74eb, type: 3}
       propertyPath: m_Name
       value: Character_EnemyPatrolAndCloseCombat Variant (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3476943960244857115, guid: 36ee0d053cd101c4bbc95da9475d74eb, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4028882310137395756, guid: 36ee0d053cd101c4bbc95da9475d74eb, type: 3}
       propertyPath: _patrolRoute
@@ -97129,6 +97513,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1730788540}
     m_Modifications:
+    - target: {fileID: 1720091024338766534, guid: 36ee0d053cd101c4bbc95da9475d74eb, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1720091024338766534, guid: 36ee0d053cd101c4bbc95da9475d74eb, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1720091024338766534, guid: 36ee0d053cd101c4bbc95da9475d74eb, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3024297051781943351, guid: 36ee0d053cd101c4bbc95da9475d74eb, type: 3}
       propertyPath: m_LocalPosition.x
       value: -7.15
@@ -97169,9 +97565,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3030611206630096315, guid: 36ee0d053cd101c4bbc95da9475d74eb, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3030611206630096315, guid: 36ee0d053cd101c4bbc95da9475d74eb, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3476943960244857115, guid: 36ee0d053cd101c4bbc95da9475d74eb, type: 3}
       propertyPath: m_Name
       value: Character_EnemyPatrolAndCloseCombat Variant (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3476943960244857115, guid: 36ee0d053cd101c4bbc95da9475d74eb, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4028882310137395756, guid: 36ee0d053cd101c4bbc95da9475d74eb, type: 3}
       propertyPath: _patrolRoute
@@ -97913,6 +98321,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Character_EnenyKamikaze (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 138855706372028777, guid: 1756a79f1b219da45a817f58d2d8fecc, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 755277743752840069, guid: 1756a79f1b219da45a817f58d2d8fecc, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 755277743752840069, guid: 1756a79f1b219da45a817f58d2d8fecc, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1753501961660645445, guid: 1756a79f1b219da45a817f58d2d8fecc, type: 3}
       propertyPath: m_LocalPosition.x
       value: 21.16631
@@ -97957,6 +98377,18 @@ PrefabInstance:
       propertyPath: _patrolRoute
       value: 
       objectReference: {fileID: 1976143842}
+    - target: {fileID: 8591828753204131021, guid: 1756a79f1b219da45a817f58d2d8fecc, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8591828753204131021, guid: 1756a79f1b219da45a817f58d2d8fecc, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8591828753204131021, guid: 1756a79f1b219da45a817f58d2d8fecc, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
