@@ -467,6 +467,10 @@ MonoBehaviour:
   _damageToDeal: 8
   validTargets:
   - {fileID: 11400000, guid: 6a2fdd1649abac645acbed71391b40f4, type: 2}
+  _root: {fileID: 138855706372028777}
+  _relevantLayers:
+    serializedVersion: 2
+    m_Bits: 320
 --- !u!50 &995975787178146733
 Rigidbody2D:
   serializedVersion: 5
@@ -510,7 +514,7 @@ CircleCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -566,6 +570,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 6051236436201989529, guid: 7529b2afa91c15d4a883be5ae07470e6, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -1101664963
+      objectReference: {fileID: 0}
     - target: {fileID: 6331915899052633983, guid: 7529b2afa91c15d4a883be5ae07470e6, type: 3}
       propertyPath: m_Layer
       value: 7
@@ -580,7 +588,7 @@ PrefabInstance:
       objectReference: {fileID: -3966875280856557594, guid: fdde976d339edbd4f84254d02591e509, type: 3}
     - target: {fileID: 7807025985240862038, guid: 7529b2afa91c15d4a883be5ae07470e6, type: 3}
       propertyPath: m_Name
-      value: Character_EnenyKamikaze
+      value: Character_EnemyKamikaze
       objectReference: {fileID: 0}
     - target: {fileID: 7807025985240862038, guid: 7529b2afa91c15d4a883be5ae07470e6, type: 3}
       propertyPath: m_Layer
@@ -671,6 +679,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7807025985240862038, guid: 7529b2afa91c15d4a883be5ae07470e6, type: 3}
       insertIndex: -1
       addedObject: {fileID: 6350030737975829734}
+    - targetCorrespondingSourceObject: {fileID: 7807025985240862038, guid: 7529b2afa91c15d4a883be5ae07470e6, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5175878299085706894}
   m_SourcePrefab: {fileID: 100100000, guid: 7529b2afa91c15d4a883be5ae07470e6, type: 3}
 --- !u!1 &138855706372028777 stripped
 GameObject:
@@ -690,7 +701,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DI_KamikazeEnemyController
   _characterRoot: {fileID: 138855706372028777}
+  _damageReceiver: {fileID: 138855706372028777}
+  _damageOnCollision: {fileID: 6975412977532871940}
   _kamikazeEnemyController: {fileID: 3940912972616844646}
+  enemyFeedbackDied: {fileID: 6350030737975829734}
+  kamikazeHit: {fileID: 5175878299085706894}
 --- !u!114 &3940912972616844646
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -732,6 +747,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyFeedback
   _deadFX: {fileID: 7099166145921748954, guid: 62ea397735582194a9f63ee651747f50, type: 3}
+--- !u!114 &5175878299085706894
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 138855706372028777}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42c29e1a0ce99fe4e8c5bc4d49aaeb1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyFeedback
+  _deadFX: {fileID: 370735748360162819, guid: 0e65106fdee329745a654e1556558b97, type: 3}
 --- !u!4 &1753501961660645445 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8494001086697993338, guid: 7529b2afa91c15d4a883be5ae07470e6, type: 3}

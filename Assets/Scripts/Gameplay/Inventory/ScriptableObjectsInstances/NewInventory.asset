@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: NewInventory
   m_EditorClassIdentifier: Assembly-CSharp::InventorySO
   savedSlots:
-  - _itemsInSlot: 5
+  - _itemsInSlot: 6
     _item: {fileID: 11400000, guid: 5fca62b9e3faaef49acf68657442e867, type: 2}
-  - _itemsInSlot: 1
+  - _itemsInSlot: 2
     _item: {fileID: 11400000, guid: fa5797f631d115d4781f93b219317f93, type: 2}
   - _itemsInSlot: 1
     _item: {fileID: 11400000, guid: 500adbebc931dbe429dc9d4171edb6ff, type: 2}
@@ -27,6 +27,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: ee97504c6f4fc054b8a8b54ec33570c7, type: 2}
   - {fileID: 11400000, guid: 858bdadf34d98574ab8c87ee658273c4, type: 2}
   savedEquippedWeapon: {fileID: 11400000, guid: b1175618499165f49b80cd0f7f33d761, type: 2}
-  savedCoins: 36
+  savedCoins: 37
   allowStacking: 1
   quickAccessSlotCount: 2

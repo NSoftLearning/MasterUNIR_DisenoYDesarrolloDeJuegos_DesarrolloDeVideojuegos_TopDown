@@ -1026,7 +1026,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DI_PatrolAndCloseCombatEnemyController
   _characterRoot: {fileID: 3476943960244857115}
   _enemyAttackObject: {fileID: 5450229689375883451}
+  _damageReceiver: {fileID: 3476943960244857115}
   patrolAndCloseCombatController: {fileID: 4028882310137395756}
+  enemyFeedback: {fileID: 1494674429375495450}
 --- !u!114 &4028882310137395756
 MonoBehaviour:
   m_ObjectHideFlags: 0
