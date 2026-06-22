@@ -139,8 +139,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FireBallTrap
   _fireBall: {fileID: 2448344331246417173, guid: 818dc7624a0ae3a41809e522d85fa808, type: 3}
   _spawnPoint: {fileID: 3180989980127624292}
-  _numOfBalls: 3
-  _timeBetweenBalls: 0.3
+  _numOfBalls: 2
+  _timeBetweenBalls: 0.45
   _direction: 0
 --- !u!114 &1120534993330081903
 MonoBehaviour:

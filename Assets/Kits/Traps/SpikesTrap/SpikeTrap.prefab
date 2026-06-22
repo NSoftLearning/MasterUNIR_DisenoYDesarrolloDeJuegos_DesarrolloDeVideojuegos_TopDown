@@ -335,5 +335,5 @@ MonoBehaviour:
   _validDamageables:
   - {fileID: 11400000, guid: 5ed885d083d7ece418e4eec0dd191588, type: 2}
   - {fileID: 11400000, guid: 6a2fdd1649abac645acbed71391b40f4, type: 2}
-  _damageAmount: 5
+  _damageAmount: 4
   _pushForce: 0

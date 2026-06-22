@@ -205,5 +205,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TrapFeedback
   _trapSound: {fileID: 8300000, guid: f3d69e576cdd6e94c93f172d40059e98, type: 3}
   _trapDeactivateSound: {fileID: 8300000, guid: f3d69e576cdd6e94c93f172d40059e98, type: 3}
-  _trapVolume: 0.166
-  _trapDeactivateSoundVolume: 0.166
+  _trapVolume: 0.2
+  _trapDeactivateSoundVolume: 0.2

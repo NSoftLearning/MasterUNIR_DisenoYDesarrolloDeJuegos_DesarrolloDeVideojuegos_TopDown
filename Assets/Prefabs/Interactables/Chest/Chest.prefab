@@ -371,7 +371,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ChestFeedback
   clip: {fileID: 8300000, guid: ce78db83697a9fb4ba9bcd95ad2fad8f, type: 3}
-  volume: 0.166
+  volume: 0.4
 --- !u!1 &7744121702786966065
 GameObject:
   m_ObjectHideFlags: 0
