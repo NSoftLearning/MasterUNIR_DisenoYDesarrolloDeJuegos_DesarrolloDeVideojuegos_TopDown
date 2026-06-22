@@ -8,7 +8,8 @@ public class DamageOnCollision : MonoBehaviour
     UnityEvent HitSomething;
     [SerializeField] int _damageToDeal;
     [SerializeField] List <DamageableTypeSO>  validTargets;
-    
+    [SerializeField] GameObject _root;
+    [SerializeField] LayerMask _relevantLayers;
     private void Start()
     {
         gameObject.SetActive(false);
@@ -24,13 +25,20 @@ public class DamageOnCollision : MonoBehaviour
     {
         if (collision == _ignoredCollider)
             return;
+        if ((_relevantLayers.value & (1 << collision.gameObject.layer)) == 0)
+                return;
 
         var damageReceiver = collision.GetComponent<IDamageReceiver>();
+
         if (damageReceiver != null)
-            damageReceiver.TryToDealDamage(new DamageDataDTO(_damageToDeal, validTargets, transform.position, 0));
-            
-        HitSomething?.Invoke();
-        Destroy(transform.root.gameObject);
+        {
+            if (damageReceiver.TryToDealDamage(new DamageDataDTO(_damageToDeal, validTargets, transform.position, 0)))
+                   Destroy(_root);            
+        }
+        else
+            Destroy(_root);
+        
+        HitSomething?.Invoke();        
         
         }
 

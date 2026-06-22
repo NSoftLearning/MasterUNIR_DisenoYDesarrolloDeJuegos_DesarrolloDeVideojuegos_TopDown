@@ -467,6 +467,10 @@ MonoBehaviour:
   _damageToDeal: 8
   validTargets:
   - {fileID: 11400000, guid: 6a2fdd1649abac645acbed71391b40f4, type: 2}
+  _root: {fileID: 138855706372028777}
+  _relevantLayers:
+    serializedVersion: 2
+    m_Bits: 320
 --- !u!50 &995975787178146733
 Rigidbody2D:
   serializedVersion: 5
@@ -565,6 +569,10 @@ PrefabInstance:
     - target: {fileID: 5739693547061785962, guid: 7529b2afa91c15d4a883be5ae07470e6, type: 3}
       propertyPath: m_Layer
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6051236436201989529, guid: 7529b2afa91c15d4a883be5ae07470e6, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -1101664963
       objectReference: {fileID: 0}
     - target: {fileID: 6331915899052633983, guid: 7529b2afa91c15d4a883be5ae07470e6, type: 3}
       propertyPath: m_Layer
