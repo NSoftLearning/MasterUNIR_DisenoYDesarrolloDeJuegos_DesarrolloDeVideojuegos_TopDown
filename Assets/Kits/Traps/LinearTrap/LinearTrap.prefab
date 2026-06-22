@@ -68,8 +68,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.19279993, y: 0.0494, z: 0}
-    m_Extent: {x: 3.1358, y: 0.6889, z: 0}
+    m_Center: {x: 0.19319999, y: 0.0494, z: 0}
+    m_Extent: {x: 2.8163, y: 0.3689, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -262,5 +262,5 @@ MonoBehaviour:
   _validDamageables:
   - {fileID: 11400000, guid: 6a2fdd1649abac645acbed71391b40f4, type: 2}
   - {fileID: 11400000, guid: 5ed885d083d7ece418e4eec0dd191588, type: 2}
-  _damageAmount: 5
+  _damageAmount: 4
   _pushForce: 0

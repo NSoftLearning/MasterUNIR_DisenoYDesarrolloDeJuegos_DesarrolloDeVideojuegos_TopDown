@@ -52,10 +52,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemyFireball
       objectReference: {fileID: 0}
-    - target: {fileID: 8291874244206524994, guid: ff0302b169b9f774fae24ebcc7690313, type: 3}
-      propertyPath: m_SortingOrder
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 8674861928208327035, guid: ff0302b169b9f774fae24ebcc7690313, type: 3}
       propertyPath: _validDamageables.Array.size
       value: 1
