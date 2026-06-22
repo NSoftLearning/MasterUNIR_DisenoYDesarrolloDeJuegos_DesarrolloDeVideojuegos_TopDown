@@ -259,8 +259,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DoorFeedback
   _openDoor: {fileID: 8300000, guid: a445aee56ddd3ee42889a7dcf8c51abc, type: 3}
   _closeDoor: {fileID: 8300000, guid: f687947dc6c9bda44bc525c27ef685b2, type: 3}
-  _openDoorVolume: 0.12
-  _closeDoorVolume: 0.12
+  _openDoorVolume: 0.08
+  _closeDoorVolume: 0.08
 --- !u!1 &7754802532616117331
 GameObject:
   m_ObjectHideFlags: 0

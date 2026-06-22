@@ -13433,6 +13433,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SwordCollectible
       objectReference: {fileID: 0}
+    - target: {fileID: 7716657810363601488, guid: 37a03d12ff1bf0846942013ef21ebb71, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8186401678839990400, guid: 37a03d12ff1bf0846942013ef21ebb71, type: 3}
       propertyPath: m_LocalPosition.x
       value: -24.9
