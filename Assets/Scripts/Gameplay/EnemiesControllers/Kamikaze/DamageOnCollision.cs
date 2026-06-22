@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
@@ -5,7 +6,7 @@ using UnityEngine.Events;
 public class DamageOnCollision : MonoBehaviour
 {
     private Collider2D _ignoredCollider;
-    UnityEvent HitSomething;
+    public event Action HitSomething;
     [SerializeField] int _damageToDeal;
     [SerializeField] List <DamageableTypeSO>  validTargets;
     [SerializeField] GameObject _root;
@@ -33,12 +34,18 @@ public class DamageOnCollision : MonoBehaviour
         if (damageReceiver != null)
         {
             if (damageReceiver.TryToDealDamage(new DamageDataDTO(_damageToDeal, validTargets, transform.position, 0)))
-                   Destroy(_root);            
+            {
+                HitSomething?.Invoke();
+                Destroy(_root);                
+            }
         }
         else
+        {
+            HitSomething?.Invoke();
             Destroy(_root);
+        }
         
-        HitSomething?.Invoke();        
+            
         
         }
 
