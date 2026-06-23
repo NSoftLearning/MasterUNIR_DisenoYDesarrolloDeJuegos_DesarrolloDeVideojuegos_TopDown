@@ -3535,7 +3535,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -76.4}
-  m_SizeDelta: {x: 230.23, y: 126.4664}
+  m_SizeDelta: {x: 253.2265, y: 126.4664}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1048662814
 MonoBehaviour:
@@ -3557,8 +3557,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "- Ander Veneros -\n- Ignacia Lobos -\n- Jose Jim\xE9nez -\n- Miguel Montero
-    -"
+  m_text: "- Ander Hern\xE1ndez -\n- Ignacia Lobos -\n- Jose Jim\xE9nez -\n- Miguel
+    Montero -"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 177504bc6372ba946af18dc652ccd74d, type: 2}
   m_sharedMaterial: {fileID: -8270625073079610600, guid: 177504bc6372ba946af18dc652ccd74d, type: 2}
